@@ -1,0 +1,7 @@
+ <?xml version="1.0" ?>
+ <Imageset Name="item_icons" Imagefile="items_icons.png" NativeHorzRes="800" NativeVertRes="600" AutoScaled="true">
+	<Image Name="armor" XPos="0.0" YPos="0.0" Width="32" Height="32" />
+	<Image Name="helmet" XPos="0.0" YPos="32.0" Width="32" Height="32" />
+	<Image Name="shield" XPos="32.0" YPos="0.0" Width="32" Height="32" />
+	<Image Name="greaves" XPos="32.0" YPos="32.0" Width="32" Height="32" />
+</Imageset>

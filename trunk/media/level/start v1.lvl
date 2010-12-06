@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<level>
+    <name value="Testlevel" />
+    <gravity value="-9.81" />
+    <ambientcolour value="0.8 0.8 0.8 0.8" />
+	<fog type="exp2" colour="0.9 0.9 0.9" expDensity="0.05" linearStart="2" linearEnd="10" />
+	<paging use="true" pagesize="1" startoffset="0 0 0" />
+		
+	</paging>
+</level>
+<statics>
+    <plane pos="15.875 0 14.125" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <plane pos="14.625 0 2.875" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 2.5 0.1" />
+    <plane pos="15.875 0 9.125" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <plane pos="20.25 0 4.75" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="1.25 1.25 0.1" />
+    <plane pos="19 0 4.75" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="1.25 1.25 0.1" />
+    <plane pos="19 0 6" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="1.25 1.25 0.1" />
+    <plane pos="20.25 0 6" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="1.25 1.25 0.1" />
+    <plane pos="14.625 0 5.375" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 2.5 0.1" />
+    <plane pos="17.125 0 2.875" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 2.5 0.1" />
+    <mesh pos="18 2.25 3.375" orient="0.382683 0 0.92388 0" filename="ogrehead.mesh" type="mesh" scale="0.0487657 0.0487657 0.0487657" />
+    <mesh pos="15.5 2.25 3.625" orient="0.970553 0.109362 -0.0269588 -0.212934" filename="ogrehead.mesh" type="mesh" scale="0.0487657 0.0487657 0.0487657" />
+    <plane pos="17.125 0 5.375" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 2.5 0.1" />
+    <mesh pos="11.5 2.2 2.6" filename="ogrehead.mesh" material="Examples/Water1" type="mesh" scale="0.0353635 0.0353635 0.0353635" />
+    <mesh pos="2.7 0.3 14.2" orient="0.608762 7.82868e-005 -6.03346e-005 -0.793353" filename="box.mesh" material="wood_door" type="mesh" scale="0.161773 3.43183 1.3186" />
+    <mesh pos="9 2.2 2.1" filename="ogrehead.mesh" material="Grass" type="mesh" scale="0.0353635 0.0353635 0.0353635" />
+    <mesh pos="0.4 0.4 13.4" filename="RZR-002.mesh" type="mesh" scale="0.316756 0.316756 0.316756" />
+    <plane pos="8.375 0 1.625" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="10 10 0.1" />
+    <plane pos="4.625 1.25 26.625" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 2.5 0.025" />
+    <plane pos="5.875 1.25 21.625" orient="0.707107 0 0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 2.5 0.1" />
+    <plane pos="3.375 1.25 21.625" orient="0.707107 0 -0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 2.5 0.1" />
+    <plane pos="14.8 0 21.6" orient="0.707107 0.707107 1.34111e-007 2.98022e-008" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 10 0.1" />
+    <plane pos="4.625 2.5 21.625" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 10 0.1" />
+    <plane pos="4.625 0 21.625" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 10 0.1" />
+    <plane pos="8.375 0 11.625" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 10 0.1" />
+    <plane pos="23.3 0 11.6" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="32" ySeg="32" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 10 0.1" />
+    <mesh pos="18.5 -0.1 -1.6" orient="0.709819 -0.704384 0 0" filename="ogrehead.mesh" type="mesh" scale="0.267411 0.267411 0.00953247" />
+    <mesh pos="-4.85957 0 -0.758286" filename="ogrehead.mesh" type="mesh" scale="0.0487657 0.0487657 0.0487657" />
+    <mesh pos="0 0 0" filename="ogrehead.mesh" type="mesh" scale="0.0487657 0.0487657 0.0487657" />
+    <mesh pos="-2.27472 0 -3.13635" filename="ogrehead.mesh" type="mesh" scale="0.0487657 0.0487657 0.0487657" />
+    <mesh pos="-3.37759 0 1.61978" filename="ogrehead.mesh" type="mesh" scale="0.0487657 0.0487657 0.0487657" />
+</statics>
+<items />
+<entrances>
+    <entrance pos="8.2 0.8 11.2" name="GameStartPosition" />
+</entrances>
+<lights>
+    <spotlight pos="28.1 3.8 3.3" orient="-0.168033 0.0521452 -0.926188 -0.333524" diffuse="0 1 0 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="10" sOuter="40" falloff="1" />
+    <point pos="2.6 2.2 -4.7" diffuse="0 1 0 1" specular="0 0 0 1" aRange="10" aConst="1" aLinear="0" aQuad="0" />
+    <spotlight pos="29.4 3.8 19" orient="0.915931 -0.32648 0.217076 0.0858335" diffuse="0 0 1 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="10" sOuter="40" falloff="1" />
+    <spotlight pos="16.6 3.8 11" orient="0.63207 -0.232707 -0.697522 -0.244548" diffuse="1 0 0 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="10" sOuter="40" falloff="1" />
+</lights>
+<doors>
+    <testdoor pos="7.2 1.1 2.6" targetLevel="start.lvl" targetEntrance="GameStartPosition" />
+    <testportal pos="14.8 1.2 26.4" scale="2.49459 2.80095 1" targetLevel="start.lvl" targetEntrance="GameStartPosition" />
+</doors>
+<characters />
+<special>
+    <kette pos="5.5 5.375 8" />
+    <kette pos="5.875 1.75 10.875" />
+    <domino pos="7.625 0.375 6.375" />
+    <domino pos="5.875 0.625 10.625" orient="0.707107 0 0.707107 0" scale="2 2 2" />
+    <domino pos="6.125 0.375 6.375" />
+    <domino pos="6.375 0.375 6.375" />
+    <domino pos="6.625 0.375 6.375" />
+    <domino pos="6.875 0.375 6.375" />
+    <domino pos="7.125 0.375 6.375" />
+    <domino pos="7.375 0.375 6.375" />
+    <domino pos="5.875 0.375 6.375" />
+    <domino pos="5.625 0.375 6.375" orient="0.965926 0 0.258819 0" />
+    <domino pos="5.5 0.375 6.625" orient="0.866025 0 0.5 0" />
+    <domino pos="5.5 0.375 6.875" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 7.125" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 7.375" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 7.625" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 7.875" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 8.125" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 8.375" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 8.625" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 8.875" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 9.125" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 9.375" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.5 0.375 9.625" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.625 0.375 9.75" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.75 0.375 10" orient="0.707107 0 0.707107 0" />
+    <domino pos="5.875 0.5 10.25" orient="0.707107 0 0.707107 0" scale="1.5 1.5 1.5" />
+</special>
+<containers>
+    <testtasche pos="12.9005 0.500419 10.8" orient="1 -1.26544e-005 3.69456e-006 -0.000492145">
+        <inventory>
+            <item id="lolbow" count="1" />
+            <item id="testbox2" count="1" />
+            <item id="testbox3" count="1" />
+            <item id="testbox4" count="1" />
+        </inventory>
+    </testtasche>
+</containers>

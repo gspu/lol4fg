@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<level>
+    <gravity value="-9.81" />
+    <ambientcolour value="1 1 1 1" />
+	<paging use="true" pagesize="100" pagestartoffset="0 0 0" />
+	
+</level>
+<statics>
+    <plane pos="-7.2 18.4 8.4" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <mesh pos="-0.8 24.4 2" orient="-1.49012e-007 0 1 0" filename="tudorhouse.mesh" type="mesh" scale="0.0107189 0.0107189 0.0107189" />
+    <plane pos="5.6 18.4 8.4" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-0.8 18.4 8.4" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="5.6 18.4 -23.6" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-0.8 18.4 -23.6" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-7.2 18.4 -23.6" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="5.6 18.4 2" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-0.8 18.4 2" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-7.2 18.4 2" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-7.2 18.4 -17.2" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-0.8 18.4 -17.2" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="5.6 18.4 -17.2" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-7.2 18.4 -10.8" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-0.8 18.4 -10.8" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="5.6 18.4 -10.8" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-7.2 18.4 -4.4" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="-0.8 18.4 -4.4" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+    <plane pos="5.6 18.4 -4.4" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/RustySteel" type="plane" scale="6.41296 6.41296 0.0529616" />
+</statics>
+<items />
+<entrances>
+    <entrance pos="0.4 19.6 -19.6" orient="1.19209e-007 0 -1 0" name="entr0" />
+</entrances>
+<lights />
+<doors />
+<characters />
+<special />
+<containers />

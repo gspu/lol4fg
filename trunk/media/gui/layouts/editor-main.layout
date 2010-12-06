@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="root" >
+        <Property Name="Font" Value="DejaVuSans-10" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="WindowsLook/FrameWindow" Name="BottomBar" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="TitlebarFont" Value="Commonwealth-10" />
+            <Property Name="SizingEnabled" Value="False" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0.95,0},{1,0},{1,0}}" />
+            <Property Name="DragMovingEnabled" Value="False" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+            <Window Type="WindowsLook/StaticText" Name="objectInfo" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value=" " />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0025,0},{0.0883963,0},{0.455,0},{0.969183,0}}" />
+            </Window>
+            <Window Type="WindowsLook/StaticText" Name="modType" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="rotate" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.46,0},{0.092264,0},{0.523749,0},{0.940597,0}}" />
+            </Window>
+            <Window Type="WindowsLook/StaticText" Name="showFPS" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="FPS: 1337" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.860001,0},{0.0857647,0},{0.994999,0},{0.966551,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="debugWnd" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Debug" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.782501,0},{0.665,0},{0.995,0},{0.946667,0}}" />
+            <Window Type="WindowsLook/StaticText" Name="TextOut" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="asdfmuh" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="VertFormatting" Value="TopAligned" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0411767,0},{0.153219,0},{0.952941,0},{0.970414,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="objects" >
+            <Property Name="Font" Value="Iconified-12" />
+            <Property Name="Text" Value="Objects" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{-0.000625,0},{0.0479167,0},{0.27875,0},{0.511666,0}}" />
+            <Window Type="WindowsLook/TabControl" Name="MainTabCtrl" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="place holder" />
+                <Property Name="TabHeight" Value="{0,23.5148}" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="TabPanePosition" Value="Top" />
+                <Property Name="UnifiedAreaRect" Value="{{0,10},{0,30},{1,-9},{1,-10}}" />
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_StaticMeshes" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Meshes" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="staticmeshes_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_Dotscenes" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="DotScenes" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="Dotscenes_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_items" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Item" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="items_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_chars" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Char" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="chars_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_doors" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Door" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="doors_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_Containers" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Containers" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="Containers_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_else" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Else" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="else_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_special" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Dynamic" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/Listbox" Name="special_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                </Window>
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="browsematerialwnd" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Select Material" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.307885,0},{0.136918,0},{0.680092,0},{0.795519,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="browsematerialwnd/list" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0339808,0},{0.0727891,0},{0.961828,0},{0.880611,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="browsematerialwnd/ok" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="OK" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.418888,0},{0.896599,0},{0.668887,0},{0.983334,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="browsematerialwnd/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.69188,0},{0.895919,0},{0.94188,0},{0.982653,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="browsepswnd" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Select Particle System" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.307885,0},{0.136918,0},{0.680092,0},{0.795519,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="browsepswnd/list" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0339808,0},{0.0727891,0},{0.961828,0},{0.880611,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="browsepswnd/ok" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="OK" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.418888,0},{0.896599,0},{0.668887,0},{0.983334,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="browsepswnd/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.69188,0},{0.895919,0},{0.94188,0},{0.982653,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="levelview" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Open Level" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.324062,0},{0.183331,0},{0.689374,0},{0.717083,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="levelview/levels_list" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,15},{0,30},{1,-15},{0.892708,-10}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="levelview/ok" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="OK" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.347977,0},{0.880635,0},{0.625723,0},{0.973049,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="levelview/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.647689,0},{0.880341,0},{0.943932,0},{0.972756,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/Menubar" Name="MainMenubar" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="ItemSpacing" Value="10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{0.0408334,0}}" />
+            <Window Type="WindowsLook/MenuItem" Name="MainMenubarFileButton" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="File" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,7},{0,0},{0,29},{0,16}}" />
+                <Property Name="VerticalAlignment" Value="Centre" />
+                <Window Type="WindowsLook/PopupMenu" Name="filePopup" >
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="FadeInTime" Value="0" />
+                    <Property Name="FadeOutTime" Value="0" />
+                    <Property Name="ItemSpacing" Value="2" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="ClippedByParent" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0,61},{0,94.0882}}" />
+                    <Property Name="AutoResizeEnabled" Value="True" />
+                    <Window Type="WindowsLook/MenuItem" Name="newlvl" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="New Level" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,2},{0,59},{0,18}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="Open" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Open" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,20},{0,59},{0,36}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="Save" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Save" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,38},{0,59},{0,54}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="SaveAs" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Save As..." />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,56},{0,59},{0,72}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="Quit" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Quit" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,74},{0,59},{0,90}}" />
+                    </Window>
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/MenuItem" Name="MainMenuBarViewBtn" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Edit" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,39},{0,0},{0,64},{0,16}}" />
+                <Property Name="VerticalAlignment" Value="Centre" />
+                <Window Type="WindowsLook/PopupMenu" Name="editPopup" >
+                    <Property Name="FadeInTime" Value="0" />
+                    <Property Name="FadeOutTime" Value="0" />
+                    <Property Name="ItemSpacing" Value="2" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="ClippedByParent" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,16},{0,126},{0,109.524}}" />
+                    <Property Name="AutoResizeEnabled" Value="True" />
+                    <Window Type="WindowsLook/MenuItem" Name="editPopup/editterrain" >
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,2},{0,124},{0,18}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="seteditterrain" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Edit Terrain" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="editPopup/editObjects" >                        
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,20},{0,124},{0,36}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="seteditobjects" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Edit Objects" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="editPopup/saveMeshes" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Save grouped Meshes" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,38},{0,124},{0,54}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="editPopup/saveObjects" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Save Grouped Objects" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,56},{0,124},{0,72}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="editPopup/saveCol" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Save Collision" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,74},{0,124},{0,90}}" />
+                    </Window>
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/MenuItem" Name="MainMenubarOptionsButton" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Options" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,74},{0,0},{0,119},{0,16}}" />
+                <Property Name="VerticalAlignment" Value="Centre" />
+                <Window Type="WindowsLook/PopupMenu" Name="optionsPopup" >
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="FadeInTime" Value="0" />
+                    <Property Name="FadeOutTime" Value="0" />
+                    <Property Name="ItemSpacing" Value="2" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="ClippedByParent" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,20},{0,109},{0,148.769}}" />
+                    <Property Name="AutoResizeEnabled" Value="True" />
+                    <Window Type="WindowsLook/MenuItem" Name="editorsettings_start" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Editor Settings........" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,2},{0,107},{0,18}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="levelsettings_start" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Level Settings........" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,20},{0,107},{0,36}}" />
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="gridSnapItem" >
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,38},{0,107},{0,54}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="GridSnap" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Snap on Grid" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="angleSnapItem" >
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,56},{0,107},{0,72}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="AngleSnap" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Snap on Angle" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="scaleSnapItem" >
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,74},{0,107},{0,90}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="ScaleSnap" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Snap on Scale" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="physicsItem" >
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,92},{0,107},{0,108}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="ProcessPhysics" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Physics" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                    <Window Type="WindowsLook/MenuItem" Name="showFogItem" >
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,2},{0,110},{0,107},{0,126}}" />
+                        <Window Type="WindowsLook/Checkbox" Name="ShowFog" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Fog" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        </Window>
+                    </Window>
+                </Window>
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="curobjects" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Current Objects" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0015625,0},{0.52,0},{0.274062,0},{0.93,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="curobjects_list" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0386134,0},{0.112244,0},{0.966294,0},{0.974489,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="EditInventory" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Inventory of ***" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.28875,0},{0.218333,0},{0.715001,0},{0.714999,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="EditInventory/listbox" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0219943,0},{0.097315,0},{0.975806,0},{0.850671,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="EditInventory/ok" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="OK" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.434604,0},{0.881209,0},{0.684604,0},{0.966779,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="EditInventory/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.71349,0},{0.877182,0},{0.963489,0},{0.976175,0}}" />
+            </Window>
+            <Window Type="WindowsLook/StaticText" Name="EditInventory/max" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Max:" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.159531,0},{0.869799,0},{0.409531,0},{0.965437,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="WindowsLook/StaticText" Name="EditInventory/1" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Max:" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0307929,0},{0.872483,0},{0.14003,0},{0.96141,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/StaticImage" Name="selectionborder" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.722501,0},{0.326667,0},{0.956251,0},{0.555,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="EditSpellbook" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Spellbook of ***" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.3425,0},{0.238333,0},{0.768751,0},{0.734999,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="EditSpellbook/listbox" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.021994,0},{0.097315,0},{0.975806,0},{0.850671,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="EditSpellbook/ok" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="OK" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.434604,0},{0.881209,0},{0.684604,0},{0.966779,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="EditSpellbook/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.71349,0},{0.877182,0},{0.963489,0},{0.976175,0}}" />
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="editterrain" >
+            <Property Name="Font" Value="Iconified-12" />
+            <Property Name="Text" Value="Edit Terrain" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.710938,0},{0.0408331,0},{0.999062,0},{0.648333,0}}" />
+            <Window Type="WindowsLook/TabControl" Name="TerrainTabCtrl" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="place holder" />
+                <Property Name="TabHeight" Value="{0,23.5148}" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="TabPanePosition" Value="Top" />
+                <Property Name="UnifiedAreaRect" Value="{{0,7},{0,22},{1,-9},{1,-38}}" />
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_brushes" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Brushes" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/StaticText" Name="Pane_brushes/" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Brush Scale:" />
+                        <Property Name="FrameEnabled" Value="False" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.529755,0},{0.0164432,0},{0.954251,0},{0.131685,0}}" />
+                        <Property Name="BackgroundEnabled" Value="False" />
+                    </Window>
+                    <Window Type="WindowsLook/Spinner" Name="editterrain/brushscale_value" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="16" />
+                        <Property Name="StepSize" Value="1" />
+                        <Property Name="CurrentValue" Value="16" />
+                        <Property Name="MaximumValue" Value="50" />
+                        <Property Name="MinimumValue" Value="-32768" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.52093,0},{0.128085,0},{0.926851,0},{0.237159,0}}" />
+                    </Window>
+                    <Window Type="WindowsLook/ScrollablePane" Name="editterrain/brushes_list" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="ContentArea" Value="l:0 t:0 r:0 b:0" />
+                        <Property Name="HorzStepSize" Value="0.1" />
+                        <Property Name="VertStepSize" Value="0.1" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="HorzOverlapSize" Value="0.01" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.029978,0},{0.035661,0},{0.463422,0},{0.990639,0}}" />
+                        <Property Name="VertOverlapSize" Value="0.01" />
+                        <Property Name="HorzScrollPosition" Value="0" />
+                        <Property Name="VertScrollPosition" Value="0" />
+                        <AutoWindow NameSuffix="__auto_container__" >
+                            <Property Name="ContentArea" Value="l:0 t:0 r:0 b:0" />
+                            <Property Name="ChildExtentsArea" Value="l:0 t:0 r:0 b:0" />
+                        </AutoWindow>
+                    </Window>
+                    <Window Type="WindowsLook/StaticText" Name="Pane_brushes/1" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Intensity" />
+                        <Property Name="FrameEnabled" Value="False" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.513217,0},{0.396854,0},{0.879548,0},{0.494182,0}}" />
+                        <Property Name="BackgroundEnabled" Value="False" />
+                    </Window>
+                    <Window Type="WindowsLook/Spinner" Name="editterrain/brushintensity" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="50" />
+                        <Property Name="StepSize" Value="1" />
+                        <Property Name="CurrentValue" Value="50" />
+                        <Property Name="MaximumValue" Value="100" />
+                        <Property Name="MinimumValue" Value="-32768" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.519318,0},{0.494611,0},{0.927405,0},{0.603121,0}}" />
+                    </Window>
+                    <Window Type="WindowsLook/HorizontalScrollbar" Name="editterrain/brushintensity_sb" >
+                        <Property Name="PageSize" Value="0" />
+                        <Property Name="StepSize" Value="1" />
+                        <Property Name="OverlapSize" Value="0" />
+                        <Property Name="DocumentSize" Value="1" />
+                        <Property Name="ScrollPosition" Value="0" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.492843,0},{0.625681,0},{0.95434,0},{0.676797,0}}" />
+                    </Window>
+                    <Window Type="WindowsLook/HorizontalScrollbar" Name="editterrain/brushscale_sb" >
+                        <Property Name="PageSize" Value="0" />
+                        <Property Name="StepSize" Value="1" />
+                        <Property Name="OverlapSize" Value="0" />
+                        <Property Name="DocumentSize" Value="1" />
+                        <Property Name="ScrollPosition" Value="0" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.503689,0},{0.262805,0},{0.959763,0},{0.317411,0}}" />
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_textures" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Textures" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/ScrollablePane" Name="editterrain/texlist" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="ContentArea" Value="l:0 t:0 r:0 b:0" />
+                        <Property Name="HorzStepSize" Value="0.1" />
+                        <Property Name="VertStepSize" Value="0.1" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="HorzOverlapSize" Value="0.01" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Property Name="VertOverlapSize" Value="0.01" />
+                        <Property Name="HorzScrollPosition" Value="0" />
+                        <Property Name="VertScrollPosition" Value="0" />
+                        <AutoWindow NameSuffix="__auto_container__" >
+                            <Property Name="ContentArea" Value="l:0 t:0 r:0 b:0" />
+                            <Property Name="ChildExtentsArea" Value="l:0 t:0 r:0 b:0" />
+                        </AutoWindow>
+                    </Window>
+                </Window>
+                <Window Type="WindowsLook/TabContentPane" Name="Pane_terrainsettings" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Settings" />
+                    <Property Name="Visible" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Window Type="WindowsLook/ScrollablePane" Name="Pane_terrainsettings/2" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="ContentArea" Value="l:0 t:0 r:137 b:265" />
+                        <Property Name="HorzStepSize" Value="0.1" />
+                        <Property Name="VertStepSize" Value="0.1" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="HorzOverlapSize" Value="0.01" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.0335561,0},{0.0169326,0},{0.974982,0},{0.874844,0}}" />
+                        <Property Name="VertOverlapSize" Value="0.01" />
+                        <Property Name="HorzScrollPosition" Value="0" />
+                        <Property Name="VertScrollPosition" Value="0" />
+                        <AutoWindow NameSuffix="__auto_container__" >
+                            <Property Name="ContentArea" Value="l:0 t:0 r:137 b:265" />
+                            <Property Name="ChildExtentsArea" Value="l:0 t:0 r:137 b:265" />
+                            <Window Type="WindowsLook/StaticText" Name="Pane_terrainsettings/1" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="Text" Value="Min. Extends" />
+                                <Property Name="FrameEnabled" Value="False" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{-0.0213643,140},{0,21}}" />
+                                <Property Name="BackgroundEnabled" Value="False" />
+                            </Window>
+                            <Window Type="WindowsLook/Editbox" Name="editterrain/minbounding" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="MaxTextLength" Value="1073741823" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,26},{-0.0213643,140},{0,47}}" />
+                            </Window>
+                            <Window Type="WindowsLook/Editbox" Name="editterrain/maxbounding" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="MaxTextLength" Value="1073741823" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,80},{-0.0213643,140},{0,103}}" />
+                            </Window>
+                            <Window Type="WindowsLook/StaticText" Name="Pane_terrainsettings/" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="Text" Value="Max Extends" />
+                                <Property Name="FrameEnabled" Value="False" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,57},{-0.0213643,140},{0,78}}" />
+                                <Property Name="BackgroundEnabled" Value="False" />
+                            </Window>
+                            <Window Type="WindowsLook/StaticText" Name="Pane_terrainsettings/2/" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="Text" Value="Light Direction" />
+                                <Property Name="FrameEnabled" Value="False" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,107},{-0.0213643,140},{0,128}}" />
+                                <Property Name="BackgroundEnabled" Value="False" />
+                            </Window>
+                            <Window Type="WindowsLook/Editbox" Name="editterrain/lightdir" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="MaxTextLength" Value="1073741823" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,136},{-0.0213643,140},{0,157}}" />
+                            </Window>
+                            <Window Type="WindowsLook/StaticText" Name="Pane_terrainsettings/2/2" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="Text" Value="Light Color" />
+                                <Property Name="FrameEnabled" Value="False" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,164},{-0.0213643,140},{0,185}}" />
+                                <Property Name="BackgroundEnabled" Value="False" />
+                            </Window>
+                            <Window Type="WindowsLook/StaticText" Name="Pane_terrainsettings/2/3" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="Text" Value="Ambient Color" />
+                                <Property Name="FrameEnabled" Value="False" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,215},{-0.0213643,140},{0,236}}" />
+                                <Property Name="BackgroundEnabled" Value="False" />
+                            </Window>
+                            <Window Type="WindowsLook/Editbox" Name="editterrain/lightcolor" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="MaxTextLength" Value="1073741823" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,190},{-0.0213643,140},{0,212}}" />
+                            </Window>
+                            <Window Type="WindowsLook/Editbox" Name="editterrain/ambientcolor" >
+                                <Property Name="Font" Value="DejaVuSans-10" />
+                                <Property Name="MaxTextLength" Value="1073741823" />
+                                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,242},{-0.0213643,140},{0,265}}" />
+                            </Window>
+                        </AutoWindow>
+                    </Window>
+                    <Window Type="WindowsLook/Button" Name="editterrain/accept" >
+                        <Property Name="Font" Value="DejaVuSans-10" />
+                        <Property Name="Text" Value="Accept" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="UnifiedAreaRect" Value="{{0.614765,0},{0.879717,0},{0.967674,0},{0.980637,0}}" />
+                    </Window>
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterrain/edittextures" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Textures..." />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.555099,0},{0.905926,0},{0.922235,0},{0.971644,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Menubar" Name="editterrain/4" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="deform" />
+                <Property Name="ItemSpacing" Value="10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0433841,0},{0.891605,0},{0.473968,0},{0.96417,0}}" />
+                <Window Type="WindowsLook/MenuItem" Name="editterrain/terrainEditMode" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Deform" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,7},{0,0},{0,50},{0,16}}" />
+                    <Property Name="VerticalAlignment" Value="Centre" />
+                    <Window Type="WindowsLook/PopupMenu" Name="editterrain/4/Item1/AutoPopup" >
+                        <Property Name="Visible" Value="False" />
+                        <Property Name="FadeInTime" Value="0" />
+                        <Property Name="FadeOutTime" Value="0" />
+                        <Property Name="ItemSpacing" Value="2" />
+                        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                        <Property Name="ClippedByParent" Value="False" />
+                        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,25},{0,80},{0,118.85}}" />
+                        <Property Name="AutoResizeEnabled" Value="True" />
+                        <Window Type="WindowsLook/MenuItem" Name="editterrain/terrainDeform" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Deform" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,2},{0,2},{0,78},{0,18}}" />
+                        </Window>
+                        <Window Type="WindowsLook/MenuItem" Name="editterrain/terrainPaint" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Paint textures" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,2},{0,20},{0,78},{0,36}}" />
+                        </Window>
+                        <Window Type="WindowsLook/MenuItem" Name="editterrain/terrainFlatten" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Flatten" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,2},{0,38},{0,78},{0,54}}" />
+                        </Window>
+                        <Window Type="WindowsLook/MenuItem" Name="editterrain/terrainSoften" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Soften" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,2},{0,56},{0,78},{0,72}}" />
+                        </Window>
+                        <Window Type="WindowsLook/MenuItem" Name="editterrain/terrainMakeholes" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Make Holes" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,2},{0,74},{0,78},{0,90}}" />
+                        </Window>
+                    </Window>
+                </Window>
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/FrameWindow" Name="editterraintextures" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Textures" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.27125,0},{0.19,0},{0.766251,0},{0.788333,0}}" />
+            <Window Type="WindowsLook/Listbox" Name="editterraintextures/alltexturelist" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.025253,0},{0.140668,0},{0.452021,0},{0.758357,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Listbox" Name="editterraintextures/leveltexturelist" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.54495,0},{0.134957,0},{0.971718,0},{0.747075,0}}" />
+            </Window>
+            <Window Type="WindowsLook/StaticText" Name="editterraintextures/2" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Available Textures" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0297982,0},{0.0688021,0},{0.443939,0},{0.143315,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="WindowsLook/StaticText" Name="editterraintextures/3" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Used Textures" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.55404,0},{0.071309,0},{0.965656,0},{0.14025,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterraintextures/add" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="&gt;" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.457071,0},{0.352368,0},{0.54293,0},{0.468663,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterraintextures/remove" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="&lt;" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.459091,0},{0.494289,0},{0.54495,0},{0.610584,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterraintextures/up" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Up" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.5601,0},{0.754039,0},{0.731817,0},{0.825766,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterraintextures/down" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Down" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.75404,0},{0.756686,0},{0.958585,0},{0.825627,0}}" />
+            </Window>
+            <Window Type="WindowsLook/StaticImage" Name="editterraintextures/preview" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="HorzFormatting" Value="Tiled" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="VertFormatting" Value="Tiled" />
+                <Property Name="UnifiedAreaRect" Value="{{0.032829,0},{0.781337,0},{0.444445,0},{0.970056,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterraintextures/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.511615,0},{0.898747,0},{0.728787,0},{0.970474,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Button" Name="editterraintextures/ok" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="OK" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.735857,0},{0.901394,0},{0.960604,0},{0.970335,0}}" />
+            </Window>
+            <Window Type="WindowsLook/Checkbox" Name="editterraintextures/useholes" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Use Holes" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.526262,0},{0.831755,0},{0.927777,0},{0.89234,0}}" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

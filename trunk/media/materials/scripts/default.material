@@ -1,0 +1,14 @@
+material default
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+                scale 0.1 0.1
+				texture notex.png
+			}
+		}
+	}
+}

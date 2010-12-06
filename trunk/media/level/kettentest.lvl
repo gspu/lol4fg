@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<level version="2">
+    <gravity value="-9.81" />
+    <ambientcolour value="1 1 1 1" />
+</level>
+<objects>
+    <special pos="-0.109853 15.0556 -1.13972" orient="1 2.08616e-007 0 0" id="kette" />
+    <special pos="0.857598 15.1418 -1.51101" scale="2.42751 2.42751 2.42751" id="kette" />
+</objects>
