@@ -1,5 +1,0 @@
-<lodData>
-    <mesh name="knot.mesh">
-        <lod fromDepth="5" meshName="ninja.mesh" />
-    </mesh>
-</lodData>

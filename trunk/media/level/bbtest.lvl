@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<level version="2">
-    <gravity value="-9.81" />
-    <ambientcolour value="1 1 1 1" />
-</level>
-<objects>
-    <static pos="-0.789316 15.1445 -1.56502" material="editor/psdummy" type="billboard" />
-</objects>
