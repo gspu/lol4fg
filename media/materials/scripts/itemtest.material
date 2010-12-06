@@ -1,0 +1,84 @@
+material pra/sword
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture lolsword.png
+			}
+		}
+	}
+}
+material pra/bow
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture lolbow.png
+			}
+		}
+	}
+}
+material pra/armor
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture crown_armor.png
+			}
+		}
+	}
+}
+material pra/helmet
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture crown_helmet3.png
+			}
+		}
+	}
+}
+material pra/shield
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture crown_shield3.png
+			}
+		}
+	}
+}
+material pra/legs
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture crown_legs.png
+			}
+		}
+	}
+}

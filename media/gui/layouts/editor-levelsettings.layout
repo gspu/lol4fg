@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="WindowsLook/FrameWindow" Name="levelsettings" >
+        <Property Name="Font" Value="DejaVuSans-10" />
+        <Property Name="Text" Value="Level settings" />
+        <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+        <Property Name="TitlebarEnabled" Value="True" />
+        <Property Name="UnifiedAreaRect" Value="{{0.224648,0},{0.0884495,0},{0.800289,0},{0.843828,0}}" />
+        <Window Type="WindowsLook/TabControl" Name="lvlsettings_tabctrl" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="TabHeight" Value="{0,26.1008}" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TabPanePosition" Value="Top" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0235794,0},{0.0847364,0},{0.96779,0},{0.879473,0}}" />
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/pane_lvl" >
+                <Property Name="Text" Value="Level" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/211" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Ambient Colour:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0258831,0},{0.0395128,0},{0.286917,0},{0.126509,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/ambientcolour" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="1 1 1 1" />
+                    <Property Name="Tooltip" Value="Ambient Light in Format R G B A" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.31269,0},{0.032552,0},{0.942156,0},{0.119726,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2111" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Gravity:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0283656,0},{0.244432,0},{0.233601,0},{0.333816,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/gravity" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="9.81 " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.280575,0},{0.242246,0},{0.503325,0},{0.333156,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/label_lvlname" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Name:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0341942,0},{0.362913,0},{0.232861,0},{0.453126,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/lvlname" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.286325,0},{0.359542,0},{0.925069,0},{0.454119,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2112" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="page size:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0625689,0},{0.57662,0},{0.323603,0},{0.663616,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Checkbox" Name="levelsettings/usePaging" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="use paging" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.043602,0},{0.45894,0},{0.293602,0},{0.550001,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/pagesize" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.284262,0},{0.565114,0},{0.923006,0},{0.659691,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21121" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Level Type:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0736513,0},{0.676289,0},{0.334685,0},{0.763285,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Combobox" Name="levelsettings/lvltype" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.284703,0},{0.692308,0},{0.534703,0},{0.942308,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/pane_lvl/" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Background Color:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.021691,0},{0.139629,0},{0.315387,0},{0.217501,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/bgcolour" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="1 1 1 1" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.31269,0},{0.136146,0},{0.942156,0},{0.216794,0}}" />
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/Pane_terrain" >
+                <Property Name="Text" Value="Terrain" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/Checkbox" Name="levelsettings/terrain/use" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="use terrain" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0288612,0},{0.0286687,0},{0.370853,0},{0.0891907,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/terrain/heightmapX" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Tooltip" Value="Must be 2^n+1" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.481543,0},{0.286775,0},{0.667149,0},{0.353542,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/1" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Heightmap resolution:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0248404,0},{0.281228,0},{0.38523,0},{0.339665,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/11" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="X:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.415162,0},{0.286255,0},{0.465079,0},{0.344693,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/terrain/heightmapZ" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Tooltip" Value="Must be 2^n+1" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.742324,0},{0.285109,0},{0.927931,0},{0.351875,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/111" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Z:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.688837,0},{0.281798,0},{0.734155,0},{0.340236,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/11111" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" >Warning:
+Any change here will reset the existing terrain!</Property>
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0451536,0},{0.827681,0},{0.814907,0},{0.963854,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/terrain/covmapZ" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Tooltip" Value="Must be 2^n" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.742324,0},{0.365652,0},{0.927931,0},{0.432418,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/1112" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Z:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.688837,0},{0.365091,0},{0.734155,0},{0.423529,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/terrain/covmapX" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Tooltip" Value="Must be 2^n" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.482593,0},{0.362292,0},{0.6682,0},{0.429058,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/112" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="X:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.415162,0},{0.356766,0},{0.465079,0},{0.415204,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/12" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Coverage map res.:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02694,0},{0.354506,0},{0.38733,0},{0.412944,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/terrain/lightmapZ" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Tooltip" Value="Must be 2^n" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.742324,0},{0.440086,0},{0.927931,0},{0.506852,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/11121" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Z:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.690087,0},{0.442278,0},{0.735405,0},{0.500716,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/terrain/lightmapX" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Tooltip" Value="Must be 2^n" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.482593,0},{0.445027,0},{0.6682,0},{0.511793,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/1121" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="X:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.415162,0},{0.443387,0},{0.465079,0},{0.501825,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/121" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Lightmap resolution:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0225406,0},{0.435027,0},{0.38293,0},{0.493465,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Combobox" Name="levelsettings/terrain/resSelect" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="ReadOnly" Value="True" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.250513,0},{0.10294,0},{0.500513,0},{0.697196,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/13" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Resolution:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0380924,0},{0.113561,0},{0.228298,0},{0.171998,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_terrain/131" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Advanced:" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0234979,0},{0.201867,0},{0.213703,0},{0.260304,0}}" />
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/Pane_fog" >
+                <Property Name="Text" Value="Fog" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/Combobox" Name="levelsettings/fog_type" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="ReadOnly" Value="True" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.284927,0},{0.068875,0},{0.534927,0},{0.395032,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/fog_density" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.293325,0},{0.391758,0},{0.543325,0},{0.476094,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_fog/" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Fog Type:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0241901,0},{0.0695146,0},{0.184498,0},{0.160574,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_fog/1" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Density:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0269391,0},{0.376333,0},{0.173448,0},{0.483949,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_fog/2" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Linear Start:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0331891,0},{0.537669,0},{0.230294,0},{0.641974,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_fog/3" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Linear End" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0331891,0},{0.659247,0},{0.230294,0},{0.773485,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/fog_start" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.293325,0},{0.541096,0},{0.543325,0},{0.625432,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/fog_end" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.293325,0},{0.6705,0},{0.543326,0},{0.754836,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_fog/11" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Color:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0374421,0},{0.225323,0},{0.183951,0},{0.332939,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/fog_color" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.276631,0},{0.227986,0},{0.846302,0},{0.312322,0}}" />
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/Pane_skybox" >
+                <Property Name="Text" Value="Skybox" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/Checkbox" Name="levelsettings/skyboxuse" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Use Skybox" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.029761,0},{0.036184,0},{0.253697,0},{0.125001,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Material:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0389175,0},{0.138158,0},{0.228515,0},{0.233554,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Button" Name="levelsettings/skyboxmaterialbrowsebtn" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="..." />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.85014,0},{0.143894,0},{0.929272,0},{0.234171,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyboxmaterial" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.189549,0},{0.147511,0},{0.84145,0},{0.234477,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_skybox/" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Distance:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0393222,0},{0.265019,0},{0.20193,0},{0.334561,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyboxdist" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.206817,0},{0.258411,0},{0.829385,0},{0.333506,0}}" />
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/skyplane_pane" >
+                <Property Name="Text" Value="SkyPlane" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/Checkbox" Name="levelsettings/skyplaneuse" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Use Skyplane" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0228924,0},{0.0328951,0},{0.278879,0},{0.118422,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/212" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Material:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0274713,0},{0.128289,0},{0.19001,0},{0.220396,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2121" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Scale:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0274708,0},{0.220394,0},{0.18044,0},{0.31579,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2122" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Tiling:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0274714,0},{0.328947,0},{0.187308,0},{0.421053,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2123" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="XSeg:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0320499,0},{0.43421,0},{0.260564,0},{0.523028,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2124" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="YSeg:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0297606,0},{0.532894,0},{0.201043,0},{0.625001,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2125" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Bow:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0343391,0},{0.628289,0},{0.251407,0},{0.723685,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplanescale" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.192299,0},{0.226973,0},{0.937252,0},{0.319079,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplanetiling" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.192299,0},{0.332237,0},{0.93819,0},{0.424343,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplanexseg" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.192299,0},{0.43421,0},{0.9359,0},{0.526316,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplaneyseg" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.192299,0},{0.539473,0},{0.9359,0},{0.63158,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplanebow" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.192299,0},{0.641447,0},{0.935901,0},{0.733553,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Button" Name="levelsettings/skyplanematerialbrowsebtn" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="..." />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.851363,0},{0.123585,0},{0.930494,0},{0.213363,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplanematerial" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.191761,0},{0.127433,0},{0.835637,0},{0.219539,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skyplanedist" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.196303,0},{0.71921,0},{0.939905,0},{0.811316,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21251" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Distance:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0297395,0},{0.708801,0},{0.187013,0},{0.804197,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/pane_skydome" >
+                <Property Name="Text" Value="Skydome" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/Checkbox" Name="levelsettings/skydomeuse" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Use Skydome" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0274713,0},{0.0263158,0},{0.324664,0},{0.115132,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/2126" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Material:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0228927,0},{0.131579,0},{0.230804,0},{0.223686,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21211" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Curvature:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.025182,0},{0.226973,0},{0.217068,0},{0.32237,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skydomecurvature" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="sdcurvature" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.208324,0},{0.230263,0},{0.958793,0},{0.325658,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skydometiling" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="sdtiling" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.208324,0},{0.335526,0},{0.954214,0},{0.430921,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21221" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Tiling:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0274713,0},{0.338815,0},{0.23996,0},{0.427632,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21231" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="XSeg:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0297606,0},{0.453947,0},{0.237672,0},{0.546053,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skydomexseg" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="sdxseg" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.210613,0},{0.450657,0},{0.951925,0},{0.549343,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/21241" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="YSeg:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0297606,0},{0.575657,0},{0.233093,0},{0.667764,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skydomeyseg" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.212903,0},{0.569078,0},{0.951925,0},{0.664474,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skydomematerial" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="material" />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.210192,0},{0.123601,0},{0.86921,0},{0.218996,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Button" Name="levelsettings/skydomematerialbrowsebtn" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="..." />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.876506,0},{0.129403,0},{0.950824,0},{0.219181,0}}" />
+                </Window>
+                <Window Type="WindowsLook/Editbox" Name="levelsettings/skydomedist" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value=" " />
+                    <Property Name="MaxTextLength" Value="1073741823" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.216312,0},{0.666302,0},{0.955334,0},{0.761698,0}}" />
+                </Window>
+                <Window Type="WindowsLook/StaticText" Name="levelsettings/212412" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="Text" Value="Distance:" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0297606,0},{0.658945,0},{0.203195,0},{0.751052,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+            <Window Type="WindowsLook/TabContentPane" Name="levelsettings/Pane_sound" >
+                <Property Name="Text" Value="Sound" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window Type="WindowsLook/ScrollablePane" Name="levelsettings/Pane_sound/1" >
+                    <Property Name="Font" Value="DejaVuSans-10" />
+                    <Property Name="ContentArea" Value="l:226 t:0 r:620 b:507" />
+                    <Property Name="HorzStepSize" Value="0.1" />
+                    <Property Name="VertStepSize" Value="0.1" />
+                    <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                    <Property Name="HorzOverlapSize" Value="0.01" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0159331,0},{0.0173314,0},{0.988071,0},{0.985874,0}}" />
+                    <Property Name="VertOverlapSize" Value="0.01" />
+                    <Property Name="HorzScrollPosition" Value="0" />
+                    <Property Name="VertScrollPosition" Value="0" />
+                    <AutoWindow NameSuffix="__auto_container__" >
+                        <Property Name="ContentArea" Value="l:226 t:0 r:620 b:507" />
+                        <Property Name="ChildExtentsArea" Value="l:226 t:0 r:620 b:507" />
+                        <Window Type="WindowsLook/MultiLineEditbox" Name="levelsettings/ambient_random" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" >
+</Property>
+                            <Property Name="MaxTextLength" Value="1073741823" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,226},{0,377},{0,615},{0,453}}" />
+                        </Window>
+                        <Window Type="WindowsLook/MultiLineEditbox" Name="levelsettings/ambient_loop" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" >
+</Property>
+                            <Property Name="MaxTextLength" Value="1073741823" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,226},{0,258},{0,615},{0,345}}" />
+                        </Window>
+                        <Window Type="WindowsLook/Editbox" Name="levelsettings/amb_rand_min" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="MaxTextLength" Value="1073741823" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,229},{0,479},{0,262},{0,507}}" />
+                        </Window>
+                        <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_sound/1/51" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Max" />
+                            <Property Name="FrameEnabled" Value="False" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,266},{0,453},{0,299},{0,477}}" />
+                            <Property Name="BackgroundEnabled" Value="False" />
+                        </Window>
+                        <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_sound/1/511" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Min" />
+                            <Property Name="FrameEnabled" Value="False" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,231},{0,453},{0,264},{0,477}}" />
+                            <Property Name="BackgroundEnabled" Value="False" />
+                        </Window>
+                        <Window Type="WindowsLook/Editbox" Name="levelsettings/amb_rand_max" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="MaxTextLength" Value="1073741823" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,267},{0,479},{0,302},{0,507}}" />
+                        </Window>
+                        <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_sound/1/5111" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Random Ambient" />
+                            <Property Name="FrameEnabled" Value="False" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,229},{0,349},{0,353},{0,373}}" />
+                            <Property Name="BackgroundEnabled" Value="False" />
+                        </Window>
+                        <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_sound/1/51111" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Loop Ambient" />
+                            <Property Name="FrameEnabled" Value="False" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,230},{0,229},{0,354},{0,253}}" />
+                            <Property Name="BackgroundEnabled" Value="False" />
+                        </Window>
+                        <Window Type="WindowsLook/MultiLineEditbox" Name="levelsettings/music_battle" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" >
+</Property>
+                            <Property Name="MaxTextLength" Value="1073741823" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,229},{0,149},{0,618},{0,232}}" />
+                        </Window>
+                        <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_sound/1/511111" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Music Battle" />
+                            <Property Name="FrameEnabled" Value="False" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,232},{0,119},{0,357},{0,144}}" />
+                            <Property Name="BackgroundEnabled" Value="False" />
+                        </Window>
+                        <Window Type="WindowsLook/MultiLineEditbox" Name="levelsettings/music_expore" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" >
+</Property>
+                            <Property Name="MaxTextLength" Value="1073741823" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,231},{0,28},{0,620},{0,115}}" />
+                        </Window>
+                        <Window Type="WindowsLook/StaticText" Name="levelsettings/Pane_sound/1/5111111" >
+                            <Property Name="Font" Value="DejaVuSans-10" />
+                            <Property Name="Text" Value="Music Explore" />
+                            <Property Name="FrameEnabled" Value="False" />
+                            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                            <Property Name="UnifiedAreaRect" Value="{{0,228},{0,0},{0,365},{0,25}}" />
+                            <Property Name="BackgroundEnabled" Value="False" />
+                        </Window>
+                    </AutoWindow>
+                </Window>
+            </Window>
+        </Window>
+        <Window Type="WindowsLook/Button" Name="levelsettings/okbtn" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="ok" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.814312,0},{0.897369,0},{0.963085,0},{0.981579,0}}" />
+        </Window>
+        <Window Type="WindowsLook/Button" Name="levelsettings/cancelbtn" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Cancel" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.636249,0},{0.897368,0},{0.800223,0},{0.981579,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

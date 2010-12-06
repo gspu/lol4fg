@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="LandsLook/FrameWindow" Name="PlayerEquipment" >
+        <Property Name="Font" Value="DejaVuSans-10" />
+        <Property Name="Text" Value="Equipment" />
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="TitlebarEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.498931,0},{0.471698,0},{0.742092,0},{0.578827,0}}" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="False" />
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/melee" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0,30},{0,30}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/ranged" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,30},{0,0},{0,60},{0,30}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/armor" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,30},{0,30},{0,60}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/shield" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,30},{0,30},{0,60},{0,60}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/bag" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,130},{0,60},{0,160},{0,90}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/else1" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,60},{0,30},{0,90}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/else2" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,30},{0,60},{0,60},{0,90}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/else3" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,90},{0,60},{0,120},{0,90}}" />
+        </Window>
+        <Window Type="LandsLook/StaticImage" Name="PlayerInventory/else4" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="UnifiedAreaRect" Value="{{0,60},{0,60},{0,90},{0,90}}" />
+        </Window>
+        <Window Type="LandsLook/ProgressBar" Name="PlayerEquipment/display_melee" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="StepSize" Value="0.01" />
+            <Property Name="CurrentProgress" Value="0" />
+            <Property Name="UnifiedAreaRect" Value="{{0,60},{0,0},{1,0},{0,20}}" />
+        </Window>
+        <Window Type="LandsLook/ProgressBar" Name="PlayerEquipment/display_ranged" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="StepSize" Value="0.01" />
+            <Property Name="CurrentProgress" Value="0" />
+            <Property Name="UnifiedAreaRect" Value="{{0,60},{0,20},{1,0},{0,40}}" />
+        </Window>
+        <Window Type="LandsLook/ProgressBar" Name="PlayerEquipment/display_armor" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="StepSize" Value="0.01" />
+            <Property Name="CurrentProgress" Value="0" />
+            <Property Name="UnifiedAreaRect" Value="{{0,60},{0,40},{1,0},{0,60}}" />
+        </Window>
+        <Window Type="LandsLook/StaticText" Name="PlayerEquipment/itemsleft" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="100" />
+            <Property Name="HorzExtent" Value="28" />
+            <Property Name="VertExtent" Value="21.6261" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0,166},{0,63},{1,-10},{0,86}}" />
+        </Window>
+    </Window>
+</GUILayout>
