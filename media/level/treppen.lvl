@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<level version="2">
+    <gravity value="-9.81" />
+    <ambientcolour value="1 1 1 1" />
+    <backgroundcolour value="0 0 0 1" />
+    <north orientation="1 0 0 0" />
+</level>
+<sound>
+    <music />
+    <ambient wait_min="0" wait_max="10" />
+    <ambientloop />
+</sound>
+<objects>
+    <static pos="3.25 16.75 -6.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 3.52049" />
+    <static pos="-0.0137191 16.8147 -2.971" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 17.8147 -3.971" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="0 16 2.5" orient="0.653281 0.270598 -0.270598 0.653282" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.0137191 16.0647 -2.221" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 16.5647 -2.721" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="0 18 4.5" orient="0.653281 0.270598 -0.270598 0.653282" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.0137191 15.5647 -1.721" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 15.3147 -1.471" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 17.3147 -3.471" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 15.8147 -1.971" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 17.5647 -3.721" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 16.3147 -2.471" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 17.0647 -3.221" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="-0.0137191 18.0647 -5.721" orient="0.5 0.5 -0.5 0.5" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="14.625 16.5 0.25" orient="0.5 0.5 -0.5 0.5" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.0137191 15.0647 0.278998" orient="0.5 0.5 -0.5 0.5" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="2.75 15 0.25" orient="0.5 0.5 -0.5 0.5" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="5.75 15 0.25" orient="0.5 0.5 -0.5 0.5" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-5.5 16.25 0.5" orient="0.560986 0.430459 -0.560986 0.430459" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-2.75 15.5 0.5" orient="0.560986 0.430459 -0.560986 0.430459" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="3 17 5.25" orient="0.866025 0.5 -2.38489e-007 4.14656e-007" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="3 15.5638 2.78782" orient="0.866025 0.5 -4.54005e-007 4.80604e-007" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.0137191 15.0647 -1.221" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 16.5 -4.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 15.25 -2" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 15.75 -3" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 15.5 -2.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 16.25 -4" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 16 -3.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="3.25 15 -1.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.5 0.5" />
+    <static pos="7.5 16.625 -4.125" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 2.40143" />
+    <static pos="13 16.375 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.125 -1.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.25 -1.625" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.375 -1.75" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.5 -1.875" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.625 -2" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.75 -2.125" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15.875 -2.25" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 16 -2.375" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 16.125 -2.5" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 16.25 -2.625" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 16.375 -2.75" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 16.5 -2.875" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="7.5 15 -1.375" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="12.5 16.125 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="12.75 16.25 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="10.75 15.25 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="10.5 15.125 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="10.25 15 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="11.5 15.625 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="11.25 15.5 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="11 15.375 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="12.25 16 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="12 15.875 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="11.75 15.75 0.25" orient="0.707107 0 0.707107 0" filename="box.mesh" material="Examples/Rocky" type="mesh" scale="3.2 0.25 0.25" />
+    <static pos="8.75 15 0.25" orient="0.5 0.5 -0.5 0.5" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <entrance pos="-0.5 16.375 0.375" name="entr0" />
+</objects>

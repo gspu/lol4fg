@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<level version="2">
+    <name value="Testlevel" />
+    <gravity value="-9.81" />
+    <ambientcolour value="0.8 0.8 0.8 0.8" />
+    <backgroundcolour value="1 0 0 1" />
+    <fog type="linear" colour="1 0 0 1" expDensity="0.001" linearStart="20" linearEnd="100" />
+</level>
+<sound>
+    <music>
+        <explore file="chimmeria.ogg" />
+        <explore file="6chan.ogg" />
+        <battle file="battle.ogg" />
+        <battle file="sdf" />
+    </music>
+    <ambient wait_min="2" wait_max="300">
+        <sound file="roar.wav" />
+        <sound file="sdfsdf" />
+        <sound file="motor_b8.wav" />
+    </ambient>
+    <ambientloop>
+        <sound file="motor_b8.wav" />
+        <sound file="Siren.wav" />
+        <sound file="fsdfasdf" />
+    </ambientloop>
+</sound>
+<objects>
+    <static pos="4.625 1.25 26.625" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 2.5 0.025" />
+    <static pos="6.25 1.25 22.5" orient="0.707107 0 0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 2.5 0.1" />
+    <static pos="3.75 1.25 22.5" orient="0.707107 0 -0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 2.5 0.1" />
+    <static pos="5 2.5 22.5" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 10 0.1" />
+    <static pos="5 0 22.5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="2.5 10 0.1" />
+    <static pos="22.5 0 -1" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="32" ySeg="32" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="10 10 0.1" />
+    <special pos="16.4 0.296001 7.6" id="domino" />
+    <special pos="14.3495 0.612002 11.8972" orient="0.707107 0 0.707107 0" scale="2 2 2" id="domino" />
+    <special pos="14.9 0.296001 7.6" id="domino" />
+    <special pos="15.15 0.296001 7.6" id="domino" />
+    <special pos="15.4 0.296001 7.6" id="domino" />
+    <special pos="15.65 0.296001 7.6" id="domino" />
+    <special pos="15.9 0.296001 7.6" id="domino" />
+    <special pos="16.15 0.296001 7.6" id="domino" />
+    <special pos="14.65 0.296001 7.6" id="domino" />
+    <special pos="14.4 0.296001 7.6" orient="0.965926 0 0.258819 0" id="domino" />
+    <special pos="14.275 0.296001 7.85" orient="0.866025 0 0.5 0" id="domino" />
+    <special pos="14.275 0.296001 8.1" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 8.35" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 8.6" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 8.85" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 9.1" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 9.35" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 9.6" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 9.85" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 10.1" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 10.35" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 10.6" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.275 0.296001 10.85" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.2892 0.296001 11.0605" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.3206 0.296001 11.2634" orient="0.707107 0 0.707107 0" id="domino" />
+    <special pos="14.3418 0.459002 11.569" orient="0.707107 0 0.707107 0" scale="1.5 1.5 1.5" id="domino" />
+    <door pos="5 1 26" id="testportal" scale="4.55636 5.11592 1" targetLevel="start.lvl" targetEntrance="GameStartPosition" />
+    <entrance pos="5 1 15" name="GameStartPosition" />
+    <light pos="26 4 -9.2" orient="-0.168033 0.0521452 -0.926188 -0.333524" type="spotlight" diffuse="0 1 0 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="10" sOuter="40" falloff="1" />
+    <light pos="-4 5.5 -13.5" orient="1 5.51343e-007 0 0" type="point" diffuse="1 1 1 1" specular="1 1 1 1" aRange="10" aConst="1" aLinear="0" aQuad="0" />
+    <light pos="27.3 4 6.5" orient="0.915931 -0.32648 0.217076 0.0858335" type="spotlight" diffuse="0 0 1 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="10" sOuter="40" falloff="1" />
+    <light pos="14.5 4 -1.5" orient="0.63207 -0.232707 -0.697522 -0.244548" type="spotlight" diffuse="1 0 0 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="10" sOuter="40" falloff="1" />
+    <container pos="0 0.510516 15" orient="1 -1.26543e-005 3.69456e-006 -0.000492145" id="testtasche">
+        <inventory>
+            <item id="lolbow" count="1" />
+            <item id="testbox2" count="1" />
+            <item id="testbox3" count="1" />
+            <item id="testbox4" count="1" />
+            <item id="testbox" count="1" />
+            <item id="stab1" count="1" />
+            <item id="lolsword" count="1" />
+        </inventory>
+    </container>
+    <container pos="0 1 10" orient="1 -1.26543e-005 3.69456e-006 -0.000492145" id="testtasche">
+        <inventory>
+            <item id="testbox2" count="5" />
+            <item id="testbox3" count="5" />
+            <item id="testbox4" count="2" />
+            <item id="testbox" count="10" />
+        </inventory>
+    </container>
+    <static pos="-5 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-5 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-5 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-5 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-5 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-5 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-5 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-10 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="0 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="-15 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="10 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 -10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="10 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 -5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="10 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 0" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="10 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 5" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="10 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 10" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="5 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <static pos="10 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+    <static pos="15 0 15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="4" ySeg="4" numTexCoordSets="5" uTile="1" vTile="1" upVector="0 1 0" material="Ogre/Skin" type="plane" scale="5 5 0.1" />
+    <light pos="0 12 0" orient="0.707107 -0.707107 0 0" type="spotlight" diffuse="0 1 0 1" specular="0 0 0 1" aRange="20" aConst="1" aLinear="0" aQuad="0" sInner="20" sOuter="40" falloff="1" />
+    <light pos="-13.5 4.5 -12" orient="1 5.51343e-007 0 0" type="point" diffuse="-0.1 -0.1 -0.1 1" specular="-0.1 -0.1 -0.1 1" aRange="10" aConst="1" aLinear="0" aQuad="0" />
+    <static pos="-9.02867 4.67605 -13" filename="ogrehead.mesh" type="mesh" scale="0.0584188 0.0584188 0.0584188" />
+    <door pos="17 1.122 5" orient="0.707107 0 -0.707107 0" id="testdoor" targetLevel="pagingtest" targetEntrance="entr0" />
+    <door pos="-6 1.122 14" orient="0.707107 0 0.707107 0" id="testdoor" targetLevel="pttest.lvl" targetEntrance="GameStartPosition" />
+    <static pos="-0.710338 0 5.5" orient="0.707107 -0.707107 0 0" filename="box_open.mesh" type="mesh" scale="3.78966 3.78966 3.78966" />
+    <static pos="-4.5 0 5.5" orient="0.707107 -0.707107 0 0" filename="box_closed.mesh" type="mesh" scale="3.78966 3.78966 3.78966" />
+    <static pos="10 0 -15" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="pra/Rocks1" type="plane" scale="5 5 0.1" />
+</objects>

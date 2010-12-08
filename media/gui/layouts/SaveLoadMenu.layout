@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="Root" >
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="LandsLook/FrameWindow" Name="saveloadwnd" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="Save/Load" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="SizingEnabled" Value="False" />
+            <Property Name="TitlebarEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+            <Property Name="DragMovingEnabled" Value="False" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+            <Window Type="LandsLook/Listbox" Name="saveloadwnd/savegamelist" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="UnifiedAreaRect" Value="{{0.028401,0},{0.0432115,0},{0.97203,0},{0.730927,0}}" />
+            </Window>
+            <Window Type="LandsLook/Button" Name="saveloadwnd/save" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Save" />
+                <Property Name="UnifiedAreaRect" Value="{{0.028401,0},{0.884079,0},{0.241479,0},{0.95215,0}}" />
+            </Window>
+            <Window Type="LandsLook/Button" Name="saveloadwnd/cancel" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Cancel" />
+                <Property Name="UnifiedAreaRect" Value="{{0.767723,0},{0.884079,0},{0.980801,0},{0.95215,0}}" />
+            </Window>
+            <Window Type="LandsLook/Button" Name="saveloadwnd/load" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Load" />
+                <Property Name="UnifiedAreaRect" Value="{{0.279096,0},{0.884079,0},{0.492174,0},{0.95215,0}}" />
+            </Window>
+            <Window Type="LandsLook/Button" Name="saveloadwnd/delete" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="Delete" />
+                <Property Name="UnifiedAreaRect" Value="{{0.519982,0},{0.884079,0},{0.73306,0},{0.95215,0}}" />
+            </Window>
+            <Window Type="LandsLook/Editbox" Name="saveloadwnd/namebox" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Text" Value="asd" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedAreaRect" Value="{{0.028401,0},{0.75515,0},{0.465453,0},{0.804224,0}}" />
+                <Property Name="TextParsingEnabled" Value="False" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

@@ -1,0 +1,533 @@
+<door>
+	<object id="ogre" name="Ogreförmige Tür" >
+		<worldArt type="mesh" scale="0.1 0.1 0.1" filename="ogrehead.mesh" />
+	</object>	
+	<object id="testdoor" name="Tür">
+		<worldArt type="mesh" filename="box.mesh" material="wood_door" scale="1.2 2.2 0.1" />
+		<collision type="box" params="1.2 2.2 0.1" />
+	</object>
+	<object id="testportal" useOnCollision="true">
+		<!--worldArt type="mesh" filename="box.mesh" material="wood_door" scale="1.2 2.2 0.1" /-->
+	</object>
+</door>
+<character>	
+	<object id="testguy" name="Testtyp" head_position="0 0.8 -0.3" jumpSound="roflsprung2.ogg" stepSound="9915_Snoman_snow3.ogg" landSound="arrow_impact.ogg">
+		<animation>
+			<anim type="idle" name="Idle1" />
+			<anim type="idle" name="Idle2" />
+			<anim type="idle" name="Idle3" />
+			<anim type="walk" name="Walk" />
+			<anim type="death" name="Death1" />
+			<anim type="attackmelee" name="Attack1" />
+			<anim type="attackmelee" name="Attack2" />
+			<anim type="attackmelee" name="Attack3" />
+			<anim type="attackranged" name="Kick" />
+			<anim type="attackranged" name="SideKick" />
+			<anim type="cast" name="Spin" />
+			<anim type="jump" name="JumpNoHeight" />
+			<anim type="run" name="Stealth" />
+			<anim type="fall" name="Climb" />
+		</animation>
+		<inventory>
+			<item id="lolbow" count="1" />
+            <item id="testbox2" count="1" />
+            <item id="testbox3" count="1" />
+            <item id="testbox4" count="1" />
+            <item id="testbox" count="1" />
+            <item id="stab1" count="1" />
+            <item id="lolsword" count="1" />
+		</inventory>
+		<equipment bag="testtasche" ranged="lolbow" />
+			
+		<spellbook>
+			<spell id="heal" />
+			<spell id="selfkill" />
+			<spell id="ugly" />
+			<spell id="wtf" />
+			<spell id="beam" />
+		</spellbook>
+		<collision type="ellipsoid" params="0.5 0.87 0.5" mass="60" upVector="0 1 0" />
+		<worldArt type="mesh" filename="ninja.mesh" scale="0.01" position_offset="0 -0.8 0" />
+	</object>
+	<object id="player" move_acceleration="10" stepSoundWaitWalk="1" stepSoundWaitRun="0.25" name="Spieler" head_position="0 0.8 -0.3" jumpSound="roflsprung2.ogg" stepSound="9908_Snoman_gravel1.ogg" landSound="9908_Snoman_gravel1.ogg">
+		<animation>
+			<anim type="idle" name="Idle1" />
+			<anim type="idle" name="Idle2" />
+			<anim type="idle" name="Idle3" />
+			<anim type="walk" name="Walk" />
+			<anim type="death" name="Death1" />
+			<anim type="attackmelee" name="Attack1" />
+			<anim type="attackmelee" name="Attack2" />
+			<anim type="attackmelee" name="Attack3" />
+			<anim type="attackranged" name="Kick" />
+			<anim type="attackranged" name="SideKick" />
+			<anim type="cast" name="Spin" />
+			<anim type="jump" name="JumpNoHeight" />
+			<anim type="run" name="Stealth" />
+			<anim type="fall" name="Climb" />
+		</animation>
+		<stats>
+			<maxHP value="200" />
+			<hitpoints value="200" />
+			<walkSpeed value="3" />
+			<runSpeed value="6" />
+		</stats>
+		<inventory>
+			<item id="lolbow" count="2" />
+            <item id="testbox2" count="1" />
+            <item id="testbox3" count="1" />
+            <item id="testbox4" count="1" />
+            <item id="testbox" count="1" />
+            <item id="lolsword" count="15" />
+            <item id="lolaxe" count="1" />
+            <item id="lolaxe" count="1" />
+            <item id="lolaxe" count="1" />
+            <item id="lolaxe" count="1" />
+		</inventory>
+		<equipment bag="testtasche" ranged="lolbow" melee="lolsword" />
+			
+		<spellbook>
+			<spell id="heal" />
+			<spell id="selfkill" />
+			<spell id="ugly" />
+			<spell id="wtf" />
+			<spell id="spark" />
+		</spellbook>
+		<collision type="ellipsoid" params="0.5 0.87 0.5" mass="60" upVector="0 1 0" />
+		<!--worldArt type="mesh" filename="ninja.mesh" scale="0.01" position_offset="0 -0.8 0" /-->
+	</object>
+	<object id="robot" name="Roboter" size="0.5 1.7 0.5" head_position="0 0.9 -0.4">
+		<animation>
+			<anim type="idle" name="Idle" />
+			<anim type="walk" name="Walk" />
+			<anim type="death" name="Die" />
+			<anim type="attackmelee" name="Shoot" />			
+			<anim type="attackranged" name="Shoot" />			
+			<anim type="jump" name="Walk" />
+			<anim type="run" name="Walk" />
+			<anim type="fall" name="Idle" />
+		</animation>
+		<inventory>
+			<item id="lolbow" count="1" />
+            <item id="testbox2" count="1" />
+            <item id="testbox3" count="1" />
+            <item id="testbox4" count="1" />
+            <item id="testbox" count="1" />
+            <item id="stab1" count="1" />
+            <item id="lolsword" count="1" />
+		</inventory>
+		<equipment bag="testtasche" ranged="lolbow" melee="lolsword" />
+			
+		<spellbook>
+			<spell id="heal" />
+			<spell id="selfkill" />
+			<spell id="ugly" />
+			<spell id="wtf" />
+			<spell id="beam" />
+		</spellbook>
+		<collision type="ellipsoid" params="0.5 0.875 0.5" mass="60" upVector="0 1 0" />
+		<worldArt type="mesh" filename="robot.mesh" scale="0.02" orientation_offset="0.7071067 0 0.7071067 0" position_offset="0 -0.8 0" />
+	</object>
+</character>
+<spell>
+	<object id="heal" name="Heilung" inv_image="roteskreuz.png" cost="10" duration="10" hittype="self">
+		<effect type="damage">
+			<damage>
+				<light value="-3" />
+			</damage>
+		</effect>
+	</object>
+	<object id="selfkill" name="Selbstmord" inv_image="skull_and_crossbones.png" duration="10" cost="10" hittype="self">
+		<effect type="damage">
+			<damage>
+				<light value="3" />
+			</damage>
+		</effect>
+	</object>
+	<object id="spark" name="Funken" inv_image="spark.png" hittype="explosion" cost="10" range="20">
+		<effect type="damage">
+			<damage>
+				<spark value="50" />
+			</damage>			
+		</effect>
+		<explosion>
+			<!--worldArt type="billboard" material="test/spark" /-->
+            <worldArt name="magic/spark" type="particle" scale="0.05" />
+			<sound value="ESPARK1.ogg" />
+			<lifespan value="1.5" />
+		</explosion>
+	</object>
+    <object id="beam" name="Teststrahl" inv_image="spark.png" hittype="beam" cost="10" range="20">
+		<effect type="damage">
+			<damage>
+				<light value="50" />
+			</damage>			
+		</effect>
+		<explosion>
+			<!--worldArt type="billboard" material="test/explosion" /-->
+			<worldArt name="Pra/Explode" type="particle" scale="0.3" />
+			<sound value="Fireball_hit.ogg" />
+			<lifespan value="1.2" />
+		</explosion>
+        <beam>
+            <material value="Strahl" />
+            <width value="2" />
+            <sound value="electriccurrent.ogg" />
+            <lifespan value="20" />
+            <maxrange value="10" />
+        </beam>
+	</object>
+	<object id="ugly" name="OMFG" inv_image="uglyicon.png" hittype="missile" cost="10">
+		<missileData>
+			<worldArt type="mesh" filename="BowArrow.mesh" scale="0.05" />
+			<collision type="ellipsoid" params="0.6 0.6 0.6" mass="5" />	
+			<velocity value="10" />
+			<count value="8" />
+			<repeat value="2" />
+			<delay value="0.2" />
+			<angle value="10" />
+		</missileData>
+       
+		<effect type="damage">
+			<damage>
+				<dark value="50" />			
+			</damage>		
+		</effect>
+	</object>
+	<object id="wtf" name="fireball" inv_image="fireball.png" hittype="missile" cost="10" sound="Fireball.ogg" cooldown="1">
+		<missileData>
+			<!--worldArt type="billboard" material="ugly2" scale="0.6 0.6 0" /-->
+			<worldArt orientation_offset="0.707107 -0.707107 0 0" name="Pra/Fire" type="particle" scale="0.1" />
+			<collision type="ellipsoid" params="0.3 0.3 0.3" mass="5" />	
+			<velocity value="10" />
+			<sound value="fire.ogg" />
+			
+		</missileData>	
+		<effect type="damage">
+			<damage>
+				<fire value="50" />			
+			</damage>		
+			
+		</effect>
+		<explosion>
+			<!--worldArt type="billboard" material="test/explosion" /-->
+			<worldArt name="Pra/Explode" type="particle" scale="0.3" />
+			<sound value="Fireball_hit.ogg" />
+			<lifespan value="1.2" />
+		</explosion>
+	</object>
+</spell>
+<item>
+	
+	<object id="testbox" name="armor" inv_image="crown_armor.png">
+		<collision type="box" params="0.5 0.5 0.5" mass="1" />
+		<worldArt type="mesh" filename="box.mesh" material="pra/armor" scale="0.5 0.5 0.5" />
+		<equip armor="true" />
+		
+		<equipstats>
+			<strength value="0" />
+			<agility  value="-5" op="add" />
+			<magic value="0" />				
+			<resistBlunt value="0.75" op="multiply" />	
+			<resistCut value="0.5" op="set" />	
+			<resistPierce value="0.2" />	
+			<resistFire value="1.2" />	 
+			<resistIce value="1" />
+			<resistSpark value="2" /> 
+			<resistLight value="-1" op="set" />	
+		</equipstats>
+				
+	</object>
+	<object id="testbox2" name="helmet"	inv_image="crown_helmet3.png">
+		<collision type="box" params="0.5 0.5 0.5" mass="0.20" />
+		<equip else="true" />
+		<property nodrop="true" />
+		<worldArt type="mesh" filename="box.mesh" material="pra/helmet" scale="0.5 0.5 0.5" />
+	</object>
+	<object id="testbox3" name="shield" inv_image="crown_shield3.png">
+		<collision type="box" params="0.5 0.5 0.5" mass="1" />
+		<equip shield="true" else="true" />
+		<worldArt type="mesh" filename="box.mesh" material="pra/shield" scale="0.5 0.5 0.5" />
+	</object>
+	<object id="testbox4" name="legs" inv_image="crown_legs.png">
+		<collision type="box" params="0.5 0.5 0.5" mass="1" />
+		<equip else="true" />
+		<worldArt type="mesh" filename="box.mesh" material="pra/legs" scale="0.5 0.5 0.5" />
+	</object>
+	<object id="lolsword" name="Schwert" inv_image="smedrosword.png" meleeSound="SwordShwing.ogg">
+		<collision type="box" params="0.05 0.015 1" mass="1" />
+		<equip melee="true" />
+		<worldArt type="mesh" filename="sword.mesh" position_offset="0 0 0.26" orientation_offset="0.707107 -0.707107 0 0" />
+		
+		<meleedamage>
+			<hitBlunt value="5" />
+			<hitCut value="30" />
+			<hitPierce value="5" />
+			<fire value="0" />
+		</meleedamage>
+		
+	</object>
+    <object id="lolaxe" name="Axt" inv_image="smedroaxt.png" meleeSound="SwordShwing.ogg">
+		<collision type="box" params="0.072205 1.169115 0.486855" position_offset="0 0.1406345 0.0580475" mass="1" />
+		<equip melee="true" />
+		<worldArt type="mesh" filename="axe.mesh" scale="0.045 0.045 0.045" />
+		
+		<meleedamage>
+			<hitBlunt value="5" />
+			<hitCut value="30" />
+			<hitPierce value="5" />
+			<fire value="0" />
+		</meleedamage>
+		
+	</object>
+	<object id="lolsword2" name="Schwert 2" inv_image="smedrosword.png"  meleeSound="SwordShwing.ogg">
+		<collision type="box" params="0.05 0.015 1" mass="1" />
+		<equip melee="true" />
+		<worldArt type="mesh" filename="sword.mesh" material="sword2" position_offset="0 0 0.25" orientation_offset="0.707107 -0.707107 0 0" />		
+		<meleedamage>
+			<hitBlunt value="5" />
+			<hitCut value="30" />
+			<hitPierce value="5" />
+			<fire value="0" />
+		</meleedamage>		
+	</object>
+	<object id="lolsword3" name="Schwert 3" inv_image="smedrosword.png"  meleeSound="SwordShwing.ogg">
+		<collision type="box" params="0.05 0.015 1" mass="1" />
+		<equip melee="true" />
+		<worldArt type="mesh" filename="sword.mesh" material="sword3" position_offset="0 0 0.25" orientation_offset="0.707107 -0.707107 0 0" />		
+		<meleedamage>
+			<hitBlunt value="5" />
+			<hitCut value="30" />
+			<hitPierce value="5" />
+			<fire value="0" />
+		</meleedamage>		
+	</object>
+	<object id="lolsword4" name="Schwert 4" inv_image="smedrosword.png"  meleeSound="SwordShwing.ogg">
+		<collision type="box" params="0.05 0.015 1" mass="1" />
+		<equip melee="true" />
+		<worldArt type="mesh" filename="sword.mesh" material="sword4" position_offset="0 0 0.25" orientation_offset="0.707107 -0.707107 0 0" />		
+		<meleedamage>
+			<hitBlunt value="5" />
+			<hitCut value="30" />
+			<hitPierce value="5" />
+			<fire value="0" />
+		</meleedamage>		
+	</object>
+	<object id="lolbow" name="Bogen" inv_image="icon_bow.png"  rangedSound="arrow_shoot.ogg" rangedCooldown="0.75">
+		<collision type="box" params="0.5 0.5 0.5" mass="1" />
+		<worldArt type="mesh" filename="bow.mesh" scale="0.056 0.056 0.056" />
+		<equip ranged="true" />
+		<rangeddamage>		
+			<hitPierce value="20" />
+		</rangeddamage>
+		<!--explosion>
+			<worldArt type="none" material="test/explosion" />
+			<sound value="arrow_impact.ogg" />
+			<lifespan value="0.5" />
+		</explosion-->
+		<missileData>
+			<worldArt type="mesh" filename="BowArrow.mesh" scale="0.05" />
+			<collision type="ellipsoid" params="0.1 0.1 0.5" mass="1" />			
+			<velocity value="20" />
+			<count value="1" />
+			<repeat value="0" />
+			<delay value="0.2" />
+			<angle value="10" />
+			<!--sound value="default_step.ogg" /-->
+			<!--sound value="roar.ogg" /-->
+			
+		</missileData>		
+	</object>
+	
+	<object id="stab1" name="Komischer Stab" inv_image="komischerstab.png">
+		<worldArt type="mesh" filename="ellipsoid.mesh" material="pra/bow" scale="0.5 0.5 0.5" />
+		<collision type="ellipsoid" params="0.5 0.5 0.5" mass="1" />
+		<equip ranged="true" />
+		<secondary id="stab2" type="ranged" />
+	</object>
+	
+	<object id="stab2" name="Komischer Stab Lol" inv_image="komischerstabblau.png">
+		<collision type="box" params="0.5 0.5 0.5" mass="1" />
+		<worldArt type="mesh" filename="sphere.mesh" material="pra/bow" scale="0.5 0.5 0.5" />
+				<!--equip ranged="true" /-->
+		<property secondary="true" /><!-- mit dieser eigenschaft erübrigt sich das equip. tatsächlich erübrigen sich sogar die einstellungen zur mesh usw. -->
+	</object>
+    
+    <object id="aloe" name="Aloe" inv_image="aloe.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="bernstein" name="Bernstein" inv_image="bernstein.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="frucht" name="Frucht" inv_image="frucht.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="gift" name="Gift" inv_image="gift.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="heldenstein" name="Heldenstein" inv_image="heldenstein.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="meridian" name="Meridian" inv_image="meridian.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="regenbogensulfit" name="Regenbogensulfit" inv_image="regenbogensulfit.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="stalagmit" name="Stalagmit" inv_image="stalagmit.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+    <object id="teerkristall" name="Teerkristall" inv_image="teerkristall.png">
+        <collision type="box" params="0.5 0.5 0.5" mass="1" />		
+        <worldArt type="mesh" filename="box.mesh" scale="0.5 0.5 0.5" />
+    </object>
+</item>
+
+<special>
+	<object id="tudorhouse"  >
+		<worldArt filename="tudorhouse.mesh" scale="0.01 0.01 0.01" shadow="false" />
+	</object>
+	<object id="kiste" >
+		<collision type="box" mass="10" params="1 1 1" />
+		<worldArt filename="box.mesh" material="RZR-002" />
+	</object>
+	<object id="kugel">
+			<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+			<collision type="ellipsoid" mass="10" params="0.1 0.1 0.1" />			
+	</object>
+    <object id="WoodPallet2" filename="WoodPallet.mesh" shadow="false" >
+		<worldArt filename="WoodPallet.mesh" />
+        <collision type="box" mass="1" params="7 0.7 7" position_offset="0 0 0" />	
+	</object>
+	<object id="kette">
+			<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+			<collision type="ellipsoid" mass="0" params="0.1 0.1 0.1" />
+			<object jointType="ballAndSocket" jointPos="0 0.25 0">
+				<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+				<collision type="ellipsoid" mass="5" params="0.1 0.1 0.1" position_offset="0 -0.5 0" />
+				<object jointType="ballAndSocket" jointPos="0 0.25 0">
+					<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+					<collision type="ellipsoid" mass="5" params="0.1 0.1 0.1" position_offset="0 -0.5 0" />
+				</object>
+			</object>
+	</object>
+	<object id="boxkette">
+			<worldArt type="mesh" filename="box.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+			<collision type="box" mass="0" params="0.1 0.25 0.1" />
+			<object jointType="ballAndSocket" jointPos="0 0.125 0">
+				<worldArt type="mesh" filename="box.mesh" scale="0.1 0.25 0.1" material="Examples/RustySteel" />
+				<collision type="box" mass="5" params="0.1 0.25 0.1" position_offset="0 -0.25 0" />
+				<object jointType="ballAndSocket" jointPos="0 0.125 0">
+					<worldArt type="mesh" filename="box.mesh" scale="0.1 0.25 0.1" material="Examples/RustySteel" />
+					<collision type="box" mass="5" params="0.1 0.25 0.1" position_offset="0 -0.25 0" />
+					<object jointType="ballAndSocket" jointPos="0 0.125 0">
+						<worldArt type="mesh" filename="box.mesh" scale="0.1 0.25 0.1" material="Examples/RustySteel" />
+						<collision type="box" mass="5" params="0.1 0.5 0.1" position_offset="0 -0.25 0" />
+					</object>
+				</object>
+			</object>
+	</object>
+	<object id="kette2">
+			<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+			<collision type="ellipsoid" mass="0" params="0.1 0.1 0.1" />
+			<object jointType="ballAndSocket" jointPos="0.125 0.125 0">
+				<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+				<collision type="ellipsoid" mass="5" params="0.1 0.1 0.1" position_offset="-0.25 -0.25 0" />
+				<object jointType="ballAndSocket" jointPos="0.125 0.125 0">
+					<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+					<collision type="ellipsoid" mass="5" params="0.1 0.1 0.1" position_offset="-0.25 -0.25 0" />
+					<object jointType="ballAndSocket" jointPos="0.125 0.125 0">
+						<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+						<collision type="ellipsoid" mass="5" params="0.1 0.1 0.1" position_offset="-0.25 -0.25 0" />
+						<object jointType="ballAndSocket" jointPos="0.125 0.125 0">
+							<worldArt type="mesh" filename="ellipsoid.mesh" scale="0.1 0.1 0.1" material="Examples/RustySteel" />
+							<collision type="ellipsoid" mass="5" params="0.1 0.1 0.1" position_offset="-0.25 -0.25 0" />
+						</object>
+					</object>
+				</object>
+			</object>
+	</object>
+	<object id="ninja">
+		<worldArt type="mesh" filename="ninja.mesh" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	<object id="ninja2">
+		<collision type="convexHull" mass="5" />
+		<worldArt filename="ninja.mesh" scale="0.07 0.07 0.07" shadow="false" />
+	</object>
+	
+	<object id="robo">
+		<worldArt type="mesh" filename="robot.mesh" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	<object id="ogre">
+		<worldArt type="mesh" filename="ogrehead.mesh" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+
+	<object id="box">
+		<worldArt type="mesh" filename="box.mesh" material="Examples/RustySteel" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	<object id="domino">
+		<worldArt type="mesh" filename="box.mesh" material="Examples/RustySteel"  scale="0.1 0.6 0.3" /> 
+		<collision type="box" mass="10" params="0.1 0.6 0.3" />
+	</object>
+	<object id="plane_sky">
+		<worldArt type="plane" xseg="1" yseg="1" scale="100 100 1" material="Examples/CloudySky" shadow="false" />
+	</object>
+	<object id="plane">
+		<worldArt type="plane" xseg="1" yseg="1" scale="100 100 1" material="Examples/RustySteel" shadow="false" />
+	</object>
+	<object id="plane_floor">
+		<worldArt type="plane" xseg="1" yseg="1" scale="50 50 1" material="Examples/Rockwall" shadow="false" />
+	</object>
+	<object id="plane_ugly">
+		<worldArt type="plane" xseg="1" yseg="1" scale="100 100 1" material="ugly" shadow="false" />
+	</object>
+	<object id="plane_floor2">
+		<worldArt type="plane" xseg="1" yseg="1" width="100" height="100" scale="1 1 1" material="Examples/Rockwall" shadow="false" />
+        <collision type="none" />
+	</object>
+	
+	
+	<object id="knot_spec">
+		<worldArt filename="knot-normal.mesh" material="Examples/OffsetMapping/Specular" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	<object id="athene">
+		<worldArt filename="athene.mesh" material="Examples/Athene/Basic" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	<object id="athene2">
+		<worldArt filename="athene.mesh" material="Examples/Athene/NormalMapped" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	<object id="athene3">
+		<worldArt filename="athene.mesh" material="Examples/Athene/NormalMappedSpecular" scale="0.1 0.1 0.1" shadow="false" />
+	</object>
+	
+	
+	<object id="WoodPallet" filename="WoodPallet.mesh" shadow="false" >
+		<worldArt filename="WoodPallet.mesh" />
+	</object>
+	<object id="column" filename="column.mesh" shadow="false" >
+		<worldArt filename="column.mesh" />
+	</object>		
+	
+</special>
+<container>
+	<object id="kiste" name="Kiste" default_size="50" carryable="false" inv_image="bag.png">
+		<collision type="treecollision" />
+		<worldArt filename="box_closed.mesh" />		
+	</object>
+	<object id="testtasche" name="Tasche des Testens" default_size="100" carryable="true" inv_image="bag.png">
+		<collision type="box" mass="10" params="1 1 1" />
+		<worldArt filename="box.mesh" material="Examples/RustySteel" />		
+	</object>
+	
+</container>
+<alchemy>
+	<mix item1="bernstein" item2="gift" result="heldenstein" />
+</alchemy>

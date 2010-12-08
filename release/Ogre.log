@@ -1,0 +1,558 @@
+20:30:28: Creating resource group General
+20:30:28: Creating resource group Internal
+20:30:28: Creating resource group Autodetect
+20:30:28: SceneManagerFactory for type 'DefaultSceneManager' registered.
+20:30:28: Registering ResourceManager for type Material
+20:30:28: Registering ResourceManager for type Mesh
+20:30:28: Registering ResourceManager for type Skeleton
+20:30:28: MovableObjectFactory for type 'ParticleSystem' registered.
+20:30:28: OverlayElementFactory for type Panel registered.
+20:30:28: OverlayElementFactory for type BorderPanel registered.
+20:30:28: OverlayElementFactory for type TextArea registered.
+20:30:28: Registering ResourceManager for type Font
+20:30:28: ArchiveFactory for archive type FileSystem registered.
+20:30:28: ArchiveFactory for archive type Zip registered.
+20:30:28: DDS codec registering
+20:30:28: FreeImage version: 3.13.1
+20:30:28: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+20:30:28: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,bay,bmq,cr2,crw,cs1,dc2,dcr,dng,erf,fff,hdr,k25,kdc,mdc,mos,mrw,nef,orf,pef,pxn,raf,raw,rdc,sr2,srf,arw,3fr,cine,ia,kc2,mef,nrw,qtk,rw2,sti,drf,dsc,ptx,cap,iiq,rwz
+20:30:28: Registering ResourceManager for type HighLevelGpuProgram
+20:30:28: Registering ResourceManager for type Compositor
+20:30:28: MovableObjectFactory for type 'Entity' registered.
+20:30:28: MovableObjectFactory for type 'Light' registered.
+20:30:28: MovableObjectFactory for type 'BillboardSet' registered.
+20:30:28: MovableObjectFactory for type 'ManualObject' registered.
+20:30:28: MovableObjectFactory for type 'BillboardChain' registered.
+20:30:28: MovableObjectFactory for type 'RibbonTrail' registered.
+20:30:28: *-*-* OGRE Initialising
+20:30:28: *-*-* Version 1.7.1 (Cthugha)
+20:30:28: Loading library .\RenderSystem_Direct3D9
+20:30:28: Installing plugin: D3D9 RenderSystem
+20:30:28: D3D9 : Direct3D9 Rendering Subsystem created.
+20:30:28: D3D9: Driver Detection Starts
+20:30:28: D3D9: Driver Detection Ends
+20:30:28: Plugin successfully installed
+20:30:28: Loading library .\RenderSystem_GL
+20:30:28: Installing plugin: GL RenderSystem
+20:30:28: OpenGL Rendering Subsystem created.
+20:30:30: Plugin successfully installed
+20:30:30: Loading library .\Plugin_ParticleFX
+20:30:30: Installing plugin: ParticleFX
+20:30:30: Particle Emitter Type 'Point' registered
+20:30:30: Particle Emitter Type 'Box' registered
+20:30:30: Particle Emitter Type 'Ellipsoid' registered
+20:30:30: Particle Emitter Type 'Cylinder' registered
+20:30:30: Particle Emitter Type 'Ring' registered
+20:30:30: Particle Emitter Type 'HollowEllipsoid' registered
+20:30:30: Particle Affector Type 'LinearForce' registered
+20:30:30: Particle Affector Type 'ColourFader' registered
+20:30:30: Particle Affector Type 'ColourFader2' registered
+20:30:30: Particle Affector Type 'ColourImage' registered
+20:30:30: Particle Affector Type 'ColourInterpolator' registered
+20:30:30: Particle Affector Type 'Scaler' registered
+20:30:30: Particle Affector Type 'Rotator' registered
+20:30:30: Particle Affector Type 'DirectionRandomiser' registered
+20:30:30: Particle Affector Type 'DeflectorPlane' registered
+20:30:30: Plugin successfully installed
+20:30:30: Loading library .\Plugin_CgProgramManager
+20:30:30: Installing plugin: Cg Program Manager
+20:30:30: Plugin successfully installed
+20:30:30: D3D9 : RenderSystem Option: Allow NVPerfHUD = No
+20:30:30: D3D9 : RenderSystem Option: FSAA = 0
+20:30:30: D3D9 : RenderSystem Option: Floating-point mode = Fastest
+20:30:30: D3D9 : RenderSystem Option: Full Screen = No
+20:30:30: D3D9 : RenderSystem Option: Rendering Device = Monitor-1-NVIDIA GeForce 8800 GTS
+20:30:30: D3D9 : RenderSystem Option: Resource Creation Policy = Create on all devices
+20:30:30: D3D9 : RenderSystem Option: VSync = No
+20:30:30: D3D9 : RenderSystem Option: VSync Interval = 1
+20:30:30: D3D9 : RenderSystem Option: Video Mode = 800 x 600 @ 32-bit colour
+20:30:30: D3D9 : RenderSystem Option: sRGB Gamma Conversion = No
+20:30:30: Warning: Invalid value 'N/A' for property 'Display Frequency' of Render System 'OpenGL Rendering Subsystem'! Default value '60' is used instead
+20:30:30: Creating resource group Bootstrap
+20:30:30: Added resource location '../media/packs/OgreCore.zip' of type 'Zip' to resource group 'Bootstrap'
+20:30:30: Added resource location '../media' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui/fonts' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui/configs' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui/imagesets' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui/looknfeel' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui/lua_scripts' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/gui/schemes' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/dotScene' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/fonts' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/materials/programs' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/materials/scripts' of type 'FileSystem' to resource group 'General'
+20:30:30: Added resource location '../media/materials/textures' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/models' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/overlays' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/particle' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/DeferredShadingMedia' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/icons' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/packs/cubemap.zip' of type 'Zip' to resource group 'General'
+20:30:31: Added resource location '../media/packs/cubemapsJS.zip' of type 'Zip' to resource group 'General'
+20:30:31: Added resource location '../media/packs/dragon.zip' of type 'Zip' to resource group 'General'
+20:30:31: Added resource location '../media/packs/fresneldemo.zip' of type 'Zip' to resource group 'General'
+20:30:31: Added resource location '../media/packs/ogretestmap.zip' of type 'Zip' to resource group 'General'
+20:30:31: Added resource location '../media/gui/layouts' of type 'FileSystem' to resource group 'General'
+20:30:31: Added resource location '../media/packs/skybox.zip' of type 'Zip' to resource group 'General'
+20:30:31: Added resource location '../media/sound' of type 'FileSystem' to resource group 'General'
+20:30:31: Creating resource group Level
+20:30:31: Added resource location '../media/level' of type 'FileSystem' to resource group 'Level'
+20:30:31: Creating resource group Savegame
+20:30:31: Added resource location '../media/savegame' of type 'FileSystem' to resource group 'Savegame'
+20:30:31: Creating resource group Temp
+20:30:31: Added resource location '../media/temp' of type 'FileSystem' to resource group 'Temp'
+20:30:31: Creating resource group Collision
+20:30:31: Added resource location '../media/level/collision' of type 'FileSystem' to resource group 'Collision'
+20:30:31: Creating resource group game_data
+20:30:31: Added resource location '../media/data' of type 'FileSystem' to resource group 'game_data'
+20:30:31: Creating resource group Terrain
+20:30:31: Added resource location '../media/Terrain' of type 'FileSystem' to resource group 'Terrain'
+20:30:31: Creating resource group TerrainBrushes
+20:30:31: Added resource location '../media/Terrain/Brushes' of type 'FileSystem' to resource group 'TerrainBrushes'
+20:30:31: Creating resource group TerrainTextures
+20:30:31: Added resource location '../media/Terrain/Textures' of type 'FileSystem' to resource group 'TerrainTextures'
+20:30:31: CPU Identifier & Features
+20:30:31: -------------------------
+20:30:31:  *   CPU ID: GenuineIntel: Intel(R) Core(TM)2 Duo CPU     E6750  @ 2.66GHz
+20:30:31:  *      SSE: yes
+20:30:31:  *     SSE2: yes
+20:30:31:  *     SSE3: yes
+20:30:31:  *      MMX: yes
+20:30:31:  *   MMXEXT: yes
+20:30:31:  *    3DNOW: no
+20:30:31:  * 3DNOWEXT: no
+20:30:31:  *     CMOV: yes
+20:30:31:  *      TSC: yes
+20:30:31:  *      FPU: yes
+20:30:31:  *      PRO: yes
+20:30:31:  *       HT: no
+20:30:31: -------------------------
+20:30:31: D3D9 : Subsystem Initialising
+20:30:31: Registering ResourceManager for type Texture
+20:30:31: Registering ResourceManager for type GpuProgram
+20:30:31: D3D9RenderSystem::_createRenderWindow "LoL4", 800x600 windowed  miscParams: FSAA=0 FSAAHint= colourDepth=32 gamma=false monitorIndex=0 useNVPerfHUD=false vsync=false vsyncInterval=1 
+20:30:31: D3D9 : Created D3D9 Rendering Window 'LoL4' : 800x600, 32bpp
+20:30:31: D3D9 : WARNING - disabling VSync in windowed mode can cause timing issues at lower frame rates, turn VSync on if you observe this problem.
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT16_RGB
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT16_RGBA
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT32_RGB
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT32_RGBA
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT16_R
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT32_R
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT16_GR
+20:30:31: D3D9: Vertex texture format supported - PF_FLOAT32_GR
+20:30:31: RenderSystem capabilities
+20:30:31: -------------------------
+20:30:31: RenderSystem Name: Direct3D9 Rendering Subsystem
+20:30:31: GPU Vendor: nvidia
+20:30:31: Device Name: Monitor-1-NVIDIA GeForce 8800 GTS
+20:30:31: Driver Version: 6.14.12.6099
+20:30:31:  * Fixed function pipeline: yes
+20:30:31:  * Hardware generation of mipmaps: yes
+20:30:31:  * Texture blending: yes
+20:30:31:  * Anisotropic texture filtering: yes
+20:30:31:  * Dot product texture operation: yes
+20:30:31:  * Cube mapping: yes
+20:30:31:  * Hardware stencil buffer: yes
+20:30:31:    - Stencil depth: 8
+20:30:31:    - Two sided stencil support: yes
+20:30:31:    - Wrap stencil values: yes
+20:30:31:  * Hardware vertex / index buffers: yes
+20:30:31:  * Vertex programs: yes
+20:30:31:  * Number of floating-point constants for vertex programs: 256
+20:30:31:  * Number of integer constants for vertex programs: 16
+20:30:31:  * Number of boolean constants for vertex programs: 16
+20:30:31:  * Fragment programs: yes
+20:30:31:  * Number of floating-point constants for fragment programs: 224
+20:30:31:  * Number of integer constants for fragment programs: 16
+20:30:31:  * Number of boolean constants for fragment programs: 16
+20:30:31:  * Geometry programs: no
+20:30:31:  * Number of floating-point constants for geometry programs: 0
+20:30:31:  * Number of integer constants for geometry programs: 0
+20:30:31:  * Number of boolean constants for geometry programs: 0
+20:30:31:  * Supported Shader Profiles: hlsl ps_1_1 ps_1_2 ps_1_3 ps_1_4 ps_2_0 ps_2_a ps_2_b ps_2_x ps_3_0 vs_1_1 vs_2_0 vs_2_a vs_2_x vs_3_0
+20:30:31:  * Texture Compression: yes
+20:30:31:    - DXT: yes
+20:30:31:    - VTC: no
+20:30:31:    - PVRTC: no
+20:30:31:  * Scissor Rectangle: yes
+20:30:31:  * Hardware Occlusion Query: yes
+20:30:31:  * User clip planes: yes
+20:30:31:  * VET_UBYTE4 vertex element type: yes
+20:30:31:  * Infinite far plane projection: yes
+20:30:31:  * Hardware render-to-texture: yes
+20:30:31:  * Floating point textures: yes
+20:30:31:  * Non-power-of-two textures: yes
+20:30:31:  * Volume textures: yes
+20:30:31:  * Multiple Render Targets: 4
+20:30:31:    - With different bit depths: yes
+20:30:31:  * Point Sprites: yes
+20:30:31:  * Extended point parameters: yes
+20:30:31:  * Max Point Size: 10
+20:30:31:  * Vertex texture fetch: yes
+20:30:31:  * Number of world matrices: 0
+20:30:31:  * Number of texture units: 8
+20:30:31:  * Stencil buffer depth: 8
+20:30:31:  * Number of vertex blend matrices: 0
+20:30:31:    - Max vertex textures: 4
+20:30:31:    - Vertex textures shared: no
+20:30:31:  * Render to Vertex Buffer : no
+20:30:31:  * DirectX per stage constants: yes
+20:30:31: ***************************************
+20:30:31: *** D3D9 : Subsystem Initialised OK ***
+20:30:31: ***************************************
+20:30:31: DefaultWorkQueue('Root') initialising on thread 00156CD8.
+20:30:31: DefaultWorkQueue('Root')::WorkerFunc - thread 001BE7D0 starting.
+20:30:31: DefaultWorkQueue('Root')::WorkerFunc - thread 001BE800 starting.
+20:30:31: Particle Renderer Type 'billboard' registered
+20:30:31: Parsing scripts for resource group Autodetect
+20:30:31: Finished parsing scripts for resource group Autodetect
+20:30:31: Parsing scripts for resource group Bootstrap
+20:30:31: Parsing script OgreCore.material
+20:30:31: Parsing script OgreProfiler.material
+20:30:31: Parsing script Ogre.fontdef
+20:30:31: Parsing script OgreDebugPanel.overlay
+20:30:31: Texture: New_Ogre_Border_Center.png: Loading 1 faces(PF_A8R8G8B8,256x128x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+20:30:31: Texture: New_Ogre_Border.png: Loading 1 faces(PF_A8R8G8B8,256x256x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+20:30:31: Texture: New_Ogre_Border_Break.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+20:30:31: Texture: ogretext.png: Loading 1 faces(PF_A8R8G8B8,256x128x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+20:30:31: Parsing script OgreLoadingPanel.overlay
+20:30:31: Finished parsing scripts for resource group Bootstrap
+20:30:31: Parsing scripts for resource group Collision
+20:30:31: Finished parsing scripts for resource group Collision
+20:30:31: Parsing scripts for resource group General
+20:30:31: Parsing script Examples.program
+20:30:32: Parsing script StdQuad_vp.program
+20:30:32: Parsing script deferred.glsl.program
+20:30:32: Parsing script deferred.hlsl.program
+20:30:32: Parsing script deferred_post.program
+20:30:32: Parsing script deferred_post_debug.glsl.program
+20:30:32: Parsing script deferred_post_debug.hlsl.program
+20:30:32: Parsing script deferred_post_minilight.glsl.program
+20:30:32: Parsing script deferred_post_minilight.hlsl.program
+20:30:32: OGRE EXCEPTION(2:InvalidParametersException): Parameter called lightSpecularColor does not exist.  in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1433)
+20:30:32: Compiler error: invalid parameters in deferred_post_minilight.hlsl.program(26): setting of constant failed
+20:30:32: Parsing script deferred_post_multipass.glsl.program
+20:30:32: Parsing script deferred_post_multipass.hlsl.program
+20:30:32: Parsing script deferred_post_onepass.glsl.program
+20:30:32: Parsing script deferred_post_onepass.hlsl.program
+20:30:32: Parsing script ShadowCaster.program
+20:30:32: Parsing script ASCII.material
+20:30:33: Parsing script ASMSwizzle.material
+20:30:33: Compiler error: object unsupported by render system in ASMSwizzle.material(1)
+20:30:33: Parsing script Axt3.material
+20:30:33: Parsing script BlackAndWhite.material
+20:30:33: Parsing script Bloom.material
+20:30:33: Parsing script Bloom2.material
+20:30:33: Parsing script bow.material
+20:30:33: Parsing script box.material
+20:30:33: Parsing script CGSwizzle.material
+20:30:33: Parsing script CompositorDemo.material
+20:30:33: Parsing script Crystals.material
+20:30:33: Parsing script default.material
+20:30:33: Parsing script DepthShadowmap.material
+20:30:33: Parsing script Dither.material
+20:30:33: Parsing script DOF.material
+20:30:33: Parsing script Embossed.material
+20:30:33: Parsing script Example-DynTex.material
+20:30:33: Parsing script Example-Water.material
+20:30:33: Parsing script Example.material
+20:30:33: Parsing script Examples-Advanced.material
+20:30:33: Parsing script Examples-DynTex.material
+20:30:33: Parsing script Examples-Water.material
+20:30:33: Parsing script Examples.material
+20:30:33: OGRE EXCEPTION(2:InvalidParametersException): Parameter called camObjPos does not exist.  in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1433)
+20:30:33: Compiler error: invalid parameters in Examples.material(837): setting of constant failed
+20:30:33: Parsing script facial.material
+20:30:33: Parsing script Glass.material
+20:30:33: Parsing script GLSLSwizzle.material
+20:30:34: Parsing script Halftone.material
+20:30:34: Parsing script hdr.material
+20:30:34: Parsing script HeatVision.material
+20:30:34: Parsing script Hurt.material
+20:30:34: Parsing script instancing.material
+20:30:34: Parsing script Invert.material
+20:30:34: Parsing script IsoSurf.material
+20:30:34: Parsing script itemtest.material
+20:30:34: Parsing script Laplace.material
+20:30:34: Parsing script magic_effects.material
+20:30:34: Parsing script MotionBlur.material
+20:30:34: Parsing script MRTtest.material
+20:30:34: Parsing script NightVision.material
+20:30:34: Parsing script Ocean.material
+20:30:34: Parsing script OffsetMapping.material
+20:30:34: Parsing script Ogre.material
+20:30:34: Parsing script OldMovie.material
+20:30:34: Parsing script OldTV.material
+20:30:34: Parsing script orcsword.material
+20:30:35: Parsing script ParticleGS.material
+20:30:35: OGRE EXCEPTION(7:InternalErrorException): Unable to compile Cg program Ogre/ParticleGS/GenerateVS: CG ERROR : The compile returned an error.
+(0) : error C6015: Output 'POSITION' not completely written
+ in CgProgram::loadFromSource at ..\..\..\..\..\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp (line 67)
+20:30:35: High-level program Ogre/ParticleGS/GenerateVS encountered an error during loading and is thus not supported.
+OGRE EXCEPTION(7:InternalErrorException): Unable to compile Cg program Ogre/ParticleGS/GenerateVS: CG ERROR : The compile returned an error.
+(0) : error C6015: Output 'POSITION' not completely written
+ in CgProgram::loadFromSource at ..\..\..\..\..\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp (line 67)
+20:30:35: OGRE EXCEPTION(7:InternalErrorException): Unable to compile Cg program Ogre/ParticleGS/DisplayVS: CG ERROR : The compile returned an error.
+(249) : warning C7050: "output.color" might be used before being initialized
+(0) : error C6015: Output 'POSITION' not completely written
+ in CgProgram::loadFromSource at ..\..\..\..\..\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp (line 67)
+20:30:35: High-level program Ogre/ParticleGS/DisplayVS encountered an error during loading and is thus not supported.
+OGRE EXCEPTION(7:InternalErrorException): Unable to compile Cg program Ogre/ParticleGS/DisplayVS: CG ERROR : The compile returned an error.
+(249) : warning C7050: "output.color" might be used before being initialized
+(0) : error C6015: Output 'POSITION' not completely written
+ in CgProgram::loadFromSource at ..\..\..\..\..\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp (line 67)
+20:30:35: OGRE EXCEPTION(7:InternalErrorException): Unable to compile Cg program Ogre/ParticleGS/DisplayPS: CG ERROR : The compile returned an error.
+(323) : fatal error C9999: unexpected cast operation
+ in CgProgram::loadFromSource at ..\..\..\..\..\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp (line 67)
+20:30:35: High-level program Ogre/ParticleGS/DisplayPS encountered an error during loading and is thus not supported.
+OGRE EXCEPTION(7:InternalErrorException): Unable to compile Cg program Ogre/ParticleGS/DisplayPS: CG ERROR : The compile returned an error.
+(323) : fatal error C9999: unexpected cast operation
+ in CgProgram::loadFromSource at ..\..\..\..\..\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp (line 67)
+20:30:35: Parsing script Penguin.material
+20:30:35: Parsing script Posterize.material
+20:30:35: Parsing script pratest.material
+20:30:35: Compiler error: unknown error in pratest.material(415): token "receive_shadows" is not recognized
+20:30:35: Parsing script pssm.material
+20:30:35: Parsing script RadialBlur.material
+20:30:35: Parsing script RZR-002.material
+20:30:35: Parsing script Scene.material
+20:30:35: Parsing script ShaderSystem.material
+20:30:35: Parsing script shadows.material
+20:30:35: Parsing script SharpenEdges.material
+20:30:35: Parsing script sibenik.material
+20:30:35: Parsing script smoke.material
+20:30:35: Parsing script StreitAxt.material
+20:30:35: Parsing script Tiling.material
+20:30:35: Parsing script ugly.material
+20:30:35: Parsing script VarianceShadowmap.material
+20:30:35: Parsing script wood_door.material
+20:30:35: Parsing script zombie.material
+20:30:35: Parsing script deferred.material
+20:30:35: Parsing script deferreddemo.material
+20:30:35: Parsing script deferred_post.material
+20:30:35: Parsing script deferred_post_debug.material
+20:30:35: Parsing script deferred_post_minilight.material
+20:30:35: Parsing script deferred_post_multipass.material
+20:30:35: Parsing script deferred_post_onepass.material
+20:30:35: Parsing script ShadowCaster.material
+20:30:35: Parsing script ssao.material
+20:30:35: Parsing script RomanBath.material
+20:30:35: Parsing script emitted_emitter.particle
+20:30:35: Parsing script Example-Water.particle
+20:30:35: Parsing script Example.particle
+20:30:35: Parsing script Examples-Water.particle
+20:30:35: Parsing script Examples.particle
+20:30:35: Parsing script magic_effects.particle
+20:30:35: Parsing script pra.particle
+20:30:36: Parsing script smoke.particle
+20:30:36: Parsing script Examples.compositor
+20:30:36: Parsing script deferred.compositor
+20:30:36: Parsing script ssao.compositor
+20:30:36: Parsing script OgreNewt.fontdef
+20:30:36: Parsing script sample.fontdef
+20:30:36: Parsing script Compositor.overlay
+20:30:36: Parsing script DP3.overlay
+20:30:36: Parsing script Example-CubeMapping.overlay
+20:30:36: Parsing script Example-DynTex.overlay
+20:30:36: Parsing script Example-Water.overlay
+20:30:36: Parsing script Shadows.overlay
+20:30:36: Finished parsing scripts for resource group General
+20:30:36: Parsing scripts for resource group Internal
+20:30:36: Finished parsing scripts for resource group Internal
+20:30:36: Parsing scripts for resource group Level
+20:30:36: Finished parsing scripts for resource group Level
+20:30:36: Parsing scripts for resource group Savegame
+20:30:36: Finished parsing scripts for resource group Savegame
+20:30:36: Parsing scripts for resource group Temp
+20:30:36: Finished parsing scripts for resource group Temp
+20:30:36: Parsing scripts for resource group Terrain
+20:30:36: Finished parsing scripts for resource group Terrain
+20:30:36: Parsing scripts for resource group TerrainBrushes
+20:30:36: Finished parsing scripts for resource group TerrainBrushes
+20:30:36: Parsing scripts for resource group TerrainTextures
+20:30:36: Finished parsing scripts for resource group TerrainTextures
+20:30:36: Parsing scripts for resource group game_data
+20:30:36: Finished parsing scripts for resource group game_data
+20:30:36: Mesh: Loading knot.mesh.
+20:30:36: PRA: Registering object 'ogre' of type gtDynamic: the ID is alerady taken by a gtDoor object. Deleting former definition
+20:30:36: PRA: Registering object 'kiste' of type gtContainer: the ID is alerady taken by a gtDynamic object. Deleting former definition
+20:30:36: PRA: Registering object 'player' of type gtCharacter: the ID is alerady taken by a gtCharacter object. Deleting former definition
+20:30:36: PRA: game data geladen
+20:30:36: Texture: _cegui_ogre_0: Loading 1 faces(PF_A8B8G8R8,1024x1017x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,1024x1017x1.
+20:30:37: Texture: _cegui_ogre_1: Loading 1 faces(PF_A8B8G8R8,800x600x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,800x600x1.
+20:30:37: PRA: getting Window currentspell. actual name: wnd0_currentspell
+20:30:37: PRA: getting Window currentweapon. actual name: wnd0_currentweapon
+20:30:37: PRA: getting Window hpbar. actual name: wnd0_hpbar
+20:30:37: PRA: getting Window manabar. actual name: wnd0_manabar
+20:30:37: PRA: getting Window hpbar. actual name: wnd0_hpbar
+20:30:37: PRA: getting Window manabar. actual name: wnd0_manabar
+20:30:37: PRA: getting Window TextOut. actual name: wnd0_TextOut
+20:30:37: PRA: getting Window compass. actual name: wnd0_compass
+20:30:37: PRA: getting Window hotkey0. actual name: wnd0_hotkey0
+20:30:37: PRA: getting Window hotkey1. actual name: wnd0_hotkey1
+20:30:37: PRA: getting Window hotkey2. actual name: wnd0_hotkey2
+20:30:37: PRA: getting Window hotkey3. actual name: wnd0_hotkey3
+20:30:37: PRA: getting Window hotkey4. actual name: wnd0_hotkey4
+20:30:37: PRA: getting Window hotkey5. actual name: wnd0_hotkey5
+20:30:37: PRA: getting Window hotkey6. actual name: wnd0_hotkey6
+20:30:37: PRA: getting Window hotkey7. actual name: wnd0_hotkey7
+20:30:37: PRA: getting Window hotkey8. actual name: wnd0_hotkey8
+20:30:37: PRA: getting Window hotkey9. actual name: wnd0_hotkey9
+20:30:37: Mesh: Loading CompassNeedle.mesh.
+20:30:37: WARNING: CompassNeedle.mesh is an older format ([MeshSerializer_v1.40]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:37: Texture: redblue2.tga: Loading 1 faces(PF_R8G8B8,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,512x512x1.
+20:30:37: PRA: getting Window saveloadwnd/savegamelist. actual name: wnd1_saveloadwnd/savegamelist
+20:30:37: PRA: getting Window saveloadwnd/namebox. actual name: wnd1_saveloadwnd/namebox
+20:30:37: PRA: getting Window saveloadwnd/save. actual name: wnd1_saveloadwnd/save
+20:30:37: PRA: getting Window saveloadwnd/load. actual name: wnd1_saveloadwnd/load
+20:30:37: PRA: getting Window saveloadwnd/delete. actual name: wnd1_saveloadwnd/delete
+20:30:37: PRA: getting Window saveloadwnd/cancel. actual name: wnd1_saveloadwnd/cancel
+20:30:37: Texture: _cegui_ogre_6: Loading 1 faces(PF_A8B8G8R8,256x256x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+20:30:37: PRA: getting Window TabControl. actual name: wnd2_TabControl
+20:30:37: PRA: getting Window OkButton. actual name: wnd2_OkButton
+20:30:37: PRA: getting Window CancelButton. actual name: wnd2_CancelButton
+20:30:37: PRA: getting Window AcceptButton. actual name: wnd2_AcceptButton
+20:30:37: PRA: getting Window RendererSelect. actual name: wnd2_RendererSelect
+20:30:37: PRA: getting Window VideoOptionContainer. actual name: wnd2_VideoOptionContainer
+20:30:37: PRA: getting Window KeyboardScroll. actual name: wnd2_KeyboardScroll
+20:30:37: PRA: getting Window options/gainAll. actual name: wnd2_options/gainAll
+20:30:37: PRA: getting Window options/gainMusic. actual name: wnd2_options/gainMusic
+20:30:37: PRA: getting Window options/gainSFX. actual name: wnd2_options/gainSFX
+20:30:37: PRA: getting Window options/gainSFXPlayer. actual name: wnd2_options/gainSFXPlayer
+20:30:37: PRA: getting Window options/gainSpeech. actual name: wnd2_options/gainSpeech
+20:30:37: PRA: getting Window options/distance_model. actual name: wnd2_options/distance_model
+20:30:37: PRA: getting Window options/maxdist. actual name: wnd2_options/maxdist
+20:30:37: PRA: getting Window options/refdist. actual name: wnd2_options/refdist
+20:30:37: PRA: getting Window options/rolloff. actual name: wnd2_options/rolloff
+20:30:37: PRA: getting Window options/sens_x. actual name: wnd2_options/sens_x
+20:30:37: PRA: getting Window options/sens_y. actual name: wnd2_options/sens_y
+20:30:37: PRA: getting Window options/kb_sens_x. actual name: wnd2_options/kb_sens_x
+20:30:37: PRA: getting Window options/kb_sens_y. actual name: wnd2_options/kb_sens_y
+20:30:37: PRA: getting Window options/physicval. actual name: wnd2_options/physicval
+20:30:37: PRA: getting Window options/mouselooking. actual name: wnd2_options/mouselooking
+20:30:37: PRA: getting Window keyboardInfoText. actual name: wnd2_keyboardInfoText
+20:30:37: PRA: getting Window RestoreDefaultKeys. actual name: wnd2_RestoreDefaultKeys
+20:30:37: PRA: getting Window InventoryWindow/content. actual name: wnd3_InventoryWindow/content
+20:30:37: PRA: getting Window InventoryWindow/equipment. actual name: wnd3_InventoryWindow/equipment
+20:30:37: PRA: getting Window PlayerInventory/melee. actual name: wnd5_PlayerInventory/melee
+20:30:37: PRA: getting Window PlayerInventory/ranged. actual name: wnd5_PlayerInventory/ranged
+20:30:37: PRA: getting Window PlayerInventory/armor. actual name: wnd5_PlayerInventory/armor
+20:30:37: PRA: getting Window PlayerInventory/shield. actual name: wnd5_PlayerInventory/shield
+20:30:37: PRA: getting Window PlayerInventory/else1. actual name: wnd5_PlayerInventory/else1
+20:30:37: PRA: getting Window PlayerInventory/else2. actual name: wnd5_PlayerInventory/else2
+20:30:37: PRA: getting Window PlayerInventory/else3. actual name: wnd5_PlayerInventory/else3
+20:30:37: PRA: getting Window PlayerInventory/else4. actual name: wnd5_PlayerInventory/else4
+20:30:37: PRA: getting Window PlayerInventory/bag. actual name: wnd5_PlayerInventory/bag
+20:30:37: PRA: getting Window PlayerEquipment/display_melee. actual name: wnd5_PlayerEquipment/display_melee
+20:30:37: PRA: getting Window PlayerEquipment/display_ranged. actual name: wnd5_PlayerEquipment/display_ranged
+20:30:37: PRA: getting Window PlayerEquipment/display_armor. actual name: wnd5_PlayerEquipment/display_armor
+20:30:37: PRA: getting Window PlayerEquipment/itemsleft. actual name: wnd5_PlayerEquipment/itemsleft
+20:30:37: PRA: getting Window SpellbookWindow/content. actual name: wnd55_SpellbookWindow/content
+20:30:37: Texture: _cegui_ogre_16: Loading 1 faces(PF_A8B8G8R8,32x32x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+20:30:37: PRA: getting Window ContainerWindow/content. actual name: wnd89_ContainerWindow/content
+20:30:37: PRA: getting Window resume. actual name: wnd140_resume
+20:30:37: PRA: getting Window startgame. actual name: wnd140_startgame
+20:30:37: PRA: getting Window saveload. actual name: wnd140_saveload
+20:30:37: PRA: getting Window options. actual name: wnd140_options
+20:30:37: PRA: getting Window quit. actual name: wnd140_quit
+20:30:37: *** Initializing OIS ***
+20:30:41: Texture: rockwall.tga: Loading 1 faces(PF_R8G8B8,256x256x1) with  hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,256x256x1.
+20:30:41: PRA: REGISTER OBJECT Object 530c628, type=static, ID=
+20:30:41: Mesh: Loading box_closed.mesh.
+20:30:41: WARNING: box_closed.mesh is an older format ([MeshSerializer_v1.40]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:41: Texture: box128.png: Loading 1 faces(PF_R8G8B8,128x128x1) with  hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,128x128x1.
+20:30:41: PRA: REGISTER OBJECT Object 5319410, type=container, ID=kiste
+20:30:41: Mesh: Loading box.mesh.
+20:30:41: WARNING: box.mesh is an older format ([MeshSerializer_v1.40]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:41: Texture: RustySteel.jpg: Loading 1 faces(PF_R8G8B8,256x256x1) with  hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,256x256x1.
+20:30:41: PRA: REGISTER OBJECT Object 719d2c0, type=container, ID=testtasche
+20:30:41: PRA: REGISTER OBJECT Object 1789a48, type=container, ID=kiste
+20:30:41: PRA: REGISTER OBJECT Object 1789888, type=container, ID=testtasche
+20:30:41: PRA: REGISTER OBJECT Object 17896c8, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 1789348, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 1788fc8, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 1788c48, type=static, ID=
+20:30:41: Mesh: Loading axe.mesh.
+20:30:41: WARNING: axe.mesh is an older format ([MeshSerializer_v1.40]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:41: Texture: axt3_tex.png: Loading 1 faces(PF_A8R8G8B8,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+20:30:41: PRA: REGISTER OBJECT Object 8128708, type=item, ID=lolaxe
+20:30:41: Mesh: Loading bow.mesh.
+20:30:41: WARNING: bow.mesh is an older format ([MeshSerializer_v1.40]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:41: Texture: bow-texture.png: Loading 1 faces(PF_R8G8B8,1024x1024x1) with  hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,1024x1024x1.
+20:30:41: PRA: REGISTER OBJECT Object 7ac30d0, type=item, ID=lolbow
+20:30:41: Mesh: Loading sword.mesh.
+20:30:41: WARNING: sword.mesh is an older format ([MeshSerializer_v1.40]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:41: Texture: sword-uv-512.png: Loading 1 faces(PF_A8R8G8B8,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+20:30:41: PRA: REGISTER OBJECT Object 8ad8798, type=item, ID=lolsword
+20:30:41: Mesh: Loading ellipsoid.mesh.
+20:30:41: WARNING: ellipsoid.mesh is an older format ([MeshSerializer_v1.30]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+20:30:41: Texture: lolbow.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+20:30:41: PRA: REGISTER OBJECT Object 1788388, type=item, ID=stab1
+20:30:41: PRA: REGISTER OBJECT Object 8b07420, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 8b021a8, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 8af8190, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 8aeae40, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 8b24a40, type=static, ID=
+20:30:41: PRA: REGISTER OBJECT Object 8b37d80, type=container, ID=kiste
+20:30:41: PRA: Warnung: SGID 1 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b38430, type=container, ID=testtasche
+20:30:41: PRA: Warnung: SGID 2 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b38b58, type=container, ID=kiste
+20:30:41: PRA: Warnung: SGID 3 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b39260, type=container, ID=testtasche
+20:30:41: PRA: Warnung: SGID 4 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b39928, type=item, ID=lolaxe
+20:30:41: PRA: Warnung: SGID 5 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b3a068, type=item, ID=lolbow
+20:30:41: PRA: Warnung: SGID 6 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b3a720, type=item, ID=lolsword
+20:30:41: PRA: Warnung: SGID 7 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b3add8, type=item, ID=stab1
+20:30:41: PRA: Warnung: SGID 8 wird bereits verwendet!
+20:30:41: PRA: REGISTER OBJECT Object 8b1d0e0, type=char, ID=player
+20:30:42: Texture: _cegui_ogre_23: Loading 1 faces(PF_A8B8G8R8,64x64x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+20:30:43: Texture: _cegui_ogre_24: Loading 1 faces(PF_A8B8G8R8,32x32x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+20:30:43: Texture: _cegui_ogre_25: Loading 1 faces(PF_B8G8R8,64x63x1) with 0 generated mipmaps from Image. Internal format is PF_X8R8G8B8,64x63x1.
+20:30:43: Texture: _cegui_ogre_26: Loading 1 faces(PF_A8B8G8R8,32x32x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+20:30:43: Texture: _cegui_ogre_27: Loading 1 faces(PF_A8B8G8R8,64x64x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+20:30:43: Texture: _cegui_ogre_28: Loading 1 faces(PF_A8B8G8R8,32x32x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+20:30:46: PRA: REGISTER OBJECT Object 8b56930, type=explosion, ID=effect
+20:30:46: Texture: blue_flare2.png: Loading 1 faces(PF_A8R8G8B8,256x256x1) with  hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+20:30:47: PRA: Object 8b56930, type=explosion, ID=effect requests deletion
+20:30:47: PRA: object Object 8b56930, type=explosion, ID=effect added to delete list
+20:30:47: PRA: UNREGISTER OBJECT Object 8b56930, type=explosion, ID=effect
+20:30:47: PRA: Object Object 8b56930, type=explosion, ID=effect has been deleted
+20:30:48: PRA: REGISTER OBJECT Object 8b56930, type=explosion, ID=effect
+20:30:49: PRA: Object 8b56930, type=explosion, ID=effect requests deletion
+20:30:49: PRA: object Object 8b56930, type=explosion, ID=effect added to delete list
+20:30:49: PRA: UNREGISTER OBJECT Object 8b56930, type=explosion, ID=effect
+20:30:49: PRA: Object Object 8b56930, type=explosion, ID=effect has been deleted
+20:30:50: DefaultWorkQueue('Root') shutting down on thread 00156CD8.
+20:30:50: DefaultWorkQueue('Root')::WorkerFunc - thread 001BE800 stopped.
+20:30:50: DefaultWorkQueue('Root')::WorkerFunc - thread 001BE7D0 stopped.
+20:30:51: *-*-* OGRE Shutdown
+20:30:51: Unregistering ResourceManager for type Compositor
+20:30:51: Unregistering ResourceManager for type Font
+20:30:51: Unregistering ResourceManager for type Skeleton
+20:30:51: Unregistering ResourceManager for type Mesh
+20:30:51: Unregistering ResourceManager for type HighLevelGpuProgram
+20:30:51: Uninstalling plugin: Cg Program Manager
+20:30:51: Plugin successfully uninstalled
+20:30:51: Unloading library .\Plugin_CgProgramManager
+20:30:51: Uninstalling plugin: ParticleFX
+20:30:51: Plugin successfully uninstalled
+20:30:51: Unloading library .\Plugin_ParticleFX
+20:30:51: Uninstalling plugin: GL RenderSystem
+20:30:51: *** Stopping Win32GL Subsystem ***
+20:30:51: Plugin successfully uninstalled
+20:30:51: Unloading library .\RenderSystem_GL
+20:30:51: Uninstalling plugin: D3D9 RenderSystem
+20:30:51: D3D9 : Shutting down cleanly.
+20:30:51: Unregistering ResourceManager for type Texture
+20:30:51: Unregistering ResourceManager for type GpuProgram
+20:30:51: D3D9 : Direct3D9 Rendering Subsystem destroyed.
+20:30:51: Plugin successfully uninstalled
+20:30:51: Unloading library .\RenderSystem_Direct3D9
+20:30:51: Unregistering ResourceManager for type Material

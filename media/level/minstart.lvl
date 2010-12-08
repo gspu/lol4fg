@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<level version="2">
+    <gravity value="-9.81" />
+    <ambientcolour value="1 1 1 1" />
+    <backgroundcolour value="0 0 0 1" />
+    <north orientation="1 0 0 0" />
+</level>
+<sound>
+    <music />
+    <ambient wait_min="0" wait_max="10" />
+    <ambientloop />
+</sound>
+<objects>
+    <static pos="0.368099 15.1268 -1.60873" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="colorWhite" type="plane" scale="2.78353 2.78353 1" />
+    <entrance pos="-0.1 16.3 -1.5" name="GameStartPosition" />
+    <item pos="0.7 15.3767 -1" SGID="1" id="lolbow" />
+    <container pos="1.1 15.6284 -2.3" orient="1 5.21398e-005 4.54866e-009 4.0374e-005" SGID="2" id="testtasche">
+        <inventory />
+    </container>
+</objects>
