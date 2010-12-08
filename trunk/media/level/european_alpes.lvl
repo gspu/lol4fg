@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<level type="paginglandscape" src="paginglandscape2.cfg" mapName="European_Alpes">
+    <name value="Testlevel" />
+    <gravity value="-9.81" />
+    <ambientcolour value="1 1 1 1" />
+    <skybox material="Examples/CloudyNoonSkyBox" />
+</level>
+<static>
+    <WoodPallet pos="8.99542 198.687 111.664" />
+    <plane_floor pos="-21.1907 198.67 102.613" orient="-0.499997 -0.500001 -0.499999 0.500003" />
+    <plane_floor pos="-1.53367 3.87134 239.752" orient="0.707107 0.707107 0 0" scale="0.13 0.13 0.13" />
+    <athene pos="-0.289407 20.0189 0.702844" />
+    <bigrobo pos="0.261963 26.0162 0.675589" />
+</static>
+<items />
+<lights />
+<activators>
+    <testdoor pos="-2.98657 4.93508 236.066" targetLevel="start.lvl" targetEntrance="entr0" />
+</activators>
+<characters>
+    <testguy pos="-90.8081 12.1537 277.469" />
+</characters>
+<special>
+    <entrance pos="2.19004 4.59607 237.052" name="eingang" />
+</special>

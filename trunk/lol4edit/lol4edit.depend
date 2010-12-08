@@ -1,0 +1,3429 @@
+# depslib dependency file v1.0
+1137359526 source:d:\c++\projects\lol4\include\tinyxml.cpp
+	<ctype.h>
+	"tinyxml.h"
+	<sstream>
+	<iostream>
+
+1137363126 d:\c++\projects\lol4\include\tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	"tinystr.h"
+
+1137363126 d:\c++\projects\lol4\include\tinystr.h
+	<assert.h>
+	<string.h>
+
+1137359526 source:d:\c++\projects\lol4\include\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1137359526 source:d:\c++\projects\lol4\include\tinyxmlparser.cpp
+	"tinyxml.h"
+	<ctype.h>
+	<stddef.h>
+	<windows.h>
+
+1173213895 source:d:\c++\projects\lol4\lol4edit\lol4edit.cpp
+	<Ogre.h>
+	<OgreFrameListener.h>
+	<OgreEventListeners.h>
+	<OgreKeyEvent.h>
+	<OgreTextAreaOverlayElement.h>
+	<OgreFontManager.h>
+	<vector>
+	<OgreNewt.h>
+	"tinyxml.h"
+	<OgreNoMemoryMacros.h>
+	<CEGUI/CEGUIImageset.h>
+	<CEGUI/CEGUISystem.h>
+	<CEGUI/CEGUILogger.h>
+	<CEGUI/CEGUISchemeManager.h>
+	<CEGUI/CEGUIWindowManager.h>
+	<CEGUI/CEGUIWindow.h>
+	"OgreCEGUIRenderer.h"
+	"OgreCEGUIResourceProvider.h"
+	<CEGUI/elements/CEGUIPushButton.h>
+	<OgreMemoryMacros.h>
+	"FwDec.h"
+	"EditorApp.h"
+	<locale.h>
+	"windows.h"
+
+1165507334 d:\ogre\ogresdk\include\ogre.h
+	"OgrePrerequisites.h"
+	"OgreAnimation.h"
+	"OgreAnimationState.h"
+	"OgreAnimationTrack.h"
+	"OgreAny.h"
+	"OgreArchive.h"
+	"OgreArchiveManager.h"
+	"OgreAxisAlignedBox.h"
+	"OgreBillboardChain.h"
+	"OgreBillboardSet.h"
+	"OgreBone.h"
+	"OgreCamera.h"
+	"OgreConfigFile.h"
+	"OgreControllerManager.h"
+	"OgreDataStream.h"
+	"OgreEntity.h"
+	"OgreException.h"
+	"OgreFrustum.h"
+	"OgreGpuProgram.h"
+	"OgreGpuProgramManager.h"
+	"OgreHardwareBufferManager.h"
+	"OgreHardwareIndexBuffer.h"
+	"OgreHardwarePixelBuffer.h"
+	"OgreHardwareOcclusionQuery.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreHardwarePixelBuffer.h"
+	"OgreHighLevelGpuProgram.h"
+	"OgreHighLevelGpuProgramManager.h"
+	"OgreKeyFrame.h"
+	"OgreLight.h"
+	"OgreLogManager.h"
+	"OgreManualObject.h"
+	"OgreMaterial.h"
+	"OgreMaterialManager.h"
+	"OgreMaterialSerializer.h"
+	"OgreMath.h"
+	"OgreMatrix3.h"
+	"OgreMatrix4.h"
+	"OgreMesh.h"
+	"OgreMeshManager.h"
+	"OgreMeshSerializer.h"
+	"OgreOverlay.h"
+	"OgreOverlayContainer.h"
+	"OgreOverlayElement.h"
+	"OgreOverlayManager.h"
+	"OgreParticleAffector.h"
+	"OgreParticleEmitter.h"
+	"OgreParticleSystemManager.h"
+	"OgrePass.h"
+	"OgrePatchMesh.h"
+	"OgrePatchSurface.h"
+	"OgreProfiler.h"
+	"OgreRadixSort.h"
+	"OgreRenderQueueInvocation.h"
+	"OgreRenderQueueListener.h"
+	"OgreRenderSystem.h"
+	"OgreRenderTargetListener.h"
+	"OgreRenderTexture.h"
+	"OgreRenderWindow.h"
+	"OgreResourceBackgroundQueue.h"
+	"OgreResourceGroupManager.h"
+	"OgreRibbonTrail.h"
+	"OgreRoot.h"
+	"OgreSceneManager.h"
+	"OgreSceneManagerEnumerator.h"
+	"OgreSceneNode.h"
+	"OgreSimpleRenderable.h"
+	"OgreSkeleton.h"
+	"OgreSkeletonInstance.h"
+	"OgreSkeletonManager.h"
+	"OgreSkeletonSerializer.h"
+	"OgreStaticGeometry.h"
+	"OgreString.h"
+	"OgreStringConverter.h"
+	"OgreStringVector.h"
+	"OgreSubEntity.h"
+	"OgreSubMesh.h"
+	"OgreTechnique.h"
+	"OgreTextureManager.h"
+	"OgreTextureUnitState.h"
+	"OgreUserDefinedObject.h"
+	"OgreVector2.h"
+	"OgreViewport.h"
+	"OgreCompositor.h"
+	"OgreCompositorManager.h"
+	"OgreCompositorChain.h"
+	"OgreCompositorInstance.h"
+	"OgreCompositionTechnique.h"
+	"OgreCompositionPass.h"
+	"OgreCompositionTargetPass.h"
+	"OgreWindowEventUtilities.h"
+	"OgreShadowCameraSetup.h"
+	"OgreShadowCameraSetupFocused.h"
+	"OgreShadowCameraSetupLiSPSM.h"
+	"OgreShadowCameraSetupPlaneOptimal.h"
+
+1186674100 d:\ogre\ogresdk\include\ogreprerequisites.h
+	"OgrePlatform.h"
+	"OgreMemoryManager.h"
+
+1187598924 d:\ogre\ogresdk\include\ogreplatform.h
+	"OgreConfig.h"
+	<_mingw.h>
+	"config.h"
+
+1178441434 d:\ogre\ogresdk\include\ogreconfig.h
+	"config.h"
+
+1173002944 d:\ogre\ogresdk\include\ogrestdheaders.h
+	<cassert>
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	<cstring>
+	<cstdarg>
+	<cmath>
+	<vector>
+	<map>
+	<string>
+	<set>
+	<list>
+	<deque>
+	<queue>
+	<bitset>
+	<ext/hash_map>
+	<ext/hash_set>
+	<hash_set>
+	<hash_map>
+	<algorithm>
+	<functional>
+	<limits>
+	<fstream>
+	<iostream>
+	<iomanip>
+	<sstream>
+	<sys/types.h>
+	<sys/stat.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<unistd.h>
+	<sys/param.h>
+	<CoreFoundation/CoreFoundation.h>
+	<boost/thread/recursive_mutex.hpp>
+
+1156321114 d:\ogre\ogresdk\include\ogrememorymanager.h
+	"OgrePlatform.h"
+	"OgreStdHeaders.h"
+	"OgreMemoryMacros.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrememorymacros.h
+
+1173002942 d:\ogre\ogresdk\include\ogreanimation.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreIteratorWrappers.h"
+	"OgreAnimable.h"
+	"OgreAnimationTrack.h"
+
+1178441438 d:\ogre\ogresdk\include\ogrestring.h
+	"OgrePrerequisites.h"
+	<ext/hash_map>
+
+1186674100 d:\ogre\ogresdk\include\ogreiteratorwrappers.h
+	"OgrePrerequisites.h"
+
+1166464152 d:\ogre\ogresdk\include\ogreanimable.h
+	"OgrePrerequisites.h"
+	"OgreVector2.h"
+	"OgreVector3.h"
+	"OgreVector4.h"
+	"OgreQuaternion.h"
+	"OgreColourValue.h"
+	"OgreSharedPtr.h"
+	"OgreStringVector.h"
+	"OgreException.h"
+	"OgreAny.h"
+
+1166464152 d:\ogre\ogresdk\include\ogrevector2.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+
+1168603878 d:\ogre\ogresdk\include\ogremath.h
+	"OgrePrerequisites.h"
+
+1181417300 d:\ogre\ogresdk\include\ogrevector3.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+	"OgreQuaternion.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrequaternion.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+
+1166464152 d:\ogre\ogresdk\include\ogrevector4.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1171020224 d:\ogre\ogresdk\include\ogrecolourvalue.h
+	"OgrePrerequisites.h"
+
+1186674102 d:\ogre\ogresdk\include\ogresharedptr.h
+	"OgrePrerequisites.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrestringvector.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSharedPtr.h"
+
+1186674100 d:\ogre\ogresdk\include\ogreexception.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	<exception>
+
+1156321112 d:\ogre\ogresdk\include\ogreany.h
+	"OgrePrerequisites.h"
+	"OgreException.h"
+	"OgreString.h"
+	<algorithm>
+	<typeinfo>
+
+1166292396 d:\ogre\ogresdk\include\ogreanimationtrack.h
+	"OgrePrerequisites.h"
+	"OgreSimpleSpline.h"
+	"OgreRotationalSpline.h"
+	"OgreKeyFrame.h"
+	"OgreAnimable.h"
+	"OgrePose.h"
+
+1156321116 d:\ogre\ogresdk\include\ogresimplespline.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreMatrix4.h"
+
+1173002944 d:\ogre\ogresdk\include\ogrematrix4.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreMatrix3.h"
+	"OgreVector4.h"
+	"OgrePlane.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrematrix3.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1186674100 d:\ogre\ogresdk\include\ogreplane.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrerotationalspline.h
+	"OgrePrerequisites.h"
+	"OgreQuaternion.h"
+
+1158532584 d:\ogre\ogresdk\include\ogrekeyframe.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreQuaternion.h"
+	"OgreAny.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreIteratorWrappers.h"
+
+1171187360 d:\ogre\ogresdk\include\ogrehardwarevertexbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+	"OgreColourValue.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrehardwarebuffer.h
+	"OgrePrerequisites.h"
+
+1173002944 d:\ogre\ogresdk\include\ogrepose.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreVector3.h"
+	"OgreIteratorWrappers.h"
+
+1174819438 d:\ogre\ogresdk\include\ogreanimationstate.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreController.h"
+	"OgreIteratorWrappers.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrecontroller.h
+	"OgrePrerequisites.h"
+	"OgreSharedPtr.h"
+
+1168112408 d:\ogre\ogresdk\include\ogrearchive.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreDataStream.h"
+	"OgreSharedPtr.h"
+	"OgreStringVector.h"
+
+1156321114 d:\ogre\ogresdk\include\ogredatastream.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSharedPtr.h"
+	<istream>
+
+1156321112 d:\ogre\ogresdk\include\ogrearchivemanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+
+1178441436 d:\ogre\ogresdk\include\ogreresourcemanager.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreResourceGroupManager.h"
+	"OgreIteratorWrappers.h"
+	"OgreCommon.h"
+	"OgreDataStream.h"
+	"OgreStringVector.h"
+	"OgreScriptLoader.h"
+
+1186674100 d:\ogre\ogresdk\include\ogreresource.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSharedPtr.h"
+	"OgreStringInterface.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrestringinterface.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreCommon.h"
+
+1184144078 d:\ogre\ogresdk\include\ogrecommon.h
+	"OgreString.h"
+	<utility>
+	<vector>
+	<map>
+
+1168112408 d:\ogre\ogresdk\include\ogreresourcegroupmanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreCommon.h"
+	"OgreDataStream.h"
+	"OgreResource.h"
+	"OgreArchive.h"
+	"OgreIteratorWrappers.h"
+
+1178441438 d:\ogre\ogresdk\include\ogresingleton.h
+	"OgrePrerequisites.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrescriptloader.h
+	"OgrePrerequisites.h"
+	"OgreDataStream.h"
+	"OgreStringVector.h"
+
+1187598924 d:\ogre\ogresdk\include\ogreaxisalignedbox.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreMatrix4.h"
+
+1156321112 d:\ogre\ogresdk\include\ogrebillboardchain.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+
+1169634246 d:\ogre\ogresdk\include\ogremovableobject.h
+	"OgrePrerequisites.h"
+	"OgreRenderQueue.h"
+	"OgreAxisAlignedBox.h"
+	"OgreSphere.h"
+	"OgreShadowCaster.h"
+	"OgreFactoryObj.h"
+	"OgreAnimable.h"
+	"OgreAny.h"
+	"OgreUserDefinedObject.h"
+
+1186674100 d:\ogre\ogresdk\include\ogrerenderqueue.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+
+1156321116 d:\ogre\ogresdk\include\ogresphere.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1169634246 d:\ogre\ogresdk\include\ogreshadowcaster.h
+	"OgrePrerequisites.h"
+	"OgreRenderable.h"
+
+1184144084 d:\ogre\ogresdk\include\ogrerenderable.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreRenderOperation.h"
+	"OgreMatrix4.h"
+	"OgreMaterial.h"
+	"OgrePlane.h"
+	"OgreGpuProgram.h"
+	"OgreVector4.h"
+	"OgreException.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrerenderoperation.h
+	"OgrePrerequisites.h"
+	"OgreVertexIndexData.h"
+
+1171187362 d:\ogre\ogresdk\include\ogrevertexindexdata.h
+	"OgrePrerequisites.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreHardwareIndexBuffer.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrehardwareindexbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+
+1168705890 d:\ogre\ogresdk\include\ogrematerial.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreIteratorWrappers.h"
+	"OgreCommon.h"
+	"OgreColourValue.h"
+	"OgreBlendMode.h"
+
+1156321112 d:\ogre\ogresdk\include\ogreblendmode.h
+	"OgrePrerequisites.h"
+	"OgreColourValue.h"
+
+1184144080 d:\ogre\ogresdk\include\ogregpuprogram.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreSharedPtr.h"
+	"OgreIteratorWrappers.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrefactoryobj.h
+	"OgrePrerequisites.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreuserdefinedobject.h
+	"OgrePrerequisites.h"
+
+1174819438 d:\ogre\ogresdk\include\ogrebillboardset.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreRadixSort.h"
+	"OgreCommon.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreradixsort.h
+	"OgrePrerequisites.h"
+
+1156321112 d:\ogre\ogresdk\include\ogrebone.h
+	"OgrePrerequisites.h"
+	"OgreNode.h"
+
+1186674100 d:\ogre\ogresdk\include\ogrenode.h
+	"OgrePrerequisites.h"
+	"OgreMatrix3.h"
+	"OgreMatrix4.h"
+	"OgreQuaternion.h"
+	"OgreString.h"
+	"OgreRenderable.h"
+	"OgreIteratorWrappers.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrecamera.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreMovableObject.h"
+	"OgreMatrix4.h"
+	"OgreVector3.h"
+	"OgrePlane.h"
+	"OgreQuaternion.h"
+	"OgreCommon.h"
+	"OgreFrustum.h"
+	"OgreRay.h"
+
+1165675044 d:\ogre\ogresdk\include\ogrefrustum.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreAxisAlignedBox.h"
+	"OgreVertexIndexData.h"
+	"OgreMovablePlane.h"
+
+1166464152 d:\ogre\ogresdk\include\ogremovableplane.h
+	"OgrePrerequisites.h"
+	"OgrePlane.h"
+	"OgreMovableObject.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreray.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgrePlaneBoundedVolume.h"
+
+1171187362 d:\ogre\ogresdk\include\ogreplaneboundedvolume.h
+	"OgrePrerequisites.h"
+	"OgreAxisAlignedBox.h"
+	"OgreSphere.h"
+	"OgreMath.h"
+	"OgrePlane.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreconfigfile.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreStringVector.h"
+	"OgreIteratorWrappers.h"
+	"OgreDataStream.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrecontrollermanager.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreSingleton.h"
+	"OgreController.h"
+	"OgrePredefinedControllers.h"
+	"OgreTextureUnitState.h"
+	"OgreSharedPtr.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrepredefinedcontrollers.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreController.h"
+	"OgreFrameListener.h"
+	"OgreGpuProgram.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreframelistener.h
+	"OgrePrerequisites.h"
+
+1186674102 d:\ogre\ogresdk\include\ogretextureunitstate.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreBlendMode.h"
+	"OgreMatrix4.h"
+	"OgreIteratorWrappers.h"
+	"OgreString.h"
+	"OgreTexture.h"
+
+1181417300 d:\ogre\ogresdk\include\ogretexture.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreResource.h"
+	"OgreImage.h"
+
+1157064474 d:\ogre\ogresdk\include\ogreimage.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgrePixelFormat.h"
+	"OgreDataStream.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrepixelformat.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+
+1173002944 d:\ogre\ogresdk\include\ogreentity.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreString.h"
+	"OgreMovableObject.h"
+	"OgreQuaternion.h"
+	"OgreVector3.h"
+	"OgreHardwareBufferManager.h"
+	"OgreMesh.h"
+
+1159139402 d:\ogre\ogresdk\include\ogrehardwarebuffermanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreHardwareIndexBuffer.h"
+
+1159031360 d:\ogre\ogresdk\include\ogremesh.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreVertexIndexData.h"
+	"OgreAxisAlignedBox.h"
+	"OgreVertexBoneAssignment.h"
+	"OgreIteratorWrappers.h"
+	"OgreProgressiveMesh.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreSkeleton.h"
+	"OgreAnimationTrack.h"
+	"OgrePose.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrevertexboneassignment.h
+	"OgrePrerequisites.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreprogressivemesh.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreHardwareIndexBuffer.h"
+	"OgreRenderOperation.h"
+
+1163778328 d:\ogre\ogresdk\include\ogreskeleton.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreQuaternion.h"
+	"OgreVector3.h"
+	"OgreIteratorWrappers.h"
+	"OgreStringVector.h"
+
+1107535676 d:\ogre\ogresdk\include\ogreeventprocessor.h
+	<list>
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreFrameListener.h"
+	"OgreMouseTarget.h"
+	"OgreKeyTarget.h"
+	"OgreMouseMotionTarget.h"
+
+1111859066 d:\ogre\ogresdk\include\ogremousetarget.h
+	"OgrePrerequisites.h"
+	"OgrePositionTarget.h"
+
+1136392060 d:\ogre\ogresdk\include\ogrepositiontarget.h
+	"OgrePrerequisites.h"
+	"OgreEventTarget.h"
+
+1136392060 d:\ogre\ogresdk\include\ogreeventtarget.h
+	"OgrePrerequisites.h"
+
+1111859066 d:\ogre\ogresdk\include\ogrekeytarget.h
+	"OgrePrerequisites.h"
+	"OgreEventTarget.h"
+
+1111859066 d:\ogre\ogresdk\include\ogremousemotiontarget.h
+	"OgrePrerequisites.h"
+	"OgrePositionTarget.h"
+
+1160325244 d:\ogre\ogresdk\include\ogregpuprogrammanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreException.h"
+	"OgreGpuProgram.h"
+	"OgreSingleton.h"
+
+1156321114 d:\ogre\ogresdk\include\ogrehardwarepixelbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+	"OgrePixelFormat.h"
+	"OgreImage.h"
+
+1164557240 d:\ogre\ogresdk\include\ogrehardwareocclusionquery.h
+	"OgrePrerequisites.h"
+
+1168534044 d:\ogre\ogresdk\include\ogrehighlevelgpuprogram.h
+	"OgrePrerequisites.h"
+	"OgreGpuProgram.h"
+
+1178441436 d:\ogre\ogresdk\include\ogrehighlevelgpuprogrammanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+	"OgreException.h"
+	"OgreHighLevelGpuProgram.h"
+
+1130770680 d:\ogre\ogresdk\include\ogreinput.h
+	"OgrePrerequisites.h"
+
+1184144082 d:\ogre\ogresdk\include\ogrelight.h
+	"OgrePrerequisites.h"
+	"OgreColourValue.h"
+	"OgreVector3.h"
+	"OgreVector4.h"
+	"OgreString.h"
+	"OgreMovableObject.h"
+	"OgrePlaneBoundedVolume.h"
+	"OgreShadowCameraSetup.h"
+
+1163442824 d:\ogre\ogresdk\include\ogrelogmanager.h
+	"OgrePrerequisites.h"
+	"OgreLog.h"
+	"OgreSingleton.h"
+	"OgreString.h"
+
+1163442824 d:\ogre\ogresdk\include\ogrelog.h
+	"OgrePrerequisites.h"
+
+1174819440 d:\ogre\ogresdk\include\ogremanualobject.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreResourceGroupManager.h"
+
+1161122430 d:\ogre\ogresdk\include\ogrematerialmanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreResourceManager.h"
+	"OgreMaterial.h"
+	"OgreStringVector.h"
+	"OgreMaterialSerializer.h"
+	"OgreNoMemoryMacros.h"
+	<boost/thread/tss.hpp>
+	"OgreMemoryMacros.h"
+
+1168534044 d:\ogre\ogresdk\include\ogrematerialserializer.h
+	"OgrePrerequisites.h"
+	"OgreMaterial.h"
+	"OgreBlendMode.h"
+	"OgreTextureUnitState.h"
+	"OgreGpuProgram.h"
+	"OgreStringVector.h"
+
+1167935310 d:\ogre\ogresdk\include\ogremeshmanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+	"OgreVector3.h"
+	"OgreHardwareBuffer.h"
+	"OgreMesh.h"
+	"OgrePatchMesh.h"
+
+1159139402 d:\ogre\ogresdk\include\ogrepatchmesh.h
+	"OgrePrerequisites.h"
+	"OgreMesh.h"
+	"OgrePatchSurface.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrepatchsurface.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreString.h"
+	"OgreRenderOperation.h"
+	"OgreAxisAlignedBox.h"
+
+1156321114 d:\ogre\ogresdk\include\ogremeshserializer.h
+	"OgrePrerequisites.h"
+	"OgreMeshSerializerImpl.h"
+	"OgreSerializer.h"
+
+1167848640 d:\ogre\ogresdk\include\ogremeshserializerimpl.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSerializer.h"
+	"OgreMaterial.h"
+	"OgreMesh.h"
+	"OgreEdgeListBuilder.h"
+
+1166464152 d:\ogre\ogresdk\include\ogreserializer.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreDataStream.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreedgelistbuilder.h
+	"OgrePrerequisites.h"
+	"OgreVector4.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreRenderOperation.h"
+	"OgreAlignedAllocator.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreoverlay.h
+	"OgrePrerequisites.h"
+	"OgreSceneNode.h"
+	"OgreIteratorWrappers.h"
+	"OgreMatrix4.h"
+
+1186674102 d:\ogre\ogresdk\include\ogrescenenode.h
+	"OgrePrerequisites.h"
+	"OgreNode.h"
+	"OgreIteratorWrappers.h"
+	"OgreAxisAlignedBox.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreoverlaycontainer.h
+	"OgrePrerequisites.h"
+	"OgreOverlayElement.h"
+	"OgreIteratorWrappers.h"
+
+1173002944 d:\ogre\ogresdk\include\ogreoverlayelement.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreRenderable.h"
+	"OgreUTFString.h"
+	"OgreStringInterface.h"
+	"OgreOverlayElementCommands.h"
+	"OgreColourValue.h"
+	"OgreRectangle.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreoverlayelementcommands.h
+	"OgrePrerequisites.h"
+	"OgreStringInterface.h"
+
+1164557240 d:\ogre\ogresdk\include\ogrerectangle.h
+	"OgrePrerequisites.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreoverlaymanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreStringVector.h"
+	"OgreOverlay.h"
+	"OgreScriptLoader.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreparticleaffector.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreStringInterface.h"
+
+1160867996 d:\ogre\ogresdk\include\ogreparticleemitter.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreVector3.h"
+	"OgreColourValue.h"
+	"OgreStringInterface.h"
+	"OgreParticleEmitterCommands.h"
+	"OgreParticle.h"
+
+1159468430 d:\ogre\ogresdk\include\ogreparticleemittercommands.h
+	"OgrePrerequisites.h"
+	"OgreStringInterface.h"
+
+1160867996 d:\ogre\ogresdk\include\ogreparticle.h
+	"OgrePrerequisites.h"
+	"OgreBillboard.h"
+
+1156321112 d:\ogre\ogresdk\include\ogrebillboard.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreColourValue.h"
+	"OgreCommon.h"
+
+1168187660 d:\ogre\ogresdk\include\ogreparticlesystemmanager.h
+	"OgrePrerequisites.h"
+	"OgreParticleSystem.h"
+	"OgreFrameListener.h"
+	"OgreSingleton.h"
+	"OgreIteratorWrappers.h"
+	"OgreScriptLoader.h"
+	"OgreResourceGroupManager.h"
+
+1159468430 d:\ogre\ogresdk\include\ogreparticlesystem.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreString.h"
+	"OgreParticleIterator.h"
+	"OgreStringInterface.h"
+	"OgreMovableObject.h"
+	"OgreRadixSort.h"
+	"OgreController.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreparticleiterator.h
+	"OgrePrerequisites.h"
+
+1184144084 d:\ogre\ogresdk\include\ogrepass.h
+	"OgrePrerequisites.h"
+	"OgreGpuProgram.h"
+	"OgreColourValue.h"
+	"OgreBlendMode.h"
+	"OgreCommon.h"
+	"OgreLight.h"
+	"OgreTextureUnitState.h"
+
+1136753674 d:\ogre\ogresdk\include\ogreplatformmanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreprofiler.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreString.h"
+	"OgreOverlay.h"
+
+1173002944 d:\ogre\ogresdk\include\ogrerenderqueueinvocation.h
+	"OgrePrerequisites.h"
+	"OgreRenderQueueSortingGrouping.h"
+	"OgreIteratorWrappers.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrerenderqueuesortinggrouping.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreMaterial.h"
+	"OgreTechnique.h"
+	"OgrePass.h"
+	"OgreRadixSort.h"
+
+1168705890 d:\ogre\ogresdk\include\ogretechnique.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreBlendMode.h"
+	"OgreCommon.h"
+	"OgrePass.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrerenderqueuelistener.h
+	"OgrePrerequisites.h"
+	"OgreRenderQueue.h"
+
+1186674100 d:\ogre\ogresdk\include\ogrerendersystem.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreTextureUnitState.h"
+	"OgreCommon.h"
+	"OgreRenderOperation.h"
+	"OgreRenderSystemCapabilities.h"
+	"OgreRenderTarget.h"
+	"OgreRenderTexture.h"
+	"OgreFrameListener.h"
+	"OgreConfigOptionMap.h"
+	"OgreGpuProgram.h"
+	"OgrePlane.h"
+	"OgreIteratorWrappers.h"
+
+1181417300 d:\ogre\ogresdk\include\ogrerendersystemcapabilities.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+
+1173002944 d:\ogre\ogresdk\include\ogrerendertarget.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreTextureManager.h"
+	"OgreViewport.h"
+	"OgreTimer.h"
+
+1181417300 d:\ogre\ogresdk\include\ogretexturemanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreTexture.h"
+	"OgreSingleton.h"
+
+1173002944 d:\ogre\ogresdk\include\ogreviewport.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreColourValue.h"
+
+1164279134 d:\ogre\ogresdk\include\ogretimer.h
+	"OgrePrerequisites.h"
+	"OgrePlatform.h"
+	"WIN32/OgreTimerImp.h"
+	"GLX/OgreTimerImp.h"
+	"OSX/OgreTimerImp.h"
+
+1186674100 d:\ogre\ogresdk\include\ogrerendertexture.h
+	"OgrePrerequisites.h"
+	"OgreRenderTarget.h"
+
+1156321114 d:\ogre\ogresdk\include\ogreconfigoptionmap.h
+	"OgrePrerequisites.h"
+	"OgreStringVector.h"
+	"OgreString.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrerendertargetlistener.h
+	"OgrePrerequisites.h"
+
+1181417300 d:\ogre\ogresdk\include\ogrerenderwindow.h
+	"OgrePrerequisites.h"
+	"OgreRenderTarget.h"
+
+1160238394 d:\ogre\ogresdk\include\ogreribbontrail.h
+	"OgrePrerequisites.h"
+	"OgreBillboardChain.h"
+	"OgreNode.h"
+	"OgreIteratorWrappers.h"
+	"OgreFrameListener.h"
+	"OgreControllerManager.h"
+
+1174819440 d:\ogre\ogresdk\include\ogreroot.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreString.h"
+	"OgreSceneManagerEnumerator.h"
+	"OgreResourceGroupManager.h"
+	<exception>
+
+1156321116 d:\ogre\ogresdk\include\ogrescenemanagerenumerator.h
+	"OgrePrerequisites.h"
+	"OgreSceneManager.h"
+	"OgreSingleton.h"
+	"OgreIteratorWrappers.h"
+
+1184144088 d:\ogre\ogresdk\include\ogrescenemanager.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSceneNode.h"
+	"OgrePlane.h"
+	"OgreQuaternion.h"
+	"OgreColourValue.h"
+	"OgreCommon.h"
+	"OgreSceneQuery.h"
+	"OgreAutoParamDataSource.h"
+	"OgreAnimationState.h"
+	"OgreRenderQueue.h"
+	"OgreRenderQueueSortingGrouping.h"
+	"OgreRectangle2D.h"
+	"OgrePixelFormat.h"
+	"OgreResourceGroupManager.h"
+	"OgreTexture.h"
+	"OgreShadowCameraSetup.h"
+	"OgreShadowTextureManager.h"
+	"OgreCamera.h"
+	"OgreInstancedGeometry.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrescenequery.h
+	"OgrePrerequisites.h"
+	"OgreAxisAlignedBox.h"
+	"OgreSphere.h"
+	"OgreRay.h"
+	"OgreRenderOperation.h"
+	"OgrePlaneBoundedVolume.h"
+
+1184144076 d:\ogre\ogresdk\include\ogreautoparamdatasource.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreMatrix4.h"
+	"OgreVector4.h"
+	"OgreLight.h"
+	"OgreColourValue.h"
+
+1156321116 d:\ogre\ogresdk\include\ogrerectangle2d.h
+	"OgrePrerequisites.h"
+	"OgreSimpleRenderable.h"
+
+1156321116 d:\ogre\ogresdk\include\ogresimplerenderable.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreAxisAlignedBox.h"
+	"OgreMaterial.h"
+
+1168012076 d:\ogre\ogresdk\include\ogreskeletoninstance.h
+	"OgrePrerequisites.h"
+	"OgreSkeleton.h"
+
+1156321116 d:\ogre\ogresdk\include\ogreskeletonmanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+
+1186674102 d:\ogre\ogresdk\include\ogreskeletonserializer.h
+	"OgrePrerequisites.h"
+	"OgreSkeleton.h"
+	"OgreSerializer.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrestaticgeometry.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrestringconverter.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+	"OgreString.h"
+	"OgreStringVector.h"
+
+1167848640 d:\ogre\ogresdk\include\ogresubentity.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreRenderable.h"
+	"OgreHardwareBufferManager.h"
+
+1167848640 d:\ogre\ogresdk\include\ogresubmesh.h
+	"OgrePrerequisites.h"
+	"OgreVertexIndexData.h"
+	"OgreMaterial.h"
+	"OgreRenderOperation.h"
+	"OgreVertexBoneAssignment.h"
+	"OgreProgressiveMesh.h"
+	"OgreAnimationTrack.h"
+
+1159139402 d:\ogre\ogresdk\include\ogrecompositor.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreResource.h"
+
+1161122430 d:\ogre\ogresdk\include\ogrecompositormanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreCompositor.h"
+	"OgreRectangle2D.h"
+	"OgreCompositorSerializer.h"
+	"OgreNoMemoryMacros.h"
+	<boost/thread/tss.hpp>
+	"OgreMemoryMacros.h"
+
+1156321112 d:\ogre\ogresdk\include\ogrecompositorserializer.h
+	"OgrePrerequisites.h"
+	"OgreDataStream.h"
+
+1187598924 d:\ogre\ogresdk\include\ogrecompositorchain.h
+	"OgrePrerequisites.h"
+	"OgreRenderTargetListener.h"
+	"OgreRenderQueueListener.h"
+	"OgreCompositorInstance.h"
+	"OgreCompositor.h"
+
+1187598924 d:\ogre\ogresdk\include\ogrecompositorinstance.h
+	"OgrePrerequisites.h"
+	"OgreMaterial.h"
+	"OgreTexture.h"
+	"OgreRenderQueue.h"
+
+1156321112 d:\ogre\ogresdk\include\ogrecompositiontechnique.h
+	"OgrePrerequisites.h"
+	"OgrePixelFormat.h"
+	"OgreIteratorWrappers.h"
+
+1156321112 d:\ogre\ogresdk\include\ogrecompositionpass.h
+	"OgrePrerequisites.h"
+	"OgreMaterial.h"
+	"OgreRenderSystem.h"
+	"OgreRenderQueue.h"
+
+1187598924 d:\ogre\ogresdk\include\ogrecompositiontargetpass.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+
+1136395660 d:\ogre\ogresdk\include\ogreeventlisteners.h
+	"OgrePrerequisites.h"
+	"OgreMouseEvent.h"
+
+1107539306 d:\ogre\ogresdk\include\ogremouseevent.h
+	"OgrePrerequisites.h"
+	"OgreInputEvent.h"
+
+1150018748 d:\ogre\ogresdk\include\ogreinputevent.h
+	"OgrePrerequisites.h"
+
+1107539292 d:\ogre\ogresdk\include\ogrekeyevent.h
+	"OgrePrerequisites.h"
+	"OgreInputEvent.h"
+
+1173002944 d:\ogre\ogresdk\include\ogretextareaoverlayelement.h
+	"OgreOverlayElement.h"
+	"OgreFont.h"
+
+1173002944 d:\ogre\ogresdk\include\ogrefont.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreTexture.h"
+	"OgreMaterial.h"
+	"OgreCommon.h"
+
+1155988492 d:\ogre\ogresdk\include\ogrefontmanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreResourceManager.h"
+	"OgreFont.h"
+
+1182101728 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt.h
+	"OgreNewt_World.h"
+	"OgreNewt_Collision.h"
+	"OgreNewt_Body.h"
+	"OgreNewt_CollisionPrimitives.h"
+	"OgreNewt_TreeCollisionSerializer.h"
+	"OgreNewt_MaterialID.h"
+	"OgreNewt_MaterialPair.h"
+	"OgreNewt_ContactCallback.h"
+	"OgreNewt_Vehicle.h"
+	"OgreNewt_RayCast.h"
+	"OgreNewt_Joint.h"
+	"OgreNewt_BasicJoints.h"
+	"OgreNewt_Tools.h"
+	"OgreNewt_BodyIterator.h"
+	"OgreNewt_Debugger.h"
+	"OgreNewt_BasicFrameListener.h"
+
+1155276469 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_world.h
+	<Newton.h>
+	<Ogre.h>
+	"OgreNewt_Prerequisites.h"
+	"OgreNewt_MaterialID.h"
+	"boost/function.hpp"
+	"boost/bind.hpp"
+
+1148112938 d:\programme\newtonsdk\sdk\newton.h
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_prerequisites.h
+	<Ogre.h>
+
+1155276469 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_materialid.h
+	<Newton.h>
+	"OgreNewt_World.h"
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function.hpp
+	<boost/preprocessor/iterate.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/function/detail/prologue.hpp>
+	<boost/function/function0.hpp>
+	<boost/function/function1.hpp>
+	<boost/function/function2.hpp>
+	<boost/function/function3.hpp>
+	<boost/function/function4.hpp>
+	<boost/function/function5.hpp>
+	<boost/function/function6.hpp>
+	<boost/function/function7.hpp>
+	<boost/function/function8.hpp>
+	<boost/function/function9.hpp>
+	<boost/function/function10.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\iterate.hpp
+	<boost/preprocessor/iteration/iterate.hpp>
+
+1145317791 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\iteration\iterate.hpp
+	<boost/preprocessor/arithmetic/dec.hpp>
+	<boost/preprocessor/arithmetic/inc.hpp>
+	<boost/preprocessor/array/elem.hpp>
+	<boost/preprocessor/array/size.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/slot/slot.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\arithmetic\dec.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\config\config.hpp
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\arithmetic\inc.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\array\elem.hpp
+	<boost/preprocessor/array/data.hpp>
+	<boost/preprocessor/array/size.hpp>
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\array\data.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\tuple\elem.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\array\size.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\cat.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\slot\slot.hpp
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/slot/detail/def.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\slot\detail\def.hpp
+
+1145317625 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\detail\workaround.hpp
+
+1145317626 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\detail\prologue.hpp
+	<cassert>
+	<algorithm>
+	<boost/throw_exception.hpp>
+	<boost/config.hpp>
+	<boost/function/function_base.hpp>
+	<boost/mem_fn.hpp>
+	<boost/type_traits/is_integral.hpp>
+	<boost/preprocessor/enum.hpp>
+	<boost/preprocessor/enum_params.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/repeat.hpp>
+	<boost/preprocessor/inc.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\throw_exception.hpp
+	<boost/config.hpp>
+	<exception>
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\config.hpp
+	<boost/config/select_compiler_config.hpp>
+	<boost/config/select_stdlib_config.hpp>
+	<boost/config/select_platform_config.hpp>
+	<boost/config/suffix.hpp>
+
+1145317625 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\config\select_compiler_config.hpp
+
+1145317625 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\config\select_stdlib_config.hpp
+	<utility>
+
+1145317625 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\config\select_platform_config.hpp
+	<boost/config/posix_features.hpp>
+
+1145317625 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\config\posix_features.hpp
+	<unistd.h>
+
+1145317625 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\config\suffix.hpp
+	<limits.h>
+	<cstddef>
+	"boost/type.hpp"
+	"boost/non_type.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type.hpp
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function_base.hpp
+	<stdexcept>
+	<string>
+	<memory>
+	<new>
+	<typeinfo>
+	<boost/config.hpp>
+	<boost/assert.hpp>
+	<boost/type_traits/is_integral.hpp>
+	<boost/type_traits/composite_traits.hpp>
+	<boost/type_traits/is_stateless.hpp>
+	<boost/ref.hpp>
+	<boost/pending/ct_if.hpp>
+	<boost/detail/workaround.hpp>
+	"boost/utility/enable_if.hpp"
+	"boost/mpl/bool.hpp"
+	<boost/function_equal.hpp>
+	<cstring>
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\assert.hpp
+	<boost/current_function.hpp>
+	<assert.h>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_integral.hpp
+	"boost/config.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\bool_trait_def.hpp
+	<boost/type_traits/detail/template_arity_spec.hpp>
+	<boost/type_traits/integral_constant.hpp>
+	<boost/mpl/bool.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/config.hpp>
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\template_arity_spec.hpp
+	<boost/mpl/int.hpp>
+	<boost/mpl/aux_/template_arity_fwd.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/config/lambda.hpp>
+	<boost/mpl/aux_/config/overload_resolution.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\int.hpp
+	<boost/mpl/int_fwd.hpp>
+	<boost/mpl/aux_/integral_wrapper.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\int_fwd.hpp
+	<boost/mpl/aux_/adl_barrier.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\adl_barrier.hpp
+	<boost/mpl/aux_/config/adl.hpp>
+	<boost/mpl/aux_/config/gcc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\adl.hpp
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/intel.hpp>
+	<boost/mpl/aux_/config/gcc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\msvc.hpp
+	<boost/config.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\intel.hpp
+	<boost/config.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\gcc.hpp
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\workaround.hpp
+	<boost/detail/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\nttp_decl.hpp
+	<boost/mpl/aux_/config/nttp.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\nttp.hpp
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\integral_wrapper.hpp
+	<boost/mpl/integral_c_tag.hpp>
+	<boost/mpl/aux_/static_cast.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\integral_c_tag.hpp
+	<boost/mpl/aux_/adl_barrier.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\static_constant.hpp
+	<boost/config.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\static_cast.hpp
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\template_arity_fwd.hpp
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\preprocessor\params.hpp
+	<boost/mpl/aux_/config/preprocessor.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/comma_if.hpp>
+	<boost/preprocessor/repeat.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\preprocessor.hpp
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\comma_if.hpp
+	<boost/preprocessor/punctuation/comma_if.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\punctuation\comma_if.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/control/if.hpp>
+	<boost/preprocessor/facilities/empty.hpp>
+	<boost/preprocessor/punctuation/comma.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\control\if.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/control/iif.hpp>
+	<boost/preprocessor/logical/bool.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\control\iif.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\logical\bool.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\facilities\empty.hpp
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\punctuation\comma.hpp
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repeat.hpp
+	<boost/preprocessor/repetition/repeat.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\repeat.hpp
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/debug/error.hpp>
+	<boost/preprocessor/detail/auto_rec.hpp>
+	<boost/preprocessor/tuple/eat.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\debug\error.hpp
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/config/config.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\detail\auto_rec.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/detail/dmc/auto_rec.hpp>
+	<boost/preprocessor/control/iif.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\detail\dmc\auto_rec.hpp
+	<boost/preprocessor/control/iif.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\tuple\eat.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\inc.hpp
+	<boost/preprocessor/arithmetic/inc.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\lambda.hpp
+	<boost/mpl/aux_/config/ttp.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\ttp.hpp
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/gcc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\ctps.hpp
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/config.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\overload_resolution.hpp
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\integral_constant.hpp
+	<boost/config.hpp>
+	<boost/mpl/bool.hpp>
+	<boost/mpl/integral_c.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\bool.hpp
+	<boost/mpl/bool_fwd.hpp>
+	<boost/mpl/integral_c_tag.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\bool_fwd.hpp
+	<boost/mpl/aux_/adl_barrier.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\integral_c.hpp
+	<boost/mpl/integral_c_fwd.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/mpl/aux_/integral_wrapper.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\integral_c_fwd.hpp
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/mpl/aux_/adl_barrier.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\lambda_support.hpp
+	<boost/mpl/aux_/config/lambda.hpp>
+	<boost/mpl/int_fwd.hpp>
+	<boost/mpl/aux_/yes_no.hpp>
+	<boost/mpl/aux_/na_fwd.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/preprocessor/enum.hpp>
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/preprocessor/tuple/to_list.hpp>
+	<boost/preprocessor/list/for_each_i.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\yes_no.hpp
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/mpl/aux_/config/arrays.hpp>
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\config\arrays.hpp
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\na_fwd.hpp
+	<boost/mpl/aux_/adl_barrier.hpp>
+
+1145317685 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mpl\aux_\preprocessor\enum.hpp
+	<boost/mpl/aux_/config/preprocessor.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/comma_if.hpp>
+	<boost/preprocessor/repeat.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\tuple\to_list.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317791 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\list\for_each_i.hpp
+	<boost/preprocessor/arithmetic/inc.hpp>
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/list/adt.hpp>
+	<boost/preprocessor/repetition/for.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+	<boost/preprocessor/tuple/rem.hpp>
+
+1145317791 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\list\adt.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/detail/is_binary.hpp>
+	<boost/preprocessor/logical/compl.hpp>
+	<boost/preprocessor/tuple/eat.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\detail\is_binary.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/detail/check.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\detail\check.hpp
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/config/config.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\logical\compl.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\for.hpp
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/debug/error.hpp>
+	<boost/preprocessor/detail/auto_rec.hpp>
+	<boost/preprocessor/repetition/detail/edg/for.hpp>
+	<boost/preprocessor/repetition/detail/msvc/for.hpp>
+	<boost/preprocessor/repetition/detail/dmc/for.hpp>
+	<boost/preprocessor/repetition/detail/for.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\detail\edg\for.hpp
+	<boost/preprocessor/control/if.hpp>
+	<boost/preprocessor/tuple/eat.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\detail\msvc\for.hpp
+	<boost/preprocessor/control/if.hpp>
+	<boost/preprocessor/tuple/eat.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\detail\dmc\for.hpp
+	<boost/preprocessor/control/expr_iif.hpp>
+	<boost/preprocessor/control/iif.hpp>
+	<boost/preprocessor/logical/bool.hpp>
+	<boost/preprocessor/tuple/eat.hpp>
+
+1145317790 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\control\expr_iif.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\detail\for.hpp
+	<boost/preprocessor/control/expr_iif.hpp>
+	<boost/preprocessor/control/iif.hpp>
+	<boost/preprocessor/logical/bool.hpp>
+	<boost/preprocessor/tuple/eat.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\tuple\rem.hpp
+	<boost/preprocessor/config/config.hpp>
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\bool_trait_undef.hpp
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\composite_traits.hpp
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/is_enum.hpp"
+	"boost/type_traits/is_member_pointer.hpp"
+	"boost/type_traits/is_member_function_pointer.hpp"
+	"boost/type_traits/is_pointer.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_union.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_array.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/wrap.hpp"
+	<cstddef>
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\config.hpp
+	"boost/config.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\yes_no_type.hpp
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\wrap.hpp
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_enum.hpp
+	"boost/type_traits/add_reference.hpp"
+	"boost/type_traits/is_arithmetic.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_convertible.hpp"
+	"boost/type_traits/is_array.hpp"
+	<boost/type_traits/is_function.hpp>
+	"boost/type_traits/config.hpp"
+	<boost/type_traits/is_class.hpp>
+	<boost/type_traits/is_union.hpp>
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\add_reference.hpp
+	"boost/type_traits/is_reference.hpp"
+	"boost/detail/workaround.hpp"
+	"boost/config.hpp"
+	"boost/type_traits/detail/type_trait_def.hpp"
+	"boost/type_traits/detail/type_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_reference.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/wrap.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\type_trait_def.hpp
+	<boost/type_traits/detail/template_arity_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\type_trait_undef.hpp
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_arithmetic.hpp
+	"boost/type_traits/is_integral.hpp"
+	"boost/type_traits/is_float.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/config.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_float.hpp
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\ice_or.hpp
+	"boost/config.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_convertible.hpp
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/add_reference.hpp"
+	"boost/type_traits/ice.hpp"
+	"boost/type_traits/is_arithmetic.hpp"
+	"boost/type_traits/is_abstract.hpp"
+	"boost/type_traits/is_void.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\ice.hpp
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/type_traits/detail/ice_not.hpp"
+	"boost/type_traits/detail/ice_eq.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\ice_and.hpp
+	"boost/config.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\ice_not.hpp
+	"boost/config.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\ice_eq.hpp
+	"boost/config.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_abstract.hpp
+	<boost/static_assert.hpp>
+	<boost/type_traits/detail/yes_no_type.hpp>
+	<boost/type_traits/is_class.hpp>
+	"boost/type_traits/detail/ice_and.hpp"
+	<boost/type_traits/is_polymorphic.hpp>
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\static_assert.hpp
+	<boost/config.hpp>
+	<boost/detail/workaround.hpp>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_class.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/is_union.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/type_traits/detail/ice_not.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/is_scalar.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_void.hpp"
+	"boost/type_traits/is_function.hpp"
+	"boost/type_traits/remove_cv.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_union.hpp
+	"boost/type_traits/remove_cv.hpp"
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/intrinsics.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\remove_cv.hpp
+	"boost/type_traits/broken_compiler_spec.hpp"
+	"boost/type_traits/detail/cv_traits_impl.hpp"
+	"boost/config.hpp"
+	<cstddef>
+	"boost/type_traits/detail/type_trait_def.hpp"
+	"boost/type_traits/detail/type_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\broken_compiler_spec.hpp
+	"boost/mpl/aux_/lambda_support.hpp"
+	"boost/config.hpp"
+	"boost/type_traits/detail/type_trait_undef.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\cv_traits_impl.hpp
+	"boost/config.hpp"
+	"boost/detail/workaround.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\intrinsics.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/is_same.hpp"
+	<type_traits.h>
+	<msl_utility>
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_same.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_scalar.hpp
+	"boost/type_traits/is_arithmetic.hpp"
+	"boost/type_traits/is_enum.hpp"
+	"boost/type_traits/is_pointer.hpp"
+	"boost/type_traits/is_member_pointer.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/config.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_pointer.hpp
+	"boost/type_traits/is_member_pointer.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/type_traits/detail/ice_not.hpp"
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/detail/is_function_ptr_tester.hpp"
+	"boost/type_traits/detail/false_result.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_member_pointer.hpp
+	"boost/type_traits/config.hpp"
+	"boost/detail/workaround.hpp"
+	"boost/type_traits/is_member_function_pointer.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/detail/is_mem_fun_pointer_tester.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/false_result.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_member_function_pointer.hpp
+	"boost/type_traits/config.hpp"
+	"boost/detail/workaround.hpp"
+	"boost/type_traits/detail/is_mem_fun_pointer_impl.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/false_result.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/is_mem_fun_pointer_tester.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\is_mem_fun_pointer_impl.hpp
+	"boost/config.hpp"
+	"boost/preprocessor/iterate.hpp"
+	"boost/preprocessor/enum_params.hpp"
+	"boost/preprocessor/comma_if.hpp"
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\enum_params.hpp
+	<boost/preprocessor/repetition/enum_params.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\enum_params.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/punctuation/comma_if.hpp>
+	<boost/preprocessor/repetition/repeat.hpp>
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\false_result.hpp
+	"boost/config.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\is_mem_fun_pointer_tester.hpp
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/config.hpp"
+	"boost/preprocessor/iterate.hpp"
+	"boost/preprocessor/enum_params.hpp"
+	"boost/preprocessor/comma_if.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\is_function_ptr_tester.hpp
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/config.hpp"
+	"boost/preprocessor/iterate.hpp"
+	"boost/preprocessor/enum_params.hpp"
+	"boost/preprocessor/comma_if.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_void.hpp
+	"boost/config.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_function.hpp
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/detail/false_result.hpp"
+	"boost/config.hpp"
+	"boost/type_traits/detail/is_function_ptr_helper.hpp"
+	"boost/type_traits/detail/is_function_ptr_tester.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\detail\is_function_ptr_helper.hpp
+	"boost/type_traits/config.hpp"
+	"boost/preprocessor/iterate.hpp"
+	"boost/preprocessor/enum_params.hpp"
+	"boost/preprocessor/comma_if.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_polymorphic.hpp
+	<boost/type_traits/is_class.hpp>
+	<boost/type_traits/remove_cv.hpp>
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	<boost/detail/workaround.hpp>
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_stateless.hpp
+	"boost/type_traits/has_trivial_constructor.hpp"
+	"boost/type_traits/has_trivial_copy.hpp"
+	"boost/type_traits/has_trivial_destructor.hpp"
+	"boost/type_traits/is_class.hpp"
+	"boost/type_traits/is_empty.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/config.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\has_trivial_constructor.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/intrinsics.hpp"
+	"boost/type_traits/is_pod.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_pod.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/is_void.hpp"
+	"boost/type_traits/is_scalar.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/intrinsics.hpp"
+	<cstddef>
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\has_trivial_copy.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/intrinsics.hpp"
+	"boost/type_traits/is_volatile.hpp"
+	"boost/type_traits/is_pod.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/ice_not.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_volatile.hpp
+	"boost/config.hpp"
+	"boost/type_traits/detail/cv_traits_impl.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/detail/yes_no_type.hpp"
+	"boost/type_traits/detail/false_result.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\has_trivial_destructor.hpp
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/intrinsics.hpp"
+	"boost/type_traits/is_pod.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\type_traits\is_empty.hpp
+	"boost/type_traits/is_convertible.hpp"
+	"boost/type_traits/detail/ice_or.hpp"
+	"boost/type_traits/config.hpp"
+	"boost/type_traits/intrinsics.hpp"
+	"boost/type_traits/remove_cv.hpp"
+	"boost/type_traits/is_class.hpp"
+	"boost/type_traits/add_reference.hpp"
+	"boost/type_traits/is_reference.hpp"
+	"boost/type_traits/is_pointer.hpp"
+	"boost/type_traits/is_member_pointer.hpp"
+	"boost/type_traits/is_array.hpp"
+	"boost/type_traits/is_void.hpp"
+	"boost/type_traits/detail/ice_and.hpp"
+	"boost/type_traits/detail/ice_not.hpp"
+	"boost/type_traits/detail/bool_trait_def.hpp"
+	"boost/type_traits/detail/bool_trait_undef.hpp"
+
+1145317826 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\ref.hpp
+	<boost/config.hpp>
+	<boost/utility/addressof.hpp>
+	<boost/mpl/bool.hpp>
+	<boost/type.hpp>
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\utility\addressof.hpp
+	<boost/config.hpp>
+	<boost/detail/workaround.hpp>
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\pending\ct_if.hpp
+	<boost/config.hpp>
+	<boost/type_traits/integral_constant.hpp>
+
+1145317827 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\utility\enable_if.hpp
+	"boost/config.hpp"
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function_equal.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\mem_fn.hpp
+	<boost/config.hpp>
+	<boost/get_pointer.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_vw.hpp>
+	<boost/bind/mem_fn_vw.hpp>
+	<boost/bind/mem_fn_vw.hpp>
+	<boost/bind/mem_fn_vw.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_template.hpp>
+	<boost/bind/mem_fn_cc.hpp>
+	<boost/bind/mem_fn_cc.hpp>
+	<boost/bind/mem_fn_cc.hpp>
+	<boost/bind/mem_fn_cc.hpp>
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\get_pointer.hpp
+	<memory>
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\mem_fn_template.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\mem_fn_vw.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\mem_fn_cc.hpp
+
+1145317789 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\enum.hpp
+	<boost/preprocessor/repetition/enum.hpp>
+
+1145317801 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\preprocessor\repetition\enum.hpp
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/debug/error.hpp>
+	<boost/preprocessor/detail/auto_rec.hpp>
+	<boost/preprocessor/punctuation/comma_if.hpp>
+	<boost/preprocessor/repetition/repeat.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+	<boost/preprocessor/tuple/rem.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function0.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317626 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\detail\maybe_include.hpp
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+	<boost/function/function_template.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function_template.hpp
+	<boost/function/detail/prologue.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function1.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function2.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function3.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function4.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function5.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function6.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function7.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function8.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function9.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317627 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\function\function10.hpp
+	<boost/function/detail/maybe_include.hpp>
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind.hpp
+	<boost/config.hpp>
+	<boost/ref.hpp>
+	<boost/mem_fn.hpp>
+	<boost/type.hpp>
+	<boost/bind/arg.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/bind/bind_template.hpp>
+	<boost/bind/bind_template.hpp>
+	<boost/bind/bind_template.hpp>
+	<boost/bind/bind_cc.hpp>
+	<boost/bind/bind_cc.hpp>
+	<boost/bind/bind_cc.hpp>
+	<boost/bind/bind_cc.hpp>
+	<boost/bind/bind_mf_cc.hpp>
+	<boost/bind/bind_mf_cc.hpp>
+	<boost/bind/bind_mf_cc.hpp>
+	<boost/bind/bind_mf_cc.hpp>
+	<boost/bind/placeholders.hpp>
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\arg.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\bind_template.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\bind_cc.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\bind_mf_cc.hpp
+
+1145317624 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\boost\bind\placeholders.hpp
+	<boost/bind/arg.hpp>
+	<boost/config.hpp>
+
+1155276469 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_collision.h
+	<Newton.h>
+	"OgreNewt_World.h"
+
+1158295895 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_body.h
+	<Ogre.h>
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Collision.h"
+	"OgreNewt_MaterialID.h"
+	"boost/function.hpp"
+	"boost/bind.hpp"
+
+1182620342 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_collisionprimitives.h
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Collision.h"
+	"OgreNewt_TreeCollisionSerializer.h"
+
+1155276469 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_treecollisionserializer.h
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreSerializer.h"
+	"OgreString.h"
+
+1155276469 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_materialpair.h
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_ContactCallback.h"
+	"OgreNewt_MaterialID.h"
+
+1171855703 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_contactcallback.h
+	<Newton.h>
+	"OgreNewt_Body.h"
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_vehicle.h
+	<Newton.h>
+	"OgreNewt_Body.h"
+	"OgreNewt_Joint.h"
+	"OgreNewt_World.h"
+
+1155276469 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_joint.h
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Body.h"
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_raycast.h
+	<Ogre.h>
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Body.h"
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_basicjoints.h
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Body.h"
+	"OgreNewt_Joint.h"
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_tools.h
+	<Ogre.h>
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Collision.h"
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_bodyiterator.h
+	<Newton.h>
+	"OgreNewt_World.h"
+	"OgreNewt_Body.h"
+
+1156485274 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_debugger.h
+	<Ogre.h>
+	<Newton.h>
+	"OgreNewt_World.h"
+
+1171855703 d:\ogre\ogresdk\ogreaddons\ogrenewt\ogrenewt_main\inc\ogrenewt_basicframelistener.h
+	<Ogre.h>
+	<OgreNewt_World.h>
+	<OIS/OIS.h>
+
+1156321114 d:\ogre\ogresdk\include\ogrenomemorymacros.h
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiimageset.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIRect.h"
+	"CEGUIColourRect.h"
+	"CEGUIImagesetManager.h"
+	"CEGUIImage.h"
+	"CEGUIIteratorBase.h"
+	"CEGUIXMLSerializer.h"
+	<map>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguibase.h
+	<cassert>
+	"CEGUIConfig.h"
+	"CEGUIVersion.h"
+	<string>
+	"CEGUIForwardRefs.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiconfig.h
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguiversion.h
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiforwardrefs.h
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguistring.h
+	"CEGUIBase.h"
+	<string>
+	<string.h>
+	<stdexcept>
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguirect.h
+	"CEGUIBase.h"
+	"CEGUIVector.h"
+	"CEGUISize.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguivector.h
+	"CEGUIBase.h"
+	"CEGUISize.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguisize.h
+	"CEGUIBase.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguicolourrect.h
+	"CEGUIBase.h"
+	"CEGUIcolour.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguicolour.h
+	"CEGUIBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiimagesetmanager.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUIIteratorBase.h"
+	<map>
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguisingleton.h
+	"CEGUIBase.h"
+	<cassert>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiiteratorbase.h
+	"CEGUIBase.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiimage.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIRect.h"
+	"CEGUIColourRect.h"
+	"CEGUIVector.h"
+	"CEGUISize.h"
+	"CEGUIRenderer.h"
+	"CEGUIXMLSerializer.h"
+	<map>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguirenderer.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIRect.h"
+	"CEGUIColourRect.h"
+	"CEGUIEventSet.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguieventset.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIEvent.h"
+	"CEGUIIteratorBase.h"
+	<map>
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguievent.h
+	"CEGUIString.h"
+	"CEGUIBoundSlot.h"
+	"CEGUISubscriberSlot.h"
+	"CEGUIRefCounted.h"
+	<map>
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguieventargs.h
+	"CEGUIBase.h"
+
+1120640088 d:\ogre\ogresdk\include\cegui\ceguirefptr.h
+	"CEGUIBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguisystem.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUIRenderer.h"
+	"CEGUIMouseCursor.h"
+	"CEGUIInputEvent.h"
+	"CEGUIResourceProvider.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguimousecursor.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUIVector.h"
+	"CEGUIRect.h"
+	"CEGUIEventSet.h"
+	"CEGUIInputEvent.h"
+	"CEGUIUDim.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiinputevent.h
+	"CEGUIBase.h"
+	"CEGUIEventArgs.h"
+	"CEGUIString.h"
+	"CEGUIVector.h"
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguiudim.h
+	"CEGUIRect.h"
+	"CEGUIVector.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiresourceprovider.h
+	"CEGUIBase.h"
+	"CEGUIDataContainer.h"
+	"CEGUIString.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguidatacontainer.h
+	"CEGUIBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguilogger.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	<fstream>
+	<sstream>
+	<vector>
+	<utility>
+	"CEGUISingleton.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguischememanager.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUIIteratorBase.h"
+	<map>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiwindowmanager.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUILogger.h"
+	"CEGUIIteratorBase.h"
+	<map>
+	<vector>
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguiwindow.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIVector.h"
+	"CEGUIRect.h"
+	"CEGUISize.h"
+	"CEGUIEventSet.h"
+	"CEGUIPropertySet.h"
+	"CEGUISystem.h"
+	"CEGUIInputEvent.h"
+	"CEGUIWindowProperties.h"
+	"CEGUIUDim.h"
+	"CEGUIRenderCache.h"
+	"CEGUIWindowRenderer.h"
+	<vector>
+	<set>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguipropertyset.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIIteratorBase.h"
+	"CEGUIProperty.h"
+	<map>
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiproperty.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIXMLSerializer.h"
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguiwindowproperties.h
+	"CEGUIProperty.h"
+	"CEGUIXMLSerializer.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguirendercache.h
+	"CEGUIVector.h"
+	"CEGUIRect.h"
+	"CEGUIImage.h"
+	"CEGUIFont.h"
+	<vector>
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguifont.h
+	"CEGUIBase.h"
+	"CEGUIPropertySet.h"
+	"CEGUIString.h"
+	"CEGUIRect.h"
+	"CEGUIVector.h"
+	"CEGUIColourRect.h"
+	"CEGUIXMLSerializer.h"
+	"CEGUIImage.h"
+	<map>
+
+1187614194 d:\ogre\ogresdk\samples\include\ogreceguirenderer.h
+	<CEGUI/CEGUIBase.h>
+	<CEGUI/CEGUIRenderer.h>
+	<CEGUI/CEGUITexture.h>
+	<OgreRenderQueueListener.h>
+	<OgreSceneManagerEnumerator.h>
+	<OgreTextureUnitState.h>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguitexture.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+
+1187614194 d:\ogre\ogresdk\samples\include\ogreceguiresourceprovider.h
+	<CEGUI/CEGUIResourceProvider.h>
+	"OgreCEGUIRenderer.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguipushbutton.h
+	"CEGUIBase.h"
+	"elements/CEGUIButtonBase.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguibuttonbase.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+
+1128796662 d:\ogre\ogresdk\include\cegui\elements\ceguibuttonbaseproperties.h
+	"CEGUIProperty.h"
+
+1128796662 d:\ogre\ogresdk\include\cegui\elements\ceguipushbuttonproperties.h
+	"CEGUIProperty.h"
+
+1128796658 d:\ogre\ogresdk\include\cegui\ceguirenderableimage.h
+	"CEGUIBase.h"
+	"CEGUIRenderableElement.h"
+
+1128796658 d:\ogre\ogresdk\include\cegui\ceguirenderableelement.h
+	"CEGUIBase.h"
+	"CEGUISystem.h"
+	"CEGUIColourRect.h"
+	"CEGUIVector.h"
+	"CEGUIRenderCache.h"
+
+1163603605 d:\c++\projects\lol4\lol4edit\include\editfwdec.h
+
+1190141380 d:\c++\projects\lol4\lol4edit\include\editorapp.h
+	<Ogre.h>
+	<OgreFrameListener.h>
+	<vector>
+	<OgreNewt.h>
+	"tinyxml.h"
+	"gameObject.h"
+	"FwDec.h"
+	"StandardApplication.h"
+
+1189954837 d:\c++\projects\lol4\lol4edit\include\editframelistener.h
+	<Ogre.h>
+	<OgreFrameListener.h>
+	<OIS.h>
+	<OgreNewt.h>
+	"tinyxml.h"
+	"FwDec.h"
+	"defines.h"
+	"EditorApp.h"
+
+1163511622 d:\ogre\ogresdk\include\cegui\config.h
+
+1165526390 d:\ogre\ogresdk\include\ogreshadowcamerasetup.h
+	"OgrePrerequisites.h"
+	"OgreMovablePlane.h"
+	"OgreSharedPtr.h"
+
+1158965050 d:\ogre\ogresdk\include\ogrealignedallocator.h
+	"OgrePrerequisites.h"
+
+1174819440 d:\ogre\ogresdk\include\ogreutfstring.h
+	"OgrePrerequisites.h"
+	<iterator>
+	<string>
+	<stdexcept>
+
+1160336898 d:\ogre\ogresdk\include\win32\ogretimerimp.h
+	"windows.h"
+
+1186674100 d:\ogre\ogresdk\include\ogreresourcebackgroundqueue.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreSingleton.h"
+	"OgreResource.h"
+	<boost/thread/thread.hpp>
+	<boost/thread/condition.hpp>
+
+1168973372 d:\ogre\ogresdk\include\ogreshadowtexturemanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgrePixelFormat.h"
+	"OgreTexture.h"
+	"OgreIteratorWrappers.h"
+
+1170372680 d:\ogre\ogresdk\include\ogreinstancedgeometry.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreSimpleRenderable.h"
+	"OgreSkeleton.h"
+	"OgreSkeletonInstance.h"
+	"OgreAnimationTrack.h"
+	"OgreBone.h"
+
+1178441438 d:\ogre\ogresdk\include\ogrewindoweventutilities.h
+	"OgrePrerequisites.h"
+	"OgrePlatform.h"
+	<windows.h>
+
+1166110000 d:\ogre\ogresdk\include\ogreshadowcamerasetupfocused.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetup.h"
+	"OgrePolygon.h"
+	"OgreConvexBody.h"
+
+1174819440 d:\ogre\ogresdk\include\ogrepolygon.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1174819440 d:\ogre\ogresdk\include\ogreconvexbody.h
+	"OgrePrerequisites.h"
+	"OgrePolygon.h"
+
+1166014480 d:\ogre\ogresdk\include\ogreshadowcamerasetuplispsm.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetupFocused.h"
+
+1166179980 d:\ogre\ogresdk\include\ogreshadowcamerasetupplaneoptimal.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetup.h"
+
+1143421382 d:\ogre\ogresdk\include\ois\ois.h
+	"OISPrereqs.h"
+	"OISObject.h"
+	"OISMouse.h"
+	"OISKeyboard.h"
+	"OISJoyStick.h"
+	"OISInterface.h"
+	"OISInputManager.h"
+	"OISForceFeedback.h"
+	"OISException.h"
+	"OISEvents.h"
+	"OISEffect.h"
+
+1165828686 d:\ogre\ogresdk\include\ois\oisprereqs.h
+	<vector>
+	<string>
+	<map>
+	"OISConfig.h"
+
+1165828686 d:\ogre\ogresdk\include\ois\oisconfig.h
+
+1165828686 d:\ogre\ogresdk\include\ois\oisobject.h
+	"OISPrereqs.h"
+	"OISInterface.h"
+
+1142383658 d:\ogre\ogresdk\include\ois\oisinterface.h
+	"OISPrereqs.h"
+
+1165828686 d:\ogre\ogresdk\include\ois\oismouse.h
+	"OISObject.h"
+	"OISEvents.h"
+
+1165828686 d:\ogre\ogresdk\include\ois\oisevents.h
+	"OISPrereqs.h"
+
+1165828686 d:\ogre\ogresdk\include\ois\oiskeyboard.h
+	"OISObject.h"
+	"OISEvents.h"
+
+1165828686 d:\ogre\ogresdk\include\ois\oisjoystick.h
+	"OISObject.h"
+	"OISEvents.h"
+
+1169654526 d:\ogre\ogresdk\include\ois\oisinputmanager.h
+	"OISPrereqs.h"
+
+1142383658 d:\ogre\ogresdk\include\ois\oisforcefeedback.h
+	"OISPrereqs.h"
+	"OISInterface.h"
+	"OISEffect.h"
+
+1147670804 d:\ogre\ogresdk\include\ois\oiseffect.h
+	"OISPrereqs.h"
+
+1146814524 d:\ogre\ogresdk\include\ois\oisexception.h
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiboundslot.h
+	"CEGUIBase.h"
+	"CEGUISubscriberSlot.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguisubscriberslot.h
+	"CEGUIBase.h"
+	"CEGUIFreeFunctionSlot.h"
+	"CEGUIFunctorCopySlot.h"
+	"CEGUIFunctorReferenceSlot.h"
+	"CEGUIFunctorPointerSlot.h"
+	"CEGUIMemberFunctionSlot.h"
+	"CEGUIFunctorReferenceBinder.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguifreefunctionslot.h
+	"CEGUISlotFunctorBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguislotfunctorbase.h
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguifunctorcopyslot.h
+	"CEGUISlotFunctorBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguifunctorreferenceslot.h
+	"CEGUISlotFunctorBase.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguifunctorpointerslot.h
+	"CEGUISlotFunctorBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguimemberfunctionslot.h
+	"CEGUISlotFunctorBase.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguifunctorreferencebinder.h
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguirefcounted.h
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguixmlserializer.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	<vector>
+	<iostream>
+	<CEGUI/XMLSerializer.h>
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiwindowrenderer.h
+	"CEGUIWindow.h"
+	"CEGUIProperty.h"
+	<vector>
+
+1190408571 d:\c++\projects\lol4\include\fwdec.h
+
+1190408571 d:\c++\projects\lol4\include\gameobject.h
+	"Ogre.h"
+	"OgreNewt.h"
+	"defines.h"
+	"FwDec.h"
+
+1184593313 d:\c++\projects\lol4\include\defines.h
+
+1190410988 d:\c++\projects\lol4\include\standardapplication.h
+	"Ogre.h"
+	"OgreNewt.h"
+	"OgreSingleton.h"
+	<OgreNoMemoryMacros.h>
+	<CEGUI/CEGUIImageset.h>
+	<CEGUI/CEGUISystem.h>
+	<CEGUI/CEGUILogger.h>
+	<CEGUI/CEGUISchemeManager.h>
+	<CEGUI/CEGUIWindowManager.h>
+	<CEGUI/CEGUIWindow.h>
+	"OgreCEGUIRenderer.h"
+	"OgreCEGUIResourceProvider.h"
+	<CEGUI/elements/CEGUIPushButton.h>
+	"OIS/OIS.h"
+	"FwDec.h"
+
+1186404946 source:d:\c++\projects\lol4\include\entranceobject.cpp
+	"entranceObject.h"
+	"functions.h"
+	"Level.h"
+
+1190408571 d:\c++\projects\lol4\include\entranceobject.h
+	"gameObject.h"
+	"Ogre.h"
+	"FwDec.h"
+	"Level.h"
+
+1190408317 d:\c++\projects\lol4\include\level.h
+	"Ogre.h"
+	"OgreNewt.h"
+	"tinyxml.h"
+	"FwDec.h"
+	"defines.h"
+	"gameObject.h"
+	"OgrePagingLandScapeListenerManager.h"
+	"StandardApplication.h"
+	<map>
+	"vector2d.h"
+
+1142416063 d:\ogre\ogresdk\ogreaddons\plsm2\plugins\paginglandscape2\include\ogrepaginglandscapelistenermanager.h
+	"OgrePagingLandScapePrerequisites.h"
+	"OgrePagingLandScapeListener.h"
+	"OgreSingleton.h"
+	"OgrePagingLandScapeCallBackEvent.h"
+
+1172067649 d:\ogre\ogresdk\ogreaddons\plsm2\plugins\paginglandscape2\include\ogrepaginglandscapeprerequisites.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBufferManager.h"
+	"OgreTextureManager.h"
+	"OgreHardwarePixelBuffer.h"
+	"OgreAxisAlignedBox.h"
+	<vector>
+	<map>
+	<queue>
+	<list>
+	<stack>
+	<limits>
+
+1129275391 d:\ogre\ogresdk\ogreaddons\plsm2\plugins\paginglandscape2\include\ogrepaginglandscapelistener.h
+	"OgrePagingLandScapePrerequisites.h"
+
+1156240467 d:\ogre\ogresdk\ogreaddons\plsm2\plugins\paginglandscape2\include\ogrepaginglandscapecallbackevent.h
+	"Ogre.h"
+	"OgrePagingLandScapeCallback.h"
+
+1147460383 d:\ogre\ogresdk\ogreaddons\plsm2\plugins\paginglandscape2\include\ogrepaginglandscapecallback.h
+	<memory.h>
+
+1185888810 d:\c++\projects\lol4\include\vector2d.h
+	<vector>
+
+1190571571 d:\c++\projects\lol4\include\functions.h
+	"Ogre.h"
+	"OgreNewt.h"
+	"StandardApplication.h"
+
+1163536456 source:d:\c++\projects\lol4\lol4edit\res\lol4.rc
+	"resource.h"
+	"winres.h"
+
+1154890398 d:\c++\projects\lol4\lol4edit\res\resource.h
+
+1186934220 source:d:\c++\projects\lol4\src\standardapplication.cpp
+	<Ogre.h>
+	<OgreFrameListener.h>
+	<OgreTextAreaOverlayElement.h>
+	<OgreFontManager.h>
+	<vector>
+	<OgreNewt.h>
+	"tinyxml.h"
+	"functions.h"
+	"FwDec.h"
+	"gameChar.h"
+	"StandardApplication.h"
+	"defines.h"
+
+1190138823 d:\c++\projects\lol4\include\gamechar.h
+	"Ogre.h"
+	"OgreNewt.h"
+	"FwDec.h"
+	"StandardApplication.h"
+	"gameObject.h"
+	"defines.h"
+
+1186404947 source:d:\c++\projects\lol4\src\actobject.cpp
+	"actObject.h"
+	"StandardApplication.h"
+	"functions.h"
+	"GameApplication.h"
+
+1190138823 d:\c++\projects\lol4\include\actobject.h
+	"Ogre.h"
+	"FwDec.h"
+	"gameObject.h"
+	"Level.h"
+
+1181729845 source:d:\c++\projects\lol4\src\dotsceneobject.cpp
+	"dotSceneObject.h"
+	"tinyxml.h"
+	"functions.h"
+
+1190138823 d:\c++\projects\lol4\include\dotsceneobject.h
+	"Ogre.h"
+	"FwDec.h"
+	"gameObject.h"
+	"Level.h"
+
+1190408571 source:d:\c++\projects\lol4\src\gameitem.cpp
+	"gameItem.h"
+	"StandardApplication.h"
+	"functions.h"
+	"defines.h"
+	"Level.h"
+
+1190139481 d:\c++\projects\lol4\include\gameitem.h
+	"gameObject.h"
+	"Ogre.h"
+	"OgreNewt.h"
+	"StandardApplication.h"
+
+1189798319 source:d:\c++\projects\lol4\src\lightobject.cpp
+	"lightObject.h"
+	"StandardApplication.h"
+	"functions.h"
+	"Level.h"
+
+1190138804 d:\c++\projects\lol4\include\lightobject.h
+	"Ogre.h"
+	"FwDec.h"
+	"gameObject.h"
+
+1137363126 source:d:\c++\projects\lol4\src\tinystr.cpp
+	"tinystr.h"
+
+1137363126 source:d:\c++\projects\lol4\src\tinyxml.cpp
+	<ctype.h>
+	"tinyxml.h"
+	<sstream>
+	<iostream>
+
+1137363126 source:d:\c++\projects\lol4\src\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1137363126 source:d:\c++\projects\lol4\src\tinyxmlparser.cpp
+	"tinyxml.h"
+	<ctype.h>
+	<stddef.h>
+	<windows.h>
+
+1183568624 source:d:\c++\projects\lol4\src\vector2d.cpp
+
+1190228414 source:d:\c++\projects\lol4\src\gameobject.cpp
+	"gameObject.h"
+	"Level.h"
+	"functions.h"
+
+1190408571 source:d:\c++\projects\lol4\lol4edit\src\editframelistener.cpp
+	"defines.h"
+	"EditFrameListener.h"
+	"EditorApp.h"
+	"functions.h"
+	"OIS/OIS.h"
+	"Level.h"
+	"gameObject.h"
+	"gameChar.h"
+	<CEGUI/CEGUIWindow.h>
+	"specialObject.h"
+
+1190408571 d:\c++\projects\lol4\include\specialobject.h
+	"Ogre.h"
+	"FwDec.h"
+	"gameObject.h"
+	"StandardApplication.h"
+
+1190411217 source:d:\c++\projects\lol4\lol4edit\src\editorapp.cpp
+	<Ogre.h>
+	<OgreFrameListener.h>
+	<vector>
+	<OgreNewt.h>
+	"tinyxml.h"
+	<OgreNoMemoryMacros.h>
+	<CEGUI/CEGUIImageset.h>
+	<CEGUI/CEGUISystem.h>
+	<CEGUI/CEGUILogger.h>
+	<CEGUI/CEGUISchemeManager.h>
+	<CEGUI/CEGUIWindowManager.h>
+	<CEGUI/CEGUIWindow.h>
+	"OgreCEGUIRenderer.h"
+	"OgreCEGUIResourceProvider.h"
+	<CEGUI/elements/CEGUIPushButton.h>
+	<CEGUI/elements/CEGUICheckbox.h>
+	<CEGUI/elements/CEGUIListbox.h>
+	<CEGUI/elements/CEGUIListboxTextItem.h>
+	<CEGUI/elements/CEGUITabControl.h>
+	<CEGUI/elements/CEGUICombobox.h>
+	<CEGUI/elements/CEGUIMenubar.h>
+	<CEGUI/elements/CEGUIMenuItem.h>
+	<CEGUI/elements/CEGUIPopupMenu.h>
+	<CEGUI/elements/CEGUIFrameWindow.h>
+	<OgreMemoryMacros.h>
+	"FwDec.h"
+	"EditorApp.h"
+	"defines.h"
+	"EditFrameListener.h"
+	"Level.h"
+	"gameObject.h"
+	"lightObject.h"
+	"entranceObject.h"
+	"doorObject.h"
+	"functions.h"
+	"../res/resource.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguicheckbox.h
+	"CEGUIBase.h"
+	"elements/CEGUIButtonBase.h"
+	"elements/CEGUICheckboxProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguicheckboxproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguilistbox.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIListboxProperties.h"
+	<vector>
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguilistboxproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguilistboxtextitem.h
+	"elements/CEGUIListboxItem.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguilistboxitem.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIColourRect.h"
+	"CEGUIRenderCache.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguitabcontrol.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUITabControlProperties.h"
+	<vector>
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguitabcontrolproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguicombobox.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIComboboxProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguicomboboxproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguimenubar.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIMenuBase.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguimenubase.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIMenuBaseProperties.h"
+	"elements/CEGUIItemListBase.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguimenubaseproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguiitemlistbase.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIItemListBaseProperties.h"
+	"elements/CEGUIItemEntry.h"
+	<vector>
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiitemlistbaseproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiitementry.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIItemEntryProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiitementryproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguimenuitem.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIItemEntry.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguipopupmenu.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIPopupMenuProperties.h"
+	"elements/CEGUIMenuBase.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguipopupmenuproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiframewindow.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIFrameWindowProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiframewindowproperties.h
+	"CEGUIProperty.h"
+
+1190408571 d:\c++\projects\lol4\include\doorobject.h
+	"Ogre.h"
+	"FwDec.h"
+	"gameObject.h"
+	"Level.h"
+
+1190408571 source:d:\c++\projects\lol4\src\level.cpp
+	"Level.h"
+	"gameObject.h"
+	"gameChar.h"
+	"specialObject.h"
+	"gameItem.h"
+	"doorObject.h"
+	"lightObject.h"
+	"functions.h"
+	"dotSceneObject.h"
+	"EditorApp.h"
+	"entranceObject.h"
+
+1190575223 source:d:\c++\projects\lol4\src\functions.cpp
+	"functions.h"
+	"CEGUI.h"
+	"defines.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\cegui.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIRect.h"
+	"CEGUIExceptions.h"
+	"CEGUITexture.h"
+	"CEGUIRenderer.h"
+	"CEGUIImageset.h"
+	"CEGUIImagesetManager.h"
+	"CEGUILogger.h"
+	"CEGUIMouseCursor.h"
+	"CEGUIFont.h"
+	"CEGUIFontManager.h"
+	"CEGUIEventArgs.h"
+	"CEGUIEvent.h"
+	"CEGUIEventSet.h"
+	"CEGUIGlobalEventSet.h"
+	"CEGUIProperty.h"
+	"CEGUIPropertySet.h"
+	"CEGUIWindow.h"
+	"CEGUIWindowFactory.h"
+	"CEGUIWindowFactoryManager.h"
+	"CEGUIWindowManager.h"
+	"CEGUIWindowRenderer.h"
+	"CEGUIWindowRendererManager.h"
+	"CEGUIScheme.h"
+	"CEGUISchemeManager.h"
+	"CEGUISystem.h"
+	"CEGUIScriptModule.h"
+	"CEGUICoordConverter.h"
+	"CEGUIPropertyHelper.h"
+	"falagard/CEGUIFalWidgetLookManager.h"
+	"elements/CEGUIButtonBase.h"
+	"elements/CEGUIPushButton.h"
+	"elements/CEGUICheckbox.h"
+	"elements/CEGUIRadioButton.h"
+	"elements/CEGUITitlebar.h"
+	"elements/CEGUIFrameWindow.h"
+	"elements/CEGUIProgressBar.h"
+	"elements/CEGUIEditbox.h"
+	"elements/CEGUIThumb.h"
+	"elements/CEGUISlider.h"
+	"elements/CEGUIScrollbar.h"
+	"elements/CEGUIListbox.h"
+	"elements/CEGUICombobox.h"
+	"elements/CEGUIListHeader.h"
+	"elements/CEGUIMultiColumnList.h"
+	"elements/CEGUIGUISheet.h"
+	"elements/CEGUIListboxTextItem.h"
+	"elements/CEGUIComboDropList.h"
+	"elements/CEGUIMultiLineEditbox.h"
+	"elements/CEGUITabButton.h"
+	"elements/CEGUITabControl.h"
+	"elements/CEGUISpinner.h"
+	"elements/CEGUIDragContainer.h"
+	"elements/CEGUIScrolledContainer.h"
+	"elements/CEGUIScrollablePane.h"
+	"elements/CEGUITooltip.h"
+	"elements/CEGUIItemEntry.h"
+	"elements/CEGUIMenuItem.h"
+	"elements/CEGUIItemListBase.h"
+	"elements/CEGUIMenuBase.h"
+	"elements/CEGUIMenubar.h"
+	"elements/CEGUIPopupMenu.h"
+	"elements/CEGUIScrolledItemListBase.h"
+	"elements/CEGUIItemListbox.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguiexceptions.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguifontmanager.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUIIteratorBase.h"
+	<map>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiglobaleventset.h
+	"CEGUIEventSet.h"
+	"CEGUISingleton.h"
+
+1165440892 d:\ogre\ogresdk\include\cegui\ceguiwindowfactory.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIWindow.h"
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiwindowfactorymanager.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISingleton.h"
+	"CEGUILogger.h"
+	"CEGUIIteratorBase.h"
+	<map>
+	<vector>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiwindowrenderermanager.h
+	"CEGUIWindowRenderer.h"
+	"CEGUISingleton.h"
+	<map>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguischeme.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUISchemeManager.h"
+	<vector>
+
+1155492076 d:\ogre\ogresdk\include\cegui\ceguiscriptmodule.h
+	"CEGUIBase.h"
+	"CEGUIString.h"
+	"CEGUIEvent.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguicoordconverter.h
+	"CEGUIUDim.h"
+
+1155492074 d:\ogre\ogresdk\include\cegui\ceguipropertyhelper.h
+	"CEGUIWindow.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalwidgetlookmanager.h
+	"CEGUISingleton.h"
+	"CEGUIString.h"
+	"CEGUIExceptions.h"
+	"falagard/CEGUIFalWidgetLookFeel.h"
+	<map>
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalwidgetlookfeel.h
+	"falagard/CEGUIFalStateImagery.h"
+	"falagard/CEGUIFalWidgetComponent.h"
+	"falagard/CEGUIFalImagerySection.h"
+	"falagard/CEGUIFalPropertyInitialiser.h"
+	"falagard/CEGUIFalPropertyDefinition.h"
+	"falagard/CEGUIFalPropertyLinkDefinition.h"
+	"falagard/CEGUIFalNamedArea.h"
+	<map>
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalstateimagery.h
+	"falagard/CEGUIFalLayerSpecification.h"
+	"CEGUIWindow.h"
+	<set>
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifallayerspecification.h
+	"falagard/CEGUIFalSectionSpecification.h"
+	"CEGUIWindow.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalsectionspecification.h
+	"CEGUIWindow.h"
+
+1165440892 d:\ogre\ogresdk\include\cegui\falagard\ceguifalwidgetcomponent.h
+	"falagard/CEGUIFalDimensions.h"
+	"falagard/CEGUIFalPropertyInitialiser.h"
+	"CEGUIWindow.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifaldimensions.h
+	"falagard/CEGUIFalEnums.h"
+	"CEGUIString.h"
+	"CEGUIUDim.h"
+	"CEGUIXMLSerializer.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalenums.h
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalpropertyinitialiser.h
+	"CEGUIPropertySet.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalimagerysection.h
+	"falagard/CEGUIFalImageryComponent.h"
+	"falagard/CEGUIFalTextComponent.h"
+	"falagard/CEGUIFalFrameComponent.h"
+	"CEGUIXMLSerializer.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalimagerycomponent.h
+	"falagard/CEGUIFalComponentBase.h"
+	"CEGUIXMLSerializer.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalcomponentbase.h
+	"falagard/CEGUIFalDimensions.h"
+	"CEGUIWindow.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifaltextcomponent.h
+	"falagard/CEGUIFalComponentBase.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalframecomponent.h
+	"falagard/CEGUIFalComponentBase.h"
+	"CEGUIXMLSerializer.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalpropertydefinition.h
+	"CEGUIFalPropertyDefinitionBase.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalpropertydefinitionbase.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalpropertylinkdefinition.h
+	"falagard/CEGUIFalPropertyDefinitionBase.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\falagard\ceguifalnamedarea.h
+	"falagard/CEGUIFalDimensions.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiradiobutton.h
+	"CEGUIBase.h"
+	"elements/CEGUIButtonBase.h"
+	"elements/CEGUIRadioButtonProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiradiobuttonproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguititlebar.h
+	"CEGUIWindow.h"
+	"elements/CEGUITitlebarProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguititlebarproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguiprogressbar.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIProgressBarProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiprogressbarproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguieditbox.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIEditboxProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguieditboxproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguithumb.h
+	"CEGUIPushButton.h"
+	"elements/CEGUIThumbProperties.h"
+	<utility>
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguithumbproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguislider.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUISliderProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguisliderproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiscrollbar.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIScrollbarProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguiscrollbarproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguilistheader.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIListHeaderSegment.h"
+	"elements/CEGUIListHeaderProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguilistheadersegment.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIListHeaderSegmentProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguilistheadersegmentproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguilistheaderproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguimulticolumnlist.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"CEGUIListHeader.h"
+	"elements/CEGUIMultiColumnListProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguimulticolumnlistproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiguisheet.h
+	"CEGUIWindow.h"
+	"CEGUIWindowFactory.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguicombodroplist.h
+	"elements/CEGUIListbox.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguimultilineeditbox.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"CEGUIFont.h"
+	"elements/CEGUIMultiLineEditboxProperties.h"
+	<vector>
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguimultilineeditboxproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguitabbutton.h
+	"CEGUIBase.h"
+	"elements/CEGUIButtonBase.h"
+
+1165440892 d:\ogre\ogresdk\include\cegui\elements\ceguispinner.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUISpinnerProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguispinnerproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguidragcontainer.h
+	"CEGUIWindow.h"
+	"CEGUIWindowFactory.h"
+	"elements/CEGUIDragContainerProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguidragcontainerproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguiscrolledcontainer.h
+	"CEGUIWindow.h"
+	"CEGUIWindowFactory.h"
+	"elements/CEGUIScrolledContainerProperties.h"
+	<map>
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguiscrolledcontainerproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiscrollablepane.h
+	"CEGUIBase.h"
+	"CEGUIWindow.h"
+	"elements/CEGUIScrollablePaneProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiscrollablepaneproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguitooltip.h
+	"CEGUIWindow.h"
+	"elements/CEGUITooltipProperties.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguitooltipproperties.h
+	"CEGUIProperty.h"
+
+1155492072 d:\ogre\ogresdk\include\cegui\elements\ceguiscrolleditemlistbase.h
+	"elements/CEGUIItemListBase.h"
+	"elements/CEGUIScrollbar.h"
+	"elements/CEGUIScrolledItemListBaseProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiscrolleditemlistbaseproperties.h
+	"CEGUIProperty.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiitemlistbox.h
+	"elements/CEGUIScrolledItemListBase.h"
+	"elements/CEGUIItemListboxProperties.h"
+
+1155492070 d:\ogre\ogresdk\include\cegui\elements\ceguiitemlistboxproperties.h
+	"CEGUIProperty.h"
+
+1190408571 source:d:\c++\projects\lol4\src\gamechar.cpp
+	"FwDec.h"
+	"gameChar.h"
+	"GameApplication.h"
+	"AI.h"
+	"doorObject.h"
+	"defines.h"
+	"Level.h"
+	"functions.h"
+
+1190408571 source:d:\c++\projects\lol4\src\doorobject.cpp
+	"doorObject.h"
+	"StandardApplication.h"
+	"functions.h"
+	"GameApplication.h"
+
+1190571571 source:d:\c++\projects\lol4\src\specialobject.cpp
+	"specialObject.h"
+	"StandardApplication.h"
+	"functions.h"
+	"Level.h"
+

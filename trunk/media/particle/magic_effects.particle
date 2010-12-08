@@ -1,0 +1,47 @@
+particle_system magic/spark
+{
+	quota	4000
+	material	PE/Blueflare
+	particle_width	2
+	particle_height	2
+	cull_each	false
+	renderer	billboard
+	billboard_type	point
+
+	emitter Point
+	{
+		angle	65.83
+		colour	0 0.557895 1 1
+		colour_range_start	0 0.557895 1 1
+		colour_range_end	0 0 1 1
+		direction	0 1 0
+		emission_rate	160
+		position	0 0 0
+		velocity	20
+		velocity_min	20
+		velocity_max	22
+		time_to_live	0.5
+		time_to_live_min	0.5
+		time_to_live_max	0.7
+		duration	1
+		duration_min	1
+		duration_max	1
+		repeat_delay	0
+		repeat_delay_min	0
+		repeat_delay_max	0.0001
+	}
+
+	affector LinearForce
+	{
+		force_vector	0 -22 0
+		force_application	add
+	}
+
+	affector ColourFader
+	{
+		red	-1
+		green	0.3704
+		blue	0.5932
+		alpha	0
+	}
+}

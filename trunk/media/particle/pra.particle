@@ -1,0 +1,117 @@
+particle_system Pra/Fire
+{
+	material 		Examples/Flare
+	particle_width 	15
+	particle_height	15
+	cull_each		false
+	quota			200
+	billboard_type	point
+
+	emitter Point
+	{
+		angle 5
+		emission_rate 100
+        time_to_live    0.03
+        direction       0 -1 0
+        velocity_min    250
+        velocity_max    300
+        colour_range_start  1 1 0.5
+        colour_range_end    1 0.8 0.3
+		
+	}
+	affector ColourFader
+	{
+		red -0.25
+		green -1
+		blue -1
+	}
+	
+}
+
+particle_system Pra/Explode
+{
+	material 		Examples/Flare
+	particle_width 	20
+	particle_height	20
+	cull_each		false
+	quota			200
+	billboard_type	point
+
+	emitter Point
+	{
+		angle 5
+		emission_rate 	100
+        time_to_live    0.05
+        direction       0 -1 0
+        velocity_min    250
+        velocity_max    300
+        colour_range_start  1 1 0.5
+        colour_range_end    1 0.8 0.3
+		
+	}
+	affector ColourFader
+	{
+		red -0.25
+		green -1
+		blue -1
+	}
+	
+}
+
+
+particle_system Pra/Spark
+{
+	quota	100
+	material	Pra/Blueflare
+	particle_width	5
+	particle_height	5
+	cull_each	true
+	renderer	billboard
+	sorted	false
+	local_space	false
+	iteration_interval	0
+	nonvisible_update_timeout	0
+	billboard_type	point
+	billboard_origin	center
+	billboard_rotation_type	texcoord
+	common_up_vector	0 1 0
+	point_rendering	false
+	accurate_facing	false
+
+	emitter Point
+	{
+		angle	110.3
+		colour	1 1 1 1
+		colour_range_start	1 1 1 1
+		colour_range_end	1 1 1 1
+		direction	0 1 0
+		emission_rate	387.1
+		position	0 0 0
+		velocity	62.9
+		velocity_min	62.9
+		velocity_max	62.9
+		time_to_live	0.3226
+		time_to_live_min	0.3226
+		time_to_live_max	0.3226
+		duration	0
+		duration_min	0
+		duration_max	0
+		repeat_delay	0
+		repeat_delay_min	0
+		repeat_delay_max	0
+	}
+
+	affector DeflectorPlane
+	{
+		plane_point	0 0 0
+		plane_normal	0 1 0
+		bounce	0
+	}
+
+	affector DirectionRandomiser
+	{
+		randomness	121
+		scope	1
+		keep_velocity	true
+	}
+}

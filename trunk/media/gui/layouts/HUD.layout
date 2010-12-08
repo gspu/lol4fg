@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="Ingame-GUI" >
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="LandsLook/StaticText" Name="TextOut" >
+            <Property Name="Font" Value="DejaVuSans-10" />
+            <Property Name="Text" Value="asdfmuh" />
+            <Property Name="HorzExtent" Value="57" />
+            <Property Name="VertExtent" Value="15.5148" />
+            <Property Name="AlwaysOnTop" Value="True" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="VertFormatting" Value="TopAligned" />
+            <Property Name="UnifiedAreaRect" Value="{{0.01,0},{0.779999,0},{0.4975,0},{0.843333,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>        
+        <Window Type="LandsLook/StaticImage" Name="hud" >
+            <Property Name="Image" Value="set:lands image:ingamegui" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0.86,0},{1,0},{1,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Window Type="LandsLook/StaticImage" Name="currentweapon" >
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.01,0},{0.233095,0},{0.08,0},{0.905,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="currentspell" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.92,0},{0.233095,0},{0.99,0},{0.905,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey1" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.17,0},{0.560475,0},{0.209,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey2" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.211176,0},{0.560475,0},{0.250176,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey3" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.2525,0},{0.560475,0},{0.2915,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey4" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.29375,0},{0.560475,0},{0.33275,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey5" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.335,0},{0.560475,0},{0.374,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey6" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.627499,0},{0.560475,0},{0.666499,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey7" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.668749,0},{0.560475,0},{0.707749,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey8" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.709999,0},{0.560475,0},{0.748999,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey9" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.751249,0},{0.560475,0},{0.790249,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hotkey0" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.792498,0},{0.560475,0},{0.831498,0},{0.927381,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="manabar_container" >
+                <Property Name="Image" Value="set:lands image:manabar-empty" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="HorzFormatting" Value="Tiled" />
+                <Property Name="UnifiedAreaRect" Value="{{0.626,0},{0.341905,0},{0.830477,0},{0.443095,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+                <Window Type="LandsLook/StaticImage" Name="manabar" >
+                    <Property Name="Font" Value="Commonwealth-10" />
+                    <Property Name="Image" Value="set:lands image:manabar" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="HorzFormatting" Value="Tiled" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hpbar_container" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Image" Value="set:lands image:hpbar-empty" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="HorzFormatting" Value="Tiled" />
+                <Property Name="UnifiedAreaRect" Value="{{0.169,0},{0.341905,0},{0.373477,0},{0.443095,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+                <Window Type="LandsLook/StaticImage" Name="hpbar" >
+                    <Property Name="Font" Value="Commonwealth-10" />
+                    <Property Name="Image" Value="set:lands image:hpbar" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="HorzFormatting" Value="Tiled" />
+                    <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hud/compassunderlay" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Image" Value="set:lands image:compass_underlay" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.4575,0},{0.190476,0},{0.54375,0},{0.988096,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="compass" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.4575,0},{0.190476,0},{0.54375,0},{0.988096,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+            <Window Type="LandsLook/StaticImage" Name="hud/compassoverlay" >
+                <Property Name="Font" Value="DejaVuSans-10" />
+                <Property Name="Image" Value="set:lands image:compass_overlay" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.4575,0},{0.190476,0},{0.54375,0},{0.988096,0}}" />
+                <Property Name="BackgroundEnabled" Value="False" />
+            </Window>
+        </Window>
+        
+        
+    </Window>
+</GUILayout>

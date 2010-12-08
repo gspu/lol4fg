@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<level version="2">
+    <gravity value="-9.81" />
+    <ambientcolour value="0.25 0.25 0.25 1" />
+    <backgroundcolour value="0 0 0 1" />
+</level>
+<sound>
+    <music />
+    <ambient wait_min="0" wait_max="10" />
+    <ambientloop />
+</sound>
+<objects>
+    <static pos="5.5 13.75 -0.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="5.5 15.25 -4.75" orient="-1.49012e-007 1 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="5.5 16.75 -0.25" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.5 13.75 -3.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.5 15.25 -4.75" orient="-1.49012e-007 1 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.5 15.25 -1.75" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-0.5 16.75 -3.25" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-3.5 13.75 -3.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-3.5 15.25 -4.75" orient="-1.49012e-007 1 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-3.5 15.25 -1.75" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-3.5 16.75 -3.25" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-6.5 13.75 -3.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-6.5 15.25 -4.75" orient="-1.49012e-007 1 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-6.5 15.25 -1.75" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-6.5 16.75 -3.25" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-7.25 16.25 -4.25" name="Pra/Fire" type="particle" scale="0.09 0.06 0.06" />
+    <static pos="-7.25 15.25 -4.25" orient="0.707107 0 0 -0.707107" filename="cone.mesh" material="wood_door" type="mesh" scale="0.9 0.15 0.15" />
+    <light pos="-7.25 16 -4" type="point" diffuse="1 0.5 0 1" specular="1 0.5 0 1" aRange="5" aConst="1" aLinear="0" aQuad="0" />
+    <static pos="-7.25 15.25 -4.5" filename="box.mesh" material="wood_door" type="mesh" scale="0.25 0.2 0.7" />
+    <static pos="-9.5 13.75 -3.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-11 15.25 -3.25" orient="1.05367e-007 -0.707107 1.05367e-007 0.707107" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="-9.5 15.25 -1.75" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="2.5 13.75 -3.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="2.5 15.25 -4.75" orient="-1.49012e-007 1 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="2.5 16.75 -3.25" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="2.5 15.25 -1.75" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="4 15.25 -0.25" orient="0.707107 0 -0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="5.5 13.75 -3.25" orient="0.707107 0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="5.5 16.75 -3.25" orient="0.707107 -0.707107 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="7 15.25 -3.25" orient="0.707107 0 0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="5.5 15.25 1.25" orient="1 0 2.98023e-008 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <static pos="6.25 16.25 -4.25" name="Pra/Fire" type="particle" scale="0.09 0.06 0.06" />
+    <light pos="6.25 16 -4" type="point" diffuse="1 0.5 0 1" specular="1 0.5 0 1" aRange="5" aConst="1" aLinear="0" aQuad="0" />
+    <static pos="6.25 15.25 -4.5" filename="box.mesh" material="wood_door" type="mesh" scale="0.25 0.2 0.7" />
+    <static pos="6.25 15.25 -4.25" orient="0.707107 0 0 -0.707107" filename="cone.mesh" material="wood_door" type="mesh" scale="0.9 0.15 0.15" />
+    <static pos="-9.5 15.25 -4.75" orient="-1.49012e-007 1 0 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <entrance pos="-9.75 15.25 -3.25" orient="0.707107 0 -0.707107 0" name="GameStartPosition" />
+    <static pos="7 15.25 -0.25" orient="0.707107 0 0.707107 0" normal="0 0 -1" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+    <door pos="5.5 14.872 1.25" id="testdoor" targetLevel="newtest" targetEntrance="entr0" />
+    <item pos="-8.8847 15.7474 -3.73387" id="lolsword" />
+    <static pos="-9.5 17.75 -3.25" normal="0 1 0" constant="0" width="1" height="1" xSeg="1" ySeg="1" numTexCoordSets="1" uTile="1" vTile="1" upVector="0 1 0" material="Examples/Rockwall" type="plane" scale="3 3 3" />
+</objects>

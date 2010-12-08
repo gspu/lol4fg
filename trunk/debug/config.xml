@@ -1,0 +1,199 @@
+<Resources>
+    <Group name="Bootstrap">
+        <Resource type="Zip" location="../media/packs/OgreCore.zip" />
+        <!--Resource type="FileSystem" location="../media" /-->
+    </Group>
+    <Group name="General">
+        <Resource type="FileSystem" location="../media" />
+        <Resource type="FileSystem" location="../media/gui" />
+        <Resource type="FileSystem" location="../media/gui/fonts" />
+        <Resource type="FileSystem" location="../media/gui/configs" />
+        <Resource type="FileSystem" location="../media/gui/imagesets" />
+        <Resource type="FileSystem" location="../media/gui/looknfeel" />
+        <Resource type="FileSystem" location="../media/gui/lua_scripts" />
+        <Resource type="FileSystem" location="../media/gui/schemes" />
+        <Resource type="FileSystem" location="../media/dotScene" />
+        <Resource type="FileSystem" location="../media/fonts" />
+        <Resource type="FileSystem" location="../media/materials/programs" />
+        <Resource type="FileSystem" location="../media/materials/scripts" />
+        <Resource type="FileSystem" location="../media/materials/textures" />
+        <Resource type="FileSystem" location="../media/models" />
+        <Resource type="FileSystem" location="../media/overlays" />
+        <Resource type="FileSystem" location="../media/particle" />
+        <Resource type="FileSystem" location="../media/DeferredShadingMedia" />
+        <Resource type="FileSystem" location="../media/icons" />
+        <Resource type="Zip" location="../media/packs/cubemap.zip" />
+        <Resource type="Zip" location="../media/packs/cubemapsJS.zip" />
+        <Resource type="Zip" location="../media/packs/dragon.zip" />
+        <Resource type="Zip" location="../media/packs/fresneldemo.zip" />
+        <Resource type="Zip" location="../media/packs/ogretestmap.zip" />
+        <Resource type="FileSystem" location="../media/gui/layouts" />
+        <Resource type="Zip" location="../media/packs/skybox.zip" />
+        <Resource type="FileSystem" location="../media/sound" />
+    </Group>
+    <Group name="Level">
+        <Resource type="FileSystem" location="../media/level" />
+    </Group>
+    <Group name="Savegame">
+        <Resource type="FileSystem" location="../media/savegame" />
+    </Group>
+    <Group name="Temp">
+        <Resource type="FileSystem" location="../media/temp" />
+    </Group>
+    <Group name="Collision">
+        <Resource type="FileSystem" location="../media/level/collision" />
+    </Group>
+    <Group name="game_data">
+        <Resource type="FileSystem" location="../media/data" />
+    </Group>
+    <Group name="Terrain">
+        <Resource type="FileSystem" location="../media/Terrain" />
+    </Group>
+    <Group name="TerrainBrushes">
+        <Resource type="FileSystem" location="../media/Terrain/Brushes" />
+    </Group>
+    <Group name="TerrainTextures">
+        <Resource type="FileSystem" location="../media/Terrain/Textures" />
+    </Group>
+</Resources>
+<Plugins folder=".">
+    <Plugin name="RenderSystem_Direct3D9_d" />
+    <Plugin name="RenderSystem_GL_d" />
+    <Plugin name="Plugin_ParticleFX_d" />
+    <!--Plugin name="Plugin_BSPSceneManager_d" /-->
+    <!--Plugin name="Plugin_OctreeSceneManager_d" /-->
+    <Plugin name="Plugin_CgProgramManager_d" />
+</Plugins>
+<game>
+    <Renderer selected="Direct3D9 Rendering Subsystem">
+        <RenderSystem name="Direct3D9 Rendering Subsystem">
+            <option name="Allow NVPerfHUD" value="No" />
+            <option name="FSAA" value="0" />
+            <option name="Floating-point mode" value="Fastest" />
+            <option name="Full Screen" value="No" />
+            <option name="Rendering Device" value="Monitor-1-NVIDIA GeForce 8800 GTS" />
+            <option name="Resource Creation Policy" value="Create on all devices" />
+            <option name="VSync" value="No" />
+            <option name="VSync Interval" value="1" />
+            <option name="Video Mode" value="800 x 600 @ 32-bit colour" />
+            <option name="sRGB Gamma Conversion" value="No" />
+        </RenderSystem>
+        <RenderSystem name="OpenGL Rendering Subsystem">
+            <option name="Colour Depth" value="32" />
+            <option name="Display Frequency" value="N/A" />
+            <option name="FSAA" value="0" />
+            <option name="Full Screen" value="No" />
+            <option name="RTT Preferred Mode" value="FBO" />
+            <option name="VSync" value="No" />
+            <option name="VSync Interval" value="1" />
+            <option name="Video Mode" value="800 x 600" />
+            <option name="sRGB Gamma Conversion" value="No" />
+        </RenderSystem>
+    </Renderer>
+    <settings>
+        <options>
+            <option name="mouselooking" value="true" />
+            <option name="sensibility_x_mouse" value="0.16" />
+            <option name="sensibility_y_mouse" value="0.14" />
+            <option name="physics_fps" value="60" />
+            <option name="sensibility_x_keyboard" value="1" />
+            <option name="gain_all" value="1" />
+            <option name="gain_sfx" value="1" />
+            <option name="gain_speech" value="1" />
+            <option name="gain_music" value="1" />
+            <option name="gain_player_sfx" value="1" />
+            <option name="rolloff_factor" value="1" />
+            <option name="ref_distance" value="150" />
+            <option name="max_distance" value="3400" />
+            <option name="distance_model" value="53250" />
+            <option name="starting_level" value="a_start.zip" />
+            <option name="starting_entrance" value="entr0" />
+            <option name="default_music" value="default.ogg" />
+            <option name="default_combat_music" value="default.ogg" />
+        </options>
+        <keys>
+            <key name="MoveForward" main="KC_W" alt="KC_NUMPAD8" />
+            <key name="MoveBack" main="KC_S" alt="KC_NUMPAD5" />
+            <key name="MoveRight" main="KC_D" alt="KC_UNASSIGNED" />
+            <key name="MoveLeft" main="KC_A" alt="KC_UNASSIGNED" />
+            <key name="Jump" main="KC_SPACE" alt="KC_UNASSIGNED" />
+            <key name="Attack" main="MB_Left" alt="KC_UNASSIGNED" />
+            <key name="Spellcast" main="MB_Right" alt="KC_UNASSIGNED" />
+            <key name="Run" main="KC_LSHIFT" alt="KC_UNASSIGNED" />
+            <key name="Action" main="KC_E" alt="KC_UNASSIGNED" />
+            <key name="Inventory" main="KC_I" alt="KC_TAB" />
+            <key name="InvTakeOne" main="MB_Left" alt="KC_UNASSIGNED" />
+            <key name="InvTakeAll" main="MB_Middle" alt="KC_UNASSIGNED" />
+            <key name="InvUse" main="MB_Right" alt="KC_UNASSIGNED" />
+            <key name="Spellbook" main="KC_M" alt="KC_UNASSIGNED" />
+            <key name="Screenshot" main="KC_SYSRQ" alt="KC_UNASSIGNED" />
+            <key name="Mainmenu" main="KC_ESCAPE" alt="KC_UNASSIGNED" />
+            <key name="LookUp" main="KC_PGUP" alt="KC_UNASSIGNED" />
+            <key name="LookDown" main="KC_PGDOWN" alt="KC_UNASSIGNED" />
+            <key name="LookLeft" main="KC_LEFT" alt="KC_NUMPAD4" />
+            <key name="LookRight" main="KC_RIGHT" alt="KC_NUMPAD6" />
+            <key name="ToggleMouselooking" main="KC_X" alt="KC_UNASSIGNED" />
+            <key name="Debug3rdp" main="KC_F1" alt="KC_UNASSIGNED" />
+            <key name="Debugshowlines" main="KC_F2" alt="KC_UNASSIGNED" />
+        </keys>
+    </settings>
+</game>
+<editor>
+    <Renderer selected="Direct3D9 Rendering Subsystem">
+        <RenderSystem name="Direct3D9 Rendering Subsystem">
+            <option name="Allow NVPerfHUD" value="No" />
+            <option name="FSAA" value="0" />
+            <option name="Floating-point mode" value="Fastest" />
+            <option name="Full Screen" value="No" />
+            <option name="Rendering Device" value="Monitor-1-NVIDIA GeForce 8800 GTS" />
+            <option name="Resource Creation Policy" value="Create on all devices" />
+            <option name="VSync" value="No" />
+            <option name="VSync Interval" value="1" />
+            <option name="Video Mode" value="800 x 600 @ 32-bit colour" />
+            <option name="sRGB Gamma Conversion" value="No" />
+        </RenderSystem>
+        <RenderSystem name="OpenGL Rendering Subsystem">
+            <option name="Colour Depth" value="32" />
+            <option name="Display Frequency" value="60" />
+            <option name="FSAA" value="0" />
+            <option name="Full Screen" value="Yes" />
+            <option name="RTT Preferred Mode" value="FBO" />
+            <option name="VSync" value="No" />
+            <option name="VSync Interval" value="1" />
+            <option name="Video Mode" value="1024 x 768" />
+            <option name="sRGB Gamma Conversion" value="No" />
+        </RenderSystem>
+    </Renderer>
+    <settings>
+        <option name="gridsnap" value="0.1" />
+        <option name="anglesnap" value="15" />
+        <option name="scalesnap" value="0.5" />
+        <option name="showfog" value="false" />
+        <option name="usegridsnap" value="false" />
+        <option name="useanglesnap" value="false" />
+        <option name="usescalesnap" value="false" />
+        <option name="move_sensitivity" value="0.05" />
+        <option name="rotate_sensitivity" value="0.25" />
+        <option name="scroll_sensitivity" value="0.01" />
+        <option name="transformaxes_scale" value="0.1" />
+        <option name="windowname" value="LoL 4 Leveleditor" />
+        <option name="cam_startposition" value="0 25 0" />
+        <option name="showDebugWnd" value="true" />
+    </settings>
+    <keys>
+        <key name="clone" value="Ctrl+KC_D" />
+        <key name="move_object" value="MB_Left" />
+        <key name="modeMove" value="KC_M" />
+        <key name="modeRotate" value="KC_R" />
+        <key name="modeScale" value="KC_S" />
+        <key name="viewRotate" value="MB_Middle" />
+        <key name="viewMove" value="KC_LSHIFT" />
+        <key name="showLines" value="KC_F3" />
+        <key name="screenShot" value="KC_SYSRQ" />
+        <key name="delete" value="KC_DELETE" />
+        <key name="showDetails" value="MB_Right" />
+        <key name="viewRotateMove" value="KC_SPACE" />
+        <key name="savemap" value="KC_F12" />
+        <key name="viewtop" value="KC_T" />
+    </keys>
+</editor>

@@ -1,0 +1,34 @@
+<RCC>
+  <qresource prefix="editor" >
+    <file>hammergrau.png</file>
+    <file>hammergrauklein.png</file>
+    <file>New.png</file>
+    <file>Save.png</file>
+    <file>Open.png</file>
+    
+    <file>arrow_move.png</file>
+    <file>arrow_rotate.png</file>
+    <file>arrow_scale.png</file>    
+    
+    
+  </qresource>
+  <qresource prefix="icon" >    
+    <file>beam.png</file>
+    <file>bomb.png</file>
+    <file>box.png</file>
+    <file>cog.png</file>
+    <file>door.png</file>
+    <file>door_in.png</file>
+    <file>lamp.png</file>
+    <file>paperbag.png</file>
+    <file>rocket-fly.png</file>
+    <file>sword.png</file>
+    <file>user_silhouette.png</file>
+    
+    <file>water.png</file>    
+    <file>invalid.png</file>    
+    <file>deleted.png</file>    
+    
+    <file>NoPreview.png</file>    
+  </qresource>
+</RCC>

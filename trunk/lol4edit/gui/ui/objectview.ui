@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ObjectListDialog</class>
+ <widget class="QDialog" name="ObjectListDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>249</width>
+    <height>278</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Objects in Level</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QListWidget" name="levelObjectList">
+     <item>
+      <property name="text">
+       <string>test</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../qrc/EditorResources.qrc">
+        <normaloff>:/icon/box.png</normaloff>:/icon/box.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+  <action name="actionGo_to_Object">
+   <property name="text">
+    <string>Go to Object</string>
+   </property>
+  </action>
+  <action name="actionSelect_Object">
+   <property name="text">
+    <string>Select Object</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../qrc/EditorResources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
