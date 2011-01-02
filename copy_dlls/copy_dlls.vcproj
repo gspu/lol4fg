@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9,00"
+	Name="copy_dlls"
+	ProjectGUID="{DC493107-976E-4A15-AC5A-10C4879F16B7}"
+	RootNamespace="copy_dlls"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+				CommandLine=""
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copying DLLs"
+				CommandLine="echo getting files from dlllist_$(ConfigurationName).txt&#x0D;&#x0A;FOR /f %%a IN (dlllist_$(ConfigurationName).txt) DO copy &quot;%%a&quot; &quot;..\$(ConfigurationName)&quot;&#x0D;&#x0A;echo getting non-listfile-able files&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\cg.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\OgreMain_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\OgrePaging_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\OgreProperty_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\OgreRTShaderSystem_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\OgreTerrain_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\OIS_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\Plugin_BSPSceneManager_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\Plugin_CgProgramManager_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\Plugin_OctreeSceneManager_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\Plugin_OctreeZone_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\Plugin_ParticleFX_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\Plugin_PCZSceneManager_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\RenderSystem_Direct3D9_d.dll&quot; &quot;..\Debug&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Debug\RenderSystem_GL_d.dll &quot; &quot;..\Debug&quot;"
+				ExcludedFromBuild="false"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+				CommandLine=""
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copying DLLs"
+				CommandLine="echo getting files from dlllist_$(ConfigurationName).txt&#x0D;&#x0A;FOR /f %%a IN (dlllist_$(ConfigurationName).txt) DO copy &quot;%%a&quot; &quot;..\$(ConfigurationName)&quot;&#x0D;&#x0A;echo getting non-listfile-able files&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\cg.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\OgreMain.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\OgrePaging.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\OgreProperty.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\OgreRTShaderSystem.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\OgreTerrain.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\OIS.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\Plugin_BSPSceneManager.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\Plugin_CgProgramManager.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\Plugin_OctreeSceneManager.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\Plugin_OctreeZone.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\Plugin_ParticleFX.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\Plugin_PCZSceneManager.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\RenderSystem_Direct3D9.dll&quot; &quot;..\Release&quot;&#x0D;&#x0A;copy &quot;$(OGRE_HOME)\bin\Release\RenderSystem_GL.dll&quot; &quot;..\Release&quot;"
+				ExcludedFromBuild="false"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
