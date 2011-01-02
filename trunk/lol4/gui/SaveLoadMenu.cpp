@@ -72,7 +72,7 @@ bool SaveLoadMenu::deleteClick(const CEGUI::EventArgs& e)
 		return true;
 	ZipSaveFile toDel(cur->getText().c_str(),app->saveGamePath,SAVEGAME_EXTENSION);
 	
-	toDel.removeFile();
+	toDel.eraseArchive();
 	update();
 	return true;
 }
