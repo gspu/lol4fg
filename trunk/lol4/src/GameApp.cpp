@@ -1135,6 +1135,14 @@ void GameApp::ceguiSetImage(CEGUI::Window *wnd, CEGUI::String str)
 
 void GameApp::resetApp()
 {
+	//remove the tempsave
+	if(tempSaveGame)
+	{
+		tempSaveGame->eraseArchive();
+		delete tempSaveGame;
+		tempSaveGame = NULL;
+	}
+
     if(playerInventoryView && playerInventoryView->isShown())
 		showInventory(false);
     if(playerSpellbookView && playerSpellbookView->isShown())
@@ -1191,10 +1199,11 @@ void GameApp::quitGame()
 }
 void GameApp::startGame()
 {
-	tempSaveGame = new ZipSaveFile("tempsave",tempPath,SAVEGAME_EXTENSION);
-	tempSaveGame->removeFile();
-	
 	resetApp();
+	//here we need a fresh and new tempSaveGame
+	//the constuctor should also create the file
+	tempSaveGame = new ZipSaveFile("tempsave",tempPath,SAVEGAME_EXTENSION);	
+	
 	loadLevel(settings.starting_level,settings.starting_entrance,true);
 	setMenu(GUI_INGAME,false);
 }
@@ -1493,7 +1502,7 @@ void GameApp::loadLevel(Ogre::String filename, Ogre::String entrance,bool reload
 
 	GameChar *oldPlayer = NULL;
 
-	//newton debuger stuff
+
 	if(currentLevel)
 	{
 		
@@ -1508,15 +1517,18 @@ void GameApp::loadLevel(Ogre::String filename, Ogre::String entrance,bool reload
 				return;
 			}
 			//das soeben verlassene level sichern!
- 			ZipSaveFile *temp2sav = new ZipSaveFile("tempsave2",tempPath,SAVEGAME_EXTENSION);
-			temp2sav->openZipFile(true);
-			temp2sav->addTextFile(currentLevel->getSavegameXML(),"level/"+currentLevel->getFileName());
-			temp2sav->copyFilesFrom(tempSaveGame);
-			temp2sav->closeZipFile();
-			tempSaveGame->removeFile();
-			temp2sav->renameFile(tempSaveGame->getZipFileName());
-			delete tempSaveGame;
-			tempSaveGame = temp2sav;
+
+			tempSaveGame->addTextFile(currentLevel->getSavegameXML(),"level/"+currentLevel->getFileName(),true);
+
+ 		//	ZipSaveFile *temp2sav = new ZipSaveFile("tempsave2",tempPath,SAVEGAME_EXTENSION);
+			////temp2sav->openZipFile(true);
+			//temp2sav->addTextFile(currentLevel->getSavegameXML(),"level/"+currentLevel->getFileName());
+			//temp2sav->copyFilesFrom(tempSaveGame);
+			//temp2sav->closeZipFile();
+			//tempSaveGame->removeFile();
+			//temp2sav->renameFile(tempSaveGame->getZipFileName());
+			//delete tempSaveGame;
+			//tempSaveGame = temp2sav;
 
 //			tempSaveGame->addTextFile(currentLevel->saveToFile("",true),"level/"+currentLevel->getFileName());
 //		OgreNewt::Debugger::getSingleton().deInit();
@@ -4190,14 +4202,11 @@ void GameApp::loadGame(Ogre::String name)
 	if(sgConfigFile == "")
 		return;
 	//ab diesem Punkt wird versucht, zu laden
+	
+
 	resetApp();
-	if(tempSaveGame)
-	{
-		//jetzt das tempsavegame löschen und ersetzen
-		tempSaveGame->removeFile();
-		delete tempSaveGame;
-	}
-	cur->copyFile("tempsave",tempPath,SAVEGAME_EXTENSION,false);
+	//copy the savegame to the target path and swich to it
+	cur->copyArchive("tempsave",tempPath,SAVEGAME_EXTENSION,true,true);
 	
 	tempSaveGame = cur;
 
@@ -4218,7 +4227,7 @@ void GameApp::loadGame(Ogre::String name)
     loadHotkeys(savelem->FirstChildElement("hotkeys"));
 	//setDisplayedSpell(player->getSpell());
 	//...
-	cur->closeZipFile();
+	//cur->closeZipFile();
 
 	delete doc;
 	
@@ -4242,18 +4251,18 @@ void GameApp::loadGame(Ogre::String name)
 
 void GameApp::saveGame(Ogre::String name)
 {
-    ZipSaveFile sav(name,saveGamePath,SAVEGAME_EXTENSION);
-	sav.openZipFile(true);
-    
-	sav.addTextFile(currentLevel->getSavegameXML(),"level/"+currentLevel->getBaseFileName()+".lvl");
-	sav.addTextFile(getSavegameSettings(),"savegame.xml");
+	//copy the tempsave
+	tempSaveGame->copyArchive(name,saveGamePath,SAVEGAME_EXTENSION,true,false);
 
-	//jetzt zeug aus dem tempsave adden
+	//open the copy
+    ZipSaveFile sav(name,saveGamePath,SAVEGAME_EXTENSION);
 	
-	sav.copyFilesFrom(tempSaveGame);
+	//add the current level and the generic savegame data file    
+	sav.addTextFile(currentLevel->getSavegameXML(),"level/"+currentLevel->getBaseFileName()+".lvl",true);
+	sav.addTextFile(getSavegameSettings(),"savegame.xml",true);
 	
 	
-	sav.closeZipFile();
+	sav.close();
 
 }
 //
