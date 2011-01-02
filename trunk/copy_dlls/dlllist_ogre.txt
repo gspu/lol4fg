@@ -1,0 +1,36 @@
+these files cannot be copied by the dlllist_debug/release-files. 
+they are here just so I have a list to use regex on
+
+release:
+$(OGRE_HOME)\bin\Release\cg.dll
+$(OGRE_HOME)\bin\Release\OgreMain.dll
+$(OGRE_HOME)\bin\Release\OgrePaging.dll
+$(OGRE_HOME)\bin\Release\OgreProperty.dll
+$(OGRE_HOME)\bin\Release\OgreRTShaderSystem.dll
+$(OGRE_HOME)\bin\Release\OgreTerrain.dll
+$(OGRE_HOME)\bin\Release\OIS.dll
+$(OGRE_HOME)\bin\Release\Plugin_BSPSceneManager.dll
+$(OGRE_HOME)\bin\Release\Plugin_CgProgramManager.dll
+$(OGRE_HOME)\bin\Release\Plugin_OctreeSceneManager.dll
+$(OGRE_HOME)\bin\Release\Plugin_OctreeZone.dll
+$(OGRE_HOME)\bin\Release\Plugin_ParticleFX.dll
+$(OGRE_HOME)\bin\Release\Plugin_PCZSceneManager.dll
+$(OGRE_HOME)\bin\Release\RenderSystem_Direct3D9.dll
+$(OGRE_HOME)\bin\Release\RenderSystem_GL.dll
+
+debug:
+$(OGRE_HOME)\bin\Debug\cg.dll
+$(OGRE_HOME)\bin\Debug\OgreMain_d.dll
+$(OGRE_HOME)\bin\Debug\OgrePaging_d.dll
+$(OGRE_HOME)\bin\Debug\OgreProperty_d.dll
+$(OGRE_HOME)\bin\Debug\OgreRTShaderSystem_d.dll
+$(OGRE_HOME)\bin\Debug\OgreTerrain_d.dll
+$(OGRE_HOME)\bin\Debug\OIS_d.dll
+$(OGRE_HOME)\bin\Debug\Plugin_BSPSceneManager_d.dll
+$(OGRE_HOME)\bin\Debug\Plugin_CgProgramManager_d.dll
+$(OGRE_HOME)\bin\Debug\Plugin_OctreeSceneManager_d.dll
+$(OGRE_HOME)\bin\Debug\Plugin_OctreeZone_d.dll
+$(OGRE_HOME)\bin\Debug\Plugin_ParticleFX_d.dll
+$(OGRE_HOME)\bin\Debug\Plugin_PCZSceneManager_d.dll
+$(OGRE_HOME)\bin\Debug\RenderSystem_Direct3D9_d.dll
+$(OGRE_HOME)\bin\Debug\RenderSystem_GL_d.dll 
