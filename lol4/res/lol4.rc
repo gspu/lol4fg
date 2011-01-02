@@ -30,7 +30,7 @@ LANGUAGE LANG_DANISH, SUBLANG_DEFAULT
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "kleinkreuz.ico"
+IDI_ICON1               ICON                    "game.ico"
 #endif    // Danish resources
 /////////////////////////////////////////////////////////////////////////////
 
