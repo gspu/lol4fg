@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lol4game", "lol4\lol4.vcpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lol4edit", "lol4edit\lol4edit.vcproj", "{F826FC1B-5BB1-4C0A-ADA9-C4B1622B3147}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "copy_dlls", "copy_dlls\copy_dlls.vcproj", "{DC493107-976E-4A15-AC5A-10C4879F16B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{F826FC1B-5BB1-4C0A-ADA9-C4B1622B3147}.Debug|Win32.Build.0 = Debug|Win32
 		{F826FC1B-5BB1-4C0A-ADA9-C4B1622B3147}.Release|Win32.ActiveCfg = Release|Win32
 		{F826FC1B-5BB1-4C0A-ADA9-C4B1622B3147}.Release|Win32.Build.0 = Release|Win32
+		{DC493107-976E-4A15-AC5A-10C4879F16B7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DC493107-976E-4A15-AC5A-10C4879F16B7}.Debug|Win32.Build.0 = Debug|Win32
+		{DC493107-976E-4A15-AC5A-10C4879F16B7}.Release|Win32.ActiveCfg = Release|Win32
+		{DC493107-976E-4A15-AC5A-10C4879F16B7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

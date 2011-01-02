@@ -13,7 +13,7 @@
 #include <zlib.h>
 #include <assert.h>
 #include <time.h>
-
+#include "functions.h"
 
 #define READ_BUFFER 32
 
@@ -28,23 +28,76 @@ const ZipArchive::uint_4b ZipArchive::centralDirHeader = 0x02014B50;
 const ZipArchive::uint_4b ZipArchive::finalHeader = 0x06054B50;
 const ZipArchive::uint_4b ZipArchive::bufSize = 16384;
 
-ZipArchive::ZipArchive(std::string filename)
+void ZipArchive::init(std::string filename,bool createIfNotExists,bool overwriteWithEmptyZip)
 {
-	
 	using namespace std;
 	mFileName = filename;
-	//zipFile.open(filename.c_str(),ios::binary|ios::in);
-	if(!open())
-		throw zsCannotOpen;//todo: throw something better //return false;
+	bool mustWriteEmpty = false;
+	if(!FileExists(filename))
+	{
+		if(!createIfNotExists)
+		{
+			throw zsCannotOpen;
+		}
+		mustWriteEmpty = true;
+		if(!open())
+			throw zsCannotOpen;
+	}
+	else
+	{
+		if(overwriteWithEmptyZip)
+		{
+			if(!open_truncate())
+				throw zsCannotOpen;
+			mustWriteEmpty = true;
+		}
+		else
+		{
+			if(!open())
+				throw zsCannotOpen;
+		}
+	}
+	
+
+	if(mustWriteEmpty)
+		writeEmptyZip();
+
 	if(!initZipStructure())
 	{
 		close();
 		throw lastState;
 	}
 	close();
-	uint_2b _date, _time;
-	getCurrentDate(_date,_time);
 }
+//
+//ZipArchive::ZipArchive(std::string filename,bool createIfNotExists)
+//{
+//	
+//	using namespace std;
+//	mFileName = filename;
+//	bool mustWriteEmpty = false;
+//	if(!FileExists(filename))
+//	{
+//		if(!createIfNotExists)
+//		{
+//			throw zsCannotOpen;
+//		}
+//		mustWriteEmpty = true;
+//	}
+//	
+//	if(!open())
+//		throw zsCannotOpen;
+//
+//	if(mustWriteEmpty)
+//		writeEmptyZip();
+//
+//	if(!initZipStructure())
+//	{
+//		close();
+//		throw lastState;
+//	}
+//	close();
+//}
 
 bool ZipArchive::initZipStructure()
 {
@@ -53,7 +106,8 @@ bool ZipArchive::initZipStructure()
 	//now try to find the "header" first
 	//for a comment-less file, it should be 22 bytes before the end
 	
-
+	filesInZip.clear();
+	filePointers.clear();
 	
 	zipFile.seekg(0,ios_base::end);
 	fileSize = zipFile.tellg();
@@ -230,12 +284,37 @@ bool ZipArchive::initZipStructure()
 	return true;
 }
 
+void ZipArchive::writeEmptyZip()
+{
+	//write finalHeader (4b) and 12 zero bytes
+	zipFile.write(reinterpret_cast<char*>(const_cast<uint_4b*>(&finalHeader)),4);
+	for(unsigned short i=0;i<12;i++)
+	{
+		zipFile.write("\0",1);
+	}
+}
+
+bool ZipArchive::open_truncate()
+{
+	if(zipFile.is_open())
+	{
+		close();
+	}
+	//open for everything AND TRUNCATE
+	zipFile.open(mFileName.c_str(),std::ios_base::binary|std::ios_base::in|std::ios_base::out|std::ios_base::trunc);
+	 
+	if(zipFile.fail())
+		return false;
+	return true;
+}
+
 bool ZipArchive::open()
 {
 	if(zipFile.is_open())
 		return true;
 	//open for everything
 	zipFile.open(mFileName.c_str(),std::ios_base::binary|std::ios_base::in|std::ios_base::out);
+	 
 	if(zipFile.fail())
 		return false;
 	return true;
@@ -277,7 +356,7 @@ void ZipArchive::truncateZipFile(unsigned long newSize)
 	fileSize = newSize;
 }
 
-Archive::Buffer ZipArchive::getFile(std::string filename)
+Archive::Buffer ZipArchive::getFile(std::string filename,Buffer::AllocType allocWith, bool nullTerminated)
 {
 	int index = getFileIndex(filename);
 	if(index == -1)
@@ -285,9 +364,9 @@ Archive::Buffer ZipArchive::getFile(std::string filename)
 		lastState = zsFileNotFound;
 		return Buffer();
 	}
-	return getFile_index(index);
+	return getFile_index(index,allocWith,nullTerminated);
 }
-Archive::Buffer ZipArchive::getFile_index(size_t index)
+Archive::Buffer ZipArchive::getFile_index(size_t index,Buffer::AllocType allocWith, bool nullTerminated)
 {
 	using namespace std;
 	open();
@@ -345,14 +424,16 @@ Archive::Buffer ZipArchive::getFile_index(size_t index)
 
 
 	Buffer readBuffer;
-	readBuffer.allocate(bufSize,Buffer::atNew);
+	readBuffer.allocate(bufSize,allocWith);
 	unsigned long curCrc32 = 0;
 
 	
 	
 	
-
-	result.allocate(curEntry.uncompSize,Buffer::atNew);
+	uint_4b resBufSize = curEntry.uncompSize;
+	if(nullTerminated)
+		resBufSize++;
+	result.allocate(resBufSize,allocWith);
 
 	stream.next_out = result.asUCharPtr();//pointer wohin schreiben
 	stream.avail_out = result.getLength();//wie viel dorthin schreiben
@@ -450,7 +531,8 @@ Archive::Buffer ZipArchive::getFile_index(size_t index)
 
 	readBuffer.deallocate();
 	
-
+	if(nullTerminated)
+		result[resBufSize-1]='\0';
 	
 	close();
 	return result;//Buffer();
@@ -622,7 +704,7 @@ bool ZipArchive::addFileWithTime(std::string filename, Buffer data, bool overwri
     //unsigned char in[bufSize];
     //unsigned char out[bufSize];
 	Buffer compressedBuffer;
-	compressedBuffer.allocate(bufSize,Buffer::atNew);
+	compressedBuffer.allocate(bufSize,defaultAllocType);
 	int level = Z_DEFAULT_COMPRESSION;
 
 	//prepare writing. seek to begin of central dir
@@ -775,7 +857,7 @@ bool ZipArchive::removeFile_index(size_t ind)
 	Buffer tempBuffer;
 	//i have no idea what is a good size for a temp buffer, just take bufSize
 	//const unsigned int UNZ_BUFSIZE = 16384;
-	tempBuffer.allocate(bufSize,Buffer::atNew);
+	tempBuffer.allocate(bufSize,defaultAllocType);
 	
 	//this is the gap which needs filling
 	uint_4b gap = curEntry.headerSize+curEntry.compSize;
@@ -1113,7 +1195,7 @@ void ZipArchive::appendCentDirEntry(FileEntry entry)
 	if(!entry.isBinary)
 	{
 		//is ASCII
-		internalAttributes = 1;
+		internalAttributes = 1;	
 	}
 	zipFile.write(reinterpret_cast<char*>(&internalAttributes),2);
 
@@ -1126,4 +1208,66 @@ void ZipArchive::appendCentDirEntry(FileEntry entry)
 	//filename
 	zipFile.write(entry.filename.c_str(),fnSize);
 	//now would come extra and comment, but I just won't write them, as I set their sizes to 0
+}
+
+void ZipArchive::doDebugComparison(ZipArchive *other)
+{
+	bool dummy = true;
+	dummy = mFooter.centralDirOffset == other->mFooter.centralDirOffset;
+	dummy = mFooter.centralDirSize == other->mFooter.centralDirSize;
+	dummy = mFooter.fileComment == other->mFooter.fileComment;
+	dummy = mFooter.numFiles == other->mFooter.numFiles;
+	
+	size_t numFiles = filesInZip.size();
+	dummy = numFiles == other->filesInZip.size();
+	for(size_t i=0;i<numFiles;i++)
+	{
+		FileEntry my = filesInZip[i];
+		FileEntry his= other->filesInZip[i];
+		//the index of the entry, 0 = first file in archive
+		dummy = (my.index == his.index);
+		//offset from the beginning of the file to this entry
+		dummy = (my.headerOffset == his.headerOffset);
+		//size of the stuff before the actual data = the relative offset of the data = 30+filenameLength+extraLength
+		dummy = (my.headerSize == his.headerSize);
+		////the offset of the compressed data
+		//uint_4b dataOffset;
+
+		//the filename as stdstring
+		dummy = (my.filename == his.filename);	
+		//method. 0 and 8 are the only ones we can use
+		dummy = (my.method == his.method);
+		//time @todo find out how it works
+		dummy = (my.time == his.time);
+		//date @todo find out how it works
+		dummy = (my.date == his.date);
+		//CRC
+		dummy = (my.crc == his.crc);
+		//compressed size = size of the data written into the file
+		//total size = compSize + headerSize
+		dummy = (my.compSize == his.compSize);
+		//uncompressed size
+		dummy = (my.uncompSize == his.uncompSize);
+
+		//CENTRAL DIR STUFF HERE
+
+		//offset of the central dir entry
+		dummy = (my.cdOffset == his.cdOffset);
+
+		//size of the central dir entry
+		dummy = (my.cdSize == his.cdSize);
+
+		//how to set ZIPINT
+		dummy = (my.isBinary == his.isBinary);
+
+		dummy = (my.bitflag == his.bitflag);
+	}
+	
+	/*
+	FileEntryVector filesInZip;
+	//and this links filenames to pointers of FileEntry, for faster access by name
+	FileEntryPtrMap filePointers;
+
+	Footer mFooter;
+	*/
 }
