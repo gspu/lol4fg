@@ -3,7 +3,6 @@
 #include <string>
 #include <assert.h>
 #include <Ogre.h>
-
 class Archive
 {
 public:	
@@ -18,32 +17,44 @@ public:
 			atOgreMalloc = 3//,	//using OGRE_MALLOC (category MEMCATEGORY_RESOURCE)
 			//atOgreNew = 4,		//using OGRE_NEW
 		};
+		//default constructor with everything empty
 		Buffer()
 			{
 				data = NULL;
 				length = 0;
 				aType = atDoNotTouch;
 			}
+		/*Buffer(size_t length, AllocType aType)
+			{
+				allocate(length,aType);
+			}*/
 
-		size_t getLength()
+		//returns length
+		inline size_t getLength()
 		{
 			return length;
 		}
+
+		//returns the data as a char*
 		char *asCharPtr()
 		{
 			return static_cast<char*>(data);
 		}
 
+		//returns the data as a unsigned char*
 		unsigned char *asUCharPtr()
 		{
 			return static_cast<unsigned char*>(data);
 		}
 
+		//returns data as a void*
 		void *asVoidPtr()
 		{
 			return data;
 		}
 
+		//just sets generic data, for when some function wants the data to be wrapped in a Buffer object
+		//whereever the data comes from, it has to take care of deallocation itself, Buffer will not be able to do so
 		void setData(void *newData, size_t length)
 		{
 			this->length = length;
@@ -51,6 +62,23 @@ public:
 			aType = atDoNotTouch;
 		}
 
+		//like the one which takes a void*, but takes a char*
+		void setData(char *newData, size_t length)
+		{
+			this->length = length;
+			data = static_cast<void*>(newData);
+			aType = atDoNotTouch;
+		}
+
+		//like the one which takes a void*, but takes a unsigned char*
+		void setData(unsigned char *newData, size_t length)
+		{
+			this->length = length;
+			data = static_cast<void*>(newData);
+			aType = atDoNotTouch;
+		}
+
+		//allocate length bytes with the specified allocation method
 		bool allocate(size_t length, AllocType at = atNew)
 		{
 			this->length = length;
@@ -89,6 +117,7 @@ public:
 			return false;
 		}
 
+		//deallocates the buffer
 		bool deallocate()
 		{
 			switch(aType)
@@ -134,20 +163,11 @@ public:
 			assert(index < length);
 			return (asUCharPtr()[index]);
 		}
-
-
-		/*void setByteAt(size_t index, unsigned char byte)
+	
+		inline bool isEmpty()
 		{
-
-		}*/
-
-		/*
-		unsigned char operator [] (size_t index, unsigned char byte)
-		{
-			assert(index < length);
-			return asUCharPtr()[index];
+			return data == NULL;
 		}
-		*/
 
 		
 	private:
@@ -157,7 +177,10 @@ public:
 
 	};
 public:
-	Archive(){};
+	Archive()
+	{
+		defaultAllocType = Buffer::atNew;
+	}
 
 	/*
 	virtual bool openRead();
@@ -168,10 +191,24 @@ public:
 
 	virtual bool hasFile(std::string filename) = 0;
 
-	virtual Buffer getFile(std::string filename) = 0;
+	virtual Buffer getFile(std::string filename,Buffer::AllocType allocWith = Buffer::atNew, bool nullTerminated = false) = 0;
 
 	virtual bool addFile(std::string filename, Buffer data, bool overwrite = true) = 0;
 
 	virtual bool removeFile(std::string filename) = 0;
+
+	inline void setDefaultAllocType(Buffer::AllocType type)
+	{
+		defaultAllocType = type;
+	}
+
+	inline Buffer::AllocType getDefaultAllocType()
+	{
+		return defaultAllocType;
+	}
+
+protected:
+	Buffer::AllocType defaultAllocType;
+
 	
 };
