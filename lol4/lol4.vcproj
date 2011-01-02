@@ -40,8 +40,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;&quot;$(OGRE_HOME)\include\OGRE&quot;;..\dependencies\CEGUI\cegui\include;&quot;$(OGRE_HOME)\samples\include&quot;;..\include;..\dependencies\ogrenewt\newton20\inc;..\dependencies\ogg\include;..\dependencies\vorbis\include;&quot;$(OGRE_HOME)\include\OIS&quot;;..\dependencies\zlib;..\dependencies\zlib\contrib\minizip;..\dependencies\tinyxml;gui;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;"
-				PreprocessorDefinitions="TIXML_USE_STL"
+				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;..\..\dependencies\NewtonWin\sdk;..\..\dependencies\CEGUI\cegui\include;..\..\dependencies\ogrenewt\newton20\inc;..\..\dependencies\libogg\include;..\..\dependencies\libvorbis\include;..\..\dependencies\zlib;..\..\dependencies\tinyxml;..\..\dependencies\zlib\contrib\minizip"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
@@ -65,10 +65,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="OgreMain_d.lib OIS_d.lib CEGUIBase_d.lib CEGUIOgreRenderer_d.lib minizip.lib zlibd.lib newton.lib OgreNewt_d.lib OpenAL32.lib libogg.lib libvorbisfile.lib tinyxmld_STL.lib OgreTerrain_d.lib OgrePaging_d.lib"
+				AdditionalDependencies="OgreMain_d.lib OIS_d.lib CEGUIBase_d.lib CEGUIOgreRenderer_d.lib zlibwapi.lib newton.lib OgreNewt_d.lib OpenAL32.lib libogg.lib libvorbisfile.lib tinyxmld_STL.lib OgreTerrain_d.lib OgrePaging_d.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;..\dependencies\zlib\contrib\minizip\$(ConfigurationName)&quot;;&quot;..\dependencies\zlib\projects\visualc6\Win32_LIB_$(ConfigurationName)&quot;;..\dependencies\ogrenewt\newton20\lib;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(NEWTON_HOME)/sdk/x32&quot;;&quot;$(NEWTON_HOME)/sdk/x32/dll_vs9&quot;;&quot;..\dependencies\ogg\win32\VS2008\Win32\$(ConfigurationName)&quot;;&quot;..\dependencies\vorbis\win32\VS2008\Win32\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;..\dependencies\CEGUI\lib;&quot;..\dependencies\tinyxml\$(ConfigurationName)_STL&quot;"
+				AdditionalLibraryDirectories="&quot;..\..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)/lol4.pdb"
 				SubSystem="2"
@@ -127,8 +127,8 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="include;&quot;$(OGRE_HOME)\include\OGRE&quot;;..\dependencies\CEGUI\cegui\include;&quot;$(OGRE_HOME)\samples\include&quot;;..\include;..\dependencies\ogrenewt\newton20\inc;..\dependencies\ogg\include;..\dependencies\vorbis\include;&quot;$(OGRE_HOME)\include\OIS&quot;;..\dependencies\zlib;..\dependencies\zlib\contrib\minizip;..\dependencies\tinyxml;gui;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;"
-				PreprocessorDefinitions="TIXML_USE_STL"
+				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;..\..\dependencies\NewtonWin\sdk;..\..\dependencies\CEGUI\cegui\include;..\..\dependencies\ogrenewt\newton20\inc;..\..\dependencies\libogg\include;..\..\dependencies\libvorbis\include;..\..\dependencies\zlib;..\..\dependencies\tinyxml;..\..\dependencies\zlib\contrib\minizip"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;TIXML_USE_STL"
 				StringPooling="true"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -153,10 +153,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="OgreMain.lib OIS.lib CEGUIBase.lib CEGUIOgreRenderer.lib minizip.lib zlib.lib newton.lib OgreNewt.lib OpenAL32.lib libogg.lib libvorbisfile.lib tinyxml_STL.lib OgreTerrain.lib OgrePaging.lib"
+				AdditionalDependencies="OgreMain.lib OIS.lib CEGUIBase.lib CEGUIOgreRenderer.lib zlibwapi.lib newton.lib OgreNewt.lib OpenAL32.lib libogg.lib libvorbisfile.lib tinyxml_STL.lib OgreTerrain.lib OgrePaging.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;..\dependencies\zlib\contrib\minizip\$(ConfigurationName)&quot;;&quot;..\dependencies\zlib\projects\visualc6\Win32_LIB_$(ConfigurationName)&quot;;..\dependencies\ogrenewt\newton20\lib;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(NEWTON_HOME)/sdk/x32&quot;;&quot;$(NEWTON_HOME)/sdk/x32/dll_vs9&quot;;&quot;..\dependencies\ogg\win32\VS2008\Win32\$(ConfigurationName)&quot;;&quot;..\dependencies\vorbis\win32\VS2008\Win32\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;..\dependencies\CEGUI\lib;&quot;..\dependencies\tinyxml\$(ConfigurationName)_STL&quot;"
+				AdditionalLibraryDirectories="&quot;..\..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;"
 				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -635,6 +635,22 @@
 			</File>
 			<File
 				RelativePath="..\src\waterplane.cpp"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Archive"
+			>
+			<File
+				RelativePath="..\include\Archive.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\ZipArchive.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\ZipArchive.h"
 				>
 			</File>
 		</Filter>
