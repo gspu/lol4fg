@@ -523,8 +523,8 @@ void Level::loadFile(ZipSaveFile *sav)
 		
 	}
 	//mWorld->update(mWorldUpdate);
-    if(levelSGfile)
-        levelSGfile->closeZipFile();
+    /*if(levelSGfile)
+        levelSGfile->closeZipFile();*/
 	
 }
 
@@ -2807,13 +2807,14 @@ void Level::updateTerrainLightmap()
 
 void Level::saveToFile(Ogre::String filename)
 {
+	//eventuell ist es eine gute idee, erstmal das archiv neuzubauen
     //zip vorbereiten
-    //FileExists(
+    
     ZipSaveFile zip(filename);
     if(FileExists(filename))
-        zip.removeFile();
+		zip.eraseArchive();
     //zip.removeFile();
-    zip.openZipFile(true);
+	zip.reInit();//opening a new file
 //	StandardApplication::getSingletonPtr()->setDebugText("save to "+filename);
 	//Ogre::String saveTo = levelPath+"/"+currentLevel->getFileName();
 	TiXmlDocument doc;
@@ -3048,7 +3049,7 @@ void Level::saveToFile(Ogre::String filename)
     std::stringstream st;
 	st << doc;
     zip.addTextFile(st.str(),"level.lvl");
-    zip.closeZipFile();
+    //zip.closeZipFile();
 	//doc.SaveFile(filename.c_str());
 	
 }

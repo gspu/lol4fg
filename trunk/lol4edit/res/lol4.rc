@@ -78,7 +78,7 @@ BEGIN
     IDS_APP_TITLE           "lol4"
 END
 
-IDI_APPICON             ICON                    "amboss2.ico"
+IDI_APPICON             ICON                    "editor.ico"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 

@@ -66,130 +66,213 @@ void ZipSaveFile::_tcDeserialiseCallback(void* deserializeHandle, void* buffer, 
     
 }
 #endif
-bool ZipSaveFile::openZipFile(bool write)
+//bool ZipSaveFile::openZipFile(bool write)
+//{
+//	return mArch->open();
+//	//if(write)
+//	//{
+//	//	if(mZip)
+//	//	{
+//	//		if(openForWrite)
+//	//			return true;
+//	//		closeZipFile();
+//	//	}
+//	//	mZip = zipOpen(mFileName.c_str(),APPEND_STATUS_CREATE);
+//	//	//mZip = CreateZip(mFileName.c_str(),NULL);
+//	//}
+//	//else
+//	//{
+//	//	if(mZip)
+//	//	{
+//	//		if(!openForWrite)
+//	//			return true;
+//	//		closeZipFile();
+//	//	}
+//	//	//mZip = OpenZip(mFileName.c_str(),NULL);
+//	//	mZip = unzOpen(mFileName.c_str());
+//	//}
+//	//openForWrite = write;
+//	//return mZip != NULL;
+//}
+
+//void ZipSaveFile::copyFilesFrom(ZipSaveFile *other)
+//{
+//	if(!other)
+//		return;
+//	other->openZipFile(false);
+//	openZipFile(true);
+//
+//	unz_global_info sourceInfo;
+//	int err = unzGetGlobalInfo (other->mZip,&sourceInfo);
+//	if (err!=UNZ_OK)
+//		return;
+//	for (int i=0;i<sourceInfo.number_entry;i++)
+//    {
+//		char curFileName[256];
+//		unz_file_info curFileInfo;
+//		err = unzGetCurrentFileInfo(other->mZip,&curFileInfo,curFileName,sizeof(curFileName),0,0,0,0);
+//		
+//		//roh?
+//		
+//		err = unzOpenCurrentFile2 (other->mZip,0,0,0);//letzter param = raw
+//		int size_buf = curFileInfo.uncompressed_size;
+//		void *buf = (void*)malloc(size_buf);
+//		err = unzReadCurrentFile(other->mZip,buf,size_buf);
+//		
+//		
+//
+//		//nun adden
+//		err = zipOpenNewFileInZip2(
+//			mZip,
+//			curFileName,
+//			0,//ach ich kapiers nicht. dann halt nichraw
+//			0,0,0,0,0,0,0,0);//roh. der dritte param ist das Zipfi
+//		//nun schreiben
+//		zipWriteInFileInZip(mZip,buf,size_buf);
+//		free(buf);
+//		err = unzGoToNextFile(other->mZip);
+//        if (err!=UNZ_OK)
+//        {
+//            return;
+//        }
+//        
+//	}
+//
+//
+//	//ZIPENTRY entry;
+//	//int err = GetZipItem(other->mZip, -1, &entry);
+//	//int cnt = entry.index;
+//	//for(int i=0;i<cnt;i++)
+//	//{
+//	//	err = GetZipItem(other->mZip, i, &entry);
+//	//	if(!err)
+//	//	{
+//	//		//jetzt prüfen ob ich die schon habe
+//	//		//SO GEHT ES NICHT!
+//	//		if(!hasFile(entry.name))
+//	//		{
+//	//			int bufsize = entry.unc_size;
+//	//			char *buf = new char[bufsize];
+//	//			err = UnzipItem(other->mZip,entry.index,buf,bufsize);
+//	//			addFileNoCheck(buf,bufsize,entry.name);
+//	//			delete buf;
+//	//		}
+//	//	}
+//	//}
+//	other->closeZipFile();
+//		
+//}
+
+//bool ZipSaveFile::hasFile(Ogre::String fileName)
+//{
+//	return mArch->hasFile(fileName);
+//	//if(mZip && openForWrite)
+//	//{
+//	//	Ogre::StringUtil::toLowerCase(fileName);
+//	//	for(Ogre::StringVector::iterator itr = filesAdded.begin();itr!=filesAdded.end();itr++)
+//	//	{	
+//	//		Ogre::String cur = *itr;
+//	//		Ogre::StringUtil::toLowerCase(cur);
+//	//		if(cur == fileName)
+//	//		{
+//	//			return true;
+//	//		}
+//	//	}
+//	//	return false;
+//	//}
+//	//else
+//	//{
+//	//	if (unzLocateFile(mZip,fileName.c_str(),0) != UNZ_OK)
+//	//		return false;
+//	//	return true;
+//	//	/*int index;
+//	//	ZIPENTRY info;
+//	//	int err = FindZipItem(mZip,fileName.c_str(),true,&index,&info);
+//	//	if(err)
+//	//		return false;
+//	//	return index == -1;*/
+//	//}
+//}
+
+bool ZipSaveFile::reInit(Ogre::String newFileName)
 {
-	if(write)
+	if(newFileName != "")
+		mFileName = newFileName;
+
+	bool shouldWriteEmptyZip = !FileExists(mFileName);
+	
+
+	if(!open())
 	{
-		if(mZip)
-		{
-			if(openForWrite)
-				return true;
-			closeZipFile();
-		}
-		mZip = zipOpen(mFileName.c_str(),APPEND_STATUS_CREATE);
-		//mZip = CreateZip(mFileName.c_str(),NULL);
-	}
-	else
-	{
-		if(mZip)
-		{
-			if(!openForWrite)
-				return true;
-			closeZipFile();
-		}
-		//mZip = OpenZip(mFileName.c_str(),NULL);
-		mZip = unzOpen(mFileName.c_str());
-	}
-	openForWrite = write;
-	return mZip != NULL;
-}
-
-void ZipSaveFile::copyFilesFrom(ZipSaveFile *other)
-{
-	if(!other)
-		return;
-	other->openZipFile(false);
-	openZipFile(true);
-
-	unz_global_info sourceInfo;
-	int err = unzGetGlobalInfo (other->mZip,&sourceInfo);
-	if (err!=UNZ_OK)
-		return;
-	for (int i=0;i<sourceInfo.number_entry;i++)
-    {
-		char curFileName[256];
-		unz_file_info curFileInfo;
-		err = unzGetCurrentFileInfo(other->mZip,&curFileInfo,curFileName,sizeof(curFileName),0,0,0,0);
-		
-		//roh?
-		
-		err = unzOpenCurrentFile2 (other->mZip,0,0,0);//letzter param = raw
-		int size_buf = curFileInfo.uncompressed_size;
-		void *buf = (void*)malloc(size_buf);
-		err = unzReadCurrentFile(other->mZip,buf,size_buf);
-		
-		
-
-		//nun adden
-		err = zipOpenNewFileInZip2(
-			mZip,
-			curFileName,
-			0,//ach ich kapiers nicht. dann halt nichraw
-			0,0,0,0,0,0,0,0);//roh. der dritte param ist das Zipfi
-		//nun schreiben
-		zipWriteInFileInZip(mZip,buf,size_buf);
-		free(buf);
-		err = unzGoToNextFile(other->mZip);
-        if (err!=UNZ_OK)
-        {
-            return;
-        }
-        
-	}
-
-
-	//ZIPENTRY entry;
-	//int err = GetZipItem(other->mZip, -1, &entry);
-	//int cnt = entry.index;
-	//for(int i=0;i<cnt;i++)
-	//{
-	//	err = GetZipItem(other->mZip, i, &entry);
-	//	if(!err)
-	//	{
-	//		//jetzt prüfen ob ich die schon habe
-	//		//SO GEHT ES NICHT!
-	//		if(!hasFile(entry.name))
-	//		{
-	//			int bufsize = entry.unc_size;
-	//			char *buf = new char[bufsize];
-	//			err = UnzipItem(other->mZip,entry.index,buf,bufsize);
-	//			addFileNoCheck(buf,bufsize,entry.name);
-	//			delete buf;
-	//		}
-	//	}
-	//}
-	other->closeZipFile();
-		
-}
-
-bool ZipSaveFile::hasFile(Ogre::String fileName)
-{
-	if(mZip && openForWrite)
-	{
-		Ogre::StringUtil::toLowerCase(fileName);
-		for(Ogre::StringVector::iterator itr = filesAdded.begin();itr!=filesAdded.end();itr++)
-		{	
-			Ogre::String cur = *itr;
-			Ogre::StringUtil::toLowerCase(cur);
-			if(cur == fileName)
-			{
-				return true;
-			}
-		}
+		lastState = zsCannotOpen;//todo: throw something better //return false;
 		return false;
 	}
-	else
+	if(shouldWriteEmptyZip)
 	{
-		if (unzLocateFile(mZip,fileName.c_str(),0) != UNZ_OK)
-			return false;
-		return true;
-		/*int index;
-		ZIPENTRY info;
-		int err = FindZipItem(mZip,fileName.c_str(),true,&index,&info);
-		if(err)
-			return false;
-		return index == -1;*/
+		writeEmptyZip();
 	}
+
+	if(!initZipStructure())
+	{
+		close();
+		return false;
+	}
+	close();
+	return true;
+}
+
+bool ZipSaveFile::addTextFile(Ogre::String fileContents,Ogre::String fileName,bool overwrite)
+{
+	Archive::Buffer temp;
+	//temp
+	temp.setData(const_cast<char*>(fileContents.c_str()),fileContents.size());
+	
+	bool success = addFile(fileName,temp,overwrite);		
+	//temp.deallocate();
+	return success;
+	
+}
+
+bool ZipSaveFile::addFileFromDataStreamPtr(Ogre::DataStreamPtr stream,Ogre::String fileName)
+{
+	Buffer buf;
+	buf.allocate(stream->size(),Buffer::atMalloc);
+    //void *buffer = malloc(stream->size());
+    
+	stream->read(buf.asVoidPtr(),stream->size());
+	bool res = addFile(fileName,buf);
+	//delete buffer;
+	buf.deallocate();
+	return res;
+    
+}
+
+bool ZipSaveFile::getFileAsDataStreamPtr(Ogre::DataStreamPtr &stream,Ogre::String fileName,bool freeOnClose)
+{
+    //SaveGameFile res;
+	Buffer buff = getFile(fileName,Buffer::atOgreMalloc,false);
+	if(buff.isEmpty())
+        return false;
+
+	//now memStream is responsible for the data, so buff is NOT being deallocated
+	Ogre::MemoryDataStream *memStream = new Ogre::MemoryDataStream(buff.asVoidPtr(),buff.getLength(),freeOnClose);
+	//wrap it into a datastreamptr
+    Ogre::DataStreamPtr wrapper(memStream);
+    stream = wrapper;
+
+    return true;
+}
+
+Ogre::String ZipSaveFile::getFileAsString(Ogre::String fileName)
+{
+	Buffer file = getFile(fileName,Buffer::atNew,true);
+	if(file.isEmpty())
+		return "";
+	
+	Ogre::String res(file.asCharPtr());// = (reinterpret_cast<char*>(file.buffer));
+	//res += "\0"; <- wat?
+	file.deallocate();
+	return res;
 }
 
 Image ZipSaveFile::getFileAsImage(Ogre::String filename)
@@ -207,8 +290,10 @@ There are other preprocessor variables including:
     * '__TIMESTAMP__' -> a string literal of the form "Mmm dd yyyy hh:mm:ss"
 
     * '__FUNCTION__' -> a string literal which contains the function name (this is part of C99, the new C standard and not all C++ compilers support it)*/
-    SaveGameFile file;
-	if(!getFile(filename,file))
+    //SaveGameFile file;
+	Archive::Buffer file = getFile(filename,Archive::Buffer::atOgreMalloc);
+	if(file.isEmpty())
+	//if(!getFile(filename,file))
     {
         return Image();
     }
@@ -216,7 +301,7 @@ There are other preprocessor variables including:
     Image img;
     //size_t test = img.getHeight();
 
-    Ogre::DataStreamPtr stream(new Ogre::MemoryDataStream(file.buffer,file.size,false));
+	Ogre::DataStreamPtr stream(new Ogre::MemoryDataStream(file.asVoidPtr(),file.getLength(),false));
     /*Ogre::DataStreamPtr ds(new Ogre::MemoryDataStream(mybuffer, mybuffersize)); */
     Ogre::String base,ext,path;
     Ogre::StringUtil::splitFullFilename(filename,base,ext,path);
@@ -225,7 +310,8 @@ There are other preprocessor variables including:
     /*stream.
     stream.close();
     stream.setNull();*/
-	free(file.buffer);//versuchen wirs so
+	file.deallocate();
+	//free(file.buffer);//versuchen wirs so
 	//delete file.buffer;
 	return img;
 }
@@ -249,63 +335,4 @@ There are other preprocessor variables including:
     bool result = addFileFromDataStreamPtr(stream,fileName);
     stream->close();
     return result;
-}
-
-bool ZipSaveFile::getFile(Ogre::String fileName,SaveGameFile &resFile,bool nullTerminated,bool allocateWithOAT)
-{
-	if(!openZipFile(false))
-		return false;
-	if(!hasFile(fileName))
-		return false;
-	//hasFile macht die datei zu "current", es sollte also passen...
-	
-	resFile.buffer = NULL;
-	resFile.size = 0;
-
-	
-	
-	unz_file_info file_info;
-	int err = unzGetCurrentFileInfo(mZip,&file_info,0,0,NULL,0,NULL,0);
-	resFile.size = file_info.uncompressed_size;
-	int readSize = resFile.size;//das kriegt die zip-funktion
-	if(nullTerminated)
-	{
-		resFile.size++;
-	}
-	err = unzOpenCurrentFile(mZip);
-	if(!allocateWithOAT)
-	{
-		resFile.buffer = (void*)malloc(resFile.size);
-	}
-	else
-	{
-		//mit der ogre-funktion alloziieren
-		resFile.buffer = (void*)OGRE_ALLOC_T(char*,resFile.size,MEMCATEGORY_GENERAL);
-	}
-	int numBytesRead = unzReadCurrentFile(mZip,resFile.buffer,readSize);
-
-	if(nullTerminated)
-	{
-		char *temp = (char*)resFile.buffer;
-		temp[resFile.size-1] = '\0';//die null anhängen
-	}
-	//unzCloseCurrentFile <- das tun
-
-	//
-
-	//int index;
-	//ZIPENTRY info;
-	//FindZipItem(mZip,fileName.c_str(),false,&index,&info);
-	//if(index == -1)
-	//	return false;
-	//int bufsize = info.unc_size;
-	//char *buffer = new char[bufsize];
-	//int err = UnzipItem(mZip,index,buffer,bufsize);
-	////*size = bufsize;
-	////buff = reinterpret_cast<void*>(buffer);
-	//resFile.buffer = reinterpret_cast<void*>(buffer);
-	//resFile.size = bufsize;
-	return true;
-	//delete buffer;
-	
 }
