@@ -120,7 +120,10 @@ public:
 	static const uint_4b bufSize;
 
 	//opens an existing zip file and reads all the necessary stuff into the structs
-	ZipArchive(std::string filename);
+	ZipArchive(std::string filename,bool createIfNotExists = false,bool overwriteWithEmptyZip=false)
+	{
+		init(filename,createIfNotExists,overwriteWithEmptyZip);
+	}
 
 	bool open();
 	void close();
@@ -129,7 +132,7 @@ public:
 
 	bool hasFile(std::string filename);
 
-	Buffer getFile(std::string filename);
+	Buffer getFile(std::string filename,Buffer::AllocType allocWith = Buffer::atNew, bool nullTerminated = false);
 
 	bool addFileWithTime(std::string filename, Buffer data, bool overwrite = true, time_t filetime = -1);
 
@@ -137,8 +140,43 @@ public:
 
 	bool removeFile(std::string filename);
 
+	void doDebugComparison(ZipArchive *other);
+
+protected:
+	std::string mFileName;
+
+	//protected constructor that does nothing
+	ZipArchive(){}
+
+	/*
+	 * actual "constructor"
+	 * string filename: the filename (duh)
+	 * bool createIfNotExists: whenever the file should be created if it does not exist. if set to false and no file, the function will fail
+	 * bool overwriteWithEmptyZip: if this is true and the file exists, it will be overwritten with an empty zip file = all files inside will be deleted
+	 * does not return anything, just throws stuff
+	 */
+	void init(std::string filename,bool createIfNotExists,bool overwriteWithEmptyZip);
+
+	/*
+	 * opens the file AND REMOVES FILE CONTENTS
+	 * protected, since the class has afterwards no idea that it has become invalidated
+	 */
+	bool open_truncate();
+
+	//writes content for an empty zip file
+	//does not set the file size or the put ptr, just writes
+	//also, does not open or close
+	void writeEmptyZip();
+
+	bool initZipStructure();
+
+	//should return something from ZipState
+	//but since zlib stuff returns ints, it would not work with this member being ZipState
+	int lastState;
 	
 private:
+	
+
 	//gets current date as dos time/date
 	void getCurrentDate(uint_2b &dosDate, uint_2b &dosTime);
 	//converts a time_t to dos time/date
@@ -152,17 +190,17 @@ private:
 	//removes a file by index
 	bool removeFile_index(size_t index);
 
-	Buffer getFile_index(size_t index);
+	Buffer getFile_index(size_t index,Buffer::AllocType allocWith,bool nullTerminated);
 
 	//retrieves the file's index, or -1 if file does not exist
 	int getFileIndex(std::string filename);
 
-	std::string mFileName;
+	
 	uint_4b fileSize;
 
 	std::fstream zipFile;
 
-	bool initZipStructure();
+	
 
 	//truncates the file to given size
 	//most probably the fstream has to be closed for this to work
@@ -192,10 +230,8 @@ private:
 	//the put pointer will be repositioned, and left somewhere at the central dir entry
 	void updateCompressedSize(FileEntry entry);
 
-	//should return something from ZipState
-	//but since zlib stuff returns ints, it would not work with this member being ZipState
-	int lastState;
+	
 
-	bool openForRead;
-	bool openForWrite;
+	//bool openForRead;
+	//bool openForWrite;
 };

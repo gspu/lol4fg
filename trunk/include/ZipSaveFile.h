@@ -2,191 +2,151 @@
 #define __saveGame
 
 
-#include "Ogre.h"
-#include "zip.h"
-#include "unzip.h"
+#include <Ogre.h>
+//#include "zip.h"
+//#include "unzip.h"
 #include "OgreImageCodec.h"
 #include "OgreNewt.h"
+#include "ZipArchive.h"
 
-class ZipSaveFile
+class ZipSaveFile: public ZipArchive
 {
 public:
-	struct SaveGameFile
+	/*struct SaveGameFile
 	{
 		void *buffer;
 		unsigned int size;
-	};
+	};*/
+	//typedef Archive::Buffer
 	//mFileName = path+"/"+name+"."+ext;
-	ZipSaveFile(Ogre::String name,Ogre::String path,Ogre::String ext)
+	ZipSaveFile(Ogre::String name,Ogre::String path,Ogre::String ext,bool createIfNotExists=true,bool overwriteWithEmptyZip=false)
+		//:ZipArchive(path+"/"+name+"."+ext,true)
 	{
-		openForWrite = true;
-		mZip = NULL;
+		//openForWrite = true;
+		//mZip = NULL;
 		mFileName = path+"/"+name+"."+ext;
 		mName = name;
+		init(mFileName,createIfNotExists,overwriteWithEmptyZip);
 		
 	}
-    ZipSaveFile(Ogre::String fullPath)
+    ZipSaveFile(Ogre::String fullPath,bool createIfNotExists=true,bool overwriteWithEmptyZip=false)
+		//:ZipArchive(fullPath,true)
 	{
-		openForWrite = true;
-		mZip = NULL;
+		//openForWrite = true;
+		//mZip = NULL;
 		mFileName = fullPath;
         Ogre::String name,ext,path;
         Ogre::StringUtil::splitFullFilename(fullPath,name,ext,path);
 		mName = name;
+		init(mFileName,createIfNotExists,overwriteWithEmptyZip);
 		
 	}
 	~ZipSaveFile()
 	{
-		closeZipFile();
+		//closeZipFile();
 	}
-	
-	
-	
-	
-	//methoden zum Datei adden. wenn nicht offen, wird es aufgemacht
-	//wenn schon vorhanden, wird nichts geadded
-	bool addFile(void *buf,size_t size,Ogre::String fileName)
-	{
-		if(hasFile(fileName))
-			return false;
-		if(!openZipFile(true))
-			return false;
-		return addFileNoCheck(buf,size,fileName);
-		
-		
-	}
-	inline bool addTextFile(Ogre::String fileContents,Ogre::String fileName)
-	{
-		return addFile(reinterpret_cast<void*>(const_cast<char*>(fileContents.c_str())),fileContents.size(),fileName);		
-		
-	}
-    bool addImageFile(Ogre::Image img,Ogre::String fileName);
-    //added datei aus einen Ogre::DataStreamPtr
-    //schließt den stream nicht!
-    bool addFileFromDataStreamPtr(Ogre::DataStreamPtr stream,Ogre::String fileName)
-    {
-        void *buffer = malloc(stream->size());
-        
-        stream->read(buffer,stream->size());
-		bool res = addFile(buffer,stream->size(),fileName);
-		delete buffer;
-		return res;
-        
-    }
-    bool getFileAsDataStreamPtr(Ogre::DataStreamPtr &stream,Ogre::String fileName,bool freeOnClose = true,bool allocateWithOAT = true)
-    {
-        SaveGameFile res;
-        if(!getFile(fileName,res,false,allocateWithOAT))
-            return false;
-        
-		//hm. das mach ich mal anders. ich lese es in den datastream ein, anstatt ihn damit zu constructen
-		//und den buffer lösch ich sofort
 
-		
-
-		//Ogre::MemoryDataStream *memStream = new Ogre::MemoryDataStream(res.size);//res.buffer,res.size,freeOnClose);
-		Ogre::MemoryDataStream *memStream = new Ogre::MemoryDataStream(res.buffer,res.size,freeOnClose);
-		//memStream->
-		//memStream-> (res.buffer,res.size);
-        Ogre::DataStreamPtr str(memStream);
-        stream = str;
-	/*	stream->close();
-		free(res.buffer);*/
-        return true;
-    }
-    
-	bool hasFile(Ogre::String fileName);
-	//inline bool addFileFromDisk(Ogre::String fileNameSrc,Ogre::String fileNameDest)
-	//{
-	//	if(hasFile(fileNameDest))
-	//		return false;
-	//	if(!openZipFile(true))
-	//		return false;
-	//	bool ok = ZipAdd(mZip,fileNameDest.c_str(),fileNameSrc.c_str()) == ZR_OK;
-	//	if(ok)
-	//	{
-	//		filesAdded.push_back(fileNameDest);
-	//	}
-	//	return ok;
-	//	
-	//	//return true;
-	//}
-	//aufruf zB
 	/*
-	SaveGameFile file;
-	getFile("asdf.muh",file);
-	...
-	delete file.buffer;
+	re-inits this instance 
+	if no new file name given, the one given on construction will be used
+	effects are:
+	- if the file does not exist, it will be created
+	- the file is re-read
+	returns: true on success, false on failure (duh)
 	*/
-	bool getFile(Ogre::String fileName,SaveGameFile &resFile,bool nullTerminated = false,bool allocateWithOAT = false);
+	bool reInit(Ogre::String newFileName="");
 
-	Ogre::String getFileAsString(Ogre::String fileName)
+	bool reInit(Ogre::String name,Ogre::String path,Ogre::String ext)
 	{
-		SaveGameFile file;
-		if(!getFile(fileName,file,true))
-			return "";
-		
-		Ogre::String res = (reinterpret_cast<char*>(file.buffer));
-		res += "\0";
-		delete file.buffer;
-		return res;
+		reInit(path+"/"+name+"."+ext);
 	}
+	
+	
+	
+	//adds a text file
+	bool addTextFile(Ogre::String fileContents,Ogre::String fileName,bool overwrite = false);
+
+	//adds an image as a file
+    bool addImageFile(Ogre::Image img,Ogre::String fileName);
+    
+	//adds the content of a DataStreamPtr as a file
+    //does not close the stream
+    bool addFileFromDataStreamPtr(Ogre::DataStreamPtr stream,Ogre::String fileName);
+
+	//gets a file as a DataStreamPtr.
+	//if freeOnClose is set to false, then the data must be manually deallocated somewhen 
+	bool getFileAsDataStreamPtr(Ogre::DataStreamPtr &stream,Ogre::String fileName,bool freeOnClose = true);
+    
+	//retrieves a file as a Ogre::String
+	Ogre::String getFileAsString(Ogre::String fileName);
+
+	//retrieves a file and tries to process it as an image.
     Ogre::Image getFileAsImage(Ogre::String filename);
-	//löscht die Datei
-	inline void removeFile()
+
+	//erases the zip file
+	inline void eraseArchive()
 	{
-		closeZipFile();
+		close();
+		//closeZipFile();
 		int err = remove(mFileName.c_str());
 	}
-	inline void renameFile(Ogre::String newFileName)
+	//renames the zip file
+	inline void renameArchive(Ogre::String newFileName)
 	{
-		closeZipFile();
+		close();
 		if(MoveFileA(mFileName.c_str(),newFileName.c_str()))
 		{
 			mFileName = newFileName;
 		}
 	}
-	inline void renameFile(Ogre::String newName,Ogre::String newPath,Ogre::String newExt)
+
+	//renames the zip file
+	inline void renameArchive(Ogre::String newName,Ogre::String newPath,Ogre::String newExt)
 	{
-		renameFile(newPath+"/"+newName+"."+newExt);
+		renameArchive(newPath+"/"+newName+"."+newExt);
 	}
-	//kopiert die datei nach newFilename, und wechselt auf die neue datei
-	//also gemeint ist das Kopieren auf dem Datenträger.
-	//hier brauchen wir ne OS-Abfrage...
-	inline void copyFile(Ogre::String newFileName,bool failIfExists)
+
+	//copies a file to newFileName
+	//bool overwrite: whenever to overwrite if the target file exists
+	//bool swichToCopy: if true, this instance will modify the newly-created file after this instead of the one it was constructed with
+	inline bool copyArchive(Ogre::String newFileName,bool overwrite,bool swichToCopy = true)
 	{
-		closeZipFile();
+		close();
 		
-		if(CopyFileA(mFileName.c_str(),newFileName.c_str(),failIfExists))
+		if(CopyFileA(mFileName.c_str(),newFileName.c_str(),!overwrite))
 		{
-			mFileName = newFileName;
+			if(swichToCopy)
+				mFileName = newFileName;
+			return true;
 		}
+		return false;
 	}
-	inline void copyFile(Ogre::String newName,Ogre::String newPath,Ogre::String newExt,bool failIfExists)
+	inline bool copyArchive(Ogre::String newName,Ogre::String newPath,Ogre::String newExt,bool overwrite,bool swichToCopy = true)
 	{
-		copyFile(newPath+"/"+newName+"."+newExt,failIfExists);
+		return copyArchive(newPath+"/"+newName+"."+newExt,overwrite,swichToCopy);
 	}
 	//wenn write = true, wird die datei zum
 	//lesen geöffnet, sonst zum schreiben
-	bool openZipFile(bool write);
+	//bool openZipFile(bool write);
 	
-	inline void closeZipFile()
-	{
-		filesAdded.clear();
-		if(mZip)// && openForWrite)
-		{
-			if(openForWrite)
-				zipClose(mZip,NULL);
-			else
-				unzClose(mZip);
-			//CloseZip(mZip);
+	//inline void closeZipFile()
+	//{
+	//	filesAdded.clear();
+	//	if(mZip)// && openForWrite)
+	//	{
+	//		if(openForWrite)
+	//			zipClose(mZip,NULL);
+	//		else
+	//			unzClose(mZip);
+	//		//CloseZip(mZip);
 
-			mZip = NULL;
-			
-		}
-	}
+	//		mZip = NULL;
+	//		
+	//	}
+	//}
 
-	void copyFilesFrom(ZipSaveFile *other);
+	//copies all files from other. no idea if still needed
+	//void copyFilesFrom(ZipSaveFile *other);
 	//void readFile(
 	Ogre::String getZipFileName()
 	{
@@ -200,19 +160,24 @@ public:
     static void _tcDeserialiseCallback(void* deserializeHandle, void* buffer, size_t size);
 	
 private:
-	bool openForWrite;
+	//bool openForWrite;
 	//HZIP mZip;
-	voidp mZip;
+	//voidp mZip;
+	//ZipArchive *mArch;
 	//zipFile writeFile;
 	//unzFile readFile;//hm wat. die sind doch identisch...
-	Ogre::String mFileName;
+	//Ogre::String mFileName;
 	Ogre::String mName;
 	//dateien, die per addfile geadded wurden
 	//damit man auch im schreibmodus hasFile machen kann
-	Ogre::StringVector filesAdded;
+	//Ogre::StringVector filesAdded;
 	
 protected:
-	bool addFileNoCheck(void *buf,size_t size,Ogre::String fileName)
+	/*
+	 * 
+	 */
+	//void init(Ogre::String fullPath, bool createIfNotExists = true, bool replaceIfExists = false);
+	/*bool addFileNoCheck(void *buf,size_t size,Ogre::String fileName)
 	{
 		int err = zipOpenNewFileInZip(mZip,fileName.c_str(),0,0,0,0,0,0,0,0);
 		if(!err)
@@ -220,7 +185,7 @@ protected:
 			err = zipWriteInFileInZip(mZip,buf,size);
 		}		
 		return (err == 0);
-	}
+	}*/
 
 
 
