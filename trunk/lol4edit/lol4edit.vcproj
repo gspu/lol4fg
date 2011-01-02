@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\QtCore&quot;;..\..\dependencies\ogrenewt\newton20\inc;..\..\dependencies\NewtonWin\sdk;..\..\dependencies\libogg\include;..\..\dependencies\libvorbis\include;..\..\dependencies\zlib;..\..\dependencies\QtOgre\QtOgre\include;..\..\dependencies\QtOgre\QtOgre\ui;..\..\dependencies\QtOgre\QtOgre\bin;..\..\dependencies\tinyxml;..\..\dependencies\zlib\contrib\minizip"
+				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\QtCore&quot;;..\..\dependencies\ogrenewt\newton20\inc;..\..\dependencies\NewtonWin\sdk;..\..\dependencies\libogg\include;..\..\dependencies\libvorbis\include;..\..\dependencies\zlib;..\..\dependencies\QtOgre\QtOgre\include;..\..\dependencies\QtOgre\QtOgre\ui;..\..\dependencies\QtOgre\QtOgre\bin;..\..\dependencies\tinyxml;..\..\dependencies\vc_2008\generated"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__editor;TIXML_USE_STL"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -68,7 +68,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="OgreMain_d.lib OIS_d.lib minizip.lib zlibd.lib newton.lib OgreNewt_d.lib OpenAL32.lib libogg.lib libvorbisfile.lib QtOgre_d.lib QtGuid4.lib QtXmld4.lib QtCored4.lib tinyxmld_STL.lib OgreTerrain_d.lib OgrePaging_d.lib"
+				AdditionalDependencies="OgreMain_d.lib OIS_d.lib zlibwapi.lib newton.lib OgreNewt_d.lib OpenAL32.lib libogg.lib libvorbisfile.lib QtOgre_d.lib QtGuid4.lib QtXmld4.lib QtCored4.lib tinyxmld_STL.lib OgreTerrain_d.lib OgrePaging_d.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="&quot;..\..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(QTDIR)\lib&quot;"
@@ -133,7 +133,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\QtCore&quot;;..\..\dependencies\ogrenewt\newton20\inc;..\..\dependencies\NewtonWin\sdk;..\..\dependencies\libogg\include;..\..\dependencies\libvorbis\include;..\..\dependencies\zlib;..\..\dependencies\QtOgre\QtOgre\include;..\..\dependencies\QtOgre\QtOgre\ui;..\..\dependencies\QtOgre\QtOgre\bin;..\..\dependencies\tinyxml;..\..\dependencies\zlib\contrib\minizip"
+				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\QtCore&quot;;..\..\dependencies\ogrenewt\newton20\inc;..\..\dependencies\NewtonWin\sdk;..\..\dependencies\libogg\include;..\..\dependencies\libvorbis\include;..\..\dependencies\zlib;..\..\dependencies\QtOgre\QtOgre\include;..\..\dependencies\QtOgre\QtOgre\ui;..\..\dependencies\QtOgre\QtOgre\bin;..\..\dependencies\tinyxml;..\..\dependencies\vc_2008\generated"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__editor;TIXML_USE_STL"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -159,7 +159,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="OgreMain.lib OIS.lib minizip.lib zlib.lib newton.lib OgreNewt.lib OpenAL32.lib libogg.lib libvorbisfile.lib QtOgre.lib QtGui4.lib QtXml4.lib QtCore4.lib tinyxml_STL.lib OgreTerrain.lib OgrePaging.lib"
+				AdditionalDependencies="OgreMain.lib OIS.lib zlibwapi.lib newton.lib OgreNewt.lib OpenAL32.lib libogg.lib libvorbisfile.lib QtOgre.lib QtGui4.lib QtXml4.lib QtCore4.lib tinyxml_STL.lib OgreTerrain.lib OgrePaging.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;..\..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(QTDIR)\lib&quot;"
@@ -1000,6 +1000,18 @@
 		<Filter
 			Name="Zip"
 			>
+			<File
+				RelativePath="..\include\Archive.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\ZipArchive.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\ZipArchive.h"
+				>
+			</File>
 			<File
 				RelativePath="..\src\ZipSaveFile.cpp"
 				>

@@ -2,7 +2,7 @@
 
 //------- BEGIN OGRE & stuff includes ----------
 #include <Ogre.h>
-#include "zip.h"
+
 #include <OgreFrameListener.h>
 //#include <OgreEventListeners.h>
 //#include <OgreKeyEvent.h>
@@ -14,7 +14,7 @@
 #include <OgreNewt.h>
 #include "tinyxml.h"
 #include "functions.h"
-#include "zip.h"
+
 #include "SpellEffect.h"
 #include "Alchemy.h"
 #include <TypeConverter.h>
