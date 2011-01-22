@@ -61,7 +61,7 @@ public:
 		//uint_4b dataOffset;
 
 		//the filename as stdstring
-		std::string filename;	
+		Ogre::String filename;	
 		//method. 0 and 8 are the only ones we can use
 		uint_2b method;
 		//time @todo find out how it works
@@ -98,13 +98,13 @@ public:
 		uint_2b numFiles;
 		uint_4b centralDirSize;
 		uint_4b centralDirOffset;
-		std::string fileComment;
+		Ogre::String fileComment;
 	};
 
 
 	typedef std::vector<FileEntry> FileEntryVector;
-	//typedef std::map<std::string,FileEntry> FileEntryMap; 
-	typedef std::map<std::string,size_t> FileEntryPtrMap; 
+	//typedef std::map<Ogre::String,FileEntry> FileEntryMap; 
+	typedef std::map<Ogre::String,size_t> FileEntryPtrMap; 
 	//FileEntryMap filesInZip;
 	//in here the actual FileEntry objects are stored, in original order
 	FileEntryVector filesInZip;
@@ -120,7 +120,7 @@ public:
 	static const uint_4b bufSize;
 
 	//opens an existing zip file and reads all the necessary stuff into the structs
-	ZipArchive(std::string filename,bool createIfNotExists = false,bool overwriteWithEmptyZip=false)
+	ZipArchive(Ogre::String filename,bool createIfNotExists = false,bool overwriteWithEmptyZip=false)
 	{
 		init(filename,createIfNotExists,overwriteWithEmptyZip);
 	}
@@ -130,20 +130,20 @@ public:
 	//bool openRead();
 	//bool openWrite();
 
-	bool hasFile(std::string filename);
+	bool hasFile(Ogre::String filename);
 
-	Buffer getFile(std::string filename,Buffer::AllocType allocWith = Buffer::atNew, bool nullTerminated = false);
+	Buffer getFile(Ogre::String filename,Buffer::AllocType allocWith = Buffer::atNew, bool nullTerminated = false);
 
-	bool addFileWithTime(std::string filename, Buffer data, bool overwrite = true, time_t filetime = -1);
+	bool addFileWithTime(Ogre::String filename, Buffer data, bool overwrite = true, time_t filetime = -1);
 
-	bool addFile(std::string filename, Buffer data, bool overwrite = true);
+	bool addFile(Ogre::String filename, Buffer data, bool overwrite = true);
 
-	bool removeFile(std::string filename);
+	bool removeFile(Ogre::String filename);
 
 	void doDebugComparison(ZipArchive *other);
 
 protected:
-	std::string mFileName;
+	Ogre::String mFileName;
 
 	//protected constructor that does nothing
 	ZipArchive(){}
@@ -155,7 +155,7 @@ protected:
 	 * bool overwriteWithEmptyZip: if this is true and the file exists, it will be overwritten with an empty zip file = all files inside will be deleted
 	 * does not return anything, just throws stuff
 	 */
-	void init(std::string filename,bool createIfNotExists,bool overwriteWithEmptyZip);
+	void init(Ogre::String filename,bool createIfNotExists,bool overwriteWithEmptyZip);
 
 	/*
 	 * opens the file AND REMOVES FILE CONTENTS
@@ -193,7 +193,7 @@ private:
 	Buffer getFile_index(size_t index,Buffer::AllocType allocWith,bool nullTerminated);
 
 	//retrieves the file's index, or -1 if file does not exist
-	int getFileIndex(std::string filename);
+	int getFileIndex(Ogre::String filename);
 
 	
 	uint_4b fileSize;

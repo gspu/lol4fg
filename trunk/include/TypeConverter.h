@@ -7,7 +7,7 @@
 #else
 #include <QImage>
 #endif
-#include <OIS.h>
+#include <OIS/OIS.h>
 
 //CEGUI::PropertyHelper::
 
@@ -263,9 +263,34 @@ inline QString qt_str(Ogre::String str)
 {
 	return QString(str.c_str());
 }
+inline QString qt_str(char *ch)
+{
+	return QString(ch);
+}
 inline Ogre::String ogre_str(QString str)
 {
 	return Ogre::String(str.toStdString());
+}
+inline QString qt_str(int nr)
+{
+    return QString::number((int)nr,10);
+}
+inline QString qt_str(unsigned int nr)
+{
+    return QString::number((unsigned int)nr,10);
+}
+inline QString qt_str(long nr)
+{
+    return QString::number((long)nr,10);
+}
+inline QString qt_str(unsigned long nr)
+{
+    return QString::number((unsigned long)nr,10);
+}
+
+inline QString qt_str(double nr)
+{
+    return QString::number((double)nr,'g',6);
 }
 
 ///////////////////////////////////////QT-RELEVANT STUFF ENDS HERE////////////////////////////

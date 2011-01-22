@@ -158,6 +158,11 @@ class QtEditorApp : public QApplication, public Ogre::LogListener
 			return mRoot;
 		}
 
+		inline QtOgre::LogManager* getLogManager()
+		{
+			return mLogManager;
+		}
+
 		//workaround, der das Ding als QWidget zurückgibt, und zwar ohne dass
 		//die .h des eventhandlingogrewidgets included werden muss
 		QWidget* getOgreWidget();

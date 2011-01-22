@@ -22,11 +22,13 @@
 #include <OgreTerrain.h>
 #include <OgreTerrainPaging.h>
 #include <OgreTerrainGroup.h>
-#include <Paging/OgrePage.h>
+#include <OgrePage.h>
 #ifdef __editor
 #include "EditorApp.h"
 #endif
 #include <TypeConverter.h>
+#include "TerrainPagingOverride.h"
+#include "ExtendedTerrainGroup.h"
 
 using namespace TypeConverter;
 
@@ -502,7 +504,7 @@ void Level::loadFile(ZipSaveFile *sav)
 
 		
 		
-		// loadTerrain();
+		loadTerrain();
 
 		
 
@@ -849,6 +851,9 @@ Level::~Level()
 	/*destructorCalled = true;*/
 	prepareForDestruction();
 	destroyAllObjects();
+
+	if(mPageProvider)
+		delete mPageProvider;
 
 	for(SoundManager::SourceList::iterator itr = mSources.begin();itr!=mSources.end();itr++)
 	{	
@@ -2810,11 +2815,10 @@ void Level::saveToFile(Ogre::String filename)
 	//eventuell ist es eine gute idee, erstmal das archiv neuzubauen
     //zip vorbereiten
     
-    ZipSaveFile zip(filename);
-    if(FileExists(filename))
-		zip.eraseArchive();
+    ZipSaveFile zip(filename,true);
+  
     //zip.removeFile();
-	zip.reInit();//opening a new file
+	
 //	StandardApplication::getSingletonPtr()->setDebugText("save to "+filename);
 	//Ogre::String saveTo = levelPath+"/"+currentLevel->getFileName();
 	TiXmlDocument doc;
@@ -4997,7 +5001,20 @@ void Level::deleteObject(GameObject *obj)
 //
 //}
 
+Ogre::DataStreamPtr Level::getTerrainForPage(long x, long y)
+{
+	Ogre::DataStreamPtr result;
+	result.setNull();
+	//check here if we have the page
+	return result;
+}
 
+void Level::defineTerrainForSection(ExtendedPagedWorldSection* section, long x, long y)
+{
+	//mTerrainGroup->saveAllTerrains
+	//mTerrainGroup->getTerrainIterator(); might be usable for saving
+	//mTerrainGroup->defineTerrain
+}
 
 
 void Level::loadTerrain()
@@ -5019,17 +5036,18 @@ void Level::loadTerrain()
 
 	
  
-    mTerrainGlobals = OGRE_NEW Ogre::TerrainGlobalOptions();
+	mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();//OGRE_NEW Ogre::TerrainGlobalOptions();
 
-	mTerrainGlobals->setDefaultResourceGroup("Terrain");
+	//mTerrainGlobals->setDefaultResourceGroup("Terrain");
  
 	//maybe the last two params, too?
     //mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f);
-	mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
+	mTerrainGroup = OGRE_NEW ExtendedTerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
 	//maybe no need at all...
     mTerrainGroup->setFilenameConvention(Ogre::String("Terrain"), Ogre::String("dat"));
     //always zero?
 	mTerrainGroup->setOrigin(Ogre::Vector3(0,-100,0));//Ogre::Vector3::ZERO);
+
 	
  
 	
@@ -5041,21 +5059,22 @@ void Level::loadTerrain()
 
 	
 	// Paging setup
-	mPageManager = OGRE_NEW Ogre::PageManager();
+	mPageManager = OGRE_NEW ExtendedPageManager(this);//Ogre::PageManager();
 		
+	mPageProvider = new LevelPageProvider(this);
 	mPageManager->setPageProvider(mPageProvider);
 	mPageManager->addCamera(getMainCam());
-	mTerrainPaging = OGRE_NEW Ogre::TerrainPaging(mPageManager);
-	Ogre::PagedWorld* world = mPageManager->createWorld();
+	mTerrainPaging = OGRE_NEW ExtendedPaging(mPageManager);//Ogre::TerrainPaging(mPageManager);
+	ExtendedWorld* world = mPageManager->createTestWorld();
 	//the numbers are loadRadius and holdRadius
-	mTerrainPaging->createWorldSection(world, mTerrainGroup, 600, 700,
+	mTerrainPaging->createTestWorldSection(world, mTerrainGroup, 600, 700,
 			-10, -10, 
 			10, 10);
 	
 	//OLD BEGIN
 	//defineTerrain(0, 0); 
  //   // sync load since we want everything in place when we start
- //   mTerrainGroup->loadAllTerrains(true);
+    //mTerrainGroup->loadAllTerrains(true);
 	//OLD END
  
     if (mTerrainsImported)
@@ -5098,16 +5117,18 @@ void Level::configureTerrainDefaults()
     // textures. this has to be set in level file
     defaultimp.layerList.resize(3);
     defaultimp.layerList[0].worldSize = 100;//something about the scaling of the image, I think
-    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_diffusespecular.tga");
-    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_normalheight.tga");
+    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_diffusespecular.dds");
+    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_normalheight.dds");
 	//nr. of these is defined in defaultimp.layerDeclaration, somehow
 	//a certain TerrainMaterialGenerator has something to do with it
     defaultimp.layerList[1].worldSize = 30;
-    defaultimp.layerList[1].textureNames.push_back("grass_green-01_diffusespecular.tga");
-    defaultimp.layerList[1].textureNames.push_back("grass_green-01_normalheight.tga");
+    defaultimp.layerList[1].textureNames.push_back("grass_green-01_diffusespecular.dds");
+    defaultimp.layerList[1].textureNames.push_back("grass_green-01_normalheight.dds");
     defaultimp.layerList[2].worldSize = 200;
-    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_diffusespecular.tga");
-    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_normalheight.tga");
+    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_diffusespecular.dds");
+    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_normalheight.dds");
+
+	
 
 	
 	
@@ -5236,11 +5257,37 @@ Ogre::Real Level::lengthTerrainToWorld(Ogre::Real terrainLength)
 
 bool Level::LevelPageProvider::prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
+	////unpack
+	//long x;
+	//long y;
+	//mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);
+	////define with flat
+	////defineTerrain(x, y);
+	//mLog("preparing page "+ogre_str(x)+" / "+ogre_str(y));
+	//mLevel->mTerrainGroup->defineTerrain(x,y,float(0.0f));
+	///*Ogre::Image img;
+	//getTerrainImage(x % 2 != 0, y % 2 != 0, img);
+	//mLevel->mTerrainGroup->defineTerrain(x, y, &img);*/
+	
 	return true; 
 }
 
 bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
+	//long x;
+	//long y;
+	//mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+
+	//mLog("loading page "+ogre_str(x)+" / "+ogre_str(y));
+	////load
+	//mLevel->mTerrainGroup->loadTerrain(x,y,true);
+	//
+	//	
+
+	////Ogre::Terrain *terr = mLevel->mTerrainGroup->getTerrain(x,y);
+
+	////mLevel->initBlendMaps(terr);
+
 	return true; 
 }
 

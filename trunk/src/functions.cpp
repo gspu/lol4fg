@@ -3,13 +3,15 @@
 #include "CEGUI.h"
 #else
 #include <QImage>
+#include "QtEditorApp.h"
+#include "EditorApp.h"
 #endif
 #include "defines.h"
 #include "Ogre.h"
 #include <TypeConverter.h>
 
 using namespace TypeConverter;
-using namespace Ogre;
+//using namespace Ogre;
 
 #ifndef __editor
 CEGUI::MouseButton convertOISMouseButtonToCegui(OIS::MouseButtonID buttonID)
@@ -49,7 +51,34 @@ bool isMouseOverGui()//float const& x, float const& y){
       return true;
    }
 }
+
+void mLog(CEGUI::String text)
+{
+	Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+Ogre::String(text.c_str()));
+}
+void mLog(const char* text)
+{
+	Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+Ogre::String(text));
+}
+void mLog(Ogre::String text)
+{
+	Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+text);
+}
+#else
+void mLog(const char* text)
+{
+	
+	EditorApp::getSingletonPtr()->qtApp->logMessage(TypeConverter::qt_str(text));
+}
+void mLog(Ogre::String text)
+{
+	//Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+text);
+	EditorApp::getSingletonPtr()->qtApp->logMessage(TypeConverter::qt_str(text));
+}
 #endif
+
+
+
 
 ObjType stringToObjectType(Ogre::String ogre_str)
 {
@@ -125,7 +154,7 @@ void destroyNode(Ogre::SceneManager *mSceneMgr,Ogre::SceneNode *mNode)
 	while(mNode->numAttachedObjects())
 	{
 
-		MovableObject *m = mNode->detachObject((unsigned short)0);
+		Ogre::MovableObject *m = mNode->detachObject((unsigned short)0);
 	//	Ogre::LogManager::getSingletonPtr()->logMessage("destroyNode: "+m->getName());
 		mSceneMgr->destroyMovableObject(m);
 
@@ -481,6 +510,7 @@ Ogre::Vector3 getWorldScale(Ogre::SceneManager *mgr,Ogre::SceneNode *nod)
 
 Ogre::RaySceneQueryResultEntry getClosest(Ogre::SceneManager *mSceneMgr,Ogre::Ray mRay,Ogre::Real maxDist,Ogre::Real minDist,bool fullRaycast, Ogre::String movableType, Ogre::uint32 queryFlags)
 {
+	using namespace Ogre;
 	RaySceneQuery *	mRaySceneQuery = mSceneMgr->createRayQuery(mRay);
 	mRaySceneQuery->setSortByDistance(true);
 	mRaySceneQuery->setQueryMask(queryFlags);
@@ -657,6 +687,7 @@ void getMeshInformation( const Ogre::Mesh* const mesh, size_t &vertex_count,
                                  const Ogre::Quaternion &orient,
                                  const Ogre::Vector3 &scale)
 {
+	using namespace Ogre;
  bool added_shared = false;
  size_t current_offset = 0;
  size_t shared_offset = 0;
@@ -828,7 +859,7 @@ short StringToColType(Ogre::String mystring)
 
 bool createPlaneMesh(Ogre::String name)
 {
-
+	using namespace Ogre;
 
 	//ok, ein fall für den meshmanager
 	if(Ogre::MeshManager::getSingleton().resourceExists(name))

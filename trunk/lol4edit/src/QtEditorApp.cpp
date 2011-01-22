@@ -374,6 +374,7 @@ namespace QtOgre
 
 		//erzeuge ein neues
 		mAppLog = mLogManager->createLog("Application");
+		
 		//logMessage
 	}
 

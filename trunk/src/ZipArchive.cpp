@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <time.h>
 #include "functions.h"
+#include <cerrno>
 
 #define READ_BUFFER 32
 
@@ -28,7 +29,7 @@ const ZipArchive::uint_4b ZipArchive::centralDirHeader = 0x02014B50;
 const ZipArchive::uint_4b ZipArchive::finalHeader = 0x06054B50;
 const ZipArchive::uint_4b ZipArchive::bufSize = 16384;
 
-void ZipArchive::init(std::string filename,bool createIfNotExists,bool overwriteWithEmptyZip)
+void ZipArchive::init(Ogre::String filename,bool createIfNotExists,bool overwriteWithEmptyZip)
 {
 	using namespace std;
 	mFileName = filename;
@@ -40,7 +41,7 @@ void ZipArchive::init(std::string filename,bool createIfNotExists,bool overwrite
 			throw zsCannotOpen;
 		}
 		mustWriteEmpty = true;
-		if(!open())
+		if(!open_truncate())
 			throw zsCannotOpen;
 	}
 	else
@@ -70,7 +71,7 @@ void ZipArchive::init(std::string filename,bool createIfNotExists,bool overwrite
 	close();
 }
 //
-//ZipArchive::ZipArchive(std::string filename,bool createIfNotExists)
+//ZipArchive::ZipArchive(Ogre::String filename,bool createIfNotExists)
 //{
 //	
 //	using namespace std;
@@ -173,7 +174,7 @@ bool ZipArchive::initZipStructure()
 	uint_4b centralDirSize;
 	uint_4b centralDirOffset;
 	uint_2b commentLength;
-	std::string comment;
+	Ogre::String comment;
 
 	zipFile.seekg(footerPos+4,ios_base::beg);//go to nrOfDisk
 	zipFile.read(reinterpret_cast<char *>(&nrOfDisk),2);
@@ -199,7 +200,7 @@ bool ZipArchive::initZipStructure()
 		tempString[commentLength] = 0;
 		zipFile.read(tempString,commentLength);
 
-		comment = std::string(tempString);
+		comment = Ogre::String(tempString);
 
 		delete tempString;
 	}
@@ -258,7 +259,7 @@ bool ZipArchive::initZipStructure()
 		char *tempBuffer = new char[filenameLength+1];
 		tempBuffer[filenameLength] = 0;
 		zipFile.read(tempBuffer,filenameLength);
-		curEntry.filename = std::string(tempBuffer);
+		curEntry.filename = Ogre::String(tempBuffer);
 		delete tempBuffer;
 
 		curEntry.cdSize = 46+filenameLength+extraLength+commentLength;
@@ -273,7 +274,7 @@ bool ZipArchive::initZipStructure()
 		
 
 		curEntry.index = curIndex;
-		//filesInZip.insert((std::string)curEntry.filename,curEntry);
+		//filesInZip.insert((Ogre::String)curEntry.filename,curEntry);
 		filesInZip.push_back(curEntry);
 		filePointers[curEntry.filename] = curIndex;//&filesInZip[curIndex];
 		//filesInZip[curEntry.filename] = curEntry;
@@ -286,9 +287,9 @@ bool ZipArchive::initZipStructure()
 
 void ZipArchive::writeEmptyZip()
 {
-	//write finalHeader (4b) and 12 zero bytes
+	//write finalHeader (4b) and 18 zero bytes
 	zipFile.write(reinterpret_cast<char*>(const_cast<uint_4b*>(&finalHeader)),4);
-	for(unsigned short i=0;i<12;i++)
+	for(unsigned short i=0;i<18;i++)
 	{
 		zipFile.write("\0",1);
 	}
@@ -313,10 +314,17 @@ bool ZipArchive::open()
 	if(zipFile.is_open())
 		return true;
 	//open for everything
-	zipFile.open(mFileName.c_str(),std::ios_base::binary|std::ios_base::in|std::ios_base::out);
+	Ogre::String openName = mFileName;
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+	openName = Ogre::StringUtil::replaceAll(mFileName,"/","\\");
+#endif
+	zipFile.open(openName.c_str(),std::ios_base::binary|std::ios_base::in|std::ios_base::out);
 	 
 	if(zipFile.fail())
+	{
+		Ogre::String temp = strerror(errno);
 		return false;
+	}
 	return true;
 }
 
@@ -356,7 +364,7 @@ void ZipArchive::truncateZipFile(unsigned long newSize)
 	fileSize = newSize;
 }
 
-Archive::Buffer ZipArchive::getFile(std::string filename,Buffer::AllocType allocWith, bool nullTerminated)
+Archive::Buffer ZipArchive::getFile(Ogre::String filename,Buffer::AllocType allocWith, bool nullTerminated)
 {
 	int index = getFileIndex(filename);
 	if(index == -1)
@@ -538,12 +546,12 @@ Archive::Buffer ZipArchive::getFile_index(size_t index,Buffer::AllocType allocWi
 	return result;//Buffer();
 }
 
-bool ZipArchive::hasFile(std::string filename)
+bool ZipArchive::hasFile(Ogre::String filename)
 {
 	return getFileIndex(filename) != -1;
 }
 
-int ZipArchive::getFileIndex(std::string filename)
+int ZipArchive::getFileIndex(Ogre::String filename)
 {
 	Archive::Buffer result;
 	FileEntryPtrMap::iterator cur = filePointers.find(filename);
@@ -655,7 +663,7 @@ time_t ZipArchive::convertDosToTimestamp(uint_2b dosDate, uint_2b dosTime)
 	return mktime (timeinfo);
 }
 
-bool ZipArchive::addFileWithTime(std::string filename, Buffer data, bool overwrite, time_t filetime)
+bool ZipArchive::addFileWithTime(Ogre::String filename, Buffer data, bool overwrite, time_t filetime)
 {
 	if(!open())
 		return false;
@@ -812,7 +820,7 @@ bool ZipArchive::addFileWithTime(std::string filename, Buffer data, bool overwri
 	return true;
 }
 
-bool ZipArchive::addFile(std::string filename, Buffer data, bool overwrite)
+bool ZipArchive::addFile(Ogre::String filename, Buffer data, bool overwrite)
 {
 	return addFileWithTime(filename,data,overwrite,-1);
 }
@@ -827,7 +835,7 @@ void ZipArchive::updateEntrySizes(FileEntry &entry)
 }
 
 
-bool ZipArchive::removeFile(std::string filename)
+bool ZipArchive::removeFile(Ogre::String filename)
 {	
 	int index = getFileIndex(filename);
 	if(index == -1)

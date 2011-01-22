@@ -66,7 +66,7 @@
 #include <MainMenu.h>
 #include <SaveLoadMenu.h>
 #include <TypeConverter.h>
-#include <zip.h>
+//#include <zip.h>
 
 
 using namespace Ogre;

@@ -1,5 +1,5 @@
 #include "unikey.h"
-#include <OIS.h>
+#include <OIS/OIS.h>
 #include "functions.h"
 #ifndef __editor
 #include "GameSettings.h"

@@ -58,6 +58,8 @@ inline Ogre::String str(const CEGUI::Point pt)
 	return Ogre::StringConverter::toString(pt.d_x)+" "+Ogre::StringConverter::toString(pt.d_y);
 }
 bool isMouseOverGui();//float const& x, float const& y);
+
+void mLog(CEGUI::String text);
 #endif
 
 inline Ogre::String ptrToString(void *ptr)
@@ -117,20 +119,9 @@ Ogre::Real getFullYaw(Ogre::Quaternion q);
 Ogre::Real getFullRoll(Ogre::Quaternion q);
 Ogre::Real getFullPitch(Ogre::Quaternion q);
 
-inline void mLog(const char* text)
-{
-	Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+Ogre::String(text));
-}
-inline void mLog(Ogre::String text)
-{
-	Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+text);
-}
-#ifndef __editor
-inline void mLog(CEGUI::String text)
-{
-	Ogre::LogManager::getSingletonPtr()->logMessage("PRA: "+Ogre::String(text.c_str()));
-}
-#endif
+void mLog(const char* text);
+void mLog(Ogre::String text);
+
 
 int round(Ogre::Real x);
 
