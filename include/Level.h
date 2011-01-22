@@ -30,6 +30,10 @@ Klasse für alles rund ums level
 #include <OgreTerrainGroup.h>
 #include <OgreTerrainPaging.h>
 
+//test
+class ExtendedPaging;
+class ExtendedPagedWorldSection;
+class ExtendedPageManager;
 
 using namespace SimpleSound;
 
@@ -539,6 +543,10 @@ public:
 	//now, my own stuff:
 	void loadTerrain();
 
+	Ogre::DataStreamPtr getTerrainForPage(long x, long y);
+
+	void defineTerrainForSection(ExtendedPagedWorldSection* section, long x, long y);
+
 	//experiment to do the decal using frustum
 	//void addDecalPasses();
 
@@ -752,16 +760,52 @@ protected:
 	bool has_terrain;
 
 	//TERRAIN PAGING STUFF
-	Ogre::TerrainPaging* mTerrainPaging;
-	Ogre::PageManager* mPageManager;
+	//Ogre::TerrainPaging* mTerrainPaging;
+	ExtendedPaging* mTerrainPaging;
+	ExtendedPageManager* mPageManager;
 
 	class LevelPageProvider : public Ogre::PageProvider
 	{
 	public:
+		LevelPageProvider(Level *parent)
+		{
+			mLevel = parent;
+		}
+		/** Give a provider the opportunity to prepare page content procedurally. 
+		@remarks
+		This call may well happen in a separate thread so it should not access 
+		GPU resources, use loadProceduralPage for that
+		@returns true if the page was populated, false otherwise
+		*/
 		bool prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+
+		/** Give a provider the opportunity to load page content procedurally. 
+		@remarks
+		This call will happen in the main render thread so it can access GPU resources. 
+		Use prepareProceduralPage for background preparation.
+		@returns true if the page was populated, false otherwise
+		*/
 		bool loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+
+		/** Give a provider the opportunity to unload page content procedurally. 
+		@remarks
+		You should not call this method directly. This call will happen in 
+		the main render thread so it can access GPU resources. Use _unprepareProceduralPage
+		for background preparation.
+		@returns true if the page was populated, false otherwise
+		*/
 		bool unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+
+		/** Give a provider the opportunity to unprepare page content procedurally. 
+		@remarks
+		You should not call this method directly. This call may well happen in 
+		a separate thread so it should not access GPU resources, use _unloadProceduralPage
+		for that
+		@returns true if the page was unpopulated, false otherwise
+		*/
 		bool unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+	protected:
+		Level *mLevel;
 	};
 	LevelPageProvider *mPageProvider;
 

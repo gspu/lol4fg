@@ -189,13 +189,13 @@ public:
 	/*virtual void addFile();
 	virtual void removeFile();*/
 
-	virtual bool hasFile(std::string filename) = 0;
+	virtual bool hasFile(Ogre::String filename) = 0;
 
-	virtual Buffer getFile(std::string filename,Buffer::AllocType allocWith = Buffer::atNew, bool nullTerminated = false) = 0;
+	virtual Buffer getFile(Ogre::String filename,Buffer::AllocType allocWith = Buffer::atNew, bool nullTerminated = false) = 0;
 
-	virtual bool addFile(std::string filename, Buffer data, bool overwrite = true) = 0;
+	virtual bool addFile(Ogre::String filename, Buffer data, bool overwrite = true) = 0;
 
-	virtual bool removeFile(std::string filename) = 0;
+	virtual bool removeFile(Ogre::String filename) = 0;
 
 	inline void setDefaultAllocType(Buffer::AllocType type)
 	{

@@ -5,7 +5,7 @@
 #include <Ogre.h>
 
 #include <OgreFrameListener.h>
-#include <OIS.h>
+#include <OIS/OIS.h>
 //#include <OgreEventListeners.h>
 //#include <OgreKeyEvent.h>
 

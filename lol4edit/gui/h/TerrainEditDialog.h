@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TerrainEditDialog.ui'
 **
-** Created: Mon 20. Sep 09:34:49 2010
+** Created: Sat 22. Jan 17:36:42 2011
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

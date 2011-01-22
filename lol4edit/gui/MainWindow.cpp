@@ -9,12 +9,13 @@
 #include "InputDialog.h"
 #include "ConfirmDialog.h"
 #include "LevelObjectList.h"
+#include "PageStatusWindow.h"
 #include <EditorApp.h>
 #include <Level.h>
 #include <functions.h>
 #include "h/MainWindow.h"
 #include "EventHandlingOgreWidget.h"
-
+#include "LogManager.h"
 #include <TypeConverter.h>
 
 
@@ -110,8 +111,12 @@
 		connect(ui->actionEdit_Terrain, SIGNAL(toggled(bool)), this, SLOT(setTerrainEditing(bool)));
 		connect(ui->actionEdit_Objects, SIGNAL(toggled(bool)), this, SLOT(setObjectsEditing(bool)));
 
+		
 	
 		bool test = connect(ui->actionDebugTest, SIGNAL(triggered(bool)), this, SLOT(performDebugTest(bool)));
+
+		
+		connect(ui->actionShow_Log_Window,SIGNAL(toggled(bool)), qtapp->getLogManager(), SLOT(setVisible(bool)));
 
 
 		//CREATING ACTION GROUPS
@@ -223,11 +228,16 @@
 		
 
 		objectListDialog = new LevelObjectList();
-		objectListSubWindow = mdiArea->addSubWindow(objectListDialog);
-		objectListSubWindow->setWindowFlags((Qt::CustomizeWindowHint | Qt::WindowTitleHint));
-		objectListSubWindow->show();
+		pageStatusSubWindow = mdiArea->addSubWindow(objectListDialog);
+		pageStatusSubWindow->setWindowFlags((Qt::CustomizeWindowHint | Qt::WindowTitleHint));
+		pageStatusSubWindow->show();
 		
 
+
+		pageStatusWindow = new PageStatusWindow();
+		objectListSubWindow = mdiArea->addSubWindow(pageStatusWindow);
+		objectListSubWindow->setWindowFlags((Qt::CustomizeWindowHint | Qt::WindowTitleHint));
+		objectListSubWindow->show();
 		
 		
 		//terrainEditDialog->show();

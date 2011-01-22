@@ -617,25 +617,18 @@ namespace QtOgre
 	    if ( mKeyStates[ Qt::Key_PageDown ] == KS_PRESSED)// || m_InputReader->isKeyDown( KC_E ) )
 		    transVector.y -= mMoveKeyboard;
 
-	    //if ( mKeyboard->isKeyDown( OIS::KC_UP ))// || m_InputReader->isKeyDown( KC_W ) )
-		   // transVector.z -= mMove;
-	    //if ( mKeyboard->isKeyDown( OIS::KC_DOWN ))// || m_InputReader->isKeyDown( KC_S ) )
-		   // transVector.z += mMove;
-	    //if ( mKeyboard->isKeyDown( OIS::KC_LEFT ))// || m_InputReader->isKeyDown( KC_A ) )
-		   // transVector.x -= mMove;
-	    //if ( mKeyboard->isKeyDown( OIS::KC_RIGHT ))// || m_InputReader->isKeyDown( KC_D ) )
-		   // transVector.x += mMove;
-	    //if ( mKeyboard->isKeyDown( OIS::KC_PGUP ))// || m_InputReader->isKeyDown( KC_Q ) )
-     //           transVector.y += mMove;
-	    //if ( mKeyboard->isKeyDown( OIS::KC_PGDOWN ))// || m_InputReader->isKeyDown( KC_E ) )
-		   // transVector.y -= mMove;
-	    //for wheel:
-	    //transVector.z -= m_InputReader->getMouseRelativeZ();
-	    ////app->log(Ogre::StringConverter::toString(m_InputReader->getMouseRelativeZ()));
-
+	
 	    Ogre::SceneNode *mCamNode = app->getCurrentLevel()->getSceneManager()->getSceneNode("CamNode");
-	    //mCamNode->getChild( 0 )->_getDerivedOrientation()
-	    mCamNode->translate( mCamNode->getChild( 0 )->_getDerivedOrientation() * transVector * time );
+
+		if(time < 1)
+		{
+			mCamNode->translate( mCamNode->getChild( 0 )->_getDerivedOrientation() * transVector * time );
+		}
+		else
+		{
+			mLog("zu viel Zeit, diesmal kein Translate");
+		}
+
     	
 	    if(axesNode)
 	    {
@@ -644,10 +637,7 @@ namespace QtOgre
 
 	    if(!app->paused)
 	    {
-
-
-		    app->getCurrentLevel()->update(time);
-		  
+			app->getCurrentLevel()->update(time);		  
 	    }
 		/*Ogre::Camera *cam = app->getCurrentLevel()->getMainCam();
 		Ogre::Viewport *vp = cam->getViewport();

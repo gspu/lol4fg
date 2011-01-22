@@ -201,11 +201,21 @@ bool ZipSaveFile::reInit(Ogre::String newFileName)
 
 	bool shouldWriteEmptyZip = !FileExists(mFileName);
 	
-
-	if(!open())
+	if(shouldWriteEmptyZip)
 	{
-		lastState = zsCannotOpen;//todo: throw something better //return false;
-		return false;
+		if(!open_truncate())
+		{
+			lastState = zsCannotOpen;//todo: throw something better //return false;
+			return false;
+		}
+	}
+	else
+	{
+		if(!open())
+		{
+			lastState = zsCannotOpen;//todo: throw something better //return false;
+			return false;
+		}
 	}
 	if(shouldWriteEmptyZip)
 	{

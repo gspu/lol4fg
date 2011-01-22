@@ -47,7 +47,7 @@ class InputDialog;
 class ConfirmDialog;
 class MaterialSelectDialog;
 class TerrainEditDialog;
-
+class PageStatusWindow;
 class LevelObjectList;
 
 
@@ -91,6 +91,9 @@ public:
 
 	QMdiSubWindow *terrainEditSubWindow;
 	TerrainEditDialog *terrainEditDialog;
+
+	PageStatusWindow *pageStatusWindow;
+	QMdiSubWindow *pageStatusSubWindow;
 
 	QMdiSubWindow *objectListSubWindow;
 	LevelObjectList *objectListDialog;

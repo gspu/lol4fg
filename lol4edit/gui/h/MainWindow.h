@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindow.ui'
 **
-** Created: Mon 20. Sep 09:34:49 2010
+** Created: Sat 22. Jan 17:36:42 2011
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -49,12 +49,14 @@ public:
     QAction *actionRotate_Mode;
     QAction *actionScale_Mode;
     QAction *actionDebugTest;
+    QAction *actionShow_Log_Window;
     QWidget *mdiArea;
     QHBoxLayout *horizontalLayout;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuOptions;
+    QMenu *menuView;
     QStatusBar *statusbar;
     QToolBar *toolBar;
 
@@ -140,6 +142,9 @@ public:
         actionScale_Mode->setIcon(icon6);
         actionDebugTest = new QAction(MainWindow);
         actionDebugTest->setObjectName(QString::fromUtf8("actionDebugTest"));
+        actionShow_Log_Window = new QAction(MainWindow);
+        actionShow_Log_Window->setObjectName(QString::fromUtf8("actionShow_Log_Window"));
+        actionShow_Log_Window->setCheckable(true);
         mdiArea = new QWidget(MainWindow);
         mdiArea->setObjectName(QString::fromUtf8("mdiArea"));
         horizontalLayout = new QHBoxLayout(mdiArea);
@@ -154,6 +159,8 @@ public:
         menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         menuOptions = new QMenu(menubar);
         menuOptions->setObjectName(QString::fromUtf8("menuOptions"));
+        menuView = new QMenu(menubar);
+        menuView->setObjectName(QString::fromUtf8("menuView"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -165,6 +172,7 @@ public:
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuEdit->menuAction());
+        menubar->addAction(menuView->menuAction());
         menubar->addAction(menuOptions->menuAction());
         menuFile->addAction(actionNew_Level);
         menuFile->addAction(actionOpen);
@@ -189,6 +197,7 @@ public:
         menuOptions->addAction(actionSnap_on_Scale);
         menuOptions->addAction(actionPhysics);
         menuOptions->addAction(actionFog);
+        menuView->addAction(actionShow_Log_Window);
         toolBar->addAction(actionNew_Level);
         toolBar->addAction(actionOpen);
         toolBar->addAction(actionSave);
@@ -234,9 +243,11 @@ public:
         actionScale_Mode->setShortcut(QApplication::translate("MainWindow", "S", 0, QApplication::UnicodeUTF8));
         actionDebugTest->setText(QApplication::translate("MainWindow", "DebugTest", 0, QApplication::UnicodeUTF8));
         actionDebugTest->setShortcut(QApplication::translate("MainWindow", "Ctrl+Y", 0, QApplication::UnicodeUTF8));
+        actionShow_Log_Window->setText(QApplication::translate("MainWindow", "Show Log Window", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0, QApplication::UnicodeUTF8));
         menuOptions->setTitle(QApplication::translate("MainWindow", "Options", 0, QApplication::UnicodeUTF8));
+        menuView->setTitle(QApplication::translate("MainWindow", "View", 0, QApplication::UnicodeUTF8));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

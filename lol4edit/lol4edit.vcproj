@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\QtCore&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc"
+				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\Terrain&quot;;&quot;$(OGRE_HOME)\include\OGRE\Paging&quot;;&quot;$(OGRE_SRC)\OgreMain\include&quot;;&quot;$(OGRE_SRC)\Components\Paging\include&quot;;&quot;$(OGRE_SRC)\Components\Terrain\include&quot;;&quot;$(OGRE_SRC)\Dependencies\include&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\Qt&quot;;&quot;$(QTDIR)\qt\include&quot;;&quot;$(QTDIR)\qt\include\QtGui&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\qt\include\QtCore&quot;;&quot;$(QTDIR)\qt\src&quot;;&quot;$(QTDIR)\qt\src\gui\kernel&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;&quot;$(BOOST_HOME)&quot;;&quot;$(OPENAL_SDK)\include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__editor;TIXML_USE_STL"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -71,7 +71,7 @@
 				AdditionalDependencies="OgreMain_d.lib OIS_d.lib zlibwapi.lib newton.lib OgreNewt_d.lib OpenAL32.lib libogg.lib libvorbisfile.lib QtOgre_d.lib QtGuid4.lib QtXmld4.lib QtCored4.lib tinyxmld_STL.lib OgreTerrain_d.lib OgrePaging_d.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(QTDIR)\lib&quot;"
+				AdditionalLibraryDirectories="&quot;..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(QTDIR)\lib&quot;;&quot;$(OGRE_SRC)\Dependencies\lib\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)/lol4edit.pdb"
 				SubSystem="2"
@@ -133,7 +133,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\paging&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\QtCore&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc"
+				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\Terrain&quot;;&quot;$(OGRE_HOME)\include\OGRE\Paging&quot;;&quot;$(OGRE_SRC)\OgreMain\include&quot;;&quot;$(OGRE_SRC)\Components\Paging\include&quot;;&quot;$(OGRE_SRC)\Components\Terrain\include&quot;;&quot;$(OGRE_SRC)\Dependencies\include&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\Qt&quot;;&quot;$(QTDIR)\qt\include&quot;;&quot;$(QTDIR)\qt\include\QtGui&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\qt\include\QtCore&quot;;&quot;$(QTDIR)\qt\src&quot;;&quot;$(QTDIR)\qt\src\gui\kernel&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;&quot;$(BOOST_HOME)&quot;;&quot;$(OPENAL_SDK)\include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__editor;TIXML_USE_STL"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -162,7 +162,7 @@
 				AdditionalDependencies="OgreMain.lib OIS.lib zlibwapi.lib newton.lib OgreNewt.lib OpenAL32.lib libogg.lib libvorbisfile.lib QtOgre.lib QtGui4.lib QtXml4.lib QtCore4.lib tinyxml_STL.lib OgreTerrain.lib OgrePaging.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(QTDIR)\lib&quot;"
+				AdditionalLibraryDirectories="&quot;..\dependencies\lib\$(ConfigurationName)&quot;;&quot;$(OGRE_HOME)\lib\$(ConfigurationName)&quot;;&quot;$(OPENAL_SDK)\libs\Win32&quot;;&quot;$(QTDIR)\lib&quot;;&quot;$(OGRE_SRC)\Dependencies\lib\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -748,6 +748,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\gui\moc_PageStatusWindow.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\include\moc_QtEditorApp.cpp"
 					>
 				</File>
@@ -798,6 +802,36 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Doing this: $(QTDIR)\bin\moc &quot;$(InputPath)&quot; -o &quot;$(InputDir)moc_$(InputName).cpp&quot;"
+							CommandLine="$(QTDIR)\bin\moc &quot;$(InputPath)&quot; -o &quot;$(InputDir)moc_$(InputName).cpp&quot;&#x0D;&#x0A;"
+							AdditionalDependencies="$(QTDIR)\bin\moc.exe;"
+							Outputs="$(InputDir)\moc_$(InputName).cpp"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="MOCing: $(QTDIR)\bin\moc &quot;$(InputPath)&quot; -o &quot;$(InputDir)moc_$(InputName).cpp&quot;"
+							CommandLine="$(QTDIR)\bin\moc &quot;$(InputPath)&quot; -o &quot;$(InputDir)moc_$(InputName).cpp&quot;&#x0D;&#x0A;"
+							AdditionalDependencies="$(QTDIR)\bin\moc.exe;"
+							Outputs="$(InputDir)\moc_$(InputName).cpp"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\gui\PageStatusWindow.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\gui\PageStatusWindow.h"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="MOCing: $(QTDIR)\bin\moc &quot;$(InputPath)&quot; -o &quot;$(InputDir)moc_$(InputName).cpp&quot;"
 							CommandLine="$(QTDIR)\bin\moc &quot;$(InputPath)&quot; -o &quot;$(InputDir)moc_$(InputName).cpp&quot;&#x0D;&#x0A;"
 							AdditionalDependencies="$(QTDIR)\bin\moc.exe;"
 							Outputs="$(InputDir)\moc_$(InputName).cpp"
@@ -1018,6 +1052,26 @@
 			</File>
 			<File
 				RelativePath="..\include\ZipSaveFile.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Terrain"
+			>
+			<File
+				RelativePath=".\src\ExtendedTerrainGroup.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\include\ExtendedTerrainGroup.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\TerrainPagingOverride.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\include\TerrainPagingOverride.h"
 				>
 			</File>
 		</Filter>
