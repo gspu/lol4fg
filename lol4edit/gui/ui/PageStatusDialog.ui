@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PageStatusDialog</class>
+ <widget class="QDialog" name="PageStatusDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>323</width>
+    <height>336</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Page Status</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTreeWidget" name="pageStatusList">
+     <property name="rootIsDecorated">
+      <bool>false</bool>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="expandsOnDoubleClick">
+      <bool>false</bool>
+     </property>
+     <attribute name="headerVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="headerDefaultSectionSize">
+      <number>60</number>
+     </attribute>
+     <attribute name="headerHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="headerShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="headerDefaultSectionSize">
+      <number>60</number>
+     </attribute>
+     <attribute name="headerVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="headerShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="headerHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>x</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>y</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>status</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>saved</string>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+      <property name="text">
+       <string>loading</string>
+      </property>
+      <property name="text">
+       <string>yes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>-1</string>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+      <property name="text">
+       <string>loaded</string>
+      </property>
+      <property name="text">
+       <string>no</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="autoLoadPages">
+     <property name="text">
+      <string>Auto Load/Unload</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>X:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="loadPageX">
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::UpDownArrows</enum>
+       </property>
+       <property name="minimum">
+        <number>-32768</number>
+       </property>
+       <property name="maximum">
+        <number>32767</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Y:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QSpinBox" name="loadPageY">
+       <property name="minimum">
+        <number>-32768</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="5">
+      <widget class="QPushButton" name="loadPageButton">
+       <property name="text">
+        <string>Load</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QPushButton" name="unloadPageButton">
+       <property name="text">
+        <string>Unload Selected</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>autoLoadPages</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>loadPageX</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>50</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoLoadPages</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>loadPageY</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoLoadPages</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>loadPageButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoLoadPages</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>unloadPageButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

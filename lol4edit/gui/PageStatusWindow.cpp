@@ -1,7 +1,8 @@
 #include "PageStatusWindow.h"
 #include "h/PageStatusDialog.h"
 #include <TypeConverter.h>
-
+#include <EditorApp.h>
+#include "Level.h"
 
 PageStatusWindow::PageItem::PageItem(long x, long y, PageStatus status, bool isSaved, QTreeWidget *view, int type):
 	QTreeWidgetItem(view,type)
@@ -68,6 +69,7 @@ void PageStatusWindow::PageItem::setSaved(bool set)
 
 void PageStatusWindow::setAutoLoad(bool set)
 {
+	EditorApp::getSingletonPtr()->getCurrentLevel()->setAutoPaging(set);
 }
 	
 void PageStatusWindow::loadPageClick()
@@ -80,4 +82,53 @@ void PageStatusWindow::unloadPageClick()
 
 void PageStatusWindow::notifyPageStatus(long x, long y, PageStatus status)
 {
+	PageItem *item = getItemByCoords(x,y);
+	if(!item)
+		item = new PageItem(x,y,status,false,ui->pageStatusList);
+	else
+		item->setStatus(status);
+	/*switch(status)
+	{
+	case psNotLoaded:
+		break;
+	case psLoading:
+		break;
+	case psLoaded:
+		break;
+	case psUnloading:
+		break;
+	};*/
+}
+
+PageStatusWindow::PageItem *PageStatusWindow::getItemByCoords(long x, long y)
+{
+	int cnt = ui->pageStatusList->topLevelItemCount();
+	
+	for(int i=0;i<cnt;i++)
+	{
+		long cur_x, cur_y;
+		PageItem *cur = static_cast<PageItem *>(ui->pageStatusList->topLevelItem(i));
+		cur->getCoordinates(cur_x,cur_y);
+		if(cur_x == x && cur_y == y)
+		{
+			return cur;
+		}
+	}
+	return NULL;
+}
+
+PageStatusWindow::PageStatusWindow(QWidget *parent, Qt::WindowFlags f):
+	QDialog(parent,f)
+{
+	ui = new Ui::PageStatusDialog();
+	ui->setupUi(this);
+	
+	
+	//connecting
+	QObject::connect(ui->loadPageButton, SIGNAL(clicked()), this, SLOT(loadPageClick()));
+	QObject::connect(ui->unloadPageButton, SIGNAL(clicked()), this, SLOT(unloadPageClick()));
+	QObject::connect(ui->autoLoadPages, SIGNAL(toggled(bool)), this, SLOT(setAutoLoad(bool)));
+
+	ui->pageStatusList->clear();
+
 }

@@ -74,16 +74,14 @@ public:
 
 	
 	//default constructor
-	PageStatusWindow(QWidget *parent = 0, Qt::WindowFlags f = 0):
-		QDialog(parent,f)
-	{
-	}
+	PageStatusWindow(QWidget *parent = 0, Qt::WindowFlags f = 0);
 
 
 
 	Ui::PageStatusDialog *ui;
 
 
+	//to be called from whatever is loading pages
 	void notifyPageStatus(long x, long y, PageStatus status);
 
 
@@ -99,6 +97,7 @@ public slots:
 
 	
 protected:
+	PageItem *getItemByCoords(long x, long y);
 	//shortcut to some stuff
 	//QListWidgetItem *getSelectedItem(QListWidget *list);
 

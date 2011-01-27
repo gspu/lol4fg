@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'PageStatusDialog.ui'
 **
-** Created: Sat 22. Jan 17:36:42 2011
+** Created: Wed 26. Jan 20:40:28 2011
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -40,7 +40,7 @@ public:
     QSpinBox *loadPageY;
     QSpacerItem *horizontalSpacer;
     QPushButton *loadPageButton;
-    QPushButton *pushButton;
+    QPushButton *unloadPageButton;
 
     void setupUi(QDialog *PageStatusDialog)
     {
@@ -106,11 +106,11 @@ public:
 
         gridLayout->addWidget(loadPageButton, 0, 5, 1, 1);
 
-        pushButton = new QPushButton(PageStatusDialog);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setAutoDefault(false);
+        unloadPageButton = new QPushButton(PageStatusDialog);
+        unloadPageButton->setObjectName(QString::fromUtf8("unloadPageButton"));
+        unloadPageButton->setAutoDefault(false);
 
-        gridLayout->addWidget(pushButton, 1, 5, 1, 1);
+        gridLayout->addWidget(unloadPageButton, 1, 5, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
@@ -120,7 +120,7 @@ public:
         QObject::connect(autoLoadPages, SIGNAL(toggled(bool)), loadPageX, SLOT(setEnabled(bool)));
         QObject::connect(autoLoadPages, SIGNAL(toggled(bool)), loadPageY, SLOT(setEnabled(bool)));
         QObject::connect(autoLoadPages, SIGNAL(toggled(bool)), loadPageButton, SLOT(setEnabled(bool)));
-        QObject::connect(autoLoadPages, SIGNAL(toggled(bool)), pushButton, SLOT(setEnabled(bool)));
+        QObject::connect(autoLoadPages, SIGNAL(toggled(bool)), unloadPageButton, SLOT(setEnabled(bool)));
 
         QMetaObject::connectSlotsByName(PageStatusDialog);
     } // setupUi
@@ -152,7 +152,7 @@ public:
         label->setText(QApplication::translate("PageStatusDialog", "X:", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("PageStatusDialog", "Y:", 0, QApplication::UnicodeUTF8));
         loadPageButton->setText(QApplication::translate("PageStatusDialog", "Load", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("PageStatusDialog", "Unload Selected", 0, QApplication::UnicodeUTF8));
+        unloadPageButton->setText(QApplication::translate("PageStatusDialog", "Unload Selected", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

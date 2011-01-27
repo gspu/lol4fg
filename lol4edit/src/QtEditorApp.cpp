@@ -350,6 +350,11 @@ namespace QtOgre
 		this->exit(0);
 	}
 
+	void QtEditorApp::enablePageAutoloading(bool enable)
+	{
+		//mainWnd->pageStatusWindow->au
+	}
+
 	void QtEditorApp::initialiseLogging(void)
 	{
 		//Initialise our logging system
