@@ -59,6 +59,7 @@
 #include "waterplane.h"
 #include "groupObject.h"
 #include "QtEditorApp.h"
+#include "PageStatusWindow.h"
 using namespace std;
 //using namespace Ogre;
 
@@ -4186,4 +4187,25 @@ int EditorApp::go_qt()
 void EditorApp::setup_qt()
 {
     configure();
+}
+
+//to be called when a page is being prepared
+void EditorApp::pagePreparingCallback(long x, long y)
+{
+	qtApp->mainWnd->pageStatusWindow->notifyPageStatus(x,y,PageStatusWindow::psLoading);
+}
+//to be called when a page is being loaded
+void EditorApp::pageLoadingCallback(long x, long y)
+{
+	qtApp->mainWnd->pageStatusWindow->notifyPageStatus(x,y,PageStatusWindow::psLoaded);
+}
+//to be called when a page is being unloaded
+void EditorApp::pageUnloadingCallback(long x, long y)
+{
+	qtApp->mainWnd->pageStatusWindow->notifyPageStatus(x,y,PageStatusWindow::psUnloading);
+}
+//to be called when a page is being unpreparing
+void EditorApp::pageUnpreparingCallback(long x, long y)
+{
+	qtApp->mainWnd->pageStatusWindow->notifyPageStatus(x,y,PageStatusWindow::psNotLoaded);
 }

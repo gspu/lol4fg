@@ -34,6 +34,7 @@ Klasse für alles rund ums level
 class ExtendedPaging;
 class ExtendedPagedWorldSection;
 class ExtendedPageManager;
+class ExtendedWorld;
 
 using namespace SimpleSound;
 
@@ -569,7 +570,8 @@ public:
 	};
 	DummyPageProvider mDummyPageProvider;*/
 
-
+//if true, pages will be automatically loaded and unloaded according to camera
+	void setAutoPaging(bool set);
 private:
 	
 
@@ -759,9 +761,15 @@ protected:
 	/***terrain stuff***/
 	bool has_terrain;
 
+	
+
+	bool getAutoPaging();
+
+
 	//TERRAIN PAGING STUFF
 	//Ogre::TerrainPaging* mTerrainPaging;
 	ExtendedPaging* mTerrainPaging;
+	ExtendedWorld* mTerrainPagedWorld;
 	ExtendedPageManager* mPageManager;
 
 	class LevelPageProvider : public Ogre::PageProvider

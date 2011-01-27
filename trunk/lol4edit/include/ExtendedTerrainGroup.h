@@ -63,6 +63,7 @@ public:
 	/// WorkQueue::ResponseHandler override
 	//void handleResponse(const Ogre::WorkQueue::Response* res, const Ogre::WorkQueue* srcQ);
 private:
+	
 	//this method of the parent should never be called.
 	//i really HATE it that I can't overwrite it
 	//only defineTerrain's call it with true, so it should be okay

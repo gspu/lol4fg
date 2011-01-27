@@ -199,6 +199,15 @@ public:
 	}
 
 	EditorSettings settings;
+
+	//to be called when a page is being prepared
+	virtual void pagePreparingCallback(long x, long y);
+	//to be called when a page is being loaded
+	virtual void pageLoadingCallback(long x, long y);
+	//to be called when a page is being unloaded
+	virtual void pageUnloadingCallback(long x, long y);
+	//to be called when a page is being unpreparing
+	virtual void pageUnpreparingCallback(long x, long y);
 private:
 	//in erster Linie dazu, um festzustellen, wann die collision neu erzeugt werden muss
     bool terrainDeformed;

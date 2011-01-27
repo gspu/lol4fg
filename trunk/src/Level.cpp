@@ -25,6 +25,7 @@
 #include <OgrePage.h>
 #ifdef __editor
 #include "EditorApp.h"
+#include "QtEditorApp.h"
 #endif
 #include <TypeConverter.h>
 #include "TerrainPagingOverride.h"
@@ -845,15 +846,37 @@ Level::~Level()
 {
 //terrainMaterial.setNull();
 	/*if(mTerrainMgr)
-		delete mTerrainMgr;
-	if(mSplatMgr)
+		delete mTerrainMgr;*/
+	/*if(mSplatMgr)
 		delete mSplatMgr;*/
 	/*destructorCalled = true;*/
 	prepareForDestruction();
 	destroyAllObjects();
 
-	if(mPageProvider)
-		delete mPageProvider;
+	//mTerrainPagedWorld
+	
+	if(has_terrain)
+	{
+		if(mPageManager)
+		{
+			mPageManager->destroyWorld(mTerrainPagedWorld);
+			OGRE_DELETE mPageManager;
+		}
+
+		if(mPageProvider)
+			delete mPageProvider;
+
+		if(mPageManager)
+			OGRE_DELETE mPageManager;
+
+		if(mTerrainGroup)
+			OGRE_DELETE mTerrainGroup;
+
+		
+	}
+	
+
+	
 
 	for(SoundManager::SourceList::iterator itr = mSources.begin();itr!=mSources.end();itr++)
 	{	
@@ -924,6 +947,17 @@ Level::~Level()
 	delete mWorld;	
 	////app->log("level destructor 6");
 }
+
+void Level::setAutoPaging(bool set)
+{
+	mTerrainPagedWorld->autoLoadingEnabled = set;
+}
+
+bool Level::getAutoPaging()
+{
+	return mTerrainPagedWorld->autoLoadingEnabled;
+}
+
 
 void Level::showNewtonDebugLines(bool show)
 {
@@ -5065,9 +5099,9 @@ void Level::loadTerrain()
 	mPageManager->setPageProvider(mPageProvider);
 	mPageManager->addCamera(getMainCam());
 	mTerrainPaging = OGRE_NEW ExtendedPaging(mPageManager);//Ogre::TerrainPaging(mPageManager);
-	ExtendedWorld* world = mPageManager->createTestWorld();
+	mTerrainPagedWorld = mPageManager->createTestWorld();
 	//the numbers are loadRadius and holdRadius
-	mTerrainPaging->createTestWorldSection(world, mTerrainGroup, 600, 700,
+	mTerrainPaging->createTestWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
 			-10, -10, 
 			10, 10);
 	
@@ -5257,27 +5291,23 @@ Ogre::Real Level::lengthTerrainToWorld(Ogre::Real terrainLength)
 
 bool Level::LevelPageProvider::prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
+
 	////unpack
-	//long x;
-	//long y;
-	//mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);
-	////define with flat
-	////defineTerrain(x, y);
-	//mLog("preparing page "+ogre_str(x)+" / "+ogre_str(y));
-	//mLevel->mTerrainGroup->defineTerrain(x,y,float(0.0f));
-	///*Ogre::Image img;
-	//getTerrainImage(x % 2 != 0, y % 2 != 0, img);
-	//mLevel->mTerrainGroup->defineTerrain(x, y, &img);*/
+	long x;
+	long y;
+	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);
+	StandardApplication::getSingletonPtr()->pagePreparingCallback(x,y);
 	
 	return true; 
 }
 
 bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
-	//long x;
-	//long y;
-	//mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+	long x;
+	long y;
+	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
 
+	StandardApplication::getSingletonPtr()->pageLoadingCallback(x,y);
 	//mLog("loading page "+ogre_str(x)+" / "+ogre_str(y));
 	////load
 	//mLevel->mTerrainGroup->loadTerrain(x,y,true);
@@ -5293,10 +5323,19 @@ bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedW
 
 bool Level::LevelPageProvider::unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
+	long x;
+	long y;
+	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+	StandardApplication::getSingletonPtr()->pageUnloadingCallback(x,y);
+
 	return true; 
 }
 
 bool Level::LevelPageProvider::unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
+	long x;
+	long y;
+	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+	StandardApplication::getSingletonPtr()->pageUnpreparingCallback(x,y);
 	return true; 
 }

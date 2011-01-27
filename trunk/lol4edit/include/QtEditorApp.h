@@ -186,6 +186,8 @@ class QtEditorApp : public QApplication, public Ogre::LogListener
 		void shutdown(void);
 		void update(void);		
 
+		void enablePageAutoloading(bool enable);
+
 	private:
 		//Private functions
 		void initialiseLogging(void);

@@ -3,6 +3,11 @@
 #include "Level.h"
 #include "ExtendedTerrainGroup.h"
 
+
+//void ExtendedPagedWorldSection::unloadPage(PageID pageID, bool forceSynchronous)
+//{
+//}
+
 void ExtendedPagedWorldSection::loadPage(Ogre::PageID pageID, bool forceSynchronous)
 {
 	if (!mParent->getManager()->getPagingOperationsEnabled())
@@ -143,5 +148,6 @@ ExtendedWorld* ExtendedPageManager::createTestWorld(const Ogre::String& name)
 
 void ExtendedWorld::notifyCamera(Ogre::Camera* cam)
 {
-	PagedWorld::notifyCamera(cam);
+	if(autoLoadingEnabled)
+		PagedWorld::notifyCamera(cam);
 }

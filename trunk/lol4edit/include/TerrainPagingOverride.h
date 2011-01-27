@@ -22,6 +22,9 @@ public:
 
 	void loadPage(Ogre::PageID pageID, bool forceSynchronous = false);
 
+	//void unloadPage(Ogre::PageID pageID, bool forceSynchronous = false);
+
+
 	Ogre::int32 t_minX;
 	Ogre::int32 t_minY;
 	Ogre::int32 t_maxX;
@@ -33,7 +36,9 @@ class ExtendedWorld: public Ogre::PagedWorld
 {
 public:
 	ExtendedWorld(const Ogre::String& name, Ogre::PageManager* manager):
-	  Ogre::PagedWorld(name,manager){}
+	  Ogre::PagedWorld(name,manager),
+	  autoLoadingEnabled(true)
+	  {}
 		  
 
 	ExtendedPagedWorldSection* createTestSection(Ogre::SceneManager* sceneMgr,
@@ -41,6 +46,9 @@ public:
 			const Ogre::String& sectionName = Ogre::StringUtil::BLANK);
 
 	void notifyCamera(Ogre::Camera* cam);
+
+
+	bool autoLoadingEnabled;
 };
 
 //Terrain Paging-------------------------------------------------------------------------------------------------------
