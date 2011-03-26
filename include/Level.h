@@ -26,15 +26,11 @@ Klasse für alles rund ums level
 //#include "ETBrush.h"
 //#include "ETSplattingManager.h"
 #include "ZipSaveFile.h"
-#include <OgreTerrain.h>
-#include <OgreTerrainGroup.h>
-#include <OgreTerrainPaging.h>
+/**/
+#include <LevelTerrainPrerequisites.h>
 
 //test
-class ExtendedPaging;
-class ExtendedPagedWorldSection;
-class ExtendedPageManager;
-class ExtendedWorld;
+
 
 using namespace SimpleSound;
 
@@ -521,13 +517,13 @@ public:
 	{
 		return mTerrainGlobals;
 	}
-    Ogre::TerrainGroup* getTerrainGroup()
+    LevelTerrainGroup* getTerrainGroup()
 	{
 		return mTerrainGroup;
 	}
 
 	Ogre::TerrainGlobalOptions* mTerrainGlobals;
-    Ogre::TerrainGroup* mTerrainGroup;
+	LevelTerrainGroup* mTerrainGroup;
     bool mTerrainsImported;
 
 	Ogre::Light *terrainLight;
@@ -546,7 +542,7 @@ public:
 
 	Ogre::DataStreamPtr getTerrainForPage(long x, long y);
 
-	void defineTerrainForSection(ExtendedPagedWorldSection* section, long x, long y);
+	void defineTerrainForSection(LevelPagedWorldSection* section, long x, long y);
 
 	//experiment to do the decal using frustum
 	//void addDecalPasses();
@@ -768,9 +764,9 @@ protected:
 
 	//TERRAIN PAGING STUFF
 	//Ogre::TerrainPaging* mTerrainPaging;
-	ExtendedPaging* mTerrainPaging;
-	ExtendedWorld* mTerrainPagedWorld;
-	ExtendedPageManager* mPageManager;
+	LevelPaging* mTerrainPaging;
+	LevelPagedWorld* mTerrainPagedWorld;
+	LevelPageManager* mPageManager;
 
 	class LevelPageProvider : public Ogre::PageProvider
 	{

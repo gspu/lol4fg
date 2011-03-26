@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\Terrain&quot;;&quot;$(OGRE_HOME)\include\OGRE\Paging&quot;;&quot;$(OGRE_SRC)\OgreMain\include&quot;;&quot;$(OGRE_SRC)\Components\Paging\include&quot;;&quot;$(OGRE_SRC)\Components\Terrain\include&quot;;&quot;$(OGRE_SRC)\Dependencies\include&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\Qt&quot;;&quot;$(QTDIR)\qt\include&quot;;&quot;$(QTDIR)\qt\include\QtGui&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\qt\include\QtCore&quot;;&quot;$(QTDIR)\qt\src&quot;;&quot;$(QTDIR)\qt\src\gui\kernel&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;&quot;$(BOOST_HOME)&quot;;&quot;$(OPENAL_SDK)\include&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\include&quot;;include;gui;..\include;&quot;$(OGRE_HOME)\include&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\Terrain&quot;;&quot;$(OGRE_HOME)\include\OGRE\Paging&quot;;&quot;$(OGRE_SRC)\OgreMain\include&quot;;&quot;$(OGRE_SRC)\Components\Paging\include&quot;;&quot;$(OGRE_SRC)\Components\Terrain\include&quot;;&quot;$(OGRE_SRC)\Dependencies\include&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\Qt&quot;;&quot;$(QTDIR)\qt\include&quot;;&quot;$(QTDIR)\qt\include\QtGui&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\qt\include\QtCore&quot;;&quot;$(QTDIR)\qt\src&quot;;&quot;$(QTDIR)\qt\src\gui\kernel&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;&quot;$(BOOST_ROOT)&quot;;&quot;$(OPENAL_SDK)\include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__editor;TIXML_USE_STL"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -133,7 +133,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="include;gui;..\include;&quot;$(OGRE_HOME)\include&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\Terrain&quot;;&quot;$(OGRE_HOME)\include\OGRE\Paging&quot;;&quot;$(OGRE_SRC)\OgreMain\include&quot;;&quot;$(OGRE_SRC)\Components\Paging\include&quot;;&quot;$(OGRE_SRC)\Components\Terrain\include&quot;;&quot;$(OGRE_SRC)\Dependencies\include&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\Qt&quot;;&quot;$(QTDIR)\qt\include&quot;;&quot;$(QTDIR)\qt\include\QtGui&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\qt\include\QtCore&quot;;&quot;$(QTDIR)\qt\src&quot;;&quot;$(QTDIR)\qt\src\gui\kernel&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;&quot;$(BOOST_HOME)&quot;;&quot;$(OPENAL_SDK)\include&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\include&quot;;include;gui;..\include;&quot;$(OGRE_HOME)\include&quot;;&quot;$(OGRE_HOME)\include\OIS&quot;;&quot;$(OGRE_HOME)\include\OGRE&quot;;&quot;$(OGRE_HOME)\samples\include&quot;;&quot;$(OGRE_HOME)\include\OGRE\Terrain&quot;;&quot;$(OGRE_HOME)\include\OGRE\Paging&quot;;&quot;$(OGRE_SRC)\OgreMain\include&quot;;&quot;$(OGRE_SRC)\Components\Paging\include&quot;;&quot;$(OGRE_SRC)\Components\Terrain\include&quot;;&quot;$(OGRE_SRC)\Dependencies\include&quot;;&quot;$(QTDIR)\include&quot;;&quot;$(QTDIR)\include\Qt&quot;;&quot;$(QTDIR)\qt\include&quot;;&quot;$(QTDIR)\qt\include\QtGui&quot;;&quot;$(QTDIR)\include\QtGui&quot;;&quot;$(QTDIR)\include\QtCore&quot;;&quot;$(QTDIR)\qt\include\QtCore&quot;;&quot;$(QTDIR)\qt\src&quot;;&quot;$(QTDIR)\qt\src\gui\kernel&quot;;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;&quot;$(BOOST_ROOT)&quot;;&quot;$(OPENAL_SDK)\include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__editor;TIXML_USE_STL"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -1064,6 +1064,50 @@
 			</File>
 			<File
 				RelativePath=".\include\ExtendedTerrainGroup.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\LevelPagedWorld.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelPagedWorld.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\LevelPagedWorldSection.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelPagedWorldSection.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\LevelPageManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelPageManager.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\LevelPaging.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelPaging.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\LevelTerrainGroup.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelTerrainGroup.h"
+				>
+			</File>
+			<File
+				RelativePath=".\include\LevelTerrainPrerequisites.h"
 				>
 			</File>
 			<File

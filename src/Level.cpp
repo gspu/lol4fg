@@ -28,9 +28,13 @@
 #include "QtEditorApp.h"
 #endif
 #include <TypeConverter.h>
-#include "TerrainPagingOverride.h"
-#include "ExtendedTerrainGroup.h"
 
+
+#include "LevelPageManager.h"
+#include "LevelTerrainGroup.h"
+#include "LevelPagedWorld.h"
+#include "LevelPaging.h"
+#include "OgreTerrainGroup.h"
 using namespace TypeConverter;
 
 
@@ -859,7 +863,7 @@ Level::~Level()
 	{
 		if(mPageManager)
 		{
-			mPageManager->destroyWorld(mTerrainPagedWorld);
+			mPageManager->destroyWorld(static_cast<Ogre::PagedWorld*>(mTerrainPagedWorld));
 			OGRE_DELETE mPageManager;
 		}
 
@@ -5043,7 +5047,7 @@ Ogre::DataStreamPtr Level::getTerrainForPage(long x, long y)
 	return result;
 }
 
-void Level::defineTerrainForSection(ExtendedPagedWorldSection* section, long x, long y)
+void Level::defineTerrainForSection(LevelPagedWorldSection* section, long x, long y)
 {
 	//mTerrainGroup->saveAllTerrains
 	//mTerrainGroup->getTerrainIterator(); might be usable for saving
@@ -5076,7 +5080,7 @@ void Level::loadTerrain()
  
 	//maybe the last two params, too?
     //mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f);
-	mTerrainGroup = OGRE_NEW ExtendedTerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
+	mTerrainGroup = OGRE_NEW LevelTerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
 	//maybe no need at all...
     mTerrainGroup->setFilenameConvention(Ogre::String("Terrain"), Ogre::String("dat"));
     //always zero?
@@ -5093,15 +5097,15 @@ void Level::loadTerrain()
 
 	
 	// Paging setup
-	mPageManager = OGRE_NEW ExtendedPageManager(this);//Ogre::PageManager();
+	mPageManager = OGRE_NEW LevelPageManager(this);//Ogre::PageManager();
 		
 	mPageProvider = new LevelPageProvider(this);
 	mPageManager->setPageProvider(mPageProvider);
 	mPageManager->addCamera(getMainCam());
-	mTerrainPaging = OGRE_NEW ExtendedPaging(mPageManager);//Ogre::TerrainPaging(mPageManager);
-	mTerrainPagedWorld = mPageManager->createTestWorld();
+	mTerrainPaging = OGRE_NEW LevelPaging(mPageManager);//Ogre::TerrainPaging(mPageManager);
+	mTerrainPagedWorld = mPageManager->createLevelPagedWorld();
 	//the numbers are loadRadius and holdRadius
-	mTerrainPaging->createTestWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
+	mTerrainPaging->createLevelWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
 			-10, -10, 
 			10, 10);
 	
@@ -5174,6 +5178,7 @@ void Level::defineTerrain(long x, long y)
     Ogre::String filename = mTerrainGroup->generateFilename(x, y);
     if (Ogre::ResourceGroupManager::getSingleton().resourceExists(mTerrainGroup->getResourceGroup(), filename))
     {
+		
         mTerrainGroup->defineTerrain(x, y);
     }
     else

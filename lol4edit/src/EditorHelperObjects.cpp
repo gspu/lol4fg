@@ -8,6 +8,7 @@
 #include <QueryListener.h>
 #include <DynamicLines.h>
 #include <TypeConverter.h>
+#include "LevelTerrainGroup.h"
 
 
 TerrainDecal::TerrainDecal():
