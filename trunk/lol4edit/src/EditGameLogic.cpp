@@ -26,7 +26,8 @@
 #include <OgreTerrainPaging.h>
 #include <TerrainEditDialog.h>
 #include <LevelObjectList.h>
-
+#include "OgreTerrainGroup.h"
+#include "LevelTerrainGroup.h"
 using namespace TypeConverter;
 
 //das ist also mein framelistener nun...
@@ -674,7 +675,7 @@ namespace QtOgre
 		Level *curLevel = app->getCurrentLevel();
 
 		
-		Ogre::TerrainGroup *mTerrainGroup = curLevel->getTerrainGroup();
+		Ogre::TerrainGroup *mTerrainGroup = static_cast<Ogre::TerrainGroup *>(curLevel->getTerrainGroup());
 		///////////////////this part finds out where on the terrain the mouse is
 
 		//get camera ray 
