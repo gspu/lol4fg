@@ -23,6 +23,7 @@
 #include <OgreTerrainPaging.h>
 #include <OgreTerrainGroup.h>
 #include <OgrePage.h>
+
 #ifdef __editor
 #include "EditorApp.h"
 #include "QtEditorApp.h"
@@ -35,6 +36,7 @@
 #include "LevelPagedWorld.h"
 #include "LevelPaging.h"
 #include "OgreTerrainGroup.h"
+#include "LevelPagingListener.h"
 using namespace TypeConverter;
 
 
@@ -855,31 +857,47 @@ Level::~Level()
 		delete mSplatMgr;*/
 	/*destructorCalled = true;*/
 	prepareForDestruction();
-	destroyAllObjects();
+	
 
 	//mTerrainPagedWorld
 	
 	if(has_terrain)
 	{
+
+		if(mTerrainPaging)
+			OGRE_DELETE mTerrainPaging;
+		/*
+		if(mPageProvider)
+			delete mPageProvider;
+
+		if(mPagingListener)
+			delete mPagingListener;*/
+		
 		if(mPageManager)
 		{
 			mPageManager->destroyWorld(static_cast<Ogre::PagedWorld*>(mTerrainPagedWorld));
 			OGRE_DELETE mPageManager;
 		}
 
+		/* evtl nicht nötig? */
+		/*
+		if(mTerrainPaging)
+			OGRE_DELETE mTerrainPaging;
+		
 		if(mPageProvider)
 			delete mPageProvider;
 
-		if(mPageManager)
-			OGRE_DELETE mPageManager;
-
-		if(mTerrainGroup)
-			OGRE_DELETE mTerrainGroup;
+		if(mPagingListener)
+			delete mPagingListener;
+		*/
+		//nicht nötig, der löschcode des pagemanagers kümmert sich drum
+		//if(mTerrainGroup)
+		//	OGRE_DELETE mTerrainGroup;
 
 		
 	}
 	
-
+	destroyAllObjects();
 	
 
 	for(SoundManager::SourceList::iterator itr = mSources.begin();itr!=mSources.end();itr++)
@@ -5058,8 +5076,7 @@ void Level::defineTerrainForSection(LevelPagedWorldSection* section, long x, lon
 void Level::loadTerrain()
 { 
 	has_terrain = true;
-    /*Ogre::MaterialManager::getSingleton().setDefaultTextureFiltering(Ogre::TFO_ANISOTROPIC);
-    Ogre::MaterialManager::getSingleton().setDefaultAnisotropy(7);*/
+
  
 	//this is the light direction for the terrain. it will need to be user-defineable
     Ogre::Vector3 lightdir(0.55, -0.3, 0.75);
@@ -5076,11 +5093,11 @@ void Level::loadTerrain()
  
 	mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();//OGRE_NEW Ogre::TerrainGlobalOptions();
 
-	//mTerrainGlobals->setDefaultResourceGroup("Terrain");
+	mPagingListener = new LevelPagingListener(this);
  
 	//maybe the last two params, too?
-    //mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f);
-	mTerrainGroup = OGRE_NEW LevelTerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
+   
+	mTerrainGroup = OGRE_NEW LevelTerrainGroup(mPagingListener, mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
 	//maybe no need at all...
     mTerrainGroup->setFilenameConvention(Ogre::String("Terrain"), Ogre::String("dat"));
     //always zero?
@@ -5091,44 +5108,39 @@ void Level::loadTerrain()
 	
     configureTerrainDefaults();
  
-    /*for (long x = 0; x <= 0; ++x)
-        for (long y = 0; y <= 0; ++y)
-            defineTerrain(x, y);*/
+   
 
 	
 	// Paging setup
 	mPageManager = OGRE_NEW LevelPageManager(this);//Ogre::PageManager();
+	mPageManager->setPagingOperationsEnabled(true);
 		
+
+	
+
 	mPageProvider = new LevelPageProvider(this);
 	mPageManager->setPageProvider(mPageProvider);
 	mPageManager->addCamera(getMainCam());
-	mTerrainPaging = OGRE_NEW LevelPaging(mPageManager);//Ogre::TerrainPaging(mPageManager);
+	mTerrainPaging = OGRE_NEW LevelPaging(mPageManager,mPagingListener);//Ogre::TerrainPaging(mPageManager);
 	mTerrainPagedWorld = mPageManager->createLevelPagedWorld();
 	//the numbers are loadRadius and holdRadius
 	mTerrainPaging->createLevelWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
 			-10, -10, 
 			10, 10);
 	
-	//OLD BEGIN
-	//defineTerrain(0, 0); 
- //   // sync load since we want everything in place when we start
-    //mTerrainGroup->loadAllTerrains(true);
-	//OLD END
- 
-    if (mTerrainsImported)
-    {
-        Ogre::TerrainGroup::TerrainIterator ti = mTerrainGroup->getTerrainIterator();
-        while(ti.hasMoreElements())
-        {
-            Ogre::Terrain* t = ti.getNext()->instance;			
-            initBlendMaps(t);
-        }
-    }
- 
-    mTerrainGroup->freeTemporaryResources();
 
-	//mTerrainGroup->saveAllTerrains(
-	//addDecalPasses();
+ //
+ //   if (mTerrainsImported)
+ //   {
+ //       Ogre::TerrainGroup::TerrainIterator ti = mTerrainGroup->getTerrainIterator();
+ //       while(ti.hasMoreElements())
+ //       {
+ //           Ogre::Terrain* t = ti.getNext()->instance;			
+ //           initBlendMaps(t);
+ //       }
+ //   }
+ //
+ //   mTerrainGroup->freeTemporaryResources();
 
 }
 
@@ -5296,23 +5308,23 @@ Ogre::Real Level::lengthTerrainToWorld(Ogre::Real terrainLength)
 
 bool Level::LevelPageProvider::prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
-
+/*
 	////unpack
 	long x;
 	long y;
 	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);
 	StandardApplication::getSingletonPtr()->pagePreparingCallback(x,y);
-	
+	*/
 	return true; 
 }
 
 bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
-	long x;
+	/*long x;
 	long y;
 	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
 
-	StandardApplication::getSingletonPtr()->pageLoadingCallback(x,y);
+	StandardApplication::getSingletonPtr()->pageLoadingCallback(x,y);*/
 	//mLog("loading page "+ogre_str(x)+" / "+ogre_str(y));
 	////load
 	//mLevel->mTerrainGroup->loadTerrain(x,y,true);
@@ -5328,19 +5340,23 @@ bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedW
 
 bool Level::LevelPageProvider::unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
 { 
+/*
 	long x;
 	long y;
 	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
 	StandardApplication::getSingletonPtr()->pageUnloadingCallback(x,y);
-
+*/
 	return true; 
 }
 
 bool Level::LevelPageProvider::unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
-{ 
+{
+/*
 	long x;
 	long y;
 	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
 	StandardApplication::getSingletonPtr()->pageUnpreparingCallback(x,y);
+*/
 	return true; 
 }
+

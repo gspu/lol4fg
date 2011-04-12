@@ -16,9 +16,12 @@
 class LevelPaging: public Ogre::TerrainPaging
 {
 public:
-	LevelPaging(Ogre::PageManager* pageMgr):
-		TerrainPaging(pageMgr)
+	LevelPaging(Ogre::PageManager* pageMgr, LevelPagingListener *listener):
+		TerrainPaging(pageMgr),
+		mPagingListener(listener)
 		{}
+
+	~LevelPaging();
 
 	//again, the necessary method is not virtual
 	LevelPagedWorldSection* createLevelWorldSection(LevelPagedWorld* world, Ogre::TerrainGroup* terrainGroup, 
@@ -26,7 +29,15 @@ public:
 			Ogre::int32 minX = -10, Ogre::int32 minY = -10, Ogre::int32 maxX = 10, Ogre::int32 maxY = 10, 
 			const Ogre::String& sectionName = Ogre::StringUtil::BLANK);
 
-	
+	inline void setPagingListener(LevelPagingListener *pl)
+	{
+		mPagingListener = pl;
+	}
+
+	inline LevelPagingListener *getPagingListener()
+	{
+		return mPagingListener;
+	}
 
 protected:
 
@@ -41,7 +52,7 @@ protected:
 	};
 	
 	
-
+	LevelPagingListener *mPagingListener;
 	//SectionFactory mSectionFactory;
 };
 

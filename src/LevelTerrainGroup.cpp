@@ -1,8 +1,10 @@
 #include "LevelTerrainGroup.h"
 
-#include <OgreTerrain.h>
+#include "OgreTerrain.h"
 
-#include <OgreTerrainGroup.h>
+#include "OgreTerrainGroup.h"
+
+#include "LevelTerrain.h"
 
 using namespace Ogre;
 
@@ -22,7 +24,8 @@ void LevelTerrainGroup::defineTerrain(long x, long y, float constantHeight)
 
 void LevelTerrainGroup::defineTerrain(long x, long y)
 {
-	Ogre::TerrainGroup::defineTerrain(x,y);
+	defineTerrain(x,y,0.0f);
+	//Ogre::TerrainGroup::defineTerrain(x,y);
 }
 
 void LevelTerrainGroup::defineTerrain(long x, long y, Ogre::DataStreamPtr _stream)
@@ -34,6 +37,21 @@ void LevelTerrainGroup::defineTerrain(long x, long y, Ogre::DataStreamPtr _strea
 	slot->newDef.stream = _stream;
 }
 
+void LevelTerrainGroup::defineTerrain(long x, long y, const Terrain::ImportData* importData)
+{
+	LevelSlot* slot = getLevelSlot(x, y, true);
+
+	slot->newDef.used = false;
+
+	slot->def.useImportData();
+
+	// Copy all settings, but make sure our primary settings are immutable
+	*slot->def.importData = *importData;
+	slot->def.importData->terrainAlign = mAlignment;
+	slot->def.importData->terrainSize = mTerrainSize;
+	slot->def.importData->worldSize = mTerrainWorldSize;
+
+}
 
 
 LevelTerrainGroup::LevelSlot* LevelTerrainGroup::getLevelSlot(long x, long y, bool createIfMissing)
@@ -133,4 +151,52 @@ WorkQueue::Response* LevelTerrainGroup::handleRequest(const WorkQueue::Request* 
 	return response;
 
 
+}
+
+LevelTerrainGroup::~LevelTerrainGroup()
+{
+	//Ogre::TerrainGroup::~TerrainGroup();
+}
+
+
+
+void LevelTerrainGroup::loadTerrain(long x, long y, bool synchronous)
+{
+	TerrainSlot* slot = getTerrainSlot(x, y, false);
+	if (slot)
+	{
+		loadLevelTerrainImpl(slot, synchronous);
+	}
+}
+
+void LevelTerrainGroup::loadAllTerrains(bool synchronous)
+{
+	// Just a straight iteration - for the numbers involved not worth 
+	// keeping a loaded / unloaded list
+	for (TerrainSlotMap::iterator i = mTerrainSlots.begin(); i != mTerrainSlots.end(); ++i)
+	{
+		TerrainSlot* slot = i->second;
+		loadLevelTerrainImpl(slot, synchronous);
+	}
+}
+
+void LevelTerrainGroup::loadLevelTerrainImpl(TerrainSlot* slot, bool synchronous)
+{
+	if (!slot->instance && 
+		(!slot->def.filename.empty() || slot->def.importData))
+	{
+		// Allocate in main thread so no race conditions
+		slot->instance = OGRE_NEW LevelTerrain(mSceneManager);
+		slot->instance->setResourceGroup(mResourceGroup);
+		// Use shared pool of buffers
+		slot->instance->setGpuBufferAllocator(&mBufferAllocator);
+
+		LoadRequest req;
+		req.slot = slot;
+		req.origin = this;
+		Root::getSingleton().getWorkQueue()->addRequest(
+			mWorkQueueChannel, WORKQUEUE_LOAD_REQUEST, 
+			Any(req), 0, synchronous);
+
+	}
 }

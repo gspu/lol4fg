@@ -62,6 +62,10 @@ bool isMouseOverGui();//float const& x, float const& y);
 void mLog(CEGUI::String text);
 #endif
 
+void unpackTerrainIndex(Ogre::uint32 key, long *x, long *y);
+
+Ogre::uint32 packTerrainIndex(long x, long y);
+
 inline Ogre::String ptrToString(void *ptr)
 {
 	long address = reinterpret_cast<long>(ptr);

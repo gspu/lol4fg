@@ -767,6 +767,8 @@ protected:
 	LevelPaging* mTerrainPaging;
 	LevelPagedWorld* mTerrainPagedWorld;
 	LevelPageManager* mPageManager;
+	LevelPagingListener *mPagingListener;
+	
 
 	class LevelPageProvider : public Ogre::PageProvider
 	{

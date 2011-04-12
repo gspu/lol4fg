@@ -10,7 +10,7 @@
 #include <vector>
 #include <OgreNewt.h>
 #include "tinyxml.h"
-
+#include "TypeConverter.h"
 
 //mem probs without this next one
 ////#include <OgreNoMemoryMacros.h>
@@ -693,10 +693,7 @@ EditorApp::~EditorApp()
 {
 
 	
-	if(mTerrainGlobals)
-	{
-		OGRE_DELETE mTerrainGlobals;
-	}
+	
 
 	if(mWindow)
 	{
@@ -732,6 +729,11 @@ EditorApp::~EditorApp()
 //OgreNewt::Debugger::getSingleton().deInit();
 	if(currentLevel)
 		delete currentLevel;
+
+	if(mTerrainGlobals)
+	{
+		OGRE_DELETE mTerrainGlobals;
+	}
 
 	/*if(plsm2SceneMgr)
 		mRoot->destroySceneManager(plsm2SceneMgr);*/
@@ -4191,12 +4193,14 @@ void EditorApp::setup_qt()
 
 //to be called when a page is being prepared
 void EditorApp::pagePreparingCallback(long x, long y)
-{
+{	
+	mLog("EditorApp::pagePreparingCallback: page"+TypeConverter::ogre_str(x)+"/"+TypeConverter::ogre_str(y));
 	qtApp->mainWnd->pageStatusWindow->notifyPageStatus(x,y,PageStatusWindow::psLoading);
 }
 //to be called when a page is being loaded
 void EditorApp::pageLoadingCallback(long x, long y)
 {
+	mLog("EditorApp::pageLoadingCallback: page"+TypeConverter::ogre_str(x)+"/"+TypeConverter::ogre_str(y));
 	qtApp->mainWnd->pageStatusWindow->notifyPageStatus(x,y,PageStatusWindow::psLoaded);
 }
 //to be called when a page is being unloaded
