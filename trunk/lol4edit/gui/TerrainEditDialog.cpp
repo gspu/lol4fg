@@ -81,6 +81,7 @@ int TerrainEditDialog::getCurrentTexture()
 
 void TerrainEditDialog::updateTextureList(Level *lvl)
 {
+	/*
 	ui->texListWidget->clear();
 	if(!lvl->hasTerrain())
 		return;
@@ -113,7 +114,7 @@ void TerrainEditDialog::updateTextureList(Level *lvl)
 		}
 	}
 
-	
+	*/
 }
 
 

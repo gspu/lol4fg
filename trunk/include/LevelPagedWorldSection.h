@@ -48,54 +48,56 @@ public:
 	//@param p The Page to unload
 	//@param forceSynchronous If true, the page will always be unloaded synchronously
 	//*/
-	//virtual void unloadPage(Page* p, bool forceSynchronous = false);
-	///** Give a section the opportunity to prepare page content procedurally. 
-	//@remarks
-	//You should not call this method directly. This call may well happen in 
-	//a separate thread so it should not access GPU resources, use _loadProceduralPage
-	//for that
-	//@returns true if the page was populated, false otherwise
-	//*/
-	//virtual bool _prepareProceduralPage(Page* page);
-	///** Give a section the opportunity to prepare page content procedurally. 
-	//@remarks
-	//You should not call this method directly. This call will happen in 
-	//the main render thread so it can access GPU resources. Use _prepareProceduralPage
-	//for background preparation.
-	//@returns true if the page was populated, false otherwise
-	//*/
-	//virtual bool _loadProceduralPage(Page* page);
-	///** Give a section  the opportunity to unload page content procedurally. 
-	//@remarks
-	//You should not call this method directly. This call will happen in 
-	//the main render thread so it can access GPU resources. Use _unprepareProceduralPage
-	//for background preparation.
-	//@returns true if the page was populated, false otherwise
-	//*/
-	//virtual bool _unloadProceduralPage(Page* page);
-	///** Give a section  the opportunity to unprepare page content procedurally. 
-	//@remarks
-	//You should not call this method directly. This call may well happen in 
-	//a separate thread so it should not access GPU resources, use _unloadProceduralPage
-	//for that
-	//@returns true if the page was unpopulated, false otherwise
-	//*/
-	//virtual bool _unprepareProceduralPage(Page* page);
+	virtual void unloadPage(Ogre::Page* p, bool forceSynchronous = false);
+	
+	/** Give a section the opportunity to prepare page content procedurally. 
+	@remarks
+	You should not call this method directly. This call may well happen in 
+	a separate thread so it should not access GPU resources, use _loadProceduralPage
+	for that
+	@returns true if the page was populated, false otherwise
+	*/
+	virtual bool _prepareProceduralPage(Ogre::Page* page);
 
-	///** Ask for a page to be kept in memory if it's loaded.
-	//@remarks
-	//	This method indicates that a page should be retained if it's already
-	//	in memory, but if it's not then it won't trigger a load. This is useful
-	//	for retaining pages that have just gone out of range, but which you
-	//	don't want to unload just yet because it's quite possible they may come
-	//	back into the active set again very quickly / easily. But at the same
-	//	time, if they've already been purged you don't want to force them to load. 
-	//	This is the 'maybe' region of pages. 
-	//@par
-	//	Any Page that is neither requested nor held in a frame will be
-	//	deemed a candidate for unloading.
-	//*/
-	//virtual void holdPage(PageID pageID);
+	/** Give a section the opportunity to prepare page content procedurally. 
+	@remarks
+	You should not call this method directly. This call will happen in 
+	the main render thread so it can access GPU resources. Use _prepareProceduralPage
+	for background preparation.
+	@returns true if the page was populated, false otherwise
+	*/
+	virtual bool _loadProceduralPage(Ogre::Page* page);
+	/** Give a section  the opportunity to unload page content procedurally. 
+	@remarks
+	You should not call this method directly. This call will happen in 
+	the main render thread so it can access GPU resources. Use _unprepareProceduralPage
+	for background preparation.
+	@returns true if the page was populated, false otherwise
+	*/
+	virtual bool _unloadProceduralPage(Ogre::Page* page);
+	/** Give a section  the opportunity to unprepare page content procedurally. 
+	@remarks
+	You should not call this method directly. This call may well happen in 
+	a separate thread so it should not access GPU resources, use _unloadProceduralPage
+	for that
+	@returns true if the page was unpopulated, false otherwise
+	*/
+	virtual bool _unprepareProceduralPage(Ogre::Page* page);
+
+	/** Ask for a page to be kept in memory if it's loaded.
+	@remarks
+		This method indicates that a page should be retained if it's already
+		in memory, but if it's not then it won't trigger a load. This is useful
+		for retaining pages that have just gone out of range, but which you
+		don't want to unload just yet because it's quite possible they may come
+		back into the active set again very quickly / easily. But at the same
+		time, if they've already been purged you don't want to force them to load. 
+		This is the 'maybe' region of pages. 
+	@par
+		Any Page that is neither requested nor held in a frame will be
+		deemed a candidate for unloading.
+	*/
+	virtual void holdPage(Ogre::PageID pageID);
 
 	//void setRealPageProvider(Ogre::PageProvider *prov)
 	//{
@@ -106,8 +108,19 @@ public:
 	Ogre::int32 t_minY;
 	Ogre::int32 t_maxX;
 	Ogre::int32 t_maxY;
+
+	inline void setPageListener(LevelPagingListener *p)
+	{
+		mPageListener = p;
+	}
+	inline LevelPagingListener  *getPageListener()
+	{
+		return mPageListener;
+	}
 protected:
-	Ogre::PageProvider *mRealPageProvider;//because in this point, OGRE SUCKS!
+	LevelPagingListener  *mPageListener;
+
+	//Ogre::PageProvider *mRealPageProvider;//because in this point, OGRE SUCKS!
 };
 
 #endif

@@ -539,50 +539,50 @@
 				RelativePath="..\include\xmlwrapper.h"
 				>
 			</File>
-		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
-			>
-			<File
-				RelativePath=".\gui\qrc\EditorResources.qrc"
+			<Filter
+				Name="Resource Files"
+				Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+				UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
+				<File
+					RelativePath=".\gui\qrc\EditorResources.qrc"
 					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="RCCing: $(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)"
-						CommandLine="$(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						AdditionalDependencies="$(QTDIR)\bin\rcc.exe"
-						Outputs="gui\qrc_EditorResources.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="RCCing: $(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)"
+							CommandLine="$(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							AdditionalDependencies="$(QTDIR)\bin\rcc.exe"
+							Outputs="gui\qrc_EditorResources.cpp"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="RCCing: $(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)"
+							CommandLine="$(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							AdditionalDependencies="$(QTDIR)\bin\rcc.exe"
+							Outputs="gui\qrc_EditorResources.cpp"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath=".\res\lol4.rc"
 					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="RCCing: $(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)"
-						CommandLine="$(QTDIR)\bin\rcc.exe -o &quot;$(ProjectDir)gui\qrc_EditorResources.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						AdditionalDependencies="$(QTDIR)\bin\rcc.exe"
-						Outputs="gui\qrc_EditorResources.cpp"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\res\lol4.rc"
-				>
-			</File>
-			<File
-				RelativePath=".\gui\qrc_EditorResources.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\res\Resource.h"
-				>
-			</File>
+				</File>
+				<File
+					RelativePath=".\gui\qrc_EditorResources.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\res\Resource.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="qt"
@@ -1059,14 +1059,6 @@
 			Name="Terrain"
 			>
 			<File
-				RelativePath=".\src\ExtendedTerrainGroup.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\include\ExtendedTerrainGroup.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\LevelPagedWorld.cpp"
 				>
 			</File>
@@ -1099,6 +1091,22 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\LevelPagingListener.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelPagingListener.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\LevelTerrain.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelTerrain.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\LevelTerrainGroup.cpp"
 				>
 			</File>
@@ -1107,15 +1115,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\include\LevelTerrainPrerequisites.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\TerrainPagingOverride.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\include\TerrainPagingOverride.h"
+				RelativePath="..\include\LevelTerrainPrerequisites.h"
 				>
 			</File>
 		</Filter>

@@ -23,5 +23,12 @@ LevelPagedWorldSection* LevelPaging::createLevelWorldSection(LevelPagedWorld* wo
 	ret->t_maxX = maxX;
 	ret->t_maxY = maxY;
 
+	ret->setPageListener(mPagingListener);
+
 	return ret;
+}
+
+LevelPaging::~LevelPaging()
+{
+	mLog("nix");
 }

@@ -10,10 +10,13 @@
 class LevelTerrainGroup: public Ogre::TerrainGroup
 {
 public:
-	LevelTerrainGroup(Ogre::SceneManager* sm, Ogre::Terrain::Alignment align, Ogre::uint16 terrainSize, 
+	LevelTerrainGroup(LevelPagingListener *pagingListener, Ogre::SceneManager* sm, Ogre::Terrain::Alignment align, Ogre::uint16 terrainSize, 
 		Ogre::Real terrainWorldSize):
-		TerrainGroup(sm, align, terrainSize, terrainWorldSize)
+		TerrainGroup(sm, align, terrainSize, terrainWorldSize),
+		mPagingListener(pagingListener)
 		{}
+
+	~LevelTerrainGroup();
 
 	struct TerrainSlotDefinitionAddon
 	{
@@ -34,6 +37,22 @@ public:
 	};
 
 
+	//creates a LevelTerrain instead of an Ogre::Terrain
+	/** Load any terrain instances that have been defined but not loaded yet. 
+	@param synchronous Whether we should force this to happen entirely in the
+		primary thread (default false, operations are threaded if possible)
+	*/
+	virtual void loadAllTerrains(bool synchronous = false);
+	
+	/** Load a specific terrain slot based on the definition that has already 
+		been supplied.
+	@param x, y The coordinates of the terrain slot relative to the centre slot (signed).
+	@param synchronous Whether we should force this to happen entirely in the
+		primary thread (default false, operations are threaded if possible)
+	*/
+	virtual void loadTerrain(long x, long y, bool synchronous = false);
+
+
 	/** Slot for a terrain instance, together with its definition. */
 	struct  LevelSlot: public TerrainSlot
 	{
@@ -46,11 +65,21 @@ public:
 
 	};
 
+	//I overwrite all of them, because they use the non-virtual getTerrainSlot
+
 	virtual void defineTerrain(long x, long y);
 
 	virtual void defineTerrain(long x, long y, Ogre::DataStreamPtr _stream);
 
 	virtual void defineTerrain(long x, long y, float constantHeight);
+
+	virtual void defineTerrain(long x, long y, const Terrain::ImportData* importData);
+
+	virtual void defineTerrain(long x, long y, const Image* img, const Terrain::LayerInstanceList* layers = 0);
+
+	virtual void defineTerrain(long x, long y, const float* pFloat, const Terrain::LayerInstanceList* layers = 0);
+
+	virtual void defineTerrain(long x, long y, const String& filename);
 
 	
 
@@ -60,6 +89,7 @@ public:
 	/// WorkQueue::ResponseHandler override
 	//void handleResponse(const Ogre::WorkQueue::Response* res, const Ogre::WorkQueue* srcQ);
 private:
+	void loadLevelTerrainImpl(TerrainSlot* slot, bool synchronous);
 	
 	//this method of the parent should never be called.
 	//i really HATE it that I can't overwrite it
@@ -68,6 +98,8 @@ private:
 
 	//similar to getTerrainSlot, but creates my extended class
 	LevelSlot* getLevelSlot(long x, long y, bool createIfMissing);
+
+	LevelPagingListener *mPagingListener;
 };
 
 

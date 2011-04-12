@@ -77,6 +77,35 @@ void mLog(Ogre::String text)
 }
 #endif
 
+void unpackTerrainIndex(Ogre::uint32 key, long *x, long *y)
+{
+	// inverse of packIndex
+	// unsigned versions
+	Ogre::uint16 y16 = static_cast<Ogre::uint16>(key & 0xFFFF);
+	Ogre::uint16 x16 = static_cast<Ogre::uint16>((key >> 16) & 0xFFFF);
+
+	*x = static_cast<Ogre::int16>(x16);
+	*y = static_cast<Ogre::int16>(y16);
+
+}
+
+Ogre::uint32 packTerrainIndex(long x, long y)
+{
+	// Convert to signed 16-bit so sign bit is in bit 15
+	Ogre::int16 xs16 = static_cast<Ogre::int16>(x);
+	Ogre::int16 ys16 = static_cast<Ogre::int16>(y);
+
+	// convert to unsigned because we do not want to propagate sign bit to 32-bits
+	Ogre::uint16 x16 = static_cast<Ogre::uint16>(xs16);
+	Ogre::uint16 y16 = static_cast<Ogre::uint16>(ys16);
+
+	Ogre::uint32 key = 0;
+	key = (x16 << 16) | y16;
+
+	return key;
+
+
+}
 
 
 
