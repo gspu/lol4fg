@@ -27,7 +27,7 @@ Klasse für alles rund ums level
 //#include "ETSplattingManager.h"
 #include "ZipSaveFile.h"
 /**/
-#include <LevelTerrainPrerequisites.h>
+
 
 //test
 
@@ -359,7 +359,7 @@ public:
     {
         return texture % nrOfChannels;
     }
-    int getOldTextureIndex(Ogre::String name)
+    /*int getOldTextureIndex(Ogre::String name)
     {
         for(unsigned int i=0;i<terrainTextures.size();i++)
         {
@@ -367,7 +367,7 @@ public:
                 return i;
         }
         return -1;
-    }
+    }*/
     void initBuffer(Ogre::uchar *buffer,unsigned int size,Ogre::uchar value=0)
     {
         for(unsigned int i=0;i<size;i++)
@@ -377,14 +377,14 @@ public:
     }
     //void add
     
-    //gibt es holes?
-	bool hasHoleMap()
-	{
-		if(terrainTextures[0] == "hole.png")
-			return true;
-		return false;
-	}
-    
+ //   //gibt es holes?
+	//bool hasHoleMap()
+	//{
+	//	if(terrainTextures[0] == "hole.png")
+	//		return true;
+	//	return false;
+	//}
+ //   
 	//liste der texuren updaten
     void updateTextureList(Ogre::StringVector newList);
     //diese nimmt jetzt folgendes an:
@@ -428,7 +428,7 @@ public:
         material = skyBoxMaterial;
     }
 
-    void getHeightmapDimensions(Ogre::uint &width,Ogre::uint &height)
+   /* void getHeightmapDimensions(Ogre::uint &width,Ogre::uint &height)
     {
         width = hmWidth;
         height= hmHeight;
@@ -442,7 +442,7 @@ public:
     {
         width = splatWidth;
         height= splatHeight;
-    }
+    }*/
 
     /*unsigned int getNumSplatChannels()
     {
@@ -501,11 +501,11 @@ public:
 		//return true;//TODO
 	}
 
-	//helper functions
-	//converts a length in world dimensions to terrain dimensions
-	Ogre::Real lengthWorldToTerrain(Ogre::Real worldLength);
-	//converts a length in terrain dimensions to world dimensions
-	Ogre::Real lengthTerrainToWorld(Ogre::Real terrainLength);
+	////helper functions
+	////converts a length in world dimensions to terrain dimensions
+	//Ogre::Real lengthWorldToTerrain(Ogre::Real worldLength);
+	////converts a length in terrain dimensions to world dimensions
+	//Ogre::Real lengthTerrainToWorld(Ogre::Real terrainLength);
 
 	/*Ogre::TerrainGlobalOptions* mTerrainGlobals;
 	Ogre::TerrainGroup* mTerrainGroup;
@@ -513,18 +513,9 @@ public:
 	Ogre::TerrainPaging* mTerrainPaging;
 	Ogre::PageManager* mPageManager;*/
 
-	Ogre::TerrainGlobalOptions* getTerrainGlobals()
-	{
-		return mTerrainGlobals;
-	}
-    LevelTerrainGroup* getTerrainGroup()
-	{
-		return mTerrainGroup;
-	}
 
-	Ogre::TerrainGlobalOptions* mTerrainGlobals;
-	LevelTerrainGroup* mTerrainGroup;
-    bool mTerrainsImported;
+
+/*
 
 	Ogre::Light *terrainLight;
  
@@ -536,14 +527,14 @@ public:
 	Ogre::Real getCombinedBlendValue(Ogre::Terrain *terrain, Ogre::uint8 layer, size_t x, size_t y);
 
 	void setCombinedBlendValue(Ogre::Terrain *terrain, Ogre::uint8 layer, size_t x, size_t y, Ogre::Real val);
-
+*/
 	//now, my own stuff:
 	void loadTerrain();
-
+/*
 	Ogre::DataStreamPtr getTerrainForPage(long x, long y);
 
 	void defineTerrainForSection(LevelPagedWorldSection* section, long x, long y);
-
+*/
 	//experiment to do the decal using frustum
 	//void addDecalPasses();
 
@@ -567,7 +558,7 @@ public:
 	DummyPageProvider mDummyPageProvider;*/
 
 //if true, pages will be automatically loaded and unloaded according to camera
-	void setAutoPaging(bool set);
+	//void setAutoPaging(bool set);
 private:
 	
 
@@ -617,10 +608,10 @@ private:
 	void processSpecial(TiXmlElement *elem);
 	void processContainers(TiXmlElement *elem);
 
-	Ogre::String getSplattingBasename()
-	{
-		return splattingBasename;
-	}
+	//Ogre::String getSplattingBasename()
+	//{
+	//	return splattingBasename;
+	//}
 
 	void loadDotScene(TiXmlElement *elem);
 	void saveDotScene();
@@ -638,7 +629,7 @@ private:
 
 	typedef std::vector<SimpleSound::Buffer*> BufferVector;
 	
-    void getTerrainLightSettings(Ogre::ColourValue &lightColor, Ogre::ColourValue &ambientColor, Ogre::Vector3 &lightDirection)
+   /* void getTerrainLightSettings(Ogre::ColourValue &lightColor, Ogre::ColourValue &ambientColor, Ogre::Vector3 &lightDirection)
     {
         lightColor = etLightColor;
         ambientColor = etAmbientColor;
@@ -651,7 +642,7 @@ private:
         etAmbientColor = ambientColor;
         etLightDirection = lightDirection;
         updateTerrainLightmap();
-    }
+    }*/
 	
 protected:
 	Ogre::SceneNode *CamNode, *CamHeadNode;//die kameranodes
@@ -759,85 +750,85 @@ protected:
 
 	
 
-	bool getAutoPaging();
+//	bool getAutoPaging();
 
-
+/*
 	//TERRAIN PAGING STUFF
 	//Ogre::TerrainPaging* mTerrainPaging;
 	LevelPaging* mTerrainPaging;
 	LevelPagedWorld* mTerrainPagedWorld;
 	LevelPageManager* mPageManager;
 	LevelPagingListener *mPagingListener;
-	
+	*/
 
-	class LevelPageProvider : public Ogre::PageProvider
-	{
-	public:
-		LevelPageProvider(Level *parent)
-		{
-			mLevel = parent;
-		}
-		/** Give a provider the opportunity to prepare page content procedurally. 
-		@remarks
-		This call may well happen in a separate thread so it should not access 
-		GPU resources, use loadProceduralPage for that
-		@returns true if the page was populated, false otherwise
-		*/
-		bool prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+	//class LevelPageProvider : public Ogre::PageProvider
+	//{
+	//public:
+	//	LevelPageProvider(Level *parent)
+	//	{
+	//		mLevel = parent;
+	//	}
+	//	/** Give a provider the opportunity to prepare page content procedurally. 
+	//	@remarks
+	//	This call may well happen in a separate thread so it should not access 
+	//	GPU resources, use loadProceduralPage for that
+	//	@returns true if the page was populated, false otherwise
+	//	*/
+	//	bool prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
 
-		/** Give a provider the opportunity to load page content procedurally. 
-		@remarks
-		This call will happen in the main render thread so it can access GPU resources. 
-		Use prepareProceduralPage for background preparation.
-		@returns true if the page was populated, false otherwise
-		*/
-		bool loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+	//	/** Give a provider the opportunity to load page content procedurally. 
+	//	@remarks
+	//	This call will happen in the main render thread so it can access GPU resources. 
+	//	Use prepareProceduralPage for background preparation.
+	//	@returns true if the page was populated, false otherwise
+	//	*/
+	//	bool loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
 
-		/** Give a provider the opportunity to unload page content procedurally. 
-		@remarks
-		You should not call this method directly. This call will happen in 
-		the main render thread so it can access GPU resources. Use _unprepareProceduralPage
-		for background preparation.
-		@returns true if the page was populated, false otherwise
-		*/
-		bool unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+	//	/** Give a provider the opportunity to unload page content procedurally. 
+	//	@remarks
+	//	You should not call this method directly. This call will happen in 
+	//	the main render thread so it can access GPU resources. Use _unprepareProceduralPage
+	//	for background preparation.
+	//	@returns true if the page was populated, false otherwise
+	//	*/
+	//	bool unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
 
-		/** Give a provider the opportunity to unprepare page content procedurally. 
-		@remarks
-		You should not call this method directly. This call may well happen in 
-		a separate thread so it should not access GPU resources, use _unloadProceduralPage
-		for that
-		@returns true if the page was unpopulated, false otherwise
-		*/
-		bool unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
-	protected:
-		Level *mLevel;
-	};
-	LevelPageProvider *mPageProvider;
+	//	/** Give a provider the opportunity to unprepare page content procedurally. 
+	//	@remarks
+	//	You should not call this method directly. This call may well happen in 
+	//	a separate thread so it should not access GPU resources, use _unloadProceduralPage
+	//	for that
+	//	@returns true if the page was unpopulated, false otherwise
+	//	*/
+	//	bool unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
+	//protected:
+	//	Level *mLevel;
+	//};
+	//LevelPageProvider *mPageProvider;
 
     OgreNewt::Body *terrainBody;
     OgreNewt::CollisionPrimitives::TreeCollision *terrainCollision;
-    const unsigned int splatChannels;
-	/*ET::TerrainManager *mTerrainMgr;
-	ET::SplattingManager* mSplatMgr;*/
-	Ogre::String splattingBasename;
-	Ogre::StringVector terrainTextures;
-	/*const ET::TerrainInfo *mTerrainInfo;
-	Ogre::MaterialPtr terrainMaterial;
-	Ogre::TexturePtr terrainLightmap;*/
-    Ogre::ColourValue etLightColor, etAmbientColor;
-    Ogre::Vector3 etLightDirection;
-    Ogre::AxisAlignedBox terrainExtends;
-    //heightmap dimensions
-    unsigned int hmWidth;
-	unsigned int hmHeight;
-    //lightmap dimensions
-    unsigned int lmWidth;
-	unsigned int lmHeight;
-    //coverage/splatting map dimensions
-    unsigned int splatWidth;
-	unsigned int splatHeight;
-	/***terrain stuff end***/
+ //   const unsigned int splatChannels;
+	///*ET::TerrainManager *mTerrainMgr;
+	//ET::SplattingManager* mSplatMgr;*/
+	//Ogre::String splattingBasename;
+	//Ogre::StringVector terrainTextures;
+	///*const ET::TerrainInfo *mTerrainInfo;
+	//Ogre::MaterialPtr terrainMaterial;
+	//Ogre::TexturePtr terrainLightmap;*/
+ //   Ogre::ColourValue etLightColor, etAmbientColor;
+ //   Ogre::Vector3 etLightDirection;
+ //   Ogre::AxisAlignedBox terrainExtends;
+ //   //heightmap dimensions
+ //   unsigned int hmWidth;
+	//unsigned int hmHeight;
+ //   //lightmap dimensions
+ //   unsigned int lmWidth;
+	//unsigned int lmHeight;
+ //   //coverage/splatting map dimensions
+ //   unsigned int splatWidth;
+	//unsigned int splatHeight;
+	///***terrain stuff end***/
 
 	//player stores the pointer to the char currently under player control
 	//origPlayer is for backupping, here is always a pointer to the 

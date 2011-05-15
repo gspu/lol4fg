@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'GenericSelectDialog.h'
 **
-** Created: Sat 2. Apr 17:46:25 2011
+** Created: Sun 8. May 19:17:51 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!

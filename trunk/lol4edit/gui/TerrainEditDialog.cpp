@@ -8,7 +8,7 @@
 #include <Level.h>
 #include <OgreTerrain.h>
 #include "DataHoldingListWidgetItem.h"
-#include "LevelTerrainGroup.h"
+//#include "LevelTerrainGroup.h"
 
 TerrainEditDialog::TerrainEditDialog(QWidget *parent, Qt::WindowFlags f)
 	:QDialog(parent,f)//, (f & (~Qt::WindowMinimizeButtonHint | ~Qt::WindowMaximizeButtonHint)))

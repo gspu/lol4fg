@@ -134,7 +134,7 @@ namespace QtOgre
 	    TransformAxis curTransform;
 	    transformMode mTMode;
 
-		TerrainDecal *mTerrainDecal;
+		//TerrainDecal *mTerrainDecal;
 		SelectionBorder *selBorder;
 
     	void requestShutdown();

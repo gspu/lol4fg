@@ -27,7 +27,7 @@
 #include <TerrainEditDialog.h>
 #include <LevelObjectList.h>
 #include "OgreTerrainGroup.h"
-#include "LevelTerrainGroup.h"
+//#include "LevelTerrainGroup.h"
 using namespace TypeConverter;
 
 //das ist also mein framelistener nun...
@@ -41,7 +41,7 @@ namespace QtOgre
 		mRotate(0.25),
 		mMove(0.25),
 		mScroll(0.05),
-		mTerrainDecal(NULL),
+//		mTerrainDecal(NULL),
 		selectionLocked(false),
 		flattenHeight(-1),
 		rqListener(NULL),
@@ -142,8 +142,8 @@ namespace QtOgre
 
 	void EditGameLogic::levelChangeBegin(Level *newLevel)
 	{
-		mTerrainDecal->setLevel(newLevel);
-		mTerrainDecal->hide();
+//		mTerrainDecal->setLevel(newLevel);
+//		mTerrainDecal->hide();
 	}
 	void EditGameLogic::levelChangeEnd()
 	{
@@ -209,7 +209,7 @@ namespace QtOgre
 
 	void EditGameLogic::createDecal()
 	{
-		mTerrainDecal = new TerrainDecal();
+//		mTerrainDecal = new TerrainDecal();
 		
 		selBorder = new SelectionBorder();
 	}
@@ -279,8 +279,8 @@ namespace QtOgre
 
 	void EditGameLogic::shutdown(void)
 	{
-		if(mTerrainDecal)
-			delete mTerrainDecal;
+		/*if(mTerrainDecal)
+			delete mTerrainDecal;*/
 		/*mSceneManager->clearScene();
 		Ogre::Root::getSingleton().destroySceneManager(mSceneManager);*/
 	}
@@ -675,63 +675,63 @@ namespace QtOgre
 		Level *curLevel = app->getCurrentLevel();
 
 		
-		Ogre::TerrainGroup *mTerrainGroup = static_cast<Ogre::TerrainGroup *>(curLevel->getTerrainGroup());
-		///////////////////this part finds out where on the terrain the mouse is
-
-		//get camera ray 
-		Ray ray; 
-		//ray = mCamera->getCameraToViewportRay(0.5, 0.5);
-		ray = getMouseRay();//mTrayMgr->getCursorRay(mCamera);
-
-		size_t brushWidth = mRealApp->mainWnd->terrainEditDialog->getSelectedBrush().getWidth();
-		TerrainGroup::RayResult rayResult = mTerrainGroup->rayIntersects(ray);
-
-		if (rayResult.hit)
-		{
-			mTerrainDecal->update(rayResult.position.x,rayResult.position.z,brushWidth);
-		}
-		
-
-		if(app->editingMode==EditorApp::emTerrain && curLevel->hasTerrain()
-			&& (mKeyStates[Qt::LeftButton] == KS_PRESSED || mKeyStates[Qt::RightButton] == KS_PRESSED))
-		{
-			Real mBrushSizeTerrainSpace = app->getCurrentLevel()->lengthWorldToTerrain(mRealApp->mainWnd->terrainEditDialog->getBrushSize());// = 0.2f;
-
-			
-			
-			if (rayResult.hit)
-			{				
-				//mEditMarker->setVisible(true);
-				//mEditNode->setPosition(rayResult.position); //<- so, here I can position  an edit marker. good.
-				Ogre::Real worldSize = mTerrainGroup->getTerrainWorldSize();
-
-				//set stuff for flatten/soften
-				if(app->getTerrainEditMode() == EditorApp::teSoften)
-				{
-					flattenHeight = mTerrainGroup->getHeightAtWorldPosition(rayResult.position);
-					//flattenHeight = terrain->getHeightAtPoint(Ogre::Math::Floor(temp.getWidth()/2),Ogre::Math::Floor(temp.getHeight()/2));
-				}
-				else if(app->getTerrainEditMode() == EditorApp::teFlatten)
-				{
-					if(flattenHeight == -1)
-					{
-						flattenHeight = mTerrainGroup->getHeightAtWorldPosition(rayResult.position);
-					}
-				}
-				
-				// figure out which terrains this affects
-				TerrainGroup::TerrainList terrainList;
-				Real brushSizeWorldSpace = worldSize * mBrushSizeTerrainSpace;
-				Sphere sphere(rayResult.position, brushSizeWorldSpace);
-				mTerrainGroup->sphereIntersects(sphere, &terrainList);
-
-				for (TerrainGroup::TerrainList::iterator ti = terrainList.begin();
-					ti != terrainList.end(); ++ti)
-				{
-					doTerrainModify(*ti, rayResult.position, time);
-				}
-			}
-			mTerrainGroup->update();
+////		Ogre::TerrainGroup *mTerrainGroup = static_cast<Ogre::TerrainGroup *>(curLevel->getTerrainGroup());
+//		///////////////////this part finds out where on the terrain the mouse is
+//
+//		//get camera ray 
+//		Ray ray; 
+//		//ray = mCamera->getCameraToViewportRay(0.5, 0.5);
+//		ray = getMouseRay();//mTrayMgr->getCursorRay(mCamera);
+//
+//		size_t brushWidth = mRealApp->mainWnd->terrainEditDialog->getSelectedBrush().getWidth();
+//		TerrainGroup::RayResult rayResult = mTerrainGroup->rayIntersects(ray);
+//
+//		if (rayResult.hit)
+//		{
+//			mTerrainDecal->update(rayResult.position.x,rayResult.position.z,brushWidth);
+//		}
+//		
+//
+//		if(app->editingMode==EditorApp::emTerrain && curLevel->hasTerrain()
+//			&& (mKeyStates[Qt::LeftButton] == KS_PRESSED || mKeyStates[Qt::RightButton] == KS_PRESSED))
+//		{
+//			Real mBrushSizeTerrainSpace = app->getCurrentLevel()->lengthWorldToTerrain(mRealApp->mainWnd->terrainEditDialog->getBrushSize());// = 0.2f;
+//
+//			
+//			
+//			if (rayResult.hit)
+//			{				
+//				//mEditMarker->setVisible(true);
+//				//mEditNode->setPosition(rayResult.position); //<- so, here I can position  an edit marker. good.
+//				Ogre::Real worldSize = mTerrainGroup->getTerrainWorldSize();
+//
+//				//set stuff for flatten/soften
+//				if(app->getTerrainEditMode() == EditorApp::teSoften)
+//				{
+//					flattenHeight = mTerrainGroup->getHeightAtWorldPosition(rayResult.position);
+//					//flattenHeight = terrain->getHeightAtPoint(Ogre::Math::Floor(temp.getWidth()/2),Ogre::Math::Floor(temp.getHeight()/2));
+//				}
+//				else if(app->getTerrainEditMode() == EditorApp::teFlatten)
+//				{
+//					if(flattenHeight == -1)
+//					{
+//						flattenHeight = mTerrainGroup->getHeightAtWorldPosition(rayResult.position);
+//					}
+//				}
+//				
+//				// figure out which terrains this affects
+//				TerrainGroup::TerrainList terrainList;
+//				Real brushSizeWorldSpace = worldSize * mBrushSizeTerrainSpace;
+//				Sphere sphere(rayResult.position, brushSizeWorldSpace);
+//				mTerrainGroup->sphereIntersects(sphere, &terrainList);
+//
+//				for (TerrainGroup::TerrainList::iterator ti = terrainList.begin();
+//					ti != terrainList.end(); ++ti)
+//				{
+//					doTerrainModify(*ti, rayResult.position, time);
+//				}
+//			}
+//			mTerrainGroup->update();
 
 
 
@@ -773,7 +773,7 @@ namespace QtOgre
 			//		}
 			//		if (mHeightUpdateCountDown == 0)
 			//			mHeightUpdateCountDown = mHeightUpdateRate;
-		}
+		//}
 		
    //     if(app->editingMode==EditorApp::emTerrain  && app->currentLevel->getTerrainManager())
 	  //  {
@@ -981,202 +981,202 @@ namespace QtOgre
 
 	void EditGameLogic::doTerrainModify(Ogre::Terrain* terrain, const Ogre::Vector3& centrepos, Ogre::Real timeElapsed)
 	{
-		using namespace Ogre;
+		//using namespace Ogre;
 
-		
+		//
 
-		Ogre::Image img = mRealApp->mainWnd->terrainEditDialog->getSelectedBrush();
+		//Ogre::Image img = mRealApp->mainWnd->terrainEditDialog->getSelectedBrush();
 
-		
-		Real mBrushSizeTerrainSpace = 0.02f;//seems to be the brush radius, in terrain coords or so
-		//0,02 ^= ca. 188
-		//eventuell worldSize * diesen Wert
-		mBrushSizeTerrainSpace = app->getCurrentLevel()->lengthWorldToTerrain(mRealApp->mainWnd->terrainEditDialog->getBrushSize());
+		//
+		//Real mBrushSizeTerrainSpace = 0.02f;//seems to be the brush radius, in terrain coords or so
+		////0,02 ^= ca. 188
+		////eventuell worldSize * diesen Wert
+		//mBrushSizeTerrainSpace = app->getCurrentLevel()->lengthWorldToTerrain(mRealApp->mainWnd->terrainEditDialog->getBrushSize());
 
 
-		Ogre::Vector3 tsPos;
-		terrain->getTerrainPosition(centrepos, &tsPos);
+		//Ogre::Vector3 tsPos;
+		//terrain->getTerrainPosition(centrepos, &tsPos);
 
-		
-		// we need point coords
-		Real terrainSize = (terrain->getSize() - 1);
-		Real intensity = mRealApp->mainWnd->terrainEditDialog->getIntensityFactor();
+		//
+		//// we need point coords
+		//Real terrainSize = (terrain->getSize() - 1);
+		//Real intensity = mRealApp->mainWnd->terrainEditDialog->getIntensityFactor();
 	
 	
-		long xSize = img.getWidth()/2; //half the size of the brush
-		mRealApp->mainWnd->setStatusText("xSize = "+TypeConverter::ogre_str(xSize));
+		//long xSize = img.getWidth()/2; //half the size of the brush
+		//mRealApp->mainWnd->setStatusText("xSize = "+TypeConverter::ogre_str(xSize));
 
-		long centerOfBrushX = (tsPos.x) * terrainSize;//center point of the brush AKA the click point in terrain coords
-		long centerOfBrushY = (tsPos.y) * terrainSize;
+		//long centerOfBrushX = (tsPos.x) * terrainSize;//center point of the brush AKA the click point in terrain coords
+		//long centerOfBrushY = (tsPos.y) * terrainSize;
 
-		//start and end values for looping through the brush area
-		long startx = centerOfBrushX - xSize;
-		long starty = centerOfBrushY - xSize;
-		long endx	= centerOfBrushX + xSize;
-		long endy	= centerOfBrushY + xSize;		
+		////start and end values for looping through the brush area
+		//long startx = centerOfBrushX - xSize;
+		//long starty = centerOfBrushY - xSize;
+		//long endx	= centerOfBrushX + xSize;
+		//long endy	= centerOfBrushY + xSize;		
 
-		
-
-
-
-		switch(app->getTerrainEditMode())
-		{
-		case EditorApp::teDeform:					
-		case EditorApp::teSoften:
-		case EditorApp::teFlatten:
-			//here is the stuff for everything deforming-related
-
-			//I think this is for when we are outside of the current terrain part
-			startx = std::max(startx, 0L);
-			starty = std::max(starty, 0L);
-			endx = std::min(endx, (long)terrainSize);
-			endy = std::min(endy, (long)terrainSize);
-
-			//getTerrainEditMode
-			for (long y = starty; y <= endy; ++y)
-			{
-				for (long x = startx; x <= endx; ++x)
-				{
-					Real tsXdist = (x / terrainSize) - tsPos.x;
-					Real tsYdist = (y / terrainSize)  - tsPos.y;
-
-					//now try to get color from png
-					Ogre::ColourValue color = img.getColourAt(x-startx,y-starty,0);
-					//hm, ignore it if they are exactly at the corner?
-					Ogre::Real medValue = ((color.r + color.g + color.b)/3);
-
-					switch(app->getTerrainEditMode())
-					{
-					case EditorApp::teDeform:
-						{				
-							Real weight = medValue;
-
-							float addedHeight = weight * 250.0 * timeElapsed * intensity;
-							float newheight;
-							if(mKeyStates[Qt::LeftButton] == KS_PRESSED)
-								newheight = terrain->getHeightAtPoint(x, y) + addedHeight;
-							else if(mKeyStates[Qt::RightButton] == KS_PRESSED)
-								newheight = terrain->getHeightAtPoint(x, y) - addedHeight;
-							terrain->setHeightAtPoint(x, y, newheight);
-						}
-						break;
-					case EditorApp::teSoften:
-					case EditorApp::teFlatten:
-						{
-							Real curHeight = terrain->getHeightAtPoint(x, y);
-							Real diff = curHeight-flattenHeight;
-							Real newVal = curHeight;
-							if(diff != 0)
-							{
-							   Ogre::Real set = curHeight - 0.5*Ogre::Math::Sign(diff)*medValue*intensity;//*(brushIntensity);
-							   
-							   if(Ogre::Math::Abs(diff) < 0.01)
-								   newVal = curHeight - diff*medValue;//*(brushIntensity);//flattenHeight;
-							   else
-								   newVal = set;                                   
-							}
-							terrain->setHeightAtPoint(x, y, newVal);
-						}
-						break;					
-					}//case(...)
-
-				}//for(x
-			}//for(y
-			break;
-		case EditorApp::tePaint:
-			int texIndex = mRealApp->mainWnd->terrainEditDialog->getCurrentTexture();
-			//and here painting and maybe hole-making, too
-
-			TerrainLayerBlendMap* layer = NULL;
-
-			if(texIndex > 0)
-			{
-				//paint
-				layer = terrain->getLayerBlendMap(texIndex);
-			}
-			// we need image coords
-			Real imgSize = terrain->getLayerBlendMapSize();
+		//
 
 
-			xSize *= (16);
 
-			/*
-			long xSize = img.getWidth()/2; <- i keep this
-			*/
-			centerOfBrushX = (tsPos.x) * imgSize;
-			centerOfBrushY = (tsPos.y) * imgSize;
+		//switch(app->getTerrainEditMode())
+		//{
+		//case EditorApp::teDeform:					
+		//case EditorApp::teSoften:
+		//case EditorApp::teFlatten:
+		//	//here is the stuff for everything deforming-related
 
-			//start and end values for looping through the brush area
-			startx	= centerOfBrushX - xSize;
-			starty	= centerOfBrushY - xSize;
-			endx	= centerOfBrushX + xSize;
-			endy	= centerOfBrushY + xSize;	
-		
+		//	//I think this is for when we are outside of the current terrain part
+		//	startx = std::max(startx, 0L);
+		//	starty = std::max(starty, 0L);
+		//	endx = std::min(endx, (long)terrainSize);
+		//	endy = std::min(endy, (long)terrainSize);
+
+		//	//getTerrainEditMode
+		//	for (long y = starty; y <= endy; ++y)
+		//	{
+		//		for (long x = startx; x <= endx; ++x)
+		//		{
+		//			Real tsXdist = (x / terrainSize) - tsPos.x;
+		//			Real tsYdist = (y / terrainSize)  - tsPos.y;
+
+		//			//now try to get color from png
+		//			Ogre::ColourValue color = img.getColourAt(x-startx,y-starty,0);
+		//			//hm, ignore it if they are exactly at the corner?
+		//			Ogre::Real medValue = ((color.r + color.g + color.b)/3);
+
+		//			switch(app->getTerrainEditMode())
+		//			{
+		//			case EditorApp::teDeform:
+		//				{				
+		//					Real weight = medValue;
+
+		//					float addedHeight = weight * 250.0 * timeElapsed * intensity;
+		//					float newheight;
+		//					if(mKeyStates[Qt::LeftButton] == KS_PRESSED)
+		//						newheight = terrain->getHeightAtPoint(x, y) + addedHeight;
+		//					else if(mKeyStates[Qt::RightButton] == KS_PRESSED)
+		//						newheight = terrain->getHeightAtPoint(x, y) - addedHeight;
+		//					terrain->setHeightAtPoint(x, y, newheight);
+		//				}
+		//				break;
+		//			case EditorApp::teSoften:
+		//			case EditorApp::teFlatten:
+		//				{
+		//					Real curHeight = terrain->getHeightAtPoint(x, y);
+		//					Real diff = curHeight-flattenHeight;
+		//					Real newVal = curHeight;
+		//					if(diff != 0)
+		//					{
+		//					   Ogre::Real set = curHeight - 0.5*Ogre::Math::Sign(diff)*medValue*intensity;//*(brushIntensity);
+		//					   
+		//					   if(Ogre::Math::Abs(diff) < 0.01)
+		//						   newVal = curHeight - diff*medValue;//*(brushIntensity);//flattenHeight;
+		//					   else
+		//						   newVal = set;                                   
+		//					}
+		//					terrain->setHeightAtPoint(x, y, newVal);
+		//				}
+		//				break;					
+		//			}//case(...)
+
+		//		}//for(x
+		//	}//for(y
+		//	break;
+		//case EditorApp::tePaint:
+		//	int texIndex = mRealApp->mainWnd->terrainEditDialog->getCurrentTexture();
+		//	//and here painting and maybe hole-making, too
+
+		//	TerrainLayerBlendMap* layer = NULL;
+
+		//	if(texIndex > 0)
+		//	{
+		//		//paint
+		//		layer = terrain->getLayerBlendMap(texIndex);
+		//	}
+		//	// we need image coords
+		//	Real imgSize = terrain->getLayerBlendMapSize();
 
 
-			startx = std::max(startx, 0L);
-			starty = std::max(starty, 0L);
-			endx = std::min(endx, (long)imgSize);
-			endy = std::min(endy, (long)imgSize);
-			for (long y = starty; y <= endy; ++y)
-			{
-				for (long x = startx; x <= endx; ++x)
-				{
-					Real tsXdist = (x / imgSize) - tsPos.x;
-					Real tsYdist = (y / imgSize)  - tsPos.y;
+		//	xSize *= (16);
 
-					//now try to get color from png
-					Ogre::ColourValue color = img.getColourAt((x-startx)/16,(y-starty)/16,0);
-					//hm, ignore it if they are exactly at the corner?
-					Ogre::Real medValue = ((color.r + color.g + color.b)/3);					
+		//	/*
+		//	long xSize = img.getWidth()/2; <- i keep this
+		//	*/
+		//	centerOfBrushX = (tsPos.x) * imgSize;
+		//	centerOfBrushY = (tsPos.y) * imgSize;
 
-					float paint = medValue * timeElapsed * 5 *intensity;
-					if(mKeyStates[Qt::RightButton] == KS_PRESSED)
-						paint *= -1;//assume it is the left key otherwise
-					size_t imgY = imgSize - y;
-					float val;
+		//	//start and end values for looping through the brush area
+		//	startx	= centerOfBrushX - xSize;
+		//	starty	= centerOfBrushY - xSize;
+		//	endx	= centerOfBrushX + xSize;
+		//	endy	= centerOfBrushY + xSize;	
+		//
 
 
-					if(texIndex > 0)
-					{
-						val = layer->getBlendValue(x, imgY) + paint;
-						
+		//	startx = std::max(startx, 0L);
+		//	starty = std::max(starty, 0L);
+		//	endx = std::min(endx, (long)imgSize);
+		//	endy = std::min(endy, (long)imgSize);
+		//	for (long y = starty; y <= endy; ++y)
+		//	{
+		//		for (long x = startx; x <= endx; ++x)
+		//		{
+		//			Real tsXdist = (x / imgSize) - tsPos.x;
+		//			Real tsYdist = (y / imgSize)  - tsPos.y;
 
-						val = Math::Clamp(val, 0.0f, 1.0f);
-					
-						layer->setBlendValue(x, imgY, val);
-					}
-					else
-					{
-						val = 1+paint;
-					}
-					/*Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(texIndex);
-					cur->setBlendValue(x,imgY,1-val);*/
-					//app->getCurrentLevel()->setCombinedBlendValue(terrain,texIndex,x,imgY,val);
-					////and now, clean everything above
-					//for(int i=texIndex+1;i<terrain->getLayerCount();i++)
-					//{
-					//	Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(i);
-					//	val = 
-					//	cur->setBlendValue(x,imgY,1-val);
-					//}
+		//			//now try to get color from png
+		//			Ogre::ColourValue color = img.getColourAt((x-startx)/16,(y-starty)/16,0);
+		//			//hm, ignore it if they are exactly at the corner?
+		//			Ogre::Real medValue = ((color.r + color.g + color.b)/3);					
 
-				}
-			}
-			int layerUpdateStart = std::max(texIndex,1);
-			for(int i = layerUpdateStart;i < terrain->getLayerCount();i++)
-			{
-				Ogre::TerrainLayerBlendMap *layer = terrain->getLayerBlendMap(i);
-				layer->dirty();
-				layer->update();
-			}
-			//} 
-			break;
+		//			float paint = medValue * timeElapsed * 5 *intensity;
+		//			if(mKeyStates[Qt::RightButton] == KS_PRESSED)
+		//				paint *= -1;//assume it is the left key otherwise
+		//			size_t imgY = imgSize - y;
+		//			float val;
 
-		}
-		
 
-		
+		//			if(texIndex > 0)
+		//			{
+		//				val = layer->getBlendValue(x, imgY) + paint;
+		//				
+
+		//				val = Math::Clamp(val, 0.0f, 1.0f);
+		//			
+		//				layer->setBlendValue(x, imgY, val);
+		//			}
+		//			else
+		//			{
+		//				val = 1+paint;
+		//			}
+		//			/*Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(texIndex);
+		//			cur->setBlendValue(x,imgY,1-val);*/
+		//			//app->getCurrentLevel()->setCombinedBlendValue(terrain,texIndex,x,imgY,val);
+		//			////and now, clean everything above
+		//			//for(int i=texIndex+1;i<terrain->getLayerCount();i++)
+		//			//{
+		//			//	Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(i);
+		//			//	val = 
+		//			//	cur->setBlendValue(x,imgY,1-val);
+		//			//}
+
+		//		}
+		//	}
+		//	int layerUpdateStart = std::max(texIndex,1);
+		//	for(int i = layerUpdateStart;i < terrain->getLayerCount();i++)
+		//	{
+		//		Ogre::TerrainLayerBlendMap *layer = terrain->getLayerBlendMap(i);
+		//		layer->dirty();
+		//		layer->update();
+		//	}
+		//	//} 
+		//	break;
+
+		//}
+		//
+
+		//
 
 		/*
 		
