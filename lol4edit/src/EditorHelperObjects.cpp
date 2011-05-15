@@ -8,209 +8,209 @@
 #include <QueryListener.h>
 #include <DynamicLines.h>
 #include <TypeConverter.h>
-#include "LevelTerrainGroup.h"
+//#include "LevelTerrainGroup.h"
 
-
-TerrainDecal::TerrainDecal():
-	mLevel(NULL),
-	/*mMeshDecal(NULL),
-	x_size(4),
-	z_size(4),
-	isShown(false),*/
-	mDecalFrustum(NULL),
-	mProjectorNode(NULL),
-	/*prev_x(0),
-	prev_z(0), 
-	prev_rad(0),
-	mFilterNode(NULL),
-	mFilterFrustum(NULL),*/
-	isShown(false)
-	//,
-	//accuracy(35)
-{
-	
-	using namespace Ogre;
-	//creating the frustum	
-	mDecalFrustum = new Frustum();
-	//mFilterFrustum = new Frustum();
-	//now create the node using the default scene manager
-	//now, new stuff
-	//mMainNode is the node which is relocated and stuff
-	//mProjectorNode is the node which projects the actual decal
-	//mFilterNode is the node containing the filter, to remove the decal
-   
-	mProjectorNode = EditorApp::getSingletonPtr()->getDefaultSceneManager()->getRootSceneNode()->createChildSceneNode("DecalProjectorNode");
-
-
-	/*mProjectorNode = mMainNode->createChildSceneNode();
-	mFilterNode = mMainNode->createChildSceneNode();*/
-
-	mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(90),Ogre::Vector3::NEGATIVE_UNIT_X));
-
-	//mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(180),Ogre::Vector3::UNIT_X));
-	mProjectorNode->attachObject(mDecalFrustum);
-	//mFilterNode->attachObject(mFilterFrustum);
-
-
-	//now detatch it
-	EditorApp::getSingletonPtr()->getDefaultSceneManager()->getRootSceneNode()->removeChild(mProjectorNode);
-
-	
-	mDecalFrustum->setAspectRatio(1);
-	mDecalFrustum->setProjectionType(PT_ORTHOGRAPHIC);
-    mDecalFrustum->setOrthoWindowHeight(100);
-	mDecalFrustum->setNearClipDistance(0.1);
-	mDecalFrustum->setFarClipDistance(10000);
-
-	/*mFilterFrustum->setAspectRatio(1);
-	mFilterFrustum->setProjectionType(PT_ORTHOGRAPHIC);
-    mFilterFrustum->setOrthoWindowHeight(100);*/
-	//mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(-90),Ogre::Vector3::UNIT_X));
-	/*mDecalFrustum->setNearClipDistance(1);
-	mDecalFrustum->setFarClipDistance(10000);*/
-
-	
-	
-
-}
-
-TerrainDecal::~TerrainDecal()
-{
-	if(mDecalFrustum)
-	{
-		delete mDecalFrustum;
-	}
-	/*if(mFilterFrustum)
-	{
-		delete mFilterFrustum;
-	}*/
-	if(mProjectorNode)
-	{
-		if(mLevel)
-			mLevel->getSceneManager()->destroySceneNode(mProjectorNode);
-		else
-			EditorApp::getSingletonPtr()->getDefaultSceneManager()->destroySceneNode(mProjectorNode);
-	}
-}
-
-
-void TerrainDecal::addDecalPasses()
-{
-	mTexStates.clear();
-	using namespace Ogre;
-	
-	if(!mLevel || !mLevel->mTerrainGroup)
-		return;
-
-	Ogre::TerrainGroup::TerrainIterator ti = mLevel->mTerrainGroup->getTerrainIterator();
-    while(ti.hasMoreElements())
-    {
-        Ogre::Terrain* t = ti.getNext()->instance;			
-		MaterialPtr mat = t->getMaterial();		
-
-
-        Pass *pass =  mat->getTechnique(0)->createPass();
-		pass->setSceneBlending(SBT_TRANSPARENT_ALPHA);
-		//pass->setAlphaRejectSettings(Ogre::CMPF_GREATER,250);
-        pass->setDepthBias(1,5);
-		pass->setDepthCheckEnabled(true);
-        pass->setLightingEnabled(false);
-		TextureUnitState *texState = pass->createTextureUnitState("decal.png");
-        texState->setProjectiveTexturing(true, mDecalFrustum);
-        texState->setTextureAddressingMode(TextureUnitState::TAM_CLAMP);
-        texState->setTextureFiltering(FO_POINT, FO_LINEAR, FO_NONE);
-
-		
-		mTexStates.push_back(texState);
-
-		/*texState = pass->createTextureUnitState("decal_filter.png");
-        texState->setProjectiveTexturing(true, mFilterFrustum);
-        texState->setTextureAddressingMode(TextureUnitState::TAM_CLAMP);
-        texState->setTextureFiltering(TFO_NONE);*/
-    }
-	isShown = true;//if this was called, then we are visible
-}
-
-
-//void TerrainDecal::generateNodeStructure(Ogre::SceneManager *mgr)
+//
+//TerrainDecal::TerrainDecal():
+//	mLevel(NULL),
+//	/*mMeshDecal(NULL),
+//	x_size(4),
+//	z_size(4),
+//	isShown(false),*/
+//	mDecalFrustum(NULL),
+//	mProjectorNode(NULL),
+//	/*prev_x(0),
+//	prev_z(0), 
+//	prev_rad(0),
+//	mFilterNode(NULL),
+//	mFilterFrustum(NULL),*/
+//	isShown(false)
+//	//,
+//	//accuracy(35)
 //{
+//	
+//	using namespace Ogre;
+//	//creating the frustum	
+//	mDecalFrustum = new Frustum();
+//	//mFilterFrustum = new Frustum();
+//	//now create the node using the default scene manager
+//	//now, new stuff
+//	//mMainNode is the node which is relocated and stuff
+//	//mProjectorNode is the node which projects the actual decal
+//	//mFilterNode is the node containing the filter, to remove the decal
+//   
+//	mProjectorNode = EditorApp::getSingletonPtr()->getDefaultSceneManager()->getRootSceneNode()->createChildSceneNode("DecalProjectorNode");
+//
+//
+//	/*mProjectorNode = mMainNode->createChildSceneNode();
+//	mFilterNode = mMainNode->createChildSceneNode();*/
+//
+//	mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(90),Ogre::Vector3::NEGATIVE_UNIT_X));
+//
+//	//mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(180),Ogre::Vector3::UNIT_X));
+//	mProjectorNode->attachObject(mDecalFrustum);
+//	//mFilterNode->attachObject(mFilterFrustum);
+//
+//
+//	//now detatch it
+//	EditorApp::getSingletonPtr()->getDefaultSceneManager()->getRootSceneNode()->removeChild(mProjectorNode);
+//
+//	
+//	mDecalFrustum->setAspectRatio(1);
+//	mDecalFrustum->setProjectionType(PT_ORTHOGRAPHIC);
+//    mDecalFrustum->setOrthoWindowHeight(100);
+//	mDecalFrustum->setNearClipDistance(0.1);
+//	mDecalFrustum->setFarClipDistance(10000);
+//
+//	/*mFilterFrustum->setAspectRatio(1);
+//	mFilterFrustum->setProjectionType(PT_ORTHOGRAPHIC);
+//    mFilterFrustum->setOrthoWindowHeight(100);*/
+//	//mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(-90),Ogre::Vector3::UNIT_X));
+//	/*mDecalFrustum->setNearClipDistance(1);
+//	mDecalFrustum->setFarClipDistance(10000);*/
+//
+//	
+//	
 //
 //}
-
-void TerrainDecal::setLevel(Level *lvl)
-{
-	using namespace Ogre;
-	if(mLevel)
-	{		
-		//mProjectorNode->detachObject(mDecalFrustum);
-		mLevel->getSceneManager()->getRootSceneNode()->removeChild(mProjectorNode);
-		lvl->getSceneManager()->getRootSceneNode()->addChild(mProjectorNode);
-		//hide();
-		mLevel = lvl;		
-	}
-	else
-	{		
-		lvl->getSceneManager()->getRootSceneNode()->addChild(mProjectorNode);	
-		mLevel = lvl;
-	}
-	addDecalPasses();
-	//mProjectorNode->setOrientation(Ogre::Quaternion::IDENTITY);
-	/*mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(-90),Ogre::Vector3::UNIT_X));
-	mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(90),Ogre::Vector3::UNIT_X));*/
-	//mProjectorNode->attachObject(mDecalFrustum);
-	mProjectorNode->setPosition(0,100,0);
-	//mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(-90),Ogre::Vector3::UNIT_X));
-
-	//show();
-}
-
-
-void TerrainDecal::show()
-{
-	if(!isShown)
-	{
-		for(TexStateList::iterator itr = mTexStates.begin();itr!=mTexStates.end();itr++)
-		{
-			(*itr)->setProjectiveTexturing(true,mDecalFrustum);
-			(*itr)->setTextureName("decal.png");
-		}
-		
-
-		//mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(180),Ogre::Vector3::UNIT_X));
-		//mProjectorNode->setVisible(true);
-		//mLevel->getSceneManager()->getRootSceneNode()->attachObject(mMeshDecal);
-		isShown = true;
-	}
-}
-
-
-void TerrainDecal::hide()
-{
-	if(isShown)
-	{
-		for(TexStateList::iterator itr = mTexStates.begin();itr!=mTexStates.end();itr++)
-		{
-			(*itr)->setProjectiveTexturing(false);
-			//(*itr)->setBlank();
-			(*itr)->setTextureName("decal_filter.png");
-		}
-		//mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(90),Ogre::Vector3::UNIT_X));
-		//mProjectorNode->setVisible(false);
-		//mLevel->getSceneManager()->getRootSceneNode()->detachObject(mMeshDecal);
-		isShown = false;
-	}
-}
-
-void TerrainDecal::update(Ogre::Real x, Ogre::Real z, Ogre::Real decalSize)
-{
-	if(!isShown)
-		return;
-	mDecalFrustum->setOrthoWindowHeight(decalSize*20);
-	//mFilterFrustum->setOrthoWindowHeight(decalSize*20);
-	//mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(x),Ogre::Vector3::UNIT_X));
-	//mProjectorNode->pitch(Ogre::Degree(x));
-	mProjectorNode->setPosition(x,100,z);
-}
+//
+//TerrainDecal::~TerrainDecal()
+//{
+//	if(mDecalFrustum)
+//	{
+//		delete mDecalFrustum;
+//	}
+//	/*if(mFilterFrustum)
+//	{
+//		delete mFilterFrustum;
+//	}*/
+//	if(mProjectorNode)
+//	{
+//		if(mLevel)
+//			mLevel->getSceneManager()->destroySceneNode(mProjectorNode);
+//		else
+//			EditorApp::getSingletonPtr()->getDefaultSceneManager()->destroySceneNode(mProjectorNode);
+//	}
+//}
+//
+//
+//void TerrainDecal::addDecalPasses()
+//{
+//	mTexStates.clear();
+//	using namespace Ogre;
+//	
+//	if(!mLevel || !mLevel->mTerrainGroup)
+//		return;
+//
+//	Ogre::TerrainGroup::TerrainIterator ti = mLevel->mTerrainGroup->getTerrainIterator();
+//    while(ti.hasMoreElements())
+//    {
+//        Ogre::Terrain* t = ti.getNext()->instance;			
+//		MaterialPtr mat = t->getMaterial();		
+//
+//
+//        Pass *pass =  mat->getTechnique(0)->createPass();
+//		pass->setSceneBlending(SBT_TRANSPARENT_ALPHA);
+//		//pass->setAlphaRejectSettings(Ogre::CMPF_GREATER,250);
+//        pass->setDepthBias(1,5);
+//		pass->setDepthCheckEnabled(true);
+//        pass->setLightingEnabled(false);
+//		TextureUnitState *texState = pass->createTextureUnitState("decal.png");
+//        texState->setProjectiveTexturing(true, mDecalFrustum);
+//        texState->setTextureAddressingMode(TextureUnitState::TAM_CLAMP);
+//        texState->setTextureFiltering(FO_POINT, FO_LINEAR, FO_NONE);
+//
+//		
+//		mTexStates.push_back(texState);
+//
+//		/*texState = pass->createTextureUnitState("decal_filter.png");
+//        texState->setProjectiveTexturing(true, mFilterFrustum);
+//        texState->setTextureAddressingMode(TextureUnitState::TAM_CLAMP);
+//        texState->setTextureFiltering(TFO_NONE);*/
+//    }
+//	isShown = true;//if this was called, then we are visible
+//}
+//
+//
+////void TerrainDecal::generateNodeStructure(Ogre::SceneManager *mgr)
+////{
+////
+////}
+//
+//void TerrainDecal::setLevel(Level *lvl)
+//{
+//	using namespace Ogre;
+//	if(mLevel)
+//	{		
+//		//mProjectorNode->detachObject(mDecalFrustum);
+//		mLevel->getSceneManager()->getRootSceneNode()->removeChild(mProjectorNode);
+//		lvl->getSceneManager()->getRootSceneNode()->addChild(mProjectorNode);
+//		//hide();
+//		mLevel = lvl;		
+//	}
+//	else
+//	{		
+//		lvl->getSceneManager()->getRootSceneNode()->addChild(mProjectorNode);	
+//		mLevel = lvl;
+//	}
+//	addDecalPasses();
+//	//mProjectorNode->setOrientation(Ogre::Quaternion::IDENTITY);
+//	/*mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(-90),Ogre::Vector3::UNIT_X));
+//	mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(90),Ogre::Vector3::UNIT_X));*/
+//	//mProjectorNode->attachObject(mDecalFrustum);
+//	mProjectorNode->setPosition(0,100,0);
+//	//mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(-90),Ogre::Vector3::UNIT_X));
+//
+//	//show();
+//}
+//
+//
+//void TerrainDecal::show()
+//{
+//	if(!isShown)
+//	{
+//		for(TexStateList::iterator itr = mTexStates.begin();itr!=mTexStates.end();itr++)
+//		{
+//			(*itr)->setProjectiveTexturing(true,mDecalFrustum);
+//			(*itr)->setTextureName("decal.png");
+//		}
+//		
+//
+//		//mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(180),Ogre::Vector3::UNIT_X));
+//		//mProjectorNode->setVisible(true);
+//		//mLevel->getSceneManager()->getRootSceneNode()->attachObject(mMeshDecal);
+//		isShown = true;
+//	}
+//}
+//
+//
+//void TerrainDecal::hide()
+//{
+//	if(isShown)
+//	{
+//		for(TexStateList::iterator itr = mTexStates.begin();itr!=mTexStates.end();itr++)
+//		{
+//			(*itr)->setProjectiveTexturing(false);
+//			//(*itr)->setBlank();
+//			(*itr)->setTextureName("decal_filter.png");
+//		}
+//		//mFilterNode->setOrientation(Ogre::Quaternion(Ogre::Degree(90),Ogre::Vector3::UNIT_X));
+//		//mProjectorNode->setVisible(false);
+//		//mLevel->getSceneManager()->getRootSceneNode()->detachObject(mMeshDecal);
+//		isShown = false;
+//	}
+//}
+//
+//void TerrainDecal::update(Ogre::Real x, Ogre::Real z, Ogre::Real decalSize)
+//{
+//	if(!isShown)
+//		return;
+//	mDecalFrustum->setOrthoWindowHeight(decalSize*20);
+//	//mFilterFrustum->setOrthoWindowHeight(decalSize*20);
+//	//mProjectorNode->setOrientation(Ogre::Quaternion(Ogre::Degree(x),Ogre::Vector3::UNIT_X));
+//	//mProjectorNode->pitch(Ogre::Degree(x));
+//	mProjectorNode->setPosition(x,100,z);
+//}
 
 ////SELECTION BORDER////
 SelectionBorder::SelectionBorder()/*:

@@ -31,12 +31,12 @@
 #include <TypeConverter.h>
 
 
-#include "LevelPageManager.h"
-#include "LevelTerrainGroup.h"
-#include "LevelPagedWorld.h"
-#include "LevelPaging.h"
-#include "OgreTerrainGroup.h"
-#include "LevelPagingListener.h"
+//#include "LevelPageManager.h"
+//#include "LevelTerrainGroup.h"
+//#include "LevelPagedWorld.h"
+//#include "LevelPaging.h"
+//#include "OgreTerrainGroup.h"
+//#include "LevelPagingListener.h"
 using namespace TypeConverter;
 
 
@@ -160,11 +160,12 @@ void Level::debugShowPlane(Ogre::Plane pl)
 
 
 Level::Level(Ogre::String filename,ZipSaveFile *sav)
-:splatChannels(3),
-mTerrainGroup(NULL),
-mTerrainPaging(NULL),
-mPageManager(NULL),
-mPageProvider(NULL),
+:
+//splatChannels(3),
+//mTerrainGroup(NULL),
+//mTerrainPaging(NULL),
+//mPageManager(NULL),
+//mPageProvider(NULL),
 has_terrain(false)
 {
 	mTerrainData.terrainSize = 129;
@@ -181,7 +182,7 @@ has_terrain(false)
     etLightDirection = Ogre::Vector3(1,-1,1);
     terrainExtends = Ogre::AxisAlignedBox(-150,-10,-150,150,90,150);*/
     levelSGfile =NULL;
-	splattingBasename = "";
+//	splattingBasename = "";
 	/*mTerrainMgr = NULL;
 	mSplatMgr = NULL;*/
 	lastSGID = 1;
@@ -864,8 +865,8 @@ Level::~Level()
 	if(has_terrain)
 	{
 
-		if(mTerrainPaging)
-			OGRE_DELETE mTerrainPaging;
+		//if(mTerrainPaging)
+		//	OGRE_DELETE mTerrainPaging;
 		/*
 		if(mPageProvider)
 			delete mPageProvider;
@@ -873,11 +874,11 @@ Level::~Level()
 		if(mPagingListener)
 			delete mPagingListener;*/
 		
-		if(mPageManager)
+		/*if(mPageManager)
 		{
 			mPageManager->destroyWorld(static_cast<Ogre::PagedWorld*>(mTerrainPagedWorld));
 			OGRE_DELETE mPageManager;
-		}
+		}*/
 
 		/* evtl nicht nötig? */
 		/*
@@ -970,15 +971,16 @@ Level::~Level()
 	////app->log("level destructor 6");
 }
 
-void Level::setAutoPaging(bool set)
-{
-	mTerrainPagedWorld->autoLoadingEnabled = set;
-}
-
-bool Level::getAutoPaging()
-{
-	return mTerrainPagedWorld->autoLoadingEnabled;
-}
+//void Level::setAutoPaging(bool set)
+//{
+//	//mTerrainPagedWorld->autoLoadingEnabled = set;
+//}
+//
+//bool Level::getAutoPaging()
+//{
+//	return false;
+//	//return mTerrainPagedWorld->autoLoadingEnabled;
+//}
 
 
 void Level::showNewtonDebugLines(bool show)
@@ -1512,8 +1514,8 @@ void Level::update(Ogre::Real time)
 	if(destructionPrepared)
 		return;
 
-	if(mTerrainGroup)
-		mTerrainGroup->update();
+	//if(mTerrainGroup)
+	//	mTerrainGroup->update();
 
 	//mLog("=== level update ===");
     SimpleSound::SoundManager *smgr = SimpleSound::SoundManager::getSingletonPtr();
@@ -2152,47 +2154,47 @@ void Level::createETMaterial()
 //entfernt das terrain
 void Level::removeTerrain()
 {
-	has_terrain = false;
-	if (mTerrainPaging)
-	{
-		OGRE_DELETE mTerrainPaging;
-		OGRE_DELETE mPageManager;
-	}
-	else
-	{
-		OGRE_DELETE mTerrainGroup;
+	//has_terrain = false;
+	//if (mTerrainPaging)
+	//{
+	//	OGRE_DELETE mTerrainPaging;
+	//	OGRE_DELETE mPageManager;
+	//}
+	//else
+	//{
+	//	OGRE_DELETE mTerrainGroup;
 
-		
-	}
-	OGRE_DELETE mTerrainGlobals;
-    /*if(terrainBody)
-    {
-        delete terrainBody;
-        terrainBody = NULL;
-    }
-    if(terrainCollision)
-    {
-        delete terrainCollision;
-        terrainCollision = NULL;
-    }
-    if(mTerrainMgr)
-    {
-        delete mTerrainMgr;
-        mTerrainMgr = NULL;
-    }
-    if(mSplatMgr)
-    {
-        delete mSplatMgr;
-        mSplatMgr = NULL;
-    }
-    if(!terrainMaterial.isNull())
-		Ogre::MaterialManager::getSingletonPtr()->remove((Ogre::ResourcePtr)terrainMaterial);
-    if(!terrainLightmap.isNull())
-        Ogre::TextureManager::getSingletonPtr()->remove((Ogre::ResourcePtr)terrainLightmap);
-    mTerrainInfo = NULL;
-    terrainTextures.clear();*/
-    /*Ogre::MaterialPtr terrainMaterial;
-	Ogre::TexturePtr terrainLightmap;*/
+	//	
+	//}
+	//OGRE_DELETE mTerrainGlobals;
+ //   /*if(terrainBody)
+ //   {
+ //       delete terrainBody;
+ //       terrainBody = NULL;
+ //   }
+ //   if(terrainCollision)
+ //   {
+ //       delete terrainCollision;
+ //       terrainCollision = NULL;
+ //   }
+ //   if(mTerrainMgr)
+ //   {
+ //       delete mTerrainMgr;
+ //       mTerrainMgr = NULL;
+ //   }
+ //   if(mSplatMgr)
+ //   {
+ //       delete mSplatMgr;
+ //       mSplatMgr = NULL;
+ //   }
+ //   if(!terrainMaterial.isNull())
+	//	Ogre::MaterialManager::getSingletonPtr()->remove((Ogre::ResourcePtr)terrainMaterial);
+ //   if(!terrainLightmap.isNull())
+ //       Ogre::TextureManager::getSingletonPtr()->remove((Ogre::ResourcePtr)terrainLightmap);
+ //   mTerrainInfo = NULL;
+ //   terrainTextures.clear();*/
+ //   /*Ogre::MaterialPtr terrainMaterial;
+	//Ogre::TexturePtr terrainLightmap;*/
 }
 //erzeugt ein leeres terrain mit ohne gar nichts
 void Level::addBlankTerrain(unsigned int heightmapWidth,unsigned int heightmapHeight,unsigned int lightmapWidth,unsigned int lightmapHeight,unsigned int splattingWidth,unsigned int splattingHeight)
@@ -2804,67 +2806,67 @@ void Level::updateTextureList(Ogre::StringVector newList)
 //}
 //
 
-void Level::setTerrainExtends(Ogre::AxisAlignedBox extends)
-{
-    //if(terrainExtends == extends)
-    //    return;
-    //ET::TerrainInfo info = *mTerrainInfo;
-    //info.setExtents(extends);
-    //mTerrainMgr->destroyTerrain();
-    //mTerrainMgr->createTerrain(info);
-    //mTerrainInfo = &mTerrainMgr->getTerrainInfo();
-    ////const_cast<ET::TerrainInfo*>(mTerrainInfo)->setExtents(extends);
-    ////getTerrainInfo()->setExtents(&extends);
-    //terrainExtends = extends;
-}
-
-void Level::updateTerrainLightmap()
-{
-	//Ogre::Image lightmap;
-	////mTerrainInfo = mTerrainMgr
- //   
- //   ET::createTerrainLightmap(*mTerrainInfo, lightmap, lmWidth, lmHeight, etLightDirection, etLightColor,
-	//etAmbientColor);
-	////Ogre::ResourceManager::ResourceCreateOrRetrieveResult texRes = TextureManager::getSingleton().createOrRetrieve("ETLightmap",Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,true);
- //   
-	////nun die lightmap den löchern entsprechend updaten
-	//int texIndex = -1;
-	//if(hasHoleMap())
-	//{
-	//	texIndex = 0;
-	//}
-	//
-	//Ogre::Image holesCovmap;
-	//int covmapNr = Ogre::Math::IFloor(float(texIndex)/float(splatChannels));
-	//int channelNr= Ogre::Math::IFloor(texIndex % splatChannels);
-	//if(texIndex != -1)
-	//{
-	//	mSplatMgr->saveMapToImage(covmapNr,holesCovmap);
-	//	/*Ogre::Real val = holesCovmap.getColourAt(x,z,0)[channelNr];
-	//				
-	//				if(val > cmpval)
-	//					continue;*/
-	//	Ogre::Real cmpval = 0;//.01;
-	//	
-	//	for(size_t x=0;x<lightmap.getWidth();x++)
-	//		for(size_t z=0;z<lightmap.getHeight();z++)
-	//		{
-	//			Ogre::Real val = holesCovmap.getColourAt(x,z,0)[channelNr];
-	//			if(val > cmpval)
-	//			{
-	//				lightmap.getData()[splatChannels*(z*lightmap.getWidth() + x)] = 255;
-	//				lightmap.getData()[splatChannels*(z*lightmap.getWidth() + x)+1] = 255;
-	//				lightmap.getData()[splatChannels*(z*lightmap.getWidth() + x)+2] = 255;
-	//				//mLog("loch at "+ogre_str(x)+"/"+ogre_str(z));
-	//			}
-	//		}
-	//}
-
-	//// get our dynamic texture and update its contents
-	////Ogre::TexturePtr tex = TextureManager::getSingleton().getByName("ETLightmap");
-	//terrainLightmap->getBuffer(0, 0)->blitFromMemory(lightmap.getPixelBox(0, 0));
-	
-}
+//void Level::setTerrainExtends(Ogre::AxisAlignedBox extends)
+//{
+//    //if(terrainExtends == extends)
+//    //    return;
+//    //ET::TerrainInfo info = *mTerrainInfo;
+//    //info.setExtents(extends);
+//    //mTerrainMgr->destroyTerrain();
+//    //mTerrainMgr->createTerrain(info);
+//    //mTerrainInfo = &mTerrainMgr->getTerrainInfo();
+//    ////const_cast<ET::TerrainInfo*>(mTerrainInfo)->setExtents(extends);
+//    ////getTerrainInfo()->setExtents(&extends);
+//    //terrainExtends = extends;
+//}
+//
+//void Level::updateTerrainLightmap()
+//{
+//	//Ogre::Image lightmap;
+//	////mTerrainInfo = mTerrainMgr
+// //   
+// //   ET::createTerrainLightmap(*mTerrainInfo, lightmap, lmWidth, lmHeight, etLightDirection, etLightColor,
+//	//etAmbientColor);
+//	////Ogre::ResourceManager::ResourceCreateOrRetrieveResult texRes = TextureManager::getSingleton().createOrRetrieve("ETLightmap",Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,true);
+// //   
+//	////nun die lightmap den löchern entsprechend updaten
+//	//int texIndex = -1;
+//	//if(hasHoleMap())
+//	//{
+//	//	texIndex = 0;
+//	//}
+//	//
+//	//Ogre::Image holesCovmap;
+//	//int covmapNr = Ogre::Math::IFloor(float(texIndex)/float(splatChannels));
+//	//int channelNr= Ogre::Math::IFloor(texIndex % splatChannels);
+//	//if(texIndex != -1)
+//	//{
+//	//	mSplatMgr->saveMapToImage(covmapNr,holesCovmap);
+//	//	/*Ogre::Real val = holesCovmap.getColourAt(x,z,0)[channelNr];
+//	//				
+//	//				if(val > cmpval)
+//	//					continue;*/
+//	//	Ogre::Real cmpval = 0;//.01;
+//	//	
+//	//	for(size_t x=0;x<lightmap.getWidth();x++)
+//	//		for(size_t z=0;z<lightmap.getHeight();z++)
+//	//		{
+//	//			Ogre::Real val = holesCovmap.getColourAt(x,z,0)[channelNr];
+//	//			if(val > cmpval)
+//	//			{
+//	//				lightmap.getData()[splatChannels*(z*lightmap.getWidth() + x)] = 255;
+//	//				lightmap.getData()[splatChannels*(z*lightmap.getWidth() + x)+1] = 255;
+//	//				lightmap.getData()[splatChannels*(z*lightmap.getWidth() + x)+2] = 255;
+//	//				//mLog("loch at "+ogre_str(x)+"/"+ogre_str(z));
+//	//			}
+//	//		}
+//	//}
+//
+//	//// get our dynamic texture and update its contents
+//	////Ogre::TexturePtr tex = TextureManager::getSingleton().getByName("ETLightmap");
+//	//terrainLightmap->getBuffer(0, 0)->blitFromMemory(lightmap.getPixelBox(0, 0));
+//	
+//}
 
 void Level::saveToFile(Ogre::String filename)
 {
@@ -5057,77 +5059,77 @@ void Level::deleteObject(GameObject *obj)
 //
 //}
 
-Ogre::DataStreamPtr Level::getTerrainForPage(long x, long y)
-{
-	Ogre::DataStreamPtr result;
-	result.setNull();
-	//check here if we have the page
-	return result;
-}
-
-void Level::defineTerrainForSection(LevelPagedWorldSection* section, long x, long y)
-{
-	//mTerrainGroup->saveAllTerrains
-	//mTerrainGroup->getTerrainIterator(); might be usable for saving
-	//mTerrainGroup->defineTerrain
-}
+//Ogre::DataStreamPtr Level::getTerrainForPage(long x, long y)
+//{
+//	Ogre::DataStreamPtr result;
+//	result.setNull();
+//	//check here if we have the page
+//	return result;
+//}
+//
+//void Level::defineTerrainForSection(LevelPagedWorldSection* section, long x, long y)
+//{
+//	//mTerrainGroup->saveAllTerrains
+//	//mTerrainGroup->getTerrainIterator(); might be usable for saving
+//	//mTerrainGroup->defineTerrain
+//}
 
 
 void Level::loadTerrain()
 { 
-	has_terrain = true;
+	//has_terrain = true;
 
- 
-	//this is the light direction for the terrain. it will need to be user-defineable
-    Ogre::Vector3 lightdir(0.55, -0.3, 0.75);
-    lightdir.normalise();
- 
-    terrainLight = mSceneMgr->createLight("terrainLight");
-    terrainLight->setType(Ogre::Light::LT_DIRECTIONAL);
-    terrainLight->setDirection(lightdir);
-	//these two colors as well
-    terrainLight->setDiffuseColour(Ogre::ColourValue::White);
-    terrainLight->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));
+ //
+	////this is the light direction for the terrain. it will need to be user-defineable
+ //   Ogre::Vector3 lightdir(0.55, -0.3, 0.75);
+ //   lightdir.normalise();
+ //
+ //   terrainLight = mSceneMgr->createLight("terrainLight");
+ //   terrainLight->setType(Ogre::Light::LT_DIRECTIONAL);
+ //   terrainLight->setDirection(lightdir);
+	////these two colors as well
+ //   terrainLight->setDiffuseColour(Ogre::ColourValue::White);
+ //   terrainLight->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));
 
-	
- 
-	mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();//OGRE_NEW Ogre::TerrainGlobalOptions();
+	//
+ //
+	//mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();//OGRE_NEW Ogre::TerrainGlobalOptions();
 
-	mPagingListener = new LevelPagingListener(this);
- 
-	//maybe the last two params, too?
-   
-	mTerrainGroup = OGRE_NEW LevelTerrainGroup(mPagingListener, mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
-	//maybe no need at all...
-    mTerrainGroup->setFilenameConvention(Ogre::String("Terrain"), Ogre::String("dat"));
-    //always zero?
-	mTerrainGroup->setOrigin(Ogre::Vector3(0,-100,0));//Ogre::Vector3::ZERO);
+	//mPagingListener = new LevelPagingListener(this);
+ //
+	////maybe the last two params, too?
+ //  
+	//mTerrainGroup = OGRE_NEW LevelTerrainGroup(mPagingListener, mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
+	////maybe no need at all...
+ //   mTerrainGroup->setFilenameConvention(Ogre::String("Terrain"), Ogre::String("dat"));
+ //   //always zero?
+	//mTerrainGroup->setOrigin(Ogre::Vector3(0,-100,0));//Ogre::Vector3::ZERO);
 
-	
- 
-	
-    configureTerrainDefaults();
- 
-   
+	//
+ //
+	//
+ //   configureTerrainDefaults();
+ //
+ //  
 
-	
-	// Paging setup
-	mPageManager = OGRE_NEW LevelPageManager(this);//Ogre::PageManager();
-	mPageManager->setPagingOperationsEnabled(true);
-		
+	//
+	//// Paging setup
+	//mPageManager = OGRE_NEW LevelPageManager(this);//Ogre::PageManager();
+	//mPageManager->setPagingOperationsEnabled(true);
+	//	
 
-	
+	//
 
-	mPageProvider = new LevelPageProvider(this);
-	mPageManager->setPageProvider(mPageProvider);
-	mPageManager->addCamera(getMainCam());
-	mTerrainPaging = OGRE_NEW LevelPaging(mPageManager,mPagingListener);//Ogre::TerrainPaging(mPageManager);
-	mTerrainPagedWorld = mPageManager->createLevelPagedWorld();
-	//the numbers are loadRadius and holdRadius
-	mTerrainPaging->createLevelWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
-			-10, -10, 
-			10, 10);
-	
+	//mPageProvider = new LevelPageProvider(this);
+	//mPageManager->setPageProvider(mPageProvider);
+	//mPageManager->addCamera(getMainCam());
+	//mTerrainPaging = OGRE_NEW LevelPaging(mPageManager,mPagingListener);//Ogre::TerrainPaging(mPageManager);
+	//mTerrainPagedWorld = mPageManager->createLevelPagedWorld();
+	////the numbers are loadRadius and holdRadius
+	//mTerrainPaging->createLevelWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
+	//		-10, -10, 
+	//		10, 10);
+	//
 
  //
  //   if (mTerrainsImported)
@@ -5144,219 +5146,219 @@ void Level::loadTerrain()
 
 }
 
-void Level::configureTerrainDefaults()
-{
-	//// this should be defineable in the game itself, I think
- //   mTerrainGlobals->setMaxPixelError(8);
- //   // this too, probaby
-	Ogre::TerrainGlobalOptions *mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();
- //
- //   // Important to set these so that the terrain knows what to use for derived (non-realtime) data
-    mTerrainGlobals->setLightMapDirection(terrainLight->getDerivedDirection());
-    mTerrainGlobals->setCompositeMapAmbient(mSceneMgr->getAmbientLight());
-    mTerrainGlobals->setCompositeMapDiffuse(terrainLight->getDiffuseColour());
- 
-	
-    // Configure default import settings for if we use imported image
-    Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings();
-	defaultimp.terrainSize = mTerrainData.terrainSize;//513;
-	defaultimp.worldSize = mTerrainData.worldSize;//12000.0f;
-    defaultimp.inputScale = 600;
-    defaultimp.minBatchSize = 33;
-    defaultimp.maxBatchSize = 65;
-    // textures. this has to be set in level file
-    defaultimp.layerList.resize(3);
-    defaultimp.layerList[0].worldSize = 100;//something about the scaling of the image, I think
-    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_diffusespecular.dds");
-    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_normalheight.dds");
-	//nr. of these is defined in defaultimp.layerDeclaration, somehow
-	//a certain TerrainMaterialGenerator has something to do with it
-    defaultimp.layerList[1].worldSize = 30;
-    defaultimp.layerList[1].textureNames.push_back("grass_green-01_diffusespecular.dds");
-    defaultimp.layerList[1].textureNames.push_back("grass_green-01_normalheight.dds");
-    defaultimp.layerList[2].worldSize = 200;
-    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_diffusespecular.dds");
-    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_normalheight.dds");
-
-	
-
-	
-	
-
-}
-
-void Level::defineTerrain(long x, long y)
-{
-    Ogre::String filename = mTerrainGroup->generateFilename(x, y);
-    if (Ogre::ResourceGroupManager::getSingleton().resourceExists(mTerrainGroup->getResourceGroup(), filename))
-    {
-		
-        mTerrainGroup->defineTerrain(x, y);
-    }
-    else
-    {
-        /*Ogre::Image img;
-        getTerrainImage(x % 2 != 0, y % 2 != 0, img);
-        mTerrainGroup->defineTerrain(x, y, &img);*/
-		mTerrainGroup->defineTerrain(x,y,float(0.0f));
-        mTerrainsImported = true;
-    }
-}
-
-Ogre::Real Level::getCombinedBlendValue(Ogre::Terrain* terrain, Ogre::uint8 layer, size_t x, size_t y)
-{
-	float baseVal = 1;//if layer == 0, then baseVal is always 1
-	if(layer > 0)
-	{
-		Ogre::TerrainLayerBlendMap *mLayer = terrain->getLayerBlendMap(layer);
-		baseVal = mLayer->getBlendValue(x,y);
-	}
-		
-	for(Ogre::uint8 i = layer+1;i<terrain->getLayerCount();i++)
-	{
-		Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(i);
-		float curVal = cur->getBlendValue(x,y);
-		baseVal = baseVal * (1-curVal); 
-	}
-	return baseVal;
-}
-
-void Level::setCombinedBlendValue(Ogre::Terrain* terrain, Ogre::uint8 layer, size_t x, size_t y, Ogre::Real val)
-{
-	float baseVal = 1;
-	if(layer > 0)
-	{
-		Ogre::TerrainLayerBlendMap *mLayer = terrain->getLayerBlendMap(layer);
-		baseVal = mLayer->getBlendValue(x,y);
-		mLayer->setBlendValue(x,y,val);
-	}
-	
-	float valFactor = val/baseVal;
-
-	Ogre::uint8 numLayersAbove = terrain->getLayerCount()-layer;
-
-	//now update the layers above
-	for(Ogre::uint8 i = layer+1;i<terrain->getLayerCount();i++)
-	{
-		Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(i);
-		Ogre::Real curVal = (1-cur->getBlendValue(x,y))/valFactor;
-		curVal = Ogre::Math::Clamp(curVal,0.f,1.0f);
-		cur->setBlendValue(x,y,curVal);
-	}
-}
-
-void Level::initBlendMaps(Ogre::Terrain* terrain)
-{
-    Ogre::TerrainLayerBlendMap* blendMap0 = terrain->getLayerBlendMap(1);
-    Ogre::TerrainLayerBlendMap* blendMap1 = terrain->getLayerBlendMap(2);
-    Ogre::Real minHeight0 = 1900;
-    Ogre::Real fadeDist0 = 40;
-    Ogre::Real minHeight1 = 70;
-    Ogre::Real fadeDist1 = 15;
-    float* pBlend1 = blendMap1->getBlendPointer();
-    for (Ogre::uint16 y = 0; y < terrain->getLayerBlendMapSize(); ++y)
-    {
-        for (Ogre::uint16 x = 0; x < terrain->getLayerBlendMapSize(); ++x)
-        {
-            Ogre::Real tx, ty;
- 
-            blendMap0->convertImageToTerrainSpace(x, y, &tx, &ty);
-            Ogre::Real height = terrain->getHeightAtTerrainPosition(tx, ty);
-            Ogre::Real val = (height - minHeight0) / fadeDist0;
-            val = Ogre::Math::Clamp(val, (Ogre::Real)0, (Ogre::Real)1);
- 
-            val = (height - minHeight1) / fadeDist1;
-            val = Ogre::Math::Clamp(val, (Ogre::Real)0, (Ogre::Real)1);
-            *pBlend1++ = val;
-        }
-    }
-    blendMap0->dirty();
-    blendMap1->dirty();
-    blendMap0->update();
-    blendMap1->update();
-}
-
-//converts a length in world dimensions to terrain dimensions
-Ogre::Real Level::lengthWorldToTerrain(Ogre::Real worldLength)
-{
-	Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings();
-	Ogre::Real size = defaultimp.terrainSize;
-	Ogre::Real mBase = -mTerrainGroup->getTerrainWorldSize() * 0.5;
-	Ogre::Real mScale = mTerrainGroup->getTerrainWorldSize() / (Ogre::Real)(size-1);
-	
-
-	
-	return (worldLength) / ((size - 1) * mScale);
-}
-//converts a length in terrain dimensions to world dimensions
-Ogre::Real Level::lengthTerrainToWorld(Ogre::Real terrainLength)
-{
-	Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings();
-	Ogre::Real size = defaultimp.terrainSize;
-	Ogre::Real mBase = -mTerrainGroup->getTerrainWorldSize() * 0.5;
-	Ogre::Real mScale = mTerrainGroup->getTerrainWorldSize() / (Ogre::Real)(size-1);
-	
-	/*// centre the terrain on local origin
-		mBase = -mWorldSize * 0.5; 
-		// scale determines what 1 unit on the grid becomes in world space
-		mScale =  mWorldSize / (Real)(mSize-1);*/
-	
-	
-	return terrainLength * (size - 1) * mScale;
-}
-
-
-bool Level::LevelPageProvider::prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
-{ 
-/*
-	////unpack
-	long x;
-	long y;
-	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);
-	StandardApplication::getSingletonPtr()->pagePreparingCallback(x,y);
-	*/
-	return true; 
-}
-
-bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
-{ 
-	/*long x;
-	long y;
-	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
-
-	StandardApplication::getSingletonPtr()->pageLoadingCallback(x,y);*/
-	//mLog("loading page "+ogre_str(x)+" / "+ogre_str(y));
-	////load
-	//mLevel->mTerrainGroup->loadTerrain(x,y,true);
-	//
-	//	
-
-	////Ogre::Terrain *terr = mLevel->mTerrainGroup->getTerrain(x,y);
-
-	////mLevel->initBlendMaps(terr);
-
-	return true; 
-}
-
-bool Level::LevelPageProvider::unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
-{ 
-/*
-	long x;
-	long y;
-	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
-	StandardApplication::getSingletonPtr()->pageUnloadingCallback(x,y);
-*/
-	return true; 
-}
-
-bool Level::LevelPageProvider::unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
-{
-/*
-	long x;
-	long y;
-	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
-	StandardApplication::getSingletonPtr()->pageUnpreparingCallback(x,y);
-*/
-	return true; 
-}
-
+//void Level::configureTerrainDefaults()
+//{
+//	//// this should be defineable in the game itself, I think
+// //   mTerrainGlobals->setMaxPixelError(8);
+// //   // this too, probaby
+//	Ogre::TerrainGlobalOptions *mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();
+// //
+// //   // Important to set these so that the terrain knows what to use for derived (non-realtime) data
+//    mTerrainGlobals->setLightMapDirection(terrainLight->getDerivedDirection());
+//    mTerrainGlobals->setCompositeMapAmbient(mSceneMgr->getAmbientLight());
+//    mTerrainGlobals->setCompositeMapDiffuse(terrainLight->getDiffuseColour());
+// 
+//	
+//    // Configure default import settings for if we use imported image
+//    Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings();
+//	defaultimp.terrainSize = mTerrainData.terrainSize;//513;
+//	defaultimp.worldSize = mTerrainData.worldSize;//12000.0f;
+//    defaultimp.inputScale = 600;
+//    defaultimp.minBatchSize = 33;
+//    defaultimp.maxBatchSize = 65;
+//    // textures. this has to be set in level file
+//    defaultimp.layerList.resize(3);
+//    defaultimp.layerList[0].worldSize = 100;//something about the scaling of the image, I think
+//    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_diffusespecular.dds");
+//    defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_normalheight.dds");
+//	//nr. of these is defined in defaultimp.layerDeclaration, somehow
+//	//a certain TerrainMaterialGenerator has something to do with it
+//    defaultimp.layerList[1].worldSize = 30;
+//    defaultimp.layerList[1].textureNames.push_back("grass_green-01_diffusespecular.dds");
+//    defaultimp.layerList[1].textureNames.push_back("grass_green-01_normalheight.dds");
+//    defaultimp.layerList[2].worldSize = 200;
+//    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_diffusespecular.dds");
+//    defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_normalheight.dds");
+//
+//	
+//
+//	
+//	
+//
+//}
+//
+//void Level::defineTerrain(long x, long y)
+//{
+//    Ogre::String filename = mTerrainGroup->generateFilename(x, y);
+//    if (Ogre::ResourceGroupManager::getSingleton().resourceExists(mTerrainGroup->getResourceGroup(), filename))
+//    {
+//		
+//        mTerrainGroup->defineTerrain(x, y);
+//    }
+//    else
+//    {
+//        /*Ogre::Image img;
+//        getTerrainImage(x % 2 != 0, y % 2 != 0, img);
+//        mTerrainGroup->defineTerrain(x, y, &img);*/
+//		mTerrainGroup->defineTerrain(x,y,float(0.0f));
+//        mTerrainsImported = true;
+//    }
+//}
+//
+//Ogre::Real Level::getCombinedBlendValue(Ogre::Terrain* terrain, Ogre::uint8 layer, size_t x, size_t y)
+//{
+//	float baseVal = 1;//if layer == 0, then baseVal is always 1
+//	if(layer > 0)
+//	{
+//		Ogre::TerrainLayerBlendMap *mLayer = terrain->getLayerBlendMap(layer);
+//		baseVal = mLayer->getBlendValue(x,y);
+//	}
+//		
+//	for(Ogre::uint8 i = layer+1;i<terrain->getLayerCount();i++)
+//	{
+//		Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(i);
+//		float curVal = cur->getBlendValue(x,y);
+//		baseVal = baseVal * (1-curVal); 
+//	}
+//	return baseVal;
+//}
+//
+//void Level::setCombinedBlendValue(Ogre::Terrain* terrain, Ogre::uint8 layer, size_t x, size_t y, Ogre::Real val)
+//{
+//	float baseVal = 1;
+//	if(layer > 0)
+//	{
+//		Ogre::TerrainLayerBlendMap *mLayer = terrain->getLayerBlendMap(layer);
+//		baseVal = mLayer->getBlendValue(x,y);
+//		mLayer->setBlendValue(x,y,val);
+//	}
+//	
+//	float valFactor = val/baseVal;
+//
+//	Ogre::uint8 numLayersAbove = terrain->getLayerCount()-layer;
+//
+//	//now update the layers above
+//	for(Ogre::uint8 i = layer+1;i<terrain->getLayerCount();i++)
+//	{
+//		Ogre::TerrainLayerBlendMap *cur = terrain->getLayerBlendMap(i);
+//		Ogre::Real curVal = (1-cur->getBlendValue(x,y))/valFactor;
+//		curVal = Ogre::Math::Clamp(curVal,0.f,1.0f);
+//		cur->setBlendValue(x,y,curVal);
+//	}
+//}
+//
+//void Level::initBlendMaps(Ogre::Terrain* terrain)
+//{
+//    Ogre::TerrainLayerBlendMap* blendMap0 = terrain->getLayerBlendMap(1);
+//    Ogre::TerrainLayerBlendMap* blendMap1 = terrain->getLayerBlendMap(2);
+//    Ogre::Real minHeight0 = 1900;
+//    Ogre::Real fadeDist0 = 40;
+//    Ogre::Real minHeight1 = 70;
+//    Ogre::Real fadeDist1 = 15;
+//    float* pBlend1 = blendMap1->getBlendPointer();
+//    for (Ogre::uint16 y = 0; y < terrain->getLayerBlendMapSize(); ++y)
+//    {
+//        for (Ogre::uint16 x = 0; x < terrain->getLayerBlendMapSize(); ++x)
+//        {
+//            Ogre::Real tx, ty;
+// 
+//            blendMap0->convertImageToTerrainSpace(x, y, &tx, &ty);
+//            Ogre::Real height = terrain->getHeightAtTerrainPosition(tx, ty);
+//            Ogre::Real val = (height - minHeight0) / fadeDist0;
+//            val = Ogre::Math::Clamp(val, (Ogre::Real)0, (Ogre::Real)1);
+// 
+//            val = (height - minHeight1) / fadeDist1;
+//            val = Ogre::Math::Clamp(val, (Ogre::Real)0, (Ogre::Real)1);
+//            *pBlend1++ = val;
+//        }
+//    }
+//    blendMap0->dirty();
+//    blendMap1->dirty();
+//    blendMap0->update();
+//    blendMap1->update();
+//}
+//
+////converts a length in world dimensions to terrain dimensions
+//Ogre::Real Level::lengthWorldToTerrain(Ogre::Real worldLength)
+//{
+//	Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings();
+//	Ogre::Real size = defaultimp.terrainSize;
+//	Ogre::Real mBase = -mTerrainGroup->getTerrainWorldSize() * 0.5;
+//	Ogre::Real mScale = mTerrainGroup->getTerrainWorldSize() / (Ogre::Real)(size-1);
+//	
+//
+//	
+//	return (worldLength) / ((size - 1) * mScale);
+//}
+////converts a length in terrain dimensions to world dimensions
+//Ogre::Real Level::lengthTerrainToWorld(Ogre::Real terrainLength)
+//{
+//	Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings();
+//	Ogre::Real size = defaultimp.terrainSize;
+//	Ogre::Real mBase = -mTerrainGroup->getTerrainWorldSize() * 0.5;
+//	Ogre::Real mScale = mTerrainGroup->getTerrainWorldSize() / (Ogre::Real)(size-1);
+//	
+//	/*// centre the terrain on local origin
+//		mBase = -mWorldSize * 0.5; 
+//		// scale determines what 1 unit on the grid becomes in world space
+//		mScale =  mWorldSize / (Real)(mSize-1);*/
+//	
+//	
+//	return terrainLength * (size - 1) * mScale;
+//}
+//
+//
+//bool Level::LevelPageProvider::prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
+//{ 
+///*
+//	////unpack
+//	long x;
+//	long y;
+//	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);
+//	StandardApplication::getSingletonPtr()->pagePreparingCallback(x,y);
+//	*/
+//	return true; 
+//}
+//
+//bool Level::LevelPageProvider::loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
+//{ 
+//	/*long x;
+//	long y;
+//	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+//
+//	StandardApplication::getSingletonPtr()->pageLoadingCallback(x,y);*/
+//	//mLog("loading page "+ogre_str(x)+" / "+ogre_str(y));
+//	////load
+//	//mLevel->mTerrainGroup->loadTerrain(x,y,true);
+//	//
+//	//	
+//
+//	////Ogre::Terrain *terr = mLevel->mTerrainGroup->getTerrain(x,y);
+//
+//	////mLevel->initBlendMaps(terr);
+//
+//	return true; 
+//}
+//
+//bool Level::LevelPageProvider::unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
+//{ 
+///*
+//	long x;
+//	long y;
+//	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+//	StandardApplication::getSingletonPtr()->pageUnloadingCallback(x,y);
+//*/
+//	return true; 
+//}
+//
+//bool Level::LevelPageProvider::unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section) 
+//{
+///*
+//	long x;
+//	long y;
+//	mLevel->mTerrainGroup->unpackIndex(page->getID(),&x,&y);	
+//	StandardApplication::getSingletonPtr()->pageUnpreparingCallback(x,y);
+//*/
+//	return true; 
+//}
+//

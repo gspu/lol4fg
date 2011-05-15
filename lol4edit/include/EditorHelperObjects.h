@@ -10,58 +10,58 @@ namespace Ogre
 	class BorderPanelOverlayElement;
 }
 	//Ogre::Overlay* overlay;
-
-//class for displaying something as a decal on the terrain
-class TerrainDecal
-{
-public:
-	TerrainDecal();
-	~TerrainDecal();
-
-	typedef std::list<Ogre::TextureUnitState*> TexStateList;
-
-
-
-	void setLevel(Level *lvl);
-
-	//the position is in WORLD coordinates
-	void update(Ogre::Real x, Ogre::Real z, Ogre::Real decalSize);
-
-	//shows the decal by attaching it to the current level
-	void show();
-
-	//hides the decal by de-attaching it from the current level
-	void hide();
-private:
-	//backupping vals
-	/*Ogre::Real prev_x;
-	Ogre::Real prev_z; 
-	Ogre::Real prev_rad;*/
-
-	TexStateList mTexStates;
-
-	//float accuracy;
-
-
-	Level *mLevel;
-
-	//Ogre::SceneNode *mMainNode;
-
-	Ogre::Frustum *mDecalFrustum;
-	Ogre::SceneNode *mProjectorNode;
-
-	/*Ogre::Frustum *mFilterFrustum;
-	Ogre::SceneNode *mFilterNode;*/
-	/*Ogre::ManualObject *mMeshDecal;
-	int x_size;
-	int z_size;*/
-	bool isShown;
-
-	
-	void addDecalPasses();
-
-	//void generateNodeStructure(Ogre::SceneManager *mgr);
-};
+//
+////class for displaying something as a decal on the terrain
+//class TerrainDecal
+//{
+//public:
+//	TerrainDecal();
+//	~TerrainDecal();
+//
+//	typedef std::list<Ogre::TextureUnitState*> TexStateList;
+//
+//
+//
+//	void setLevel(Level *lvl);
+//
+//	//the position is in WORLD coordinates
+//	void update(Ogre::Real x, Ogre::Real z, Ogre::Real decalSize);
+//
+//	//shows the decal by attaching it to the current level
+//	void show();
+//
+//	//hides the decal by de-attaching it from the current level
+//	void hide();
+//private:
+//	//backupping vals
+//	/*Ogre::Real prev_x;
+//	Ogre::Real prev_z; 
+//	Ogre::Real prev_rad;*/
+//
+//	TexStateList mTexStates;
+//
+//	//float accuracy;
+//
+//
+//	Level *mLevel;
+//
+//	//Ogre::SceneNode *mMainNode;
+//
+//	Ogre::Frustum *mDecalFrustum;
+//	Ogre::SceneNode *mProjectorNode;
+//
+//	/*Ogre::Frustum *mFilterFrustum;
+//	Ogre::SceneNode *mFilterNode;*/
+//	/*Ogre::ManualObject *mMeshDecal;
+//	int x_size;
+//	int z_size;*/
+//	bool isShown;
+//
+//	
+//	void addDecalPasses();
+//
+//	//void generateNodeStructure(Ogre::SceneManager *mgr);
+//};
 
 //a selection border for the editor
 class SelectionBorder

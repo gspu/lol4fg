@@ -1059,15 +1059,11 @@
 			Name="Terrain"
 			>
 			<File
-				RelativePath="..\src\LevelPagedWorld.cpp"
+				RelativePath="..\include\LevelPage.h"
 				>
 			</File>
 			<File
 				RelativePath="..\include\LevelPagedWorld.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\LevelPagedWorldSection.cpp"
 				>
 			</File>
 			<File
@@ -1083,39 +1079,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\LevelPaging.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\include\LevelPaging.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\LevelPagingListener.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\include\LevelPagingListener.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\LevelTerrain.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\include\LevelTerrain.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\LevelTerrainGroup.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\include\LevelTerrainGroup.h"
-				>
-			</File>
-			<File
-				RelativePath="..\include\LevelTerrainPrerequisites.h"
+				RelativePath="..\include\LevelTerrainPrereqs.h"
 				>
 			</File>
 		</Filter>

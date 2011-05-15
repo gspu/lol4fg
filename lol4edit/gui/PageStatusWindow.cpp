@@ -69,7 +69,7 @@ void PageStatusWindow::PageItem::setSaved(bool set)
 
 void PageStatusWindow::setAutoLoad(bool set)
 {
-	EditorApp::getSingletonPtr()->getCurrentLevel()->setAutoPaging(set);
+	//EditorApp::getSingletonPtr()->getCurrentLevel()->setAutoPaging(set);
 }
 	
 void PageStatusWindow::loadPageClick()

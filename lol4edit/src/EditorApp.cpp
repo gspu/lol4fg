@@ -1581,10 +1581,10 @@ void EditorApp::updateTexturesList()
 void EditorApp::setEditorMode(EditorMode mode)
 {    
     editingMode = mode;
-	if(mode == emTerrain)
+	/*if(mode == emTerrain)
 		qtApp->getGameLogic()->mTerrainDecal->show();
 	else
-		qtApp->getGameLogic()->mTerrainDecal->hide();
+		qtApp->getGameLogic()->mTerrainDecal->hide();*/
 }
 //
 void EditorApp::setTerrainEditing(bool enable)
