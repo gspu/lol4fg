@@ -19,10 +19,11 @@
 #include "ZipSaveFile.h"
 #include "xmlwrapper.h"
 #include "waterplane.h"
-#include <OgreTerrain.h>
-#include <OgreTerrainPaging.h>
-#include <OgreTerrainGroup.h>
-#include <OgrePage.h>
+#include <LevelTerrainPrereqs.h>
+
+#include <LevelPage.h>
+#include <LevelPagedWorld.h>
+#include <LevelPageManager.h>
 
 #ifdef __editor
 #include "EditorApp.h"
@@ -166,7 +167,8 @@ Level::Level(Ogre::String filename,ZipSaveFile *sav)
 //mTerrainPaging(NULL),
 //mPageManager(NULL),
 //mPageProvider(NULL),
-has_terrain(false)
+has_terrain(false),
+mPagedWorld(NULL)
 {
 	mTerrainData.terrainSize = 129;
 	mTerrainData.worldSize = 600;
@@ -2115,41 +2117,41 @@ void Level::placePlayer(Ogre::String entranceName,GameChar *oldPlayer)
 //
 //}
 
-void Level::createETMaterial()
-{	
-	//Ogre::MaterialManager	*matMgr = Ogre::MaterialManager::getSingletonPtr();
-	////test
-	//
-	////Material klonen
-	//Ogre::MaterialPtr baseMaterial = matMgr->getByName("ETTerrainMaterialBase");
-	//
-
-	//Ogre::MaterialPtr mat = matMgr->getByName("ETTerrainMaterial"+mFileName);
-	//if(!mat.isNull())
-	//{
-	//	matMgr->remove(mat->getName());
-	//}
-	//if(!terrainMaterial.isNull())
-	//{
-	//	matMgr->remove(terrainMaterial->getName());
-	//}
-	//unsigned int numCovMaps = mSplatMgr->getNumMaps();
-	//unsigned int numTextures= terrainTextures.size();
-	////material ETTerrainMaterial
-	//terrainMaterial = baseMaterial->clone("ETTerrainMaterial"+mFileName);//matMgr->create("ETTerrainMaterial"+mFileName,"ET");
-	//
-	//Ogre::Technique *mainTech = terrainMaterial->getTechnique(0);
-	////jetzt die haupttechnik
-	//createETMaterialPasses(mainTech,9);
-	////und die fallback
-	//Ogre::Technique *fallbackTech = terrainMaterial->getTechnique(1);
-	//createETMaterialPasses(fallbackTech,0);
-
-
-	//updateSceneManagersAfterMaterialsChange();
- //   Ogre::MaterialSerializer out;
- //   out.exportMaterial(terrainMaterial,"test.material");
-}
+//void Level::createETMaterial()
+//{	
+//	//Ogre::MaterialManager	*matMgr = Ogre::MaterialManager::getSingletonPtr();
+//	////test
+//	//
+//	////Material klonen
+//	//Ogre::MaterialPtr baseMaterial = matMgr->getByName("ETTerrainMaterialBase");
+//	//
+//
+//	//Ogre::MaterialPtr mat = matMgr->getByName("ETTerrainMaterial"+mFileName);
+//	//if(!mat.isNull())
+//	//{
+//	//	matMgr->remove(mat->getName());
+//	//}
+//	//if(!terrainMaterial.isNull())
+//	//{
+//	//	matMgr->remove(terrainMaterial->getName());
+//	//}
+//	//unsigned int numCovMaps = mSplatMgr->getNumMaps();
+//	//unsigned int numTextures= terrainTextures.size();
+//	////material ETTerrainMaterial
+//	//terrainMaterial = baseMaterial->clone("ETTerrainMaterial"+mFileName);//matMgr->create("ETTerrainMaterial"+mFileName,"ET");
+//	//
+//	//Ogre::Technique *mainTech = terrainMaterial->getTechnique(0);
+//	////jetzt die haupttechnik
+//	//createETMaterialPasses(mainTech,9);
+//	////und die fallback
+//	//Ogre::Technique *fallbackTech = terrainMaterial->getTechnique(1);
+//	//createETMaterialPasses(fallbackTech,0);
+//
+//
+//	//updateSceneManagersAfterMaterialsChange();
+// //   Ogre::MaterialSerializer out;
+// //   out.exportMaterial(terrainMaterial,"test.material");
+//}
 
 //entfernt das terrain
 void Level::removeTerrain()
@@ -2541,107 +2543,107 @@ Ogre::String Level::getSavegameXML()
 
 
 
-void Level::updateTextureList(Ogre::StringVector newList)
-{
-    ////zu jeder neuen textur schauen, ob es schon einen covmapchannel gibt
-    ////wenn ja, diesen holen
-    ////erstmal, wie viele covmaps brauchen wir?
-    //size_t newTexCount = newList.size();
-
-    ////mSplatMgr->setNumTextures(newCount);
-    //unsigned int numCovMaps = Ogre::Math::ICeil(float(newTexCount) / float(splatChannels));
-    ////images für die neuen covmaps
-    //std::vector<Ogre::Image> newCovmaps;
-    //newCovmaps.reserve(numCovMaps);
-    //unsigned int curCovmap = 0;
-    //unsigned int curChannel= 0;
-    //unsigned int bufSize = splatChannels*splatWidth*splatHeight;
-    //for(unsigned int i=0;i<numCovMaps;i++)
-    //{
-    //    //buffer für diese map vorbereiten
-    //    
-    //    Ogre::Image curImage;
-    //    Ogre::uchar *buffer = new Ogre::uchar[bufSize];
-    //    initBuffer(buffer,bufSize,0);
-    //    //jetzt die [splatChannels] texturen durchgehen
-    //    for(unsigned int j=0;j<splatChannels;j++)
-    //    {
-    //        unsigned int curTexIndex = i*numCovMaps+j;
-    //        if(curTexIndex>=newList.size())
-    //            break;
-    //        Ogre::String curTex = newList[curTexIndex];
-    //        int oldIndex = getOldTextureIndex(curTex);
-    //        if(oldIndex != -1)
-    //        {
-    //            //existiert schon, ich muss den channel klauen
-    //            //erstmal das zugehörige image holen
-    //            Ogre::Image img;
-    //            mSplatMgr->saveMapToImage(covmapNrFromTextureIndex(oldIndex,splatChannels),img);
-    //            //jetzt den richtigen kanal davon
-    //            //und davon aus dem buffer den richtigen channel. entspricht dem wert, um den erhöht werden soll
-    //            //wenn negativ, dann ist das Offset = Abs(imgChannelCnt-1-Offset);
-    //            //int imgChannelCnt = pixelFormatToNumChannels(img.getFormat());//das ist wie viele channel es hat. negativ=umgekehrte reihenfolge
-    //            //jetzt den kanal im image. entspricht dem Offset
-    //            int channelInImg = oldIndex % splatChannels;//channelNrFromTextureIndex(oldIndex,Ogre::Math::Abs(imgChannelCnt));
-    //            /*if(imgChannelCnt < 0)
-    //            {
-    //                imgChannelCnt *= -1;
-    //                channelInImg = imgChannelCnt-1-channelInImg;
-    //            }
-    //            */
-    //            //und jetzt endlich channel klauen...
-    //            Ogre::uchar *oldBuffer = img.getData();
-    //            for(unsigned int k=0;k<bufSize;k += splatChannels)
-    //            {
-    //                buffer[k+j] = oldBuffer[k+channelInImg];
-    //                //[k+channelInImg] <- für den alten
-    //                //[k+j] <- für den neuen
-
-    //                //das k ist jetzt das Index für den alten buffer
-    //                //j ist die nr. des neuen channels, im neuen buffer
-    //            }
-    //            
-    //        }
-    //    }
-    //    curImage.loadDynamicImage(buffer,splatWidth,splatHeight,1,numChannelsToPixelFormat(splatChannels),true);
-    //    newCovmaps.push_back(curImage);        
-    //}
-    //
-    ////und jetzt nochmal wg der löcher
-    //for(size_t i=0;i<bufSize;i+=3)
-    //{
-    //    bool isHole = true;
-    //    Ogre::uchar p1 = 0;
-    //    Ogre::uchar p2 = 0;
-    //    Ogre::uchar p3 = 0;
-    //    for(size_t j=1;j<newCovmaps.size();j++)
-    //    {
-    //        p1 += newCovmaps[j].getData()[i];
-    //        p2 += newCovmaps[j].getData()[i+1];
-    //        p3 += newCovmaps[j].getData()[i+2];
-    //        
-
-    //    }
-    //    if(p1+p2+p3+newCovmaps[0].getData()[i]
-    //        +newCovmaps[0].getData()[i+1]
-    //        +newCovmaps[0].getData()[i+2] < 255)
-    //    {
-    //        newCovmaps[0].getData()[i] = 255-p1-p2-p3-newCovmaps[0].getData()[i+1]-newCovmaps[0].getData()[i+2];
-    //    }
-    //   
-    //    
-
-    //}
-    //terrainTextures = newList;
-    //mSplatMgr->setNumTextures(newTexCount);     
-    //for(Ogre::uint i = 0;i<mSplatMgr->getNumMaps();i++)
-    //{       
-    //    mSplatMgr->loadMapFromImage(i, newCovmaps[i]);
-    //}
-    //createETMaterial();
-    //updateTerrainLightmap();
-    //mTerrainMgr->setMaterial(terrainMaterial);
-}
+//void Level::updateTextureList(Ogre::StringVector newList)
+//{
+//    ////zu jeder neuen textur schauen, ob es schon einen covmapchannel gibt
+//    ////wenn ja, diesen holen
+//    ////erstmal, wie viele covmaps brauchen wir?
+//    //size_t newTexCount = newList.size();
+//
+//    ////mSplatMgr->setNumTextures(newCount);
+//    //unsigned int numCovMaps = Ogre::Math::ICeil(float(newTexCount) / float(splatChannels));
+//    ////images für die neuen covmaps
+//    //std::vector<Ogre::Image> newCovmaps;
+//    //newCovmaps.reserve(numCovMaps);
+//    //unsigned int curCovmap = 0;
+//    //unsigned int curChannel= 0;
+//    //unsigned int bufSize = splatChannels*splatWidth*splatHeight;
+//    //for(unsigned int i=0;i<numCovMaps;i++)
+//    //{
+//    //    //buffer für diese map vorbereiten
+//    //    
+//    //    Ogre::Image curImage;
+//    //    Ogre::uchar *buffer = new Ogre::uchar[bufSize];
+//    //    initBuffer(buffer,bufSize,0);
+//    //    //jetzt die [splatChannels] texturen durchgehen
+//    //    for(unsigned int j=0;j<splatChannels;j++)
+//    //    {
+//    //        unsigned int curTexIndex = i*numCovMaps+j;
+//    //        if(curTexIndex>=newList.size())
+//    //            break;
+//    //        Ogre::String curTex = newList[curTexIndex];
+//    //        int oldIndex = getOldTextureIndex(curTex);
+//    //        if(oldIndex != -1)
+//    //        {
+//    //            //existiert schon, ich muss den channel klauen
+//    //            //erstmal das zugehörige image holen
+//    //            Ogre::Image img;
+//    //            mSplatMgr->saveMapToImage(covmapNrFromTextureIndex(oldIndex,splatChannels),img);
+//    //            //jetzt den richtigen kanal davon
+//    //            //und davon aus dem buffer den richtigen channel. entspricht dem wert, um den erhöht werden soll
+//    //            //wenn negativ, dann ist das Offset = Abs(imgChannelCnt-1-Offset);
+//    //            //int imgChannelCnt = pixelFormatToNumChannels(img.getFormat());//das ist wie viele channel es hat. negativ=umgekehrte reihenfolge
+//    //            //jetzt den kanal im image. entspricht dem Offset
+//    //            int channelInImg = oldIndex % splatChannels;//channelNrFromTextureIndex(oldIndex,Ogre::Math::Abs(imgChannelCnt));
+//    //            /*if(imgChannelCnt < 0)
+//    //            {
+//    //                imgChannelCnt *= -1;
+//    //                channelInImg = imgChannelCnt-1-channelInImg;
+//    //            }
+//    //            */
+//    //            //und jetzt endlich channel klauen...
+//    //            Ogre::uchar *oldBuffer = img.getData();
+//    //            for(unsigned int k=0;k<bufSize;k += splatChannels)
+//    //            {
+//    //                buffer[k+j] = oldBuffer[k+channelInImg];
+//    //                //[k+channelInImg] <- für den alten
+//    //                //[k+j] <- für den neuen
+//
+//    //                //das k ist jetzt das Index für den alten buffer
+//    //                //j ist die nr. des neuen channels, im neuen buffer
+//    //            }
+//    //            
+//    //        }
+//    //    }
+//    //    curImage.loadDynamicImage(buffer,splatWidth,splatHeight,1,numChannelsToPixelFormat(splatChannels),true);
+//    //    newCovmaps.push_back(curImage);        
+//    //}
+//    //
+//    ////und jetzt nochmal wg der löcher
+//    //for(size_t i=0;i<bufSize;i+=3)
+//    //{
+//    //    bool isHole = true;
+//    //    Ogre::uchar p1 = 0;
+//    //    Ogre::uchar p2 = 0;
+//    //    Ogre::uchar p3 = 0;
+//    //    for(size_t j=1;j<newCovmaps.size();j++)
+//    //    {
+//    //        p1 += newCovmaps[j].getData()[i];
+//    //        p2 += newCovmaps[j].getData()[i+1];
+//    //        p3 += newCovmaps[j].getData()[i+2];
+//    //        
+//
+//    //    }
+//    //    if(p1+p2+p3+newCovmaps[0].getData()[i]
+//    //        +newCovmaps[0].getData()[i+1]
+//    //        +newCovmaps[0].getData()[i+2] < 255)
+//    //    {
+//    //        newCovmaps[0].getData()[i] = 255-p1-p2-p3-newCovmaps[0].getData()[i+1]-newCovmaps[0].getData()[i+2];
+//    //    }
+//    //   
+//    //    
+//
+//    //}
+//    //terrainTextures = newList;
+//    //mSplatMgr->setNumTextures(newTexCount);     
+//    //for(Ogre::uint i = 0;i<mSplatMgr->getNumMaps();i++)
+//    //{       
+//    //    mSplatMgr->loadMapFromImage(i, newCovmaps[i]);
+//    //}
+//    //createETMaterial();
+//    //updateTerrainLightmap();
+//    //mTerrainMgr->setMaterial(terrainMaterial);
+//}
 
 //Ogre::Vector3 Level::getTerrainVertex(size_t x,size_t z)
 //{
@@ -5077,9 +5079,11 @@ void Level::deleteObject(GameObject *obj)
 
 void Level::loadTerrain()
 { 
-	//has_terrain = true;
+	has_terrain = true;
 
- //
+	
+ /*
+		//
 	////this is the light direction for the terrain. it will need to be user-defineable
  //   Ogre::Vector3 lightdir(0.55, -0.3, 0.75);
  //   lightdir.normalise();
@@ -5111,6 +5115,11 @@ void Level::loadTerrain()
  //   configureTerrainDefaults();
  //
  //  
+*/
+	LevelPageManager *lpm = LevelPageManager::getSingletonPtr();
+	lpm->setPagingOperationsEnabled(true);
+	lpm->addCamera(getMainCam());
+	mPagedWorld = lpm->createLevelWorld(this);
 
 	//
 	//// Paging setup

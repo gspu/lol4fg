@@ -13,7 +13,7 @@ public:
 	be a singleton
 	@param lvl The Level to which this "world" belongs
 	*/
-	LevelPagedWorld(Level *lvl);
+	LevelPagedWorld(Level *lvl, Ogre::String name);
 	virtual ~LevelPagedWorld();
 
 	// it might be indeed a good idea to move some of the loading stuff into the relevant classes.
@@ -26,71 +26,58 @@ public:
 	// non-virtual stuff, AGAIN... let's hope this functions will never be called.
 	// i'll try to overwrite them anyway. maybe it'll help
 	// they might be unnecessary, though. the TerrainPaging example does not overwrite PagedWorld, but PagedWorldSection
-	void load(const String& filename);
-	void load(const DataStreamPtr& stream);
-	bool load(StreamSerialiser& stream);
-	void save(const String& filename);
-	void save(const DataStreamPtr& stream);
-	void save(StreamSerialiser& stream);
+	/*void load(const Ogre::String& filename);
+	void load(const Ogre::DataStreamPtr& stream);
+	bool load(Ogre::StreamSerialiser& stream);
+	void save(const Ogre::String& filename);
+	void save(const Ogre::DataStreamPtr& stream);
+	void save(Ogre::StreamSerialiser& stream);*/
 
-	PagedWorldSection* createSection(SceneManager* sceneMgr,
-		const String& typeName,
-		const String& sectionName = StringUtil::BLANK);
-	PagedWorldSection* createSection(const String& strategyName, SceneManager* sceneMgr,
-		const String& sectionName = StringUtil::BLANK);
-	PagedWorldSection* createSection(PageStrategy* strategy, SceneManager* sceneMgr, 
-		const String& sectionName = StringUtil::BLANK);
+	/*Ogre::PagedWorldSection* createSection(Ogre::SceneManager* sceneMgr,
+		const Ogre::String& typeName,
+		const Ogre::String& sectionName = Ogre::StringUtil::BLANK);
+	Ogre::PagedWorldSection* createSection(const Ogre::String& strategyName, Ogre::SceneManager* sceneMgr,
+		const Ogre::String& sectionName = Ogre::StringUtil::BLANK);
+	Ogre::PagedWorldSection* createSection(Ogre::PageStrategy* strategy, Ogre::SceneManager* sceneMgr, 
+		const Ogre::String& sectionName = Ogre::StringUtil::BLANK);*/
 
 
+	LevelPagedWorldSection* createLevelSection(Level *lvl,
+		const Ogre::String& sectionName = Ogre::StringUtil::BLANK);
 
-	typedef map<String, PagedWorldSection*>::type SectionMap;
+	//typedef map<String, PagedWorldSection*>::type SectionMap;
 	/// Retrieve a const reference to all the sections in this world
-	const SectionMap& getSections() const { return mSections; }
+	//const SectionMap& getSections() const { return mSections; }
 
 	
 	//finally, virtual stuff
 
-	/** Give a world  the opportunity to prepare page content procedurally. 
-	@remarks
-	You should not call this method directly. This call may well happen in 
-	a separate thread so it should not access GPU resources, use _loadProceduralPage
-	for that
-	@returns true if the page was populated, false otherwise
+	/*
+	i do not actually need to overwrite these, it just calls the function of the same name
+	on the pageprovider if any, and if it doesn't work, it is called on the PageManager
+			bool generated = false;
+		if (mPageProvider)
+			generated = mPageProvider->unprepareProceduralPage(page, section);
+		if (!generated)
+			generated = mManager->_unprepareProceduralPage(page, section);
+		return generated;
+	virtual bool _prepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);	
+	virtual bool _loadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);	
+	virtual bool _unloadProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);	
+	virtual bool _unprepareProceduralPage(Ogre::Page* page, Ogre::PagedWorldSection* section);
 	*/
-	virtual bool _prepareProceduralPage(Page* page, PagedWorldSection* section);
-	/** Give a world  the opportunity to prepare page content procedurally. 
-	@remarks
-	You should not call this method directly. This call will happen in 
-	the main render thread so it can access GPU resources. Use _prepareProceduralPage
-	for background preparation.
-	@returns true if the page was populated, false otherwise
-	*/
-	virtual bool _loadProceduralPage(Page* page, PagedWorldSection* section);
-	/** Give a world  the opportunity to unload page content procedurally. 
-	@remarks
-	You should not call this method directly. This call will happen in 
-	the main render thread so it can access GPU resources. Use _unprepareProceduralPage
-	for background preparation.
-	@returns true if the page was populated, false otherwise
-	*/
-	virtual bool _unloadProceduralPage(Page* page, PagedWorldSection* section);
-	/** Give a world  the opportunity to unprepare page content procedurally. 
-	@remarks
-	You should not call this method directly. This call may well happen in 
-	a separate thread so it should not access GPU resources, use _unloadProceduralPage
-	for that
-	@returns true if the page was unpopulated, false otherwise
-	*/
-	virtual bool _unprepareProceduralPage(Page* page, PagedWorldSection* section);
 	
 
 
+	/*don't need those either, they just call frameStart/End on all sections
 	/// Called when the frame starts
-	virtual void frameStart(Real timeSinceLastFrame);
+	virtual void frameStart(Ogre::Real timeSinceLastFrame);
 	/// Called when the frame ends
-	virtual void frameEnd(Real timeElapsed);
+	virtual void frameEnd(Ogre::Real timeElapsed);*/
+
 	/// Notify a world of the current camera
-	virtual void notifyCamera(Camera* cam);
+	// i overwrite this to be able to "freeze" the paging state
+	virtual void notifyCamera(Ogre::Camera* cam);
 
 };
 

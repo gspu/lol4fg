@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'TerrainEditDialog.h'
 **
-** Created: Sun 8. May 19:17:50 2011
+** Created: Sun 22. May 17:05:46 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!

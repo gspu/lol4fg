@@ -60,6 +60,7 @@
 #include "groupObject.h"
 #include "QtEditorApp.h"
 #include "PageStatusWindow.h"
+#include <LevelPageManager.h>
 using namespace std;
 //using namespace Ogre;
 
@@ -730,10 +731,12 @@ EditorApp::~EditorApp()
 	if(currentLevel)
 		delete currentLevel;
 
-	if(mTerrainGlobals)
+	if(pageMgr)
+		delete pageMgr;
+	/*if(mTerrainGlobals)
 	{
 		OGRE_DELETE mTerrainGlobals;
-	}
+	}*/
 
 	/*if(plsm2SceneMgr)
 		mRoot->destroySceneManager(plsm2SceneMgr);*/
@@ -955,6 +958,9 @@ void EditorApp::createDefaultSceneMgr(void)
 
 void EditorApp::initTerrainGlobals()
 {
+	pageMgr = new LevelPageManager();
+	/*
+
 	mTerrainGlobals = OGRE_NEW Ogre::TerrainGlobalOptions();
 
 	mTerrainGlobals->setDefaultResourceGroup("Terrain");
@@ -973,6 +979,8 @@ void EditorApp::initTerrainGlobals()
     mTerrainGlobals->setLightMapDirection(lightMapDir);
     mTerrainGlobals->setCompositeMapAmbient(Ogre::ColourValue::White);
     mTerrainGlobals->setCompositeMapDiffuse(Ogre::ColourValue::White);
+
+	*/
 
 }
 

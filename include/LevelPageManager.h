@@ -92,6 +92,15 @@ public:
 
 	~LevelPageManager();
 
+	/** Create a new PagedWorld instance. 
+	@param name Optionally give a name to the world (if no name is given, one
+		will be generated).
+	*/
+	LevelPagedWorld* createLevelWorld(Level *lvl, const Ogre::String& name = Ogre::StringUtil::BLANK);
+
+
+	LevelPagedWorld* loadLevelWorld(Level *lvl, const Ogre::String& name = Ogre::StringUtil::BLANK);
+
 	/** Destroy a world.
 	The World seems to be the important, level-dependent stuff*/
 	void destroyWorld(LevelPagedWorld* world);
