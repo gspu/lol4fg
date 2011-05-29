@@ -26,6 +26,7 @@ Klasse für alles rund ums level
 //#include "ETBrush.h"
 //#include "ETSplattingManager.h"
 #include "ZipSaveFile.h"
+#include <LevelTerrainPrereqs.h>
 /**/
 
 
@@ -386,14 +387,14 @@ public:
 	//}
  //   
 	//liste der texuren updaten
-    void updateTextureList(Ogre::StringVector newList);
+    //void updateTextureList(Ogre::StringVector newList);
     //diese nimmt jetzt folgendes an:
     //-ambient entspricht der ambienteinstellung des levels
     //-shadowed ist immer true
     //somit müssen nur noch lightDir und etLightColor gespeichert werden. und width und height
-	void updateTerrainLightmap();
+	//void updateTerrainLightmap();
 	//erstellt das Material für das Terrain anhand von ETTerrainMaterialBase
-	void createETMaterial();
+	//void createETMaterial();
 
 	//erzeugt anhand von terrainTextures und mSplatMgr->getNumMaps()
 	//Pässe für eine technik. sollte nur von createETMaterial aufgerufen werden
@@ -501,12 +502,15 @@ public:
 		//return true;//TODO
 	}
 
+	LevelPagedWorld *mPagedWorld;
+
 	////helper functions
 	////converts a length in world dimensions to terrain dimensions
 	//Ogre::Real lengthWorldToTerrain(Ogre::Real worldLength);
 	////converts a length in terrain dimensions to world dimensions
 	//Ogre::Real lengthTerrainToWorld(Ogre::Real terrainLength);
 
+	
 	/*Ogre::TerrainGlobalOptions* mTerrainGlobals;
 	Ogre::TerrainGroup* mTerrainGroup;
 	bool mPaging;

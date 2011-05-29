@@ -83,6 +83,7 @@ StandardApplication::StandardApplication():
 	currentLevel(NULL),
 	oldLevel(NULL),
 	mWindow(NULL),
+	pageMgr(NULL),
 	
 	mRoot(0)
 {

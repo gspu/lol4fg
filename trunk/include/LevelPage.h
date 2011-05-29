@@ -5,22 +5,14 @@
 #include <Ogre.h>
 #include "LevelTerrainPrereqs.h"
 #include "FwDec.h"
+#include <OgreWorkQueue.h>
 
 class LevelPage: public Ogre::Page
 {
-protected:
-	
-
-	virtual bool prepareImpl(PageData* dataToPopulate);
-	virtual bool prepareImpl(StreamSerialiser& str, PageData* dataToPopulate);
-	virtual void loadImpl();
-
-
-
 public:
 
 	//i will calculate the id when necessary
-	LevelPage(PagedWorldSection* parent);
+	LevelPage(long x, long y, LevelPagedWorldSection* parent);
 	~LevelPage();
 
 
@@ -37,16 +29,16 @@ public:
 	/// Save page data to an automatically generated file name
 	virtual void save();
 	/// Save page data to a file
-	virtual void save(const String& filename);
+	virtual void save(const Ogre::String& filename);
 	/// Save page data to a serialiser 
-	virtual void save(StreamSerialiser& stream);
+	virtual void save(Ogre::StreamSerialiser& stream);
 
 	/// Called when the frame starts
-	virtual void frameStart(Real timeSinceLastFrame);
+	virtual void frameStart(Ogre::Real timeSinceLastFrame);
 	/// Called when the frame ends
-	virtual void frameEnd(Real timeElapsed);
+	virtual void frameEnd(Ogre::Real timeElapsed);
 	/// Notify a section of the current camera
-	virtual void notifyCamera(Camera* cam);
+	virtual void notifyCamera(Ogre::Camera* cam);
 
 	//absolutely no idea how this stuff is supposed to work or if i need it
 	///** Create a new PageContentCollection within this page.
@@ -71,16 +63,24 @@ public:
 	///// Get the list of content collections
 	//const ContentCollectionList& getContentCollectionList() const;
 
-	//those should be virtual
-	/// WorkQueue::RequestHandler override
-	bool canHandleRequest(const WorkQueue::Request* req, const WorkQueue* srcQ);
-	/// WorkQueue::RequestHandler override
-	WorkQueue::Response* handleRequest(const WorkQueue::Request* req, const WorkQueue* srcQ);
-	/// WorkQueue::ResponseHandler override
-	bool canHandleResponse(const WorkQueue::Response* res, const WorkQueue* srcQ);
-	/// WorkQueue::ResponseHandler override
-	void handleResponse(const WorkQueue::Response* res, const WorkQueue* srcQ);
+	//those should be virtual. not sure if i actually need to overwrite them, though
+	///// WorkQueue::RequestHandler override
+	//bool canHandleRequest(const Ogre::WorkQueue::Request* req, const Ogre::WorkQueue* srcQ);
+	///// WorkQueue::RequestHandler override
+	//Ogre::WorkQueue::Response* handleRequest(const Ogre::WorkQueue::Request* req, const Ogre::WorkQueue* srcQ);
+	///// WorkQueue::ResponseHandler override
+	//bool canHandleResponse(const Ogre::WorkQueue::Response* res, const Ogre::WorkQueue* srcQ);
+	///// WorkQueue::ResponseHandler override
+	//void handleResponse(const Ogre::WorkQueue::Response* res, const Ogre::WorkQueue* srcQ);
 
+	void getCoords(long &x, long &y);
+protected:
+	Level *lvl;
+	
+
+	virtual bool prepareImpl(Ogre::Page::PageData* dataToPopulate);
+	virtual bool prepareImpl(Ogre::StreamSerialiser& str, Ogre::Page::PageData* dataToPopulate);
+	virtual void loadImpl();
 
 };
 

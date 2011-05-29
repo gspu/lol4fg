@@ -28,7 +28,7 @@
 #include "Sound.h"
 #include "SoundManager.h"
 
-
+#include <LevelTerrainPrereqs.h>
 
 
 
@@ -44,6 +44,7 @@ public:
 	
 	//OgreAL::SoundManager *soundMgr;
 	SimpleSound::SoundManager *soundMgr;
+	LevelPageManager *pageMgr;
 	
 
 	bool showFog;

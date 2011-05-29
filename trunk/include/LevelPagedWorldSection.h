@@ -10,22 +10,22 @@ class LevelPagedWorldSection: public Ogre::PagedWorldSection
 public:
 	/** Construct a new instance, specifying the parent level. */
 	LevelPagedWorldSection(Level *level);
-	virtual ~PagedWorldSection();
+	virtual ~LevelPagedWorldSection();
 
 
 	//i need to overwrite those. they will recieve a stream I got from the zip
 	/// Load this section from a stream (returns true if successful)
-	virtual bool load(StreamSerialiser& stream);
+	virtual bool load(Ogre::StreamSerialiser& stream);
 	/// Save this section to a stream
-	virtual void save(StreamSerialiser& stream);
+	virtual void save(Ogre::StreamSerialiser& stream);
 
 	//might need those, too
 	/// Called when the frame starts
-	virtual void frameStart(Real timeSinceLastFrame);
+	virtual void frameStart(Ogre::Real timeSinceLastFrame);
 	/// Called when the frame ends
-	virtual void frameEnd(Real timeElapsed);
+	virtual void frameEnd(Ogre::Real timeElapsed);
 	/// Notify a section of the current camera
-	virtual void notifyCamera(Camera* cam);
+	virtual void notifyCamera(Ogre::Camera* cam);
 
 	/** Load or create a page against this section covering the given world 
 		space position. 
@@ -36,7 +36,7 @@ public:
 
 		now THIS I need to overwrite. it will create my own Page objects
 	*/
-	virtual Page* loadOrCreatePage(const Vector3& worldPos);
+	virtual Ogre::Page* loadOrCreatePage(const Ogre::Vector3& worldPos);
 
 
 
@@ -50,7 +50,7 @@ public:
 	@param pageID The page ID to load
 	@param forceSynchronous If true, the page will always be loaded synchronously
 	*/
-	virtual void loadPage(PageID pageID, bool forceSynchronous = false);
+	virtual void loadPage(Ogre::PageID pageID, bool forceSynchronous = false);
 
 	/** Ask for a page to be unloaded with the given (section-relative) PageID
 	@remarks
@@ -59,7 +59,7 @@ public:
 	@param pageID The page ID to unload
 	@param forceSynchronous If true, the page will always be unloaded synchronously
 	*/
-	virtual void unloadPage(PageID pageID, bool forceSynchronous = false);
+	virtual void unloadPage(Ogre::PageID pageID, bool forceSynchronous = false);
 	/** Ask for a page to be unloaded with the given (section-relative) PageID
 	@remarks
 	You would not normally call this manually, the PageStrategy is in 
@@ -67,7 +67,7 @@ public:
 	@param p The Page to unload
 	@param forceSynchronous If true, the page will always be unloaded synchronously
 	*/
-	virtual void unloadPage(Page* p, bool forceSynchronous = false);
+	virtual void unloadPage(Ogre::Page* p, bool forceSynchronous = false);
 	/** Give a section the opportunity to prepare page content procedurally. 
 	@remarks
 	You should not call this method directly. This call may well happen in 
@@ -75,7 +75,7 @@ public:
 	for that
 	@returns true if the page was populated, false otherwise
 	*/
-	virtual bool _prepareProceduralPage(Page* page);
+	virtual bool _prepareProceduralPage(Ogre::Page* page);
 	/** Give a section the opportunity to prepare page content procedurally. 
 	@remarks
 	You should not call this method directly. This call will happen in 
@@ -83,7 +83,7 @@ public:
 	for background preparation.
 	@returns true if the page was populated, false otherwise
 	*/
-	virtual bool _loadProceduralPage(Page* page);
+	virtual bool _loadProceduralPage(Ogre::Page* page);
 	/** Give a section  the opportunity to unload page content procedurally. 
 	@remarks
 	You should not call this method directly. This call will happen in 
@@ -91,7 +91,7 @@ public:
 	for background preparation.
 	@returns true if the page was populated, false otherwise
 	*/
-	virtual bool _unloadProceduralPage(Page* page);
+	virtual bool _unloadProceduralPage(Ogre::Page* page);
 	/** Give a section  the opportunity to unprepare page content procedurally. 
 	@remarks
 	You should not call this method directly. This call may well happen in 
@@ -99,7 +99,7 @@ public:
 	for that
 	@returns true if the page was unpopulated, false otherwise
 	*/
-	virtual bool _unprepareProceduralPage(Page* page);
+	virtual bool _unprepareProceduralPage(Ogre::Page* page);
 
 	/** Ask for a page to be kept in memory if it's loaded.
 	@remarks
@@ -114,7 +114,7 @@ public:
 		Any Page that is neither requested nor held in a frame will be
 		deemed a candidate for unloading.
 	*/
-	virtual void holdPage(PageID pageID);
+	virtual void holdPage(Ogre::PageID pageID);
 
 
 
@@ -124,7 +124,7 @@ public:
 	The StreamSerialiser returned is the responsibility of the caller to
 	delete. 
 	*/
-	virtual StreamSerialiser* _readPageStream(PageID pageID);
+	virtual Ogre::StreamSerialiser* _readPageStream(Ogre::PageID pageID);
 
 	/** Get a serialiser set up to write Page data for the given PageID. 
 	@param pageID The ID of the page being requested
@@ -132,10 +132,14 @@ public:
 	The StreamSerialiser returned is the responsibility of the caller to
 	delete. 
 	*/
-	virtual StreamSerialiser* _writePageStream(PageID pageID);
+	virtual Ogre::StreamSerialiser* _writePageStream(Ogre::PageID pageID);
 
 	/** Get the type name of this section. */
-	virtual const String& getType();
+	virtual const Ogre::String& getType();
+
+	virtual Level *getLevel(){return mLevel;}
+protected:
+	Level *mLevel;
 };
 
 #endif
