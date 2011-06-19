@@ -44,7 +44,7 @@ LevelPagedWorldSection* LevelPagedWorld::createLevelSection(Level *lvl, const Og
 
 	LevelPagedWorldSection* ret = 0;
 	
-	ret = OGRE_NEW LevelPagedWorldSection(lvl);
+	ret = OGRE_NEW LevelPagedWorldSection(theName,lvl);
 	
 	mSections[theName] = ret;
 

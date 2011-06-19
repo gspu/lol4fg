@@ -5082,76 +5082,15 @@ void Level::loadTerrain()
 	has_terrain = true;
 
 	
- /*
-		//
-	////this is the light direction for the terrain. it will need to be user-defineable
- //   Ogre::Vector3 lightdir(0.55, -0.3, 0.75);
- //   lightdir.normalise();
- //
- //   terrainLight = mSceneMgr->createLight("terrainLight");
- //   terrainLight->setType(Ogre::Light::LT_DIRECTIONAL);
- //   terrainLight->setDirection(lightdir);
-	////these two colors as well
- //   terrainLight->setDiffuseColour(Ogre::ColourValue::White);
- //   terrainLight->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));
 
-	//
- //
-	//mTerrainGlobals = Ogre::TerrainGlobalOptions::getSingletonPtr();//OGRE_NEW Ogre::TerrainGlobalOptions();
-
-	//mPagingListener = new LevelPagingListener(this);
- //
-	////maybe the last two params, too?
- //  
-	//mTerrainGroup = OGRE_NEW LevelTerrainGroup(mPagingListener, mSceneMgr, Ogre::Terrain::ALIGN_X_Z, mTerrainData.terrainSize, mTerrainData.worldSize);
-	////maybe no need at all...
- //   mTerrainGroup->setFilenameConvention(Ogre::String("Terrain"), Ogre::String("dat"));
- //   //always zero?
-	//mTerrainGroup->setOrigin(Ogre::Vector3(0,-100,0));//Ogre::Vector3::ZERO);
-
-	//
- //
-	//
- //   configureTerrainDefaults();
- //
- //  
-*/
 	LevelPageManager *lpm = LevelPageManager::getSingletonPtr();
 	lpm->setPagingOperationsEnabled(true);
 	lpm->addCamera(getMainCam());
+	
 	mPagedWorld = lpm->createLevelWorld(this);
-
-	//
-	//// Paging setup
-	//mPageManager = OGRE_NEW LevelPageManager(this);//Ogre::PageManager();
-	//mPageManager->setPagingOperationsEnabled(true);
-	//	
-
-	//
-
-	//mPageProvider = new LevelPageProvider(this);
-	//mPageManager->setPageProvider(mPageProvider);
-	//mPageManager->addCamera(getMainCam());
-	//mTerrainPaging = OGRE_NEW LevelPaging(mPageManager,mPagingListener);//Ogre::TerrainPaging(mPageManager);
-	//mTerrainPagedWorld = mPageManager->createLevelPagedWorld();
-	////the numbers are loadRadius and holdRadius
-	//mTerrainPaging->createLevelWorldSection(mTerrainPagedWorld, mTerrainGroup, 600, 700,
-	//		-10, -10, 
-	//		10, 10);
-	//
-
- //
- //   if (mTerrainsImported)
- //   {
- //       Ogre::TerrainGroup::TerrainIterator ti = mTerrainGroup->getTerrainIterator();
- //       while(ti.hasMoreElements())
- //       {
- //           Ogre::Terrain* t = ti.getNext()->instance;			
- //           initBlendMaps(t);
- //       }
- //   }
- //
- //   mTerrainGroup->freeTemporaryResources();
+	
+	LevelPagedWorldSection *sec = mPagedWorld->createLevelSection(this);
+	
 
 }
 

@@ -9,7 +9,7 @@ class LevelPagedWorldSection: public Ogre::PagedWorldSection
 {
 public:
 	/** Construct a new instance, specifying the parent level. */
-	LevelPagedWorldSection(Level *level);
+	LevelPagedWorldSection(Ogre::String name, Level *level);
 	virtual ~LevelPagedWorldSection();
 
 
@@ -20,10 +20,12 @@ public:
 	virtual void save(Ogre::StreamSerialiser& stream);
 
 	//might need those, too
+	/*
 	/// Called when the frame starts
 	virtual void frameStart(Ogre::Real timeSinceLastFrame);
 	/// Called when the frame ends
 	virtual void frameEnd(Ogre::Real timeElapsed);
+	*/
 	/// Notify a section of the current camera
 	virtual void notifyCamera(Ogre::Camera* cam);
 
@@ -138,8 +140,11 @@ public:
 	virtual const Ogre::String& getType();
 
 	virtual Level *getLevel(){return mLevel;}
+
+	//static Ogre::String generateName();
 protected:
 	Level *mLevel;
+	bool autoPagingEnabled;
 };
 
 #endif

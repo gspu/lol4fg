@@ -1091,6 +1091,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\LevelTerrainGroup.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\include\LevelTerrainGroup.h"
+				>
+			</File>
+			<File
 				RelativePath="..\include\LevelTerrainPrereqs.h"
 				>
 			</File>
