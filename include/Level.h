@@ -504,6 +504,11 @@ public:
 
 	LevelPagedWorld *mPagedWorld;
 
+	LevelPagedWorld *getPagedWorld()
+	{
+		return mPagedWorld;
+	}
+
 	////helper functions
 	////converts a length in world dimensions to terrain dimensions
 	//Ogre::Real lengthWorldToTerrain(Ogre::Real worldLength);

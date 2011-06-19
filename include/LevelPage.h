@@ -7,6 +7,8 @@
 #include "FwDec.h"
 #include <OgreWorkQueue.h>
 
+class DynamicLines;
+
 class LevelPage: public Ogre::Page
 {
 public:
@@ -81,6 +83,10 @@ protected:
 	virtual bool prepareImpl(Ogre::Page::PageData* dataToPopulate);
 	virtual bool prepareImpl(Ogre::StreamSerialiser& str, Ogre::Page::PageData* dataToPopulate);
 	virtual void loadImpl();
+
+	//DEBUG STUFF
+	DynamicLines *lines;
+	Ogre::SceneNode *linesNode;
 
 };
 
