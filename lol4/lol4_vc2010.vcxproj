@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>lol4game</ProjectName>
+    <ProjectGuid>{2F1D9F60-B5CE-402F-864D-9796ECFF48EF}</ProjectGuid>
+    <RootNamespace>lol4</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Include;include;gui;..\include;$(OGRE_HOME)\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\samples\include;$(OGRE_HOME)\include\OGRE\Terrain;$(OGRE_HOME)\include\OGRE\Paging;$(OGRE_SRC)\OgreMain\include;$(OGRE_SRC)\Components\Paging\include;$(OGRE_SRC)\Components\Terrain\include;$(OGRE_DEPENDENCIES_DIR)\include;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\CEGUI\cegui\include;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\tinyxml;..\dependencies\inc;$(BOOST_ROOT);$(OPENAL_SDK)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMain_d.lib;OIS_d.lib;CEGUIBase_d.lib;CEGUIOgreRenderer_d.lib;zlibwapi.lib;newton.lib;OgreNewt_d.lib;OpenAL32.lib;libogg.lib;libvorbisfile.lib;tinyxmld_STL.lib;OgreTerrain_d.lib;OgrePaging_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\dependencies\lib\$(Configuration);$(OGRE_HOME)\lib\$(Configuration);$(OPENAL_SDK)\libs\Win32;$(QTDIR)\lib;$(OGRE_DEPENDENCIES_DIR)\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)lol4.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Include;include;gui;..\include;$(OGRE_HOME)\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\samples\include;$(OGRE_HOME)\include\OGRE\Terrain;$(OGRE_HOME)\include\OGRE\Paging;$(OGRE_SRC)\OgreMain\include;$(OGRE_SRC)\Components\Paging\include;$(OGRE_SRC)\Components\Terrain\include;$(OGRE_DEPENDENCIES_DIR)\include;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\CEGUI\cegui\include;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\tinyxml;..\dependencies\inc;$(BOOST_ROOT);$(OPENAL_SDK)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMain.lib;OIS.lib;CEGUIBase.lib;CEGUIOgreRenderer.lib;zlibwapi.lib;newton.lib;OgreNewt.lib;OpenAL32.lib;libogg.lib;libvorbisfile.lib;tinyxml_STL.lib;OgreTerrain.lib;OgrePaging.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\dependencies\lib\$(Configuration);$(OGRE_HOME)\lib\$(Configuration);$(OPENAL_SDK)\libs\Win32;$(QTDIR)\lib;$(OGRE_DEPENDENCIES_DIR)\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\lol4.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="res\Resource.h" />
+    <ClInclude Include="include\ai.h" />
+    <ClInclude Include="..\include\Alchemy.h" />
+    <ClInclude Include="..\include\bidirectionalVector2d.h" />
+    <ClInclude Include="..\include\Buffer.h" />
+    <ClInclude Include="..\include\CommonSettings.h" />
+    <ClInclude Include="..\include\contactCallback.h" />
+    <ClInclude Include="..\include\data.h" />
+    <ClInclude Include="..\include\defines.h" />
+    <ClInclude Include="..\include\doorObject.h" />
+    <ClInclude Include="..\include\functions.h" />
+    <ClInclude Include="..\include\FwDec.h" />
+    <ClInclude Include="include\GameApp.h" />
+    <ClInclude Include="..\include\gamedata.h" />
+    <ClInclude Include="include\GameFrameListener.h" />
+    <ClInclude Include="include\GameSettings.h" />
+    <ClInclude Include="..\include\inventory.h" />
+    <ClInclude Include="..\include\Level.h" />
+    <ClInclude Include="..\include\Listener.h" />
+    <ClInclude Include="..\include\LoadingThread.h" />
+    <ClInclude Include="..\include\smallclasses.h" />
+    <ClInclude Include="..\include\Sound.h" />
+    <ClInclude Include="..\include\SoundManager.h" />
+    <ClInclude Include="..\include\Source.h" />
+    <ClInclude Include="..\include\spellbook.h" />
+    <ClInclude Include="..\include\SpellEffect.h" />
+    <ClInclude Include="..\include\StandardApplication.h" />
+    <ClInclude Include="..\include\TypeConverter.h" />
+    <ClInclude Include="..\include\unikey.h" />
+    <ClInclude Include="..\include\waterplane.h" />
+    <ClInclude Include="..\include\WorldArt.h" />
+    <ClInclude Include="..\include\xmlwrapper.h" />
+    <ClInclude Include="..\include\ZipSaveFile.h" />
+    <ClInclude Include="gui\ContainerWindow.h" />
+    <ClInclude Include="gui\EquipmentView.h" />
+    <ClInclude Include="gui\GameWindow.h" />
+    <ClInclude Include="gui\HoldingSlotWindow.h" />
+    <ClInclude Include="gui\HUD.h" />
+    <ClInclude Include="gui\InventoryDisplayWindow.h" />
+    <ClInclude Include="gui\InventoryWindow.h" />
+    <ClInclude Include="gui\MainMenu.h" />
+    <ClInclude Include="gui\OptionsWindow.h" />
+    <ClInclude Include="gui\SaveLoadMenu.h" />
+    <ClInclude Include="gui\SlotView.h" />
+    <ClInclude Include="gui\SpellbookWindow.h" />
+    <ClInclude Include="..\include\beamObject.h" />
+    <ClInclude Include="..\include\containerObject.h" />
+    <ClInclude Include="..\include\DynamicObject.h" />
+    <ClInclude Include="..\include\entranceObject.h" />
+    <ClInclude Include="..\include\ExplosionObject.h" />
+    <ClInclude Include="..\include\gameChar.h" />
+    <ClInclude Include="..\include\gameItem.h" />
+    <ClInclude Include="..\include\gameObject.h" />
+    <ClInclude Include="..\include\lightObject.h" />
+    <ClInclude Include="..\include\missileObject.h" />
+    <ClInclude Include="..\include\staticObject.h" />
+    <ClInclude Include="..\include\vector2d.h" />
+    <ClInclude Include="..\include\Archive.h" />
+    <ClInclude Include="..\include\ZipArchive.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ai.cpp" />
+    <ClCompile Include="..\src\Alchemy.cpp" />
+    <ClCompile Include="..\src\contactCallback.cpp" />
+    <ClCompile Include="..\src\functions.cpp" />
+    <ClCompile Include="src\GameApp.cpp" />
+    <ClCompile Include="..\src\gamedata.cpp" />
+    <ClCompile Include="src\GameFrameListener.cpp" />
+    <ClCompile Include="src\GameSettings.cpp" />
+    <ClCompile Include="..\src\inventory.cpp" />
+    <ClCompile Include="..\src\Level.cpp" />
+    <ClCompile Include="..\src\Listener.cpp" />
+    <ClCompile Include="..\src\LoadingThread.cpp" />
+    <ClCompile Include="src\lol4.cpp" />
+    <ClCompile Include="..\src\SoundManager.cpp" />
+    <ClCompile Include="..\src\Source.cpp" />
+    <ClCompile Include="..\src\spellbook.cpp" />
+    <ClCompile Include="..\src\SpellEffect.cpp" />
+    <ClCompile Include="..\src\StandardApplication.cpp" />
+    <ClCompile Include="..\src\unikey.cpp" />
+    <ClCompile Include="..\src\vector2d.cpp" />
+    <ClCompile Include="..\src\WorldArt.cpp" />
+    <ClCompile Include="..\src\xmlwrapper.cpp" />
+    <ClCompile Include="..\src\ZipSaveFile.cpp" />
+    <ClCompile Include="gui\ContainerWindow.cpp" />
+    <ClCompile Include="gui\EquipmentView.cpp" />
+    <ClCompile Include="gui\GameWindow.cpp" />
+    <ClCompile Include="gui\HoldingSlotWindow.cpp" />
+    <ClCompile Include="gui\HUD.cpp" />
+    <ClCompile Include="gui\InventoryDisplayWindow.cpp" />
+    <ClCompile Include="gui\InventoryWindow.cpp" />
+    <ClCompile Include="gui\MainMenu.cpp" />
+    <ClCompile Include="gui\OptionsWindow.cpp" />
+    <ClCompile Include="gui\SaveLoadMenu.cpp" />
+    <ClCompile Include="gui\SlotView.cpp" />
+    <ClCompile Include="gui\SpellbookWindow.cpp" />
+    <ClCompile Include="..\src\beamObject.cpp" />
+    <ClCompile Include="..\src\containerObject.cpp" />
+    <ClCompile Include="..\src\doorObject.cpp" />
+    <ClCompile Include="..\src\DynamicObject.cpp" />
+    <ClCompile Include="..\src\entranceObject.cpp" />
+    <ClCompile Include="..\src\ExplosionObject.cpp" />
+    <ClCompile Include="..\src\gameChar.cpp" />
+    <ClCompile Include="..\src\gameItem.cpp" />
+    <ClCompile Include="..\src\gameObject.cpp" />
+    <ClCompile Include="..\src\lightObject.cpp" />
+    <ClCompile Include="..\src\missileObject.cpp" />
+    <ClCompile Include="..\src\staticObject.cpp" />
+    <ClCompile Include="..\src\waterplane.cpp" />
+    <ClCompile Include="..\src\ZipArchive.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
