@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>lol4edit</ProjectName>
+    <ProjectGuid>{F826FC1B-5BB1-4C0A-ADA9-C4B1622B3147}</ProjectGuid>
+    <RootNamespace>lol4edit</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\$(Configuration)\</IntDir>
+    <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreBuildEventUseInBuild>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\$(Configuration)\</IntDir>
+    <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</PreBuildEventUseInBuild>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Message>Converting UI files...</Message>
+      <Command>$(ProjectDir)gui\convertui.bat</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;include;gui;..\include;$(OGRE_HOME)\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\samples\include;$(OGRE_HOME)\include\OGRE\Terrain;$(OGRE_HOME)\include\OGRE\Paging;$(OGRE_SRC)\OgreMain\include;$(OGRE_SRC)\Components\Paging\include;$(OGRE_SRC)\Components\Terrain\include;$(OGRE_DEPENDENCIES_DIR)\include;$(QTDIR)\include;$(QTDIR)\include\Qt;$(QTDIR)\qt\include;$(QTDIR)\qt\include\QtGui;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtCore;$(QTDIR)\qt\include\QtCore;$(QTDIR)\qt\src;$(QTDIR)\qt\src\gui\kernel;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;$(BOOST_ROOT);$(OPENAL_SDK)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__editor;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMain_d.lib;OIS_d.lib;zlibwapi.lib;newton.lib;OgreNewt_d.lib;OpenAL32.lib;libogg.lib;libvorbisfile.lib;QtOgre_d.lib;QtGuid4.lib;QtXmld4.lib;QtCored4.lib;tinyxmld_STL.lib;OgreTerrain_d.lib;OgrePaging_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\dependencies\lib\$(Configuration);$(OGRE_HOME)\lib\$(Configuration);$(OPENAL_SDK)\libs\Win32;$(QTDIR)\lib;$(OGRE_DEPENDENCIES_DIR)\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)lol4edit.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Message>Converting UI files...</Message>
+      <Command>$(ProjectDir)gui\convertui.bat</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;include;gui;..\include;$(OGRE_HOME)\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\samples\include;$(OGRE_HOME)\include\OGRE\Terrain;$(OGRE_HOME)\include\OGRE\Paging;$(OGRE_SRC)\OgreMain\include;$(OGRE_SRC)\Components\Paging\include;$(OGRE_SRC)\Components\Terrain\include;$(OGRE_DEPENDENCIES_DIR)\include;$(QTDIR)\include;$(QTDIR)\include\Qt;$(QTDIR)\qt\include;$(QTDIR)\qt\include\QtGui;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtCore;$(QTDIR)\qt\include\QtCore;$(QTDIR)\qt\src;$(QTDIR)\qt\src\gui\kernel;..\dependencies\ogrenewt\newton20\inc;..\dependencies\NewtonWin\sdk;..\dependencies\libogg\include;..\dependencies\libvorbis\include;..\dependencies\zlib;..\dependencies\QtOgre\QtOgre\include;..\dependencies\QtOgre\QtOgre\ui;..\dependencies\QtOgre\QtOgre\bin;..\dependencies\tinyxml;..\dependencies\inc;$(BOOST_ROOT);$(OPENAL_SDK)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__editor;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMain.lib;OIS.lib;zlibwapi.lib;newton.lib;OgreNewt.lib;OpenAL32.lib;libogg.lib;libvorbisfile.lib;QtOgre.lib;QtGui4.lib;QtXml4.lib;QtCore4.lib;tinyxml_STL.lib;OgreTerrain.lib;OgrePaging.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\dependencies\lib\$(Configuration);$(OGRE_HOME)\lib\$(Configuration);$(OPENAL_SDK)\libs\Win32;$(QTDIR)\lib;$(OGRE_DEPENDENCIES_DIR)\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Alchemy.cpp" />
+    <ClCompile Include="..\src\beamObject.cpp" />
+    <ClCompile Include="..\src\contactCallback.cpp" />
+    <ClCompile Include="..\src\containerObject.cpp" />
+    <ClCompile Include="..\src\doorObject.cpp" />
+    <ClCompile Include="..\src\DynamicObject.cpp" />
+    <ClCompile Include="src\EditorApp.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessSuppressLineNumbers>
+    </ClCompile>
+    <ClCompile Include="src\EditorHelperObjects.cpp" />
+    <ClCompile Include="..\src\entranceObject.cpp" />
+    <ClCompile Include="..\src\ExplosionObject.cpp" />
+    <ClCompile Include="..\src\functions.cpp" />
+    <ClCompile Include="..\src\gameChar.cpp" />
+    <ClCompile Include="..\src\gamedata.cpp" />
+    <ClCompile Include="..\src\gameItem.cpp" />
+    <ClCompile Include="..\src\gameObject.cpp" />
+    <ClCompile Include="..\src\groupObject.cpp" />
+    <ClCompile Include="..\src\inventory.cpp" />
+    <ClCompile Include="..\src\Level.cpp" />
+    <ClCompile Include="..\src\lightObject.cpp" />
+    <ClCompile Include="..\src\Listener.cpp" />
+    <ClCompile Include="..\src\LoadingThread.cpp" />
+    <ClCompile Include="src\lol4edit.cpp" />
+    <ClCompile Include="..\src\missileObject.cpp" />
+    <ClCompile Include="..\src\QueryListener.cpp" />
+    <ClCompile Include="..\src\SoundManager.cpp" />
+    <ClCompile Include="..\src\Source.cpp" />
+    <ClCompile Include="..\src\spellbook.cpp" />
+    <ClCompile Include="..\src\SpellEffect.cpp" />
+    <ClCompile Include="..\src\StandardApplication.cpp" />
+    <ClCompile Include="..\src\staticObject.cpp" />
+    <ClCompile Include="..\src\TypeConverter.cpp" />
+    <ClCompile Include="..\src\unikey.cpp" />
+    <ClCompile Include="..\src\vector2d.cpp" />
+    <ClCompile Include="..\src\waterplane.cpp" />
+    <ClCompile Include="..\src\WorldArt.cpp" />
+    <ClCompile Include="..\src\xmlwrapper.cpp" />
+    <ClCompile Include="gui\qrc_EditorResources.cpp" />
+    <ClCompile Include="src\EditGameLogic.cpp" />
+    <ClCompile Include="src\QtEditorApp.cpp" />
+    <ClCompile Include="gui\GenericSelectDialog.cpp" />
+    <ClCompile Include="gui\LevelObjectList.cpp" />
+    <ClCompile Include="gui\LevelSelectDialog.cpp" />
+    <ClCompile Include="gui\MainWindow.cpp" />
+    <ClCompile Include="gui\MaterialSelectDialog.cpp" />
+    <ClCompile Include="gui\moc_GenericSelectDialog.cpp" />
+    <ClCompile Include="gui\moc_LevelObjectList.cpp" />
+    <ClCompile Include="gui\moc_MainWindow.cpp" />
+    <ClCompile Include="gui\moc_ObjectDetailsDialog.cpp" />
+    <ClCompile Include="gui\moc_ObjectSelectDialog.cpp" />
+    <ClCompile Include="gui\moc_PageStatusWindow.cpp" />
+    <ClCompile Include="include\moc_QtEditorApp.cpp" />
+    <ClCompile Include="gui\moc_TerrainEditDialog.cpp" />
+    <ClCompile Include="gui\ObjectDetailsDialog.cpp" />
+    <ClCompile Include="gui\ObjectSelectDialog.cpp" />
+    <ClCompile Include="gui\PageStatusWindow.cpp" />
+    <ClCompile Include="gui\PSSelectDialog.cpp" />
+    <ClCompile Include="gui\TerrainEditDialog.cpp" />
+    <ClCompile Include="gui\ConfirmDialog.cpp" />
+    <ClCompile Include="gui\InputDialog.cpp" />
+    <ClCompile Include="..\src\DynamicLines.cpp" />
+    <ClCompile Include="..\src\DynamicRenderable.cpp" />
+    <ClCompile Include="..\src\ZipArchive.cpp" />
+    <ClCompile Include="..\src\ZipSaveFile.cpp" />
+    <ClCompile Include="..\src\LevelPage.cpp" />
+    <ClCompile Include="..\src\LevelPagedWorld.cpp" />
+    <ClCompile Include="..\src\LevelPagedWorldSection.cpp" />
+    <ClCompile Include="..\src\LevelPageManager.cpp" />
+    <ClCompile Include="..\src\LevelTerrainGroup.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Alchemy.h" />
+    <ClInclude Include="..\include\beamObject.h" />
+    <ClInclude Include="..\include\bidirectionalVector2d.h" />
+    <ClInclude Include="..\include\Buffer.h" />
+    <ClInclude Include="..\include\contactCallback.h" />
+    <ClInclude Include="..\include\containerObject.h" />
+    <ClInclude Include="..\include\data.h" />
+    <ClInclude Include="..\include\defines.h" />
+    <ClInclude Include="include\dialogs.h" />
+    <ClInclude Include="..\include\doorObject.h" />
+    <ClInclude Include="..\include\DynamicObject.h" />
+    <ClInclude Include="include\EditorApp.h" />
+    <ClInclude Include="include\EditorHelperObjects.h" />
+    <ClInclude Include="include\EditorSettings.h" />
+    <ClInclude Include="..\include\entranceObject.h" />
+    <ClInclude Include="..\include\ExplosionObject.h" />
+    <ClInclude Include="..\include\functions.h" />
+    <ClInclude Include="..\include\FwDec.h" />
+    <ClInclude Include="..\include\gameChar.h" />
+    <ClInclude Include="..\include\gamedata.h" />
+    <ClInclude Include="..\include\gameItem.h" />
+    <ClInclude Include="..\include\gameObject.h" />
+    <ClInclude Include="..\include\groupObject.h" />
+    <ClInclude Include="include\gui.h" />
+    <ClInclude Include="..\include\inventory.h" />
+    <ClInclude Include="..\include\Level.h" />
+    <ClInclude Include="..\include\lightObject.h" />
+    <ClInclude Include="..\include\Listener.h" />
+    <ClInclude Include="..\include\LoadingThread.h" />
+    <ClInclude Include="..\include\missileObject.h" />
+    <ClInclude Include="..\include\QueryListener.h" />
+    <ClInclude Include="..\include\smallclasses.h" />
+    <ClInclude Include="..\include\Sound.h" />
+    <ClInclude Include="..\include\SoundManager.h" />
+    <ClInclude Include="..\include\Source.h" />
+    <ClInclude Include="..\include\spellbook.h" />
+    <ClInclude Include="..\include\SpellEffect.h" />
+    <ClInclude Include="..\include\StandardApplication.h" />
+    <ClInclude Include="..\include\staticObject.h" />
+    <ClInclude Include="..\include\TypeConverter.h" />
+    <ClInclude Include="..\include\unikey.h" />
+    <ClInclude Include="..\include\vector2d.h" />
+    <ClInclude Include="..\include\waterplane.h" />
+    <ClInclude Include="..\include\WorldArt.h" />
+    <ClInclude Include="..\include\xmlwrapper.h" />
+    <ClInclude Include="res\Resource.h" />
+    <ClInclude Include="include\EditGameLogic.h" />
+    <CustomBuild Include="include\QtEditorApp.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="gui\DataHoldingListWidgetItem.h" />
+    <CustomBuild Include="gui\GenericSelectDialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOCing: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOCing: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="gui\LevelObjectList.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOCing: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="gui\LevelSelectDialog.h" />
+    <CustomBuild Include="gui\MainWindow.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="gui\MaterialSelectDialog.h" />
+    <CustomBuild Include="gui\ObjectDetailsDialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="gui\ObjectSelectDialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Doing this: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOCing: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="gui\PageStatusWindow.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOCing: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOCing: $(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="gui\PSSelectDialog.h" />
+    <CustomBuild Include="gui\TerrainEditDialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOCing...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOCing...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cpp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="gui\ConfirmDialog.h" />
+    <CustomBuild Include="gui\InputDialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="gui\h\CharacterData.h" />
+    <ClInclude Include="gui\h\confirmdialog.h" />
+    <ClInclude Include="gui\h\details.h" />
+    <ClInclude Include="gui\h\DoorData.h" />
+    <ClInclude Include="gui\h\editinventory.h" />
+    <ClInclude Include="gui\h\editorsettings.h" />
+    <ClInclude Include="gui\h\inputdialog.h" />
+    <ClInclude Include="gui\h\levelsettings.h" />
+    <ClInclude Include="gui\h\LightData.h" />
+    <ClInclude Include="gui\h\MainWindow.h" />
+    <ClInclude Include="gui\h\Objectlist2.h" />
+    <ClInclude Include="gui\h\Objectlist_Widget.h" />
+    <ClInclude Include="gui\h\objectselect.h" />
+    <ClInclude Include="gui\h\objectview.h" />
+    <ClInclude Include="gui\h\selectdialog.h" />
+    <ClInclude Include="gui\h\StaticData.h" />
+    <ClInclude Include="gui\h\terrain.h" />
+    <ClInclude Include="gui\h\texlist.h" />
+    <ClInclude Include="gui\h\WaterData.h" />
+    <ClInclude Include="..\include\DynamicLines.h" />
+    <ClInclude Include="..\include\DynamicRenderable.h" />
+    <ClInclude Include="..\include\Archive.h" />
+    <ClInclude Include="..\include\ZipArchive.h" />
+    <ClInclude Include="..\include\ZipSaveFile.h" />
+    <ClInclude Include="..\include\LevelPage.h" />
+    <ClInclude Include="..\include\LevelPagedWorld.h" />
+    <ClInclude Include="..\include\LevelPagedWorldSection.h" />
+    <ClInclude Include="..\include\LevelPageManager.h" />
+    <ClInclude Include="..\include\LevelTerrain.h" />
+    <ClInclude Include="..\include\LevelTerrainGroup.h" />
+    <ClInclude Include="..\include\LevelTerrainPrereqs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="gui\qrc\EditorResources.qrc">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCCing: $(QTDIR)\bin\rcc.exe -o "$(ProjectDir)gui\qrc_EditorResources.cpp" "%(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\rcc.exe -o "$(ProjectDir)gui\qrc_EditorResources.cpp" "%(FullPath)"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\rcc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">gui\qrc_EditorResources.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RCCing: $(QTDIR)\bin\rcc.exe -o "$(ProjectDir)gui\qrc_EditorResources.cpp" "%(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\rcc.exe -o "$(ProjectDir)gui\qrc_EditorResources.cpp" "%(FullPath)"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\rcc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">gui\qrc_EditorResources.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\lol4.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

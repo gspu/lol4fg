@@ -21,14 +21,18 @@ public:
 	//constant height
 	virtual void defineTerrain(long x, long y, float constantHeight);	
 	//tweaking of the importdata might be necessary
-	virtual void defineTerrain(long x, long y, const Terrain::ImportData* importData);	
+	virtual void defineTerrain(long x, long y, const Ogre::Terrain::ImportData* importData);	
 	//image and LayerInstanceList. LayerInstanceList seems to be the list of textures or so
-	virtual void defineTerrain(long x, long y, const Image* img, const Terrain::LayerInstanceList* layers = 0);	
+	virtual void defineTerrain(long x, long y, const Ogre::Image* img, const Ogre::Terrain::LayerInstanceList* layers = 0);	
 	//a lot of floats and a LayerInstanceList
-	virtual void defineTerrain(long x, long y, const float* pFloat, const Terrain::LayerInstanceList* layers = 0);
+	virtual void defineTerrain(long x, long y, const float* pFloat, const Ogre::Terrain::LayerInstanceList* layers = 0);
 	//from filename. this will be redirected to load from level file instead
-	virtual void defineTerrain(long x, long y, const String& filename);
-	
+	virtual void defineTerrain(long x, long y, const Ogre::String& filename);
+protected:
+	Level *mLevel;
+
+	TerrainSlot* getLevelTerrainSlot(long x, long y, bool createIfMissing);
+	TerrainSlot* getLevelTerrainSlot(long x, long y) const;
 };
 
 #endif
